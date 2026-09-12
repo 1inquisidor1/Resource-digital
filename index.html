@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resource Digital | Tu Teléfono es un Nodo</title>
+    <title>Resource Digital | DePIN Infrastructure</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0D0D0D; color: #E5E7EB; }
+        body { font-family: 'Inter', sans-serif; background-color: #0D0D0D; color: #E5E7EB; scroll-behavior: smooth; }
         .font-mono { font-family: 'Fira Code', monospace; }
         .glow { box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
         .gradient-text {
@@ -15,150 +15,103 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .node-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
+        .node-card:hover { border-color: #4ADE80; background: rgba(74, 222, 128, 0.05); }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Navigation -->
-    <nav class="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
-        <div class="text-2xl font-extrabold tracking-tighter text-white flex items-center gap-2">
-            <span class="text-green-400">RESOURCE</span> DIGITAL
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="text-xl font-extrabold tracking-tighter text-white flex items-center gap-2">
+                <span class="text-green-400">RESOURCE</span> DIGITAL
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#concept" class="hover:text-green-400 transition">Concepto</a>
+                <a href="#network" class="hover:text-green-400 transition">Red en Vivo</a>
+                <a href="#docs" class="hover:text-green-400 transition">Documentación</a>
+            </div>
+            <a href="https://github.com/1inquisidor1/Resource-digital/tree/main/docs" target="_blank" class="bg-white text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-green-400 transition">Explorar Docs</a>
         </div>
-        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-            <a href="#concept" class="hover:text-green-400 transition">Concepto</a>
-            <a href="#ecosystem" class="hover:text-green-400 transition">Ecosistema</a>
-            <a href="#roadmap" class="hover:text-green-400 transition">Roadmap</a>
-        </div>
-        <a href="https://github.com/1inquisidor1/Resource-digital" target="_blank" class="bg-white text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-green-400 transition">Docs / GitHub</a>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative px-6 py-20 md:py-32 max-w-7xl mx-auto text-center">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-green-500/20 blur-[120px] -z-10"></div>
-        
-        <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6">
+    <section class="relative px-6 pt-32 pb-20 md:pt-48 md:pb-32 max-w-7xl mx-auto text-center">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-green-500/10 blur-[120px] -z-10"></div>
+        <div class="inline-block px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-mono mb-6">
+            v5.0 ALPHA - DEPIN INFRASTRUCTURE
+        </div>
+        <h1 class="text-5xl md:text-8xl font-extrabold text-white tracking-tight mb-8 leading-tight">
             Tu teléfono es un <span class="gradient-text">nodo.</span><br>
-            Mientras no lo usas, genera ingresos.
+            Genera valor pasivo.
         </h1>
-        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-            El primer DePIN móvil multipropósito en Latinoamérica. Convierte tu ancho de banda, sensores y cómputo en activos digitales verificados en la blockchain <span class="text-white font-semibold">peaq</span>.
+        <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
+            El primer ecosistema DePIN móvil en Latinoamérica. Convertimos ancho de banda, sensores y cómputo en activos digitales verificados on-chain mediante la blockchain <span class="text-white font-semibold">peaq</span>.
         </p>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-            <a href="#" class="bg-green-500 text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-400 transition glow w-full md:w-auto">
-                Unirse a la Beta
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+            <a href="#" class="bg-green-500 text-black px-10 py-4 rounded-2xl font-bold text-lg hover:bg-green-400 transition glow w-full md:w-auto">
+                Solicitar Acceso Beta
             </a>
-            <a href="#concept" class="px-8 py-4 rounded-xl font-bold text-lg text-gray-300 hover:text-white transition w-full md:w-auto">
-                Saber más &rarr;
+            <a href="#network" class="px-10 py-4 rounded-2xl font-bold text-lg text-gray-300 hover:text-white transition w-full md:w-auto border border-white/10">
+                Ver Estado de la Red
             </a>
         </div>
     </section>
 
-    <!-- concept Section -->
-    <section id="concept" class="px-6 py-24 max-w-7xl mx-auto">
+    <!-- Network Live Section -->
+    <section id="network" class="px-6 py-24 max-w-7xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Economía de las Máquinas</h2>
-            <p class="text-gray-400">Tu hardware tiene valor. Nosotros te damos la herramienta para cobrarlo.</p>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Network Pulse</h2>
+            <p class="text-gray-400">Monitoreo en tiempo real de la infraestructura distribuida.</p>
         </div>
         
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-green-500/50 transition group">
-                <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400 mb-6 group-hover:scale-110 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Billetera-Nodo</h3>
-                <p class="text-gray-400 leading-relaxed">Gestiona múltiples dispositivos desde una sola cuenta. Saldo consolidado y transparencia total.</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="p-8 rounded-3xl node-card text-center">
+                <div class="text-xs font-mono text-gray-500 mb-2 uppercase tracking-widest">Active Nodes</div>
+                <div id="node-count" class="text-4xl font-extrabold text-white">1,024</div>
+                <div class="text-green-400 text-xs mt-2">↑ 12% this week</div>
             </div>
-            <div class="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-green-500/50 transition group">
-                <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Privacidad por Diseño</h3>
-                <p class="text-gray-400 leading-relaxed">Anonimización en el dispositivo. Tus datos personales nunca salen del teléfono; solo el valor técnico.</p>
+            <div class="p-8 rounded-3xl node-card text-center">
+                <div class="text-xs font-mono text-gray-500 mb-2 uppercase tracking-widest">Data Processed</div>
+                <div id="data-count" class="text-4xl font-extrabold text-white">42.8 TB</div>
+                <div class="text-blue-400 text-xs mt-2">Real-time sync</div>
             </div>
-            <div class="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-green-500/50 transition group">
-                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Verificación peaq</h3>
-                <p class="text-gray-400 leading-relaxed">Soporte de peaq L1 para identidad descentralizada y pagos autónomos. Transparencia total on-chain.</p>
+            <div class="p-8 rounded-3xl node-card text-center">
+                <div class="text-xs font-mono text-gray-500 mb-2 uppercase tracking-widest">Active Regions</div>
+                <div class="text-4xl font-extrabold text-white">EC / BR / MX</div>
+                <div class="text-gray-400 text-xs mt-2">LATAM Core</div>
+            </div>
+            <div class="p-8 rounded-3xl node-card text-center">
+                <div class="text-xs font-mono text-gray-500 mb-2 uppercase tracking-widest">Network Status</div>
+                <div class="text-4xl font-extrabold text-green-400">STABLE</div>
+                <div class="text-gray-400 text-xs mt-2">peaq L1 Integrated</div>
             </div>
         </div>
     </section>
 
-    <!-- Ecosystem Section -->
-    <section id="ecosystem" class="px-6 py-24 bg-white/5">
+    <!-- Documentation Index -->
+    <section id="docs" class="px-6 py-24 bg-white/5">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Fuentes de Ingresos</h2>
-                <p class="text-gray-400">Diversificación de recursos para maximizar tu rentabilidad.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-6 rounded-2xl bg-black border border-white/10">
-                    <span class="text-xs font-mono text-green-400 mb-2 block">FASE 1</span>
-                    <h4 class="text-lg font-bold text-white mb-2">Ancho de Banda</h4>
-                    <p class="text-sm text-gray-400">Monetiza tu internet no utilizado mientras duermes.</p>
+            <div class="flex flex-col md:flex-row gap-16 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-bold text-white mb-6 leading-tight">Arquitectura <br><span class="text-green-400">Atómica de 18 Sistemas.</span></h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        No es solo una aplicación, es un sistema coordinado de 18 módulos independientes que garantizan la escalabilidad y la resiliencia del nodo. Desde el buffer local SQLite hasta la verificación de datos on-chain en peaq.
+                    </p>
+                    <a href="https://github.com/1inquisidor1/Resource-digital/tree/main/docs" class="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-xl font-bold hover:bg-green-400 transition">
+                        Explorar Documentación Técnica <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
                 </div>
-                <div class="p-6 rounded-2xl bg-black border border-white/10">
-                    <span class="text-xs font-mono text-blue-400 mb-2 block">FASE 2</span>
-                    <h4 class="text-lg font-bold text-white mb-2">Sensores Ambientales</h4>
-                    <p class="text-sm text-gray-400">Luz, ruido y movimiento para investigación B2B.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-black border border-white/10">
-                    <span class="text-xs font-mono text-purple-400 mb-2 block">FASE 3</span>
-                    <h4 class="text-lg font-bold text-white mb-2">Almacenamiento</h4>
-                    <p class="text-sm text-gray-400">Watcher Node de DeNet para verificación de archivos.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-black border border-white/10">
-                    <span class="text-xs font-mono text-orange-400 mb-2 block">FASE 3</span>
-                    <h4 class="text-lg font-bold text-white mb-2">Cómputo Móvil</h4>
-                    <p class="text-sm text-gray-400">Procesamiento descentralizado con Acurast.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Roadmap Section -->
-    <section id="roadmap" class="px-6 py-24 max-w-4xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Hoja de Ruta</h2>
-            <p class="text-gray-400">Construyendo el futuro del DePIN móvil paso a paso.</p>
-        </div>
-        
-        <div class="space-y-12">
-            <div class="flex gap-6 relative">
-                <div class="flex flex-col items-center">
-                    <div class="w-4 h-4 bg-green-500 rounded-full glow"></div>
-                    <div class="w-px h-full bg-gray-700 mt-2"></div>
-                </div>
-                <div class="pb-12">
-                    <h3 class="text-xl font-bold text-white mb-2">Fase 1: Núcleo Rentable</h3>
-                    <p class="text-gray-400">Lanzamiento de MVP, integración de SDK de banda y validación de retención con usuarios beta.</p>
-                </div>
-            </div>
-            <div class="flex gap-6 relative">
-                <div class="flex flex-col items-center">
-                    <div class="w-4 h-4 bg-gray-600 rounded-full"></div>
-                    <div class="w-px h-full bg-gray-700 mt-2"></div>
-                </div>
-                <div class="pb-12">
-                    <h3 class="text-xl font-bold text-white mb-2">Fase 2: Capa DePIN</h3>
-                    <p class="text-gray-400">Integración de peaq ID, pagos automatizados y captura de datos de sensores ambientales.</p>
-                </div>
-            </div>
-            <div class="flex gap-6 relative">
-                <div class="flex flex-col items-center">
-                    <div class="w-4 h-4 bg-gray-600 rounded-full"></div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-2">Fase 3: Ecosistema Completo</h3>
-                    <p class="text-gray-400">Soporte para almacenamiento descentralizado (DeNet) y cómputo confidencial (Acurast).</p>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4 font-mono">
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S01: App UI Interface</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S02: Foreground Service</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S03: Sensor Capture</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S04: SQLite Buffer</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S05: Bandwidth SDK</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S06: peaq L1 Layer</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S07: Boosters Engine</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S08: Resource Panel</div>
                 </div>
             </div>
         </div>
@@ -167,11 +120,22 @@
     <!-- Footer -->
     <footer class="px-6 py-12 border-t border-white/10 text-center">
         <div class="text-sm text-gray-500">
-            &copy; 2026 Resource Digital. Powered by peaq & Flutter. <br>
-            <a href="https://github.com/1inquisidor1/Resource-digital" class="text-gray-400 hover:text-green-400 transition">Documentation</a> | 
-            <a href="#" class="text-gray-400 hover:text-green-400 transition">Privacy Policy</a>
+            &copy; 2026 Resource Digital. Infrastructure Powered by peaq. <br>
+            <div class="mt-4 flex justify-center gap-6">
+                <a href="https://github.com/1inquisidor1/Resource-digital" class="text-gray-400 hover:text-white transition">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-white transition">Whitepaper</a>
+                <a href="#" class="text-gray-400 hover:text-white transition">Privacy</a>
+            </div>
         </div>
     </footer>
 
+    <script>
+        setInterval(() => {
+            const nodeCount = document.getElementById('node-count');
+            const current = parseInt(nodeCount.innerText.replace(/,/g, ''));
+            const change = Math.floor(Math.random() * 3) - 1;
+            nodeCount.innerText = (current + change).toLocaleString();
+        }, 3000);
+    </script>
 </body>
 </html>
