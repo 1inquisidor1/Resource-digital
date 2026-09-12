@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad — Resource Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0D0D0D; color: #E5E7EB; }
+        .box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); }
+        a { color: #4ADE80; }
+        h2 { color: #fff; }
+    </style>
+</head>
+<body class="p-6 md:p-12 max-w-4xl mx-auto">
+    <a href="/" class="text-gray-400 hover:text-white transition text-sm mb-8 inline-block">&larr; Volver a Inicio</a>
+    <h1 class="text-3xl font-extrabold text-white mb-8">Política de Privacidad</h1>
+    
+<div class="space-y-6 text-gray-400 leading-relaxed">
+    <div class="box p-5 rounded-xl">
+        <h2 class="text-xl font-bold mb-2">1. Información que recopilamos</h2>
+        <p>Recopilamos únicamente los datos necesarios para operar el servicio:</p>
+        <ul class="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Datos de cuenta:</strong> email, identificador de wallet, dispositivo(s) vinculado(s).</li>
+            <li><strong>Datos de banda ancha:</strong> GB compartidos, tiempo de actividad (uptime) y ubicación aproximada (a nivel de barrio).</li>
+            <li><strong>Datos de sensores:</strong> lecturas ambientales de luz, ruido y movimiento, anonimizadas en el dispositivo (solo hashes y zonas).</li>
+            <li><strong>Datos de ganancias:</strong> historial de transacciones, saldo y retiros.</li>
+        </ul>
+    </div>
+
+    <div class="box p-5 rounded-xl">
+        <h2 class="text-xl font-bold mb-2">2. Cómo usamos su información</h2>
+        <ul class="list-disc pl-6 mt-2 space-y-1">
+            <li>Operar la billetera-nodo y calcular sus ganancias.</li>
+            <li>Procesar retiros vía PIX, SPEI, USDC o PayPal.</li>
+            <li>Mejorar la Aplicación y prevenir fraudes.</li>
+            <li>Cumplir con obligaciones legales y fiscales.</li>
+        </ul>
+    </div>
+
+    <div class="box p-5 rounded-xl">
+        <h2 class="text-xl font-bold mb-2">3. Compartir ancho de banda (Honeygain / SDK)</h2>
+        <p>Al activar el opt-in, usted permite que el SDK compartido use su ancho de banda no utilizado con empresas de investigación de mercado e IA. Puede desactivarlo en cualquier momento desde <strong>Configuración &gt; Recursos &gt; Banda ancha</strong>.</p>
+        <p class="mt-2"><strong>El SDK no accede a:</strong> datos personales (nombre, email, teléfono), archivos personales, historial de navegación, ni contraseñas o credenciales.</p>
+    </div>
+
+    <div class="box p-5 rounded-xl">
+        <h2 class="text-xl font-bold mb-2">4. Anonimización en el dispositivo</h2>
+        <p>Los datos de sensores se anonimizan antes de salir del teléfono. Solo se transmiten hashes irreversibles y códigos de zona, nunca ubicación exacta ni identificadores personales. Sin PII on-chain: en la blockchain de peaq solo se registran hashes y DIDs.</p>
+    </div>
+
+    <div class="box p-5 rounded-xl">
+        <h2 class="text-xl font-bold mb-2">5. Sus derechos</h2>
+        <p>De acuerdo con GDPR/LGPD, usted tiene derecho a:</p>
+        <ul class="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Acceso:</strong> solicitar una copia de sus datos.</li>
+            <li><strong>Rectificación:</strong> corregir datos inexactos.</li>
+            <li><strong>Eliminación:</strong> borrar su cuenta y datos (derecho al olvido).</li>
+            <li><strong>Portabilidad:</strong> exportar sus datos en formato JSON.</li>
+            <li><strong>Oposición:</strong> desactivar recursos individuales.</li>
+        </ul>
+    </div>
+
+    <div class="box p-5 rounded-xl">
+        <h2 class="text-xl font-bold mb-2">6. Retención de datos</h2>
+        <ul class="list-disc pl-6 mt-2 space-y-1">
+            <li>Ganancias: 5 años (obligación fiscal).</li>
+            <li>Sesiones de banda: 90 días.</li>
+            <li>Buffer de sensores: 24h local + 30 días remoto.</li>
+            <li>peaq DIDs: permanente (público).</li>
+            <li>Logs de autenticación: 30 días.</li>
+        </ul>
+    </div>
+
+    <div class="box p-5 rounded-xl">
+        <h2 class="text-xl font-bold mb-2">7. Seguridad</h2>
+        <p>Usamos cifrado en tránsito (TLS con certificate pinning), almacenamiento seguro con Android Keystore, Row Level Security en la base de datos y técnicas RASP (anti-root/Frida/repackaging).</p>
+    </div>
+
+    <div class="box p-5 rounded-xl">
+        <h2 class="text-xl font-bold mb-2">8. Contacto de privacidad</h2>
+        <p>Email de privacidad: <a href="mailto:contacto@resourcedigital.app">contacto@resourcedigital.app</a>.</p>
+    </div>
+</div>
+    <div class="mt-12 pt-6 border-t border-white/10 text-sm text-gray-500">
+        <p>Resource Digital &copy; 2026. Para contacto: <a href="mailto:contacto@resourcedigital.app">contacto@resourcedigital.app</a></p>
+    </div>
+</body>
+</html>
