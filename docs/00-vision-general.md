@@ -1,0 +1,3 @@
+# 00 vision general
+
+Documento en construcción...

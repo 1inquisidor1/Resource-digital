@@ -1,0 +1,3 @@
+# bug_report
+
+Documento en construcción...
