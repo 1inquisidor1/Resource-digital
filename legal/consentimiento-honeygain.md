@@ -1,3 +1,0 @@
-# consentimiento honeygain
-
-Documento en construcción...
