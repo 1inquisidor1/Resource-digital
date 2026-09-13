@@ -19,6 +19,20 @@ Estos sistemas forman el motor operativo del nodo en el dispositivo del usuario.
 - [**S08: Panel de Recursos**](docs/S08_panel.md) - Transparencia de consumo y ganancias.
 - [**S09: Afiliados v2.0**](docs/S09_affiliates.md) - Sistema de referidos multinivel.
 
+## 🚀 Fase 3: Ecosistema Completo (Semanas 9+)
+
+**Sistemas Fase 3:**
+- **S19:** DeNet Storage - Almacenamiento descentralizado
+- **S20:** Acurast Compute - Cómputo descentralizado  
+- **S21:** PayOS Gateway - Pagos interoperables LatAm
+
+| Semana | Actividad | Sistemas |
+|--------|-----------|----------|
+| 9 | DeNet + Acurast | S19, S20 |
+| 10 | PayOS + Feature Flags | S21, S17 |
+| 11 | Hardening de Seguridad | - |
+| 12 | Beta Ampliada (50 usuarios) | - |
+
 ## 🛡️ Sistemas de Soporte (Sistemas 10-18)
 Infraestructura de backend, legal y monitoreo.
 
