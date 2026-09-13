@@ -6,7 +6,7 @@
 ## 🎯 Propuesta de Valor
 > **“Tu teléfono es un nodo. Mientras no lo usas, genera ingresos. Tú controlas cuántos dispositivos vincular y qué recursos activar.”**
 
-- **Resultados Tangibles:** Ingresos desde el día 1 vía ancho de banda.
+- **Resultados Tangibles:** Potencial de generación de ingresos inmediata tras la activación de los módulos de Fase 1 (Banda Ancha).
 - **Billetera-Nodo:** Saldo consolidado de todos los dispositivos vinculados.
 - **Verificación On-Chain:** Identidad soberana y registro de contribuciones mediante **peaq ID**.
 

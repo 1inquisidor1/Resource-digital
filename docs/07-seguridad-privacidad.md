@@ -48,3 +48,7 @@ El SDK de Honeygain requiere:
 | Buffer sensores | 24h local + 30d remoto | SQLite + Supabase |
 | peaq DIDs | Permanente (público) | peaq blockchain |
 | Logs de auth | 30 días | Supabase |
+
+## 5. Soporte y Contacto
+Para cualquier consulta legal, solicitudes de eliminación de datos o soporte técnico, contacte al correo oficial:
+**andy@resourcedigital.dpdns.org**
