@@ -51,3 +51,6 @@ Fuentes de ingreso de alto valor.
 ---
 
 Ultima actualizacion: 2026-09-13
+---
+
+**Ver Plan de Desarrollo completo:** [legal/roadmap.html](../legal/roadmap.html)

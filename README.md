@@ -62,6 +62,8 @@ Fuentes de ingreso de alto valor mediante almacenamiento y computo.
 | 2 | 5-8 | Capa DePIN con peaq | S03, S06-S09, S13-S15, S17-S18 |
 | 3 | 9+ | Ecosistema Completo | S19-S21 |
 
+**Ver Plan de Desarrollo completo:** [legal/roadmap.html](legal/roadmap.html)
+
 ---
 
 *Ultima actualizacion: 2026-09-13*
