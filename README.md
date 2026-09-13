@@ -64,6 +64,7 @@ Fuentes de ingreso de alto valor mediante almacenamiento y computo.
 
 **Ver Plan de Desarrollo completo:** [legal/roadmap.html](legal/roadmap.html)
 **Probar la App:** [Simulador interactivo](legal/app-simulator.html) — Demostración del funcionamiento en fase final
+**Beta Cerrada:** [Registrarse para la beta](legal/beta.html) — 50 plazas disponibles
 
 ---
 

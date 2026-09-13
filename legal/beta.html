@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resource Digital - Registro Beta Cerrada. Sé parte del primer DePIN móvil multipropósito para Latinoamérica.">
+    <meta name="theme-color" content="#00e5a0">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Resource Digital | Beta Cerrada">
+    <meta property="og:description" content="Regístrate para la beta cerrada de Resource Digital">
+    <title>Resource Digital | Beta Cerrada - Registro</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-0: #070b14;
+            --bg-1: #0d1321;
+            --bg-2: #151d2e;
+            --bg-3: #1a2540;
+            --border: #1e2a3a;
+            --border-active: #2a4a3a;
+            --text-0: #f8fafc;
+            --text-1: #cbd5e1;
+            --text-2: #94a3b8;
+            --text-3: #64748b;
+            --accent: #00e5a0;
+            --accent-dim: #00b884;
+            --accent-glow: rgba(0, 229, 160, 0.15);
+            --accent-glow2: rgba(0, 229, 160, 0.3);
+            --blue: #60a5fa;
+            --blue-glow: rgba(96, 165, 250, 0.12);
+            --orange: #fbbf24;
+            --orange-glow: rgba(251, 191, 36, 0.12);
+            --purple: #a78bfa;
+            --purple-glow: rgba(167, 139, 250, 0.12);
+            --red: #f87171;
+            --red-glow: rgba(248, 113, 113, 0.12);
+            --gradient: linear-gradient(135deg, var(--accent) 0%, var(--blue) 100%);
+            --font: 'Inter', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font);
+            background: var(--bg-0);
+            color: var(--text-1);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+        ::selection { background: var(--accent); color: var(--bg-0); }
+
+        /* CONTAINER */
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 24px 20px 80px;
+        }
+
+        /* BACK LINK */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 32px;
+            padding: 6px 16px;
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: 13px;
+            color: var(--text-2);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .back-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+        .header__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: var(--accent-glow);
+            border: 1px solid var(--accent);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .header__badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent-glow2);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+        }
+        .header__title {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--text-0);
+            margin-bottom: 12px;
+            letter-spacing: -0.03em;
+        }
+        .header__title span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header__subtitle {
+            font-size: 16px;
+            color: var(--text-2);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* INFO CARDS */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        .info-card {
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px;
+        }
+        .info-card__icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .info-card__icon.accent { background: var(--accent-glow); }
+        .info-card__icon.blue { background: var(--blue-glow); }
+        .info-card__icon.orange { background: var(--orange-glow); }
+        .info-card__icon.purple { background: var(--purple-glow); }
+        .info-card__title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-0);
+            margin-bottom: 4px;
+        }
+        .info-card__desc {
+            font-size: 11px;
+            color: var(--text-3);
+            line-height: 1.4;
+        }
+
+        /* FORM */
+        .form-section {
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .form-section__header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        .form-section__number {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--bg-0);
+            flex-shrink: 0;
+        }
+        .form-section__number.accent { background: var(--accent); }
+        .form-section__number.blue { background: var(--blue); }
+        .form-section__number.orange { background: var(--orange); }
+        .form-section__number.purple { background: var(--purple); }
+        .form-section__title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-0);
+        }
+        .form-section__desc {
+            font-size: 11px;
+            color: var(--text-3);
+            margin-top: 2px;
+        }
+
+        /* FORM FIELDS */
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .form-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-2);
+            margin-bottom: 6px;
+        }
+        .form-label .required {
+            color: var(--red);
+            margin-left: 2px;
+        }
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-0);
+            font-size: 14px;
+            font-family: var(--font);
+            transition: all 0.2s;
+        }
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--text-3);
+        }
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 36px;
+        }
+        .form-select option {
+            background: var(--bg-2);
+            color: var(--text-0);
+        }
+        .form-textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        .form-hint {
+            font-size: 10px;
+            color: var(--text-3);
+            margin-top: 4px;
+        }
+
+        /* CHECKBOX */
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px;
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .checkbox-group:hover {
+            border-color: var(--accent);
+        }
+        .checkbox-group input {
+            display: none;
+        }
+        .checkbox__box {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+        .checkbox__box::after {
+            content: '✓';
+            font-size: 12px;
+            color: var(--bg-0);
+            opacity: 0;
+        }
+        .checkbox-group input:checked + .checkbox__box {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+        .checkbox-group input:checked + .checkbox__box::after {
+            opacity: 1;
+        }
+        .checkbox__text {
+            font-size: 12px;
+            color: var(--text-2);
+        }
+        .checkbox__text strong {
+            color: var(--text-0);
+        }
+
+        /* SUBMIT BUTTON */
+        .submit-section {
+            text-align: center;
+            margin-top: 32px;
+        }
+        .submit-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 40px;
+            background: var(--accent);
+            color: var(--bg-0);
+            border: none;
+            border-radius: 999px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: var(--font);
+            width: 100%;
+            max-width: 320px;
+        }
+        .submit-btn:hover {
+            background: var(--accent-dim);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--accent-glow2);
+        }
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .submit-btn__spinner {
+            display: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid transparent;
+            border-top-color: var(--bg-0);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        .submit-btn.loading .submit-btn__spinner {
+            display: block;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* SUCCESS STATE */
+        .success-state {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--bg-1);
+            border: 1px solid var(--border-active);
+            border-radius: 18px;
+            margin-bottom: 24px;
+        }
+        .success-state.show {
+            display: block;
+            animation: fadeUp 0.5s var(--ease);
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .success-state__icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--accent-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 16px;
+        }
+        .success-state__title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-0);
+            margin-bottom: 8px;
+        }
+        .success-state__text {
+            font-size: 14px;
+            color: var(--text-2);
+            margin-bottom: 16px;
+        }
+        .success-state__email {
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--accent);
+            background: var(--bg-2);
+            padding: 8px 16px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* ERROR STATE */
+        .error-state {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: var(--red-glow);
+            border: 1px solid var(--red);
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .error-state.show {
+            display: block;
+            animation: shake 0.5s var(--ease);
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        .error-state__text {
+            font-size: 13px;
+            color: var(--red);
+            font-weight: 500;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer__links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+        .footer__links a {
+            color: var(--text-2);
+            font-size: 13px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer__links a:hover {
+            color: var(--accent);
+        }
+        .footer__copy {
+            font-size: 12px;
+            color: var(--text-3);
+        }
+
+        /* PROGRESS BAR */
+        .progress-bar {
+            height: 4px;
+            background: var(--bg-3);
+            border-radius: 2px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+        .progress-bar__fill {
+            height: 100%;
+            background: var(--gradient);
+            border-radius: 2px;
+            transition: width 0.3s var(--ease);
+        }
+
+        /* HONEYPOT - hidden from users, bots will fill it */
+        .honeypot {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
+            height: 0;
+            width: 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .header__title {
+                font-size: 24px;
+            }
+            .container {
+                padding: 16px 16px 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">← Volver al inicio</a>
+        
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header__badge">
+                <span class="header__badge-dot"></span>
+                Beta Cerrada 2026
+            </div>
+            <h1 class="header__title">Únete a la <span>Beta Cerrada</span></h1>
+            <p class="header__subtitle">
+                Sé parte del primer DePIN móvil multipropósito diseñado para Latinoamérica. 
+                Solo 50 plazas disponibles para la fase de validación en Ecuador.
+            </p>
+        </header>
+
+        <!-- INFO CARDS -->
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card__icon accent">📱</div>
+                <div class="info-card__title">Android 8.0+</div>
+                <div class="info-card__desc">Requerido • 2GB RAM mínimo</div>
+            </div>
+            <div class="info-card">
+                <div class="info-card__icon blue">⏱️</div>
+                <div class="info-card__title">4 semanas</div>
+                <div class="info-card__desc">Duración de la beta cerrada</div>
+            </div>
+            <div class="info-card">
+                <div class="info-card__icon orange">🎁</div>
+                <div class="info-card__title">Recompensas</div>
+                <div class="info-card__desc">Ganancias reales + bonus por feedback</div>
+            </div>
+            <div class="info-card">
+                <div class="info-card__icon purple">🔒</div>
+                <div class="info-card__title">Datos anónimos</div>
+                <div class="info-card__desc">Privacidad desde el diseño</div>
+            </div>
+        </div>
+
+        <!-- SUCCESS STATE -->
+        <div class="success-state" id="successState">
+            <div class="success-state__icon">✅</div>
+            <h2 class="success-state__title">¡Solicitud Enviada!</h2>
+            <p class="success-state__text">
+                Hemos recibido tu registro. Recibirás un correo de confirmación en:
+            </p>
+            <div class="success-state__email" id="successEmail"></div>
+            <p style="margin-top:16px;font-size:12px;color:var(--text-3)">
+                Revisa tu bandeja de spam si no lo encuentras en 24h.
+            </p>
+        </div>
+
+        <!-- ERROR STATE -->
+        <div class="error-state" id="errorState">
+            <span class="error-state__text" id="errorText"></span>
+        </div>
+
+        <!-- FORM -->
+        <form id="betaForm" action="https://formsubmit.co/ajax/andy@resourcedigital.dpdns.org" method="POST">
+            
+            <!-- HONEYPOT - Anti-spam -->
+            <div class="honeypot">
+                <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+                <input type="checkbox" name="_captcha" tabindex="-1">
+            </div>
+            
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="Nueva solicitud Beta - Resource Digital">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="¡Gracias por registrarte en la Beta Cerrada de Resource Digital! Hemos recibido tu solicitud. Te contactaremos pronto con instrucciones. - Equipo Resource Digital">
+            <input type="hidden" name="_next" value="">
+
+            <!-- Progress -->
+            <div class="progress-bar">
+                <div class="progress-bar__fill" id="progressFill" style="width:0%"></div>
+            </div>
+
+            <!-- SECTION 1: Personal Info -->
+            <div class="form-section">
+                <div class="form-section__header">
+                    <span class="form-section__number accent">1</span>
+                    <div>
+                        <div class="form-section__title">Información Personal</div>
+                        <div class="form-section__desc">Datos básicos para contacto</div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Nombre completo<span class="required">*</span></label>
+                        <input type="text" class="form-input" name="nombre" placeholder="Tu nombre" required minlength="3" maxlength="50">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Edad<span class="required">*</span></label>
+                        <input type="number" class="form-input" name="edad" placeholder="25" required min="18" max="80">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Email<span class="required">*</span></label>
+                        <input type="email" class="form-input" name="email" placeholder="tu@email.com" required id="emailInput">
+                        <div class="form-hint">Recibirás confirmación aquí</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Teléfono / WhatsApp</label>
+                        <input type="tel" class="form-input" name="telefono" placeholder="+593 9XX XXX XXXX" pattern="[+]?[0-9\s\-\(\)]{8,20}">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">País<span class="required">*</span></label>
+                        <select class="form-select" name="pais" required>
+                            <option value="">Selecciona...</option>
+                            <option value="Ecuador">🇪🇨 Ecuador</option>
+                            <option value="México">🇲🇽 México</option>
+                            <option value="Colombia">🇨🇴 Colombia</option>
+                            <option value="Brasil">🇧🇷 Brasil</option>
+                            <option value="Perú">🇵🇪 Perú</option>
+                            <option value="Chile">🇨🇱 Chile</option>
+                            <option value="Argentina">🇦🇷 Argentina</option>
+                            <option value="Otro">🌎 Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Ciudad<span class="required">*</span></label>
+                        <input type="text" class="form-input" name="ciudad" placeholder="Quito" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: Device Info -->
+            <div class="form-section">
+                <div class="form-section__header">
+                    <span class="form-section__number blue">2</span>
+                    <div>
+                        <div class="form-section__title">Información del Dispositivo</div>
+                        <div class="form-section__desc">Para verificar compatibilidad</div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Marca del teléfono<span class="required">*</span></label>
+                        <select class="form-select" name="marca" required>
+                            <option value="">Selecciona...</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="Xiaomi">Xiaomi</option>
+                            <option value="Motorola">Motorola</option>
+                            <option value="Huawei">Huawei</option>
+                            <option value="Google Pixel">Google Pixel</option>
+                            <option value="OnePlus">OnePlus</option>
+                            <option value="Nokia">Nokia</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Modelo<span class="required">*</span></label>
+                        <input type="text" class="form-input" name="modelo" placeholder="Galaxy A54, Redmi Note 12..." required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Versión Android<span class="required">*</span></label>
+                        <select class="form-select" name="android_version" required>
+                            <option value="">Selecciona...</option>
+                            <option value="14">Android 14</option>
+                            <option value="13">Android 13</option>
+                            <option value="12">Android 12</option>
+                            <option value="11">Android 11</option>
+                            <option value="10">Android 10</option>
+                            <option value="9">Android 9</option>
+                            <option value="8">Android 8</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">RAM del dispositivo</label>
+                        <select class="form-select" name="ram">
+                            <option value="">Selecciona...</option>
+                            <option value="2GB">2 GB</option>
+                            <option value="4GB">4 GB</option>
+                            <option value="6GB">6 GB</option>
+                            <option value="8GB">8 GB</option>
+                            <option value="12GB">12 GB+</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">¿Tienes root o bootloader desbloqueado?</label>
+                    <select class="form-select" name="root">
+                        <option value="no">No</option>
+                        <option value="root">Sí, tiene root</option>
+                        <option value="bootloader">Sí, bootloader desbloqueado</option>
+                        <option value="ambos">Ambos</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- SECTION 3: Network Info -->
+            <div class="form-section">
+                <div class="form-section__header">
+                    <span class="form-section__number orange">3</span>
+                    <div>
+                        <div class="form-section__title">Conectividad</div>
+                        <div class="form-section__desc">Información sobre tu conexión a internet</div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Tipo de conexión principal<span class="required">*</span></label>
+                        <select class="form-select" name="conexion" required>
+                            <option value="">Selecciona...</option>
+                            <option value="wifi_casa">WiFi en casa (fibra/ADSL)</option>
+                            <option value="wifi_datos">WiFi en trabajo/universidad</option>
+                            <option value="datos_moviles">Solo datos móviles (4G/5G)</option>
+                            <option value="mixto">Mixto (WiFi + datos)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Velocidad de internet</label>
+                        <select class="form-select" name="velocidad">
+                            <option value="">Selecciona...</option>
+                            <option value="10mbps">~10 Mbps (básico)</option>
+                            <option value="50mbps">~50 Mbps</option>
+                            <option value="100mbps">~100 Mbps</option>
+                            <option value="300mbps">~300 Mbps</option>
+                            <option value="1gbps">~1 Gbps (fibra)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">¿Tienes datos ilimitados?</label>
+                        <select class="form-select" name="datos_ilimitados">
+                            <option value="">Selecciona...</option>
+                            <option value="si">Sí, plan ilimitado</option>
+                            <option value="no">No, tengo límite</option>
+                            <option value="parcialmente">Parcialmente (reducción después de cierto uso)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">¿Telefono siempre conectado a WiFi?</label>
+                        <select class="form-select" name="siempre_wifi">
+                            <option value="">Selecciona...</option>
+                            <option value="si">Sí, casi siempre</option>
+                            <option value="no">No, uso más datos móviles</option>
+                            <option value="variable">Varía según el día</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: Beta Specific -->
+            <div class="form-section">
+                <div class="form-section__header">
+                    <span class="form-section__number purple">4</span>
+                    <div>
+                        <div class="form-section__title">Sobre la Beta</div>
+                        <div class="form-section__desc">Tu experiencia y disponibilidad</div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">¿Has usado apps DePIN antes?</label>
+                        <select class="form-select" name="experiencia">
+                            <option value="">Selecciona...</option>
+                            <option value="ninguna">Ninguna experiencia</option>
+                            <option value="honeygain">Honeygain</option>
+                            <option value="pawns">Pawns.app</option>
+                            <option value="packetstream">PacketStream</option>
+                            <option value="otra">Otra app similar</option>
+                            <option value="varias">Varias de las anteriores</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Horas disponibles por día</label>
+                        <select class="form-select" name="horas_disponibles">
+                            <option value="">Selecciona...</option>
+                            <option value="2-4">2-4 horas</option>
+                            <option value="4-8">4-8 horas</option>
+                            <option value="8-12">8-12 horas</option>
+                            <option value="12+">12+ horas (nodo 24/7)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">¿Por qué quieres participar?<span class="required">*</span></label>
+                    <textarea class="form-textarea" name="motivacion" placeholder="Cuéntanos qué te motiva a probar Resource Digital..." required minlength="20" maxlength="500"></textarea>
+                    <div class="form-hint">Mínimo 20 caracteres • Máximo 500</div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">¿Cómo nos conociste?</label>
+                    <select class="form-select" name="referencia">
+                        <option value="">Selecciona...</option>
+                        <option value="github">GitHub / Repositorio</option>
+                        <option value="twitter">Twitter / X</option>
+                        <option value="telegram">Telegram</option>
+                        <option value="discord">Discord</option>
+                        <option value="amigo">Recomendación de un amigo</option>
+                        <option value="busqueda">Búsqueda en Google</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- SECTION 5: Terms -->
+            <div class="form-section">
+                <div class="form-section__header">
+                    <span class="form-section__number accent">5</span>
+                    <div>
+                        <div class="form-section__title">Términos y Confirmación</div>
+                        <div class="form-section__desc">Revisa antes de enviar</div>
+                    </div>
+                </div>
+                
+                <label class="checkbox-group">
+                    <input type="checkbox" name="terminos" required>
+                    <span class="checkbox__box"></span>
+                    <span class="checkbox__text">
+                        Acepto participar en la beta cerrada de Resource Digital. Entiendo que es una versión preliminar y puede tener errores. Acepto proporcionar feedback constructivo.
+                    </span>
+                </label>
+                
+                <label class="checkbox-group" style="margin-top:8px">
+                    <input type="checkbox" name="privacidad" required>
+                    <span class="checkbox__box"></span>
+                    <span class="checkbox__text">
+                        Acepto la <a href="privacy.html" target="_blank" style="color:var(--accent)">Política de Privacidad</a>. Mis datos serán usados únicamente para la coordinación de la beta.
+                    </span>
+                </label>
+                
+                <label class="checkbox-group" style="margin-top:8px">
+                    <input type="checkbox" name="comunicacion">
+                    <span class="checkbox__box"></span>
+                    <span class="checkbox__text">
+                        Deseo recibir actualizaciones sobre el proyecto por email (opcional).
+                    </span>
+                </label>
+            </div>
+
+            <!-- SUBMIT -->
+            <div class="submit-section">
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="submit-btn__spinner"></span>
+                    <span class="submit-btn__text">Enviar Solicitud Beta</span>
+                </button>
+                <p style="margin-top:16px;font-size:12px;color:var(--text-3)">
+                    🔒 Tu información está protegida. Solo 50 plazas disponibles.
+                </p>
+            </div>
+        </form>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer__links">
+                <a href="privacy.html">Privacidad</a>
+                <a href="terms.html">Términos</a>
+                <a href="roadmap.html">Plan</a>
+                <a href="../">Inicio</a>
+            </div>
+            <p class="footer__copy">© 2026 Resource Digital. Evolucionando hacia peaq.</p>
+        </footer>
+    </div>
+
+    <script>
+    // ========== PREVENT MULTIPLE SUBMISSIONS ==========
+    const STORAGE_KEY = 'resource_digital_beta_registered';
+    const EMAIL_KEY = 'resource_digital_beta_email';
+    
+    // Check if already registered
+    function checkRegistration() {
+        const registered = localStorage.getItem(STORAGE_KEY);
+        const savedEmail = localStorage.getItem(EMAIL_KEY);
+        
+        if (registered === 'true' && savedEmail) {
+            showSuccess(savedEmail, true);
+            return true;
+        }
+        return false;
+    }
+    
+    // ========== PROGRESS BAR ==========
+    function updateProgress() {
+        const form = document.getElementById('betaForm');
+        const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+        let filled = 0;
+        
+        inputs.forEach(input => {
+            if (input.type === 'checkbox') {
+                if (input.checked) filled++;
+            } else if (input.value.trim() !== '') {
+                filled++;
+            }
+        });
+        
+        const percent = Math.round((filled / inputs.length) * 100);
+        document.getElementById('progressFill').style.width = percent + '%';
+    }
+    
+    // ========== FORM SUBMISSION ==========
+    document.getElementById('betaForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const email = document.getElementById('emailInput').value.trim();
+        
+        // Prevent multiple submissions
+        if (localStorage.getItem(STORAGE_KEY) === 'true') {
+            showError('Ya has enviado tu solicitud. Solo se permite una por usuario.');
+            return;
+        }
+        
+        // Validate email
+        if (!isValidEmail(email)) {
+            showError('Por favor ingresa un email válido.');
+            return;
+        }
+        
+        // Check honeypot
+        const honeypot = document.querySelector('[name="_honey"]').value;
+        if (honeypot) {
+            // Bot detected, silently fail
+            console.log('Bot detected');
+            return;
+        }
+        
+        // Show loading
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+        document.querySelector('.submit-btn__text').textContent = 'Enviando...';
+        
+        // Submit form
+        try {
+            const formData = new FormData(this);
+            
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                // Save to localStorage
+                localStorage.setItem(STORAGE_KEY, 'true');
+                localStorage.setItem(EMAIL_KEY, email);
+                
+                showSuccess(email, false);
+            } else {
+                throw new Error('Error en el servidor');
+            }
+        } catch (error) {
+            showError('Error al enviar. Por favor intenta de nuevo.');
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
+            document.querySelector('.submit-btn__text').textContent = 'Enviar Solicitud Beta';
+        }
+    });
+    
+    // ========== HELPERS ==========
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+    
+    function showSuccess(email, alreadyRegistered) {
+        document.getElementById('betaForm').style.display = 'none';
+        document.getElementById('successEmail').textContent = email;
+        document.getElementById('successState').classList.add('show');
+        
+        if (alreadyRegistered) {
+            document.querySelector('.success-state__title').textContent = 'Ya Estás Registrado';
+            document.querySelector('.success-state__text').textContent = 'Tu solicitud fue enviada anteriormente. Te contactaremos pronto.';
+        }
+    }
+    
+    function showError(message) {
+        const errorState = document.getElementById('errorState');
+        document.getElementById('errorText').textContent = message;
+        errorState.classList.add('show');
+        
+        setTimeout(() => {
+            errorState.classList.remove('show');
+        }, 5000);
+    }
+    
+    // ========== LISTENERS ==========
+    document.querySelectorAll('input, select, textarea').forEach(input => {
+        input.addEventListener('input', updateProgress);
+        input.addEventListener('change', updateProgress);
+    });
+    
+    // ========== INIT ==========
+    checkRegistration();
+    updateProgress();
+    </script>
+</body>
+</html>
