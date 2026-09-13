@@ -3,29 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resource Digital - Términos de Servicio">
+    <meta name="theme-color" content="#00e5a0">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Resource Digital">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300e5a0'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%230a0e1a' font-family='sans-serif' font-weight='bold'>R</text></svg>">
+    <meta property="og:title" content="Resource Digital | Términos de Servicio">
+    <meta property="og:description" content="Términos de Servicio - Resource Digital">
+    <title>Resource Digital | Términos de Servicio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-0: #0a0e1a;
-            --bg-1: #111827;
-            --bg-2: #1a2233;
-            --border: #1f2937;
-            --text-0: #f9fafb;
-            --text-1: #d1d5db;
-            --text-2: #9ca3af;
-            --text-3: #6b7280;
+            --bg-0: #070b14;
+            --bg-1: #0d1321;
+            --bg-2: #151d2e;
+            --bg-3: #1a2540;
+            --border: #1e2a3a;
+            --border-hover: #2a3a52;
+            --text-0: #f8fafc;
+            --text-1: #cbd5e1;
+            --text-2: #94a3b8;
+            --text-3: #64748b;
             --accent: #00e5a0;
-            --accent-glow: rgba(0, 229, 160, 0.15);
-            --font-sans: 'Inter', sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
+            --accent-dim: #00b884;
+            --accent-glow: rgba(0, 229, 160, 0.12);
+            --accent-glow-strong: rgba(0, 229, 160, 0.25);
+            --warning: #fbbf24;
+            --danger: #f87171;
+            --info: #60a5fa;
+            --future: #a78bfa;
+            --gradient-primary: linear-gradient(135deg, var(--accent) 0%, var(--info) 100%);
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+            --fs-xs: 0.75rem;
+            --fs-sm: 0.875rem;
+            --fs-base: 1rem;
+            --fs-lg: 1.125rem;
+            --fs-xl: 1.5rem;
+            --fs-2xl: 2rem;
+            --fs-3xl: 2.75rem;
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --radius-sm: 8px;
+            --radius-md: 12px;
             --radius-lg: 16px;
-            --radius-md: 10px;
-            --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.6);
+            --shadow-glow: 0 0 32px var(--accent-glow);
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+            --dur-fast: 150ms;
+            --dur: 250ms;
+            --dur-slow: 400ms;
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
@@ -35,244 +73,278 @@
             color: var(--text-1);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
         }
         ::selection { background: var(--accent); color: var(--bg-0); }
         ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: var(--bg-1); }
-        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
+        ::-webkit-scrollbar-track { background: var(--bg-0); }
+        ::-webkit-scrollbar-thumb { background: var(--bg-3); border-radius: 5px; border: 2px solid var(--bg-0); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-dim); }
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
-        :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
         
-        .nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 50;
-            backdrop-filter: blur(12px);
-            background: rgba(10, 14, 26, 0.8);
+        /* LAYOUT */
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-16) var(--space-6);
+        }
+        
+        /* HEADER */
+        .legal-header {
+            text-align: center;
+            margin-bottom: var(--space-16);
+            padding-bottom: var(--space-8);
             border-bottom: 1px solid var(--border);
         }
-        .nav__inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .nav__brand {
-            font-size: 1.125rem;
+        .legal-header__brand {
+            font-size: var(--fs-xl);
             font-weight: 800;
-            letter-spacing: -0.03em;
             color: var(--text-0);
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+            margin-bottom: var(--space-4);
         }
-        .nav__brand span { color: var(--accent); }
-        .nav__back {
-            font-size: 0.875rem;
+        .legal-header__brand-accent {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .legal-header__title {
+            font-size: var(--fs-2xl);
+            font-weight: 700;
+            color: var(--text-0);
+            margin-bottom: var(--space-4);
+        }
+        .legal-header__subtitle {
             color: var(--text-2);
-            padding: 0.5rem 1rem;
+            font-size: var(--fs-sm);
+        }
+        
+        /* CONTENT */
+        .legal-content {
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-10);
+        }
+        .legal-content h2 {
+            font-size: var(--fs-xl);
+            font-weight: 700;
+            color: var(--text-0);
+            margin: var(--space-8) 0 var(--space-4);
+            padding-bottom: var(--space-2);
+            border-bottom: 1px solid var(--border);
+        }
+        .legal-content h2:first-child { margin-top: 0; }
+        .legal-content h3 {
+            font-size: var(--fs-lg);
+            font-weight: 600;
+            color: var(--text-0);
+            margin: var(--space-6) 0 var(--space-3);
+        }
+        .legal-content p {
+            margin-bottom: var(--space-4);
+            color: var(--text-1);
+        }
+        .legal-content ul, .legal-content ol {
+            margin-bottom: var(--space-4);
+            padding-left: var(--space-6);
+        }
+        .legal-content li {
+            margin-bottom: var(--space-2);
+            color: var(--text-1);
+        }
+        .legal-content strong { color: var(--text-0); font-weight: 600; }
+        .legal-content blockquote {
+            background: var(--bg-2);
+            border-left: 3px solid var(--accent);
+            padding: var(--space-4) var(--space-6);
+            margin: var(--space-4) 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+        .legal-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-4) 0;
+        }
+        .legal-content th, .legal-content td {
+            padding: var(--space-3) var(--space-4);
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+        .legal-content th {
+            background: var(--bg-2);
+            color: var(--text-0);
+            font-weight: 600;
+        }
+        .legal-content td { color: var(--text-1); }
+        
+        /* FOOTER */
+        .legal-footer {
+            text-align: center;
+            margin-top: var(--space-12);
+            padding-top: var(--space-8);
+            border-top: 1px solid var(--border);
+        }
+        .legal-footer p {
+            color: var(--text-3);
+            font-size: var(--fs-sm);
+        }
+        
+        /* BACK LINK */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-8);
+            padding: var(--space-2) var(--space-4);
+            background: var(--bg-2);
             border: 1px solid var(--border);
             border-radius: 999px;
-            transition: all 250ms ease;
+            font-size: var(--fs-sm);
+            color: var(--text-2);
+            transition: all var(--dur) var(--ease);
         }
-        .nav__back:hover {
+        .back-link:hover {
+            background: var(--bg-3);
             border-color: var(--accent);
             color: var(--accent);
             text-decoration: none;
         }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 6rem 1.5rem 4rem;
-        }
-        
-        .page-title {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            font-weight: 800;
-            color: var(--text-0);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
-        }
-        
-        .page-subtitle {
-            color: var(--text-3);
-            font-size: 0.875rem;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .section {
-            margin-bottom: 2.5rem;
-        }
-        
-        .section h2 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-0);
-            margin-bottom: 1rem;
-        }
-        
-        .section p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-        
-        .section ul {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-        
-        .section li {
-            margin-bottom: 0.5rem;
-            list-style: disc;
-        }
-        
-        .card {
-            background: var(--bg-1);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .card--highlight {
-            border-color: var(--accent);
-            background: linear-gradient(135deg, var(--bg-1), rgba(0, 229, 160, 0.05));
-        }
-        
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            padding: 0.25rem 0.75rem;
-            background: var(--accent-glow);
-            color: var(--accent);
-            border: 1px solid rgba(0, 229, 160, 0.3);
-            border-radius: 999px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-        }
-        
-        .contact-box {
-            background: var(--bg-1);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .contact-box h3 {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--text-0);
-            margin-bottom: 0.5rem;
-        }
-        
-        @media (max-width: 768px) {
-            .container { padding: 5rem 1rem 3rem; }
-        }
-        
-        @media (prefers-reduced-motion: reduce) {
-            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-        }
     </style>
-    <meta name="description" content="Términos de Servicio de Resource Digital. Acuerdo de licencia de usuario final (EULA).">
-    <meta property="og:title" content="Términos de Servicio — Resource Digital">
-    <meta property="og:description" content="Acuerdo de licencia de usuario final para Resource Digital.">
-    <title>Términos de Servicio — Resource Digital</title>
 </head>
 <body>
+    <div class="legal-container">
+        <a href="/" class="back-link">← Volver al inicio</a>
+        
+        <header class="legal-header">
+            <div class="legal-header__brand">
+                <span class="legal-header__brand-accent">RESOURCE</span> DIGITAL
+            </div>
+            <h1 class="legal-header__title">Términos de Servicio</h1>
+            <p class="legal-header__subtitle">Última actualización: 2026-09-13</p>
+        </header>
+        
+        <main class="legal-content">
+            
+<blockquote>
+<strong>Resumen:</strong> Al usar la app Resource Digital, aceptas estos términos. Léelos cuidadosamente.
+</blockquote>
 
-    <nav class="nav">
-        <div class="nav__inner">
-            <div class="nav__brand"><span>RESOURCE</span> DIGITAL</div>
-            <a href="../index.html" class="nav__back">← Volver</a>
-        </div>
-    </nav>
+<h2>1. Aceptación de los Términos</h2>
+<p>Al descargar, instalar o usar Resource Digital ("la App"), aceptas estar sujeto a estos Términos de Servicio. Si no aceptas estos términos, no uses la App.</p>
 
-    <div class="container">
-        <h1 class="page-title">Términos de Servicio</h1>
-        <p class="page-subtitle">Última actualización: Septiembre 2026 · v5.1 ALPHA</p>
+<h2>2. Descripción del Servicio</h2>
+<p>Resource Digital es una aplicación que transforma tu smartphone en un nodo de infraestructura descentralizada (DePIN) que genera ingresos pasivos compartiendo:</p>
+<ul>
+<li>Ancho de banda no utilizado</li>
+<li>Datos de sensores (anonimizados)</li>
+<li>Almacenamiento (futuro)</li>
+<li>Computación (futuro)</li>
+</ul>
+
+<h2>3. Elegibilidad</h2>
+<p>Para usar la App debes:</p>
+<ul>
+<li>Tener al menos 18 años (o edad legal en tu jurisdicción)</li>
+<li>Tener un dispositivo Android compatible</li>
+<li>Residir en un mercado admitido actualmente</li>
+</ul>
+
+<h2>4. Cuenta y Seguridad</h2>
+
+<h3>4.1 Creación de Cuenta</h3>
+<ul>
+<li>Debes proporcionar información precisa y actualizada</li>
+<li>Eres responsable de mantener la seguridad de tu cuenta</li>
+<li>Debes notificar inmediatamente cualquier uso no autorizado</li>
+</ul>
+
+<h3>4.2 Identidad Descentralizada</h3>
+<ul>
+<li>Tu identidad se gestiona mediante DID en peaq Network</li>
+<li>Controlas tus claves privadas</li>
+<li>No podemos recuperar cuentas perdidas si pierdes tus claves</li>
+</ul>
+
+<h2>5. Uso Aceptable</h2>
+
+<h3>5.1 Permitido</h3>
+<ul>
+<li>Usar la App para generar ingresos pasivos</li>
+<li>Participar en la red DePIN de forma legítima</li>
+<li>Invitar otros usuarios mediante el sistema de referidos</li>
+</ul>
+
+<h3>5.2 Prohibido</h3>
+<ul>
+<li>Manipular o falsificar datos de sensores</li>
+<li>Usar la App para actividades ilegales</li>
+<li>Interferir con el funcionamiento de la red</li>
+<li>Crear múltiples cuentas fraudulentas</li>
+<li>Distribuir malware o software malicioso</li>
+</ul>
+
+<h2>6. Ganancias y Pagos</h2>
+
+<h3>6.1 Cálculo de Ganancias</h3>
+<ul>
+<li>Las ganancias se calculan basándose en datos objetivos</li>
+<li>El algoritmo de reparto es transparente y auditable</li>
+<li>Las tasas pueden variar según el mercado</li>
+</ul>
+
+<h3>6.2 Retiros</h3>
+<ul>
+<li>Los retiros mínimos y métodos se especifican en la App</li>
+<li>Podemos requerir verificación KYC para retiros grandes</li>
+<li>Los pagos se procesan en USDC y/o moneda local</li>
+</ul>
+
+<h2>7. Propiedad Intelectual</h2>
+<ul>
+<li>El código fuente está disponible bajo licencia especificada en GitHub</li>
+<li>La marca "Resource Digital" es propiedad del proyecto</li>
+<li>No puedes usar nuestra marca sin autorización</li>
+</ul>
+
+<h2>8. Limitación de Responsabilidad</h2>
+<p>La App se proporciona "tal cual" sin garantías de:</p>
+<ul>
+<li>Ininterrupción del servicio</li>
+<li>Garantía de ganancias específicas</li>
+<li>Compatibilidad con todos los dispositivos</li>
+</ul>
+<p>No somos responsables por daños indirectos, incidentales o consecuentes.</p>
+
+<h2>9. Terminación</h2>
+<p>Podemos suspender o terminar tu cuenta si:</p>
+<ul>
+<li>Violas estos términos</li>
+<li>Usas la App para actividades fraudulentas</li>
+<li>Proporcionas información falsa</li>
+</ul>
+
+<h2>10. Cambios en los Términos</h2>
+<p>Nos reservamos el derecho de modificar estos términos. Notificaremos cambios significativos a través de la App.</p>
+
+<h2>11. Ley Aplicable</h2>
+<p>Estos términos se rigen por las leyes de Ecuador y jurisdicciones aplicables en Latinoamérica.</p>
+
+<h2>12. Contacto</h2>
+<p>Para consultas sobre estos términos:</p>
+<ul>
+<li><strong>Email:</strong> legal@resourcedigital.app</li>
+<li><strong>GitHub:</strong> Abre un issue en el repositorio</li>
+</ul>
+
+        </main>
         
-        <span class="badge">Documento Legal</span>
-        
-        <div class="section">
-            <h2>1. Aceptación de los Términos</h2>
-            <p>Al acceder y utilizar Resource Digital ("la Aplicación"), usted acepta estar sujeto a estos Términos de Servicio. Si no está de acuerdo con alguna parte de estos términos, no podrá utilizar nuestros servicios.</p>
-        </div>
-        
-        <div class="section">
-            <h2>2. Descripción del Servicio</h2>
-            <p>Resource Digital es una infraestructura DePIN (Decentralized Physical Infrastructure Network) móvil que permite a los usuarios monetizar recursos inactivos de sus dispositivos, comenzando con el ancho de banda de internet no utilizado.</p>
-            <p>El servicio opera mediante la integración de múltiples SDKs de proveedores terceros, incluyendo Honeygain, Pawns.app y Bright SDK, actualmente en proceso de aprobación.</p>
-        </div>
-        
-        <div class="section">
-            <h2>3. Elegibilidad</h2>
-            <ul>
-                <li>Debe tener al menos 18 años de edad.</li>
-                <li>Debe residir en una región donde el servicio esté disponible (inicialmente Ecuador).</li>
-                <li>Debe proporcionar un dispositivo Android compatible con acceso a internet estable.</li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2>4. Uso Aceptable</h2>
-            <p>El usuario se compromete a:</p>
-            <ul>
-                <li>No manipular o interferir con los mecanismos de monetización.</li>
-                <li>No utilizar el servicio para actividades ilegales.</li>
-                <li>No intentar realizar ingeniería inversa de la aplicación.</li>
-                <li>Mantener la seguridad de sus credenciales de acceso.</li>
-            </ul>
-        </div>
-        
-        <div class="card card--highlight">
-            <h2>5. Consentimiento y Control del Usuario</h2>
-            <p><strong>Resource Digital requiere consentimiento explícito (opt-in) antes de activar cualquier módulo de monetización.</strong></p>
-            <p>El usuario puede desactivar el servicio en cualquier momento desde Configuración > Recursos > Banda ancha. La desactivación es inmediata y no afecta a los saldos ya acumulados.</p>
-        </div>
-        
-        <div class="section">
-            <h2>6. Propiedad de los Datos</h2>
-            <p>El usuario mantiene la propiedad de sus datos personales. Resource Digital no vende, comparte ni transfiere datos personales a terceros para fines distintos a la operación del servicio.</p>
-            <p>Los datos de ancho de banda compartidos son procesados por los SDKs de proveedores terceros bajo sus propias políticas de privacidad.</p>
-        </div>
-        
-        <div class="section">
-            <h2>7. Limitación de Responsabilidad</h2>
-            <p>Resource Digital se proporciona "tal cual" sin garantías de ningún tipo. No garantizamos ingresos específicos, disponibilidad continua del servicio o compatibilidad con todos los dispositivos.</p>
-            <p>Los ingresos dependen de múltiples factores fuera de nuestro control, incluyendo el tráfico de red efectivo y las políticas de los proveedores de SDK.</p>
-        </div>
-        
-        <div class="section">
-            <h2>8. Modificaciones</h2>
-            <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios serán notificados a través de la aplicación y entrarán en vigor 30 días después de la publicación.</p>
-        </div>
-        
-        <div class="section">
-            <h2>9. Terminación</h2>
-            <p>Cualquiera de las partes puede terminar este acuerdo en cualquier momento. El usuario puede eliminar su cuenta desde la configuración de la aplicación, lo que resultará en la destrucción de sus datos personales y la revocación de su identidad on-chain.</p>
-        </div>
-        
-        <div class="section">
-            <h2>10. Ley Aplicable</h2>
-            <p>Estos términos se rigen por las leyes de la República del Ecuador. Cualquier disputa será resuelta en los tribunales competentes de Quito, Ecuador.</p>
-        </div>
-        
-        <div class="contact-box">
-            <h3>Contacto Legal</h3>
-            <p>Para consultas sobre estos términos:</p>
-            <p><a href="mailto:andy@resourcedigital.dpdns.org">andy@resourcedigital.dpdns.org</a></p>
-        </div>
+        <footer class="legal-footer">
+            <p>© 2026 Resource Digital. Todos los derechos reservados.</p>
+        </footer>
     </div>
-
 </body>
 </html>

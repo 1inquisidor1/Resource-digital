@@ -1093,3 +1093,18 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-dim);
 }
+
+.footer__links {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-6);
+    margin-top: var(--space-6);
+}
+.footer__links a {
+    color: var(--text-2);
+    font-size: var(--fs-sm);
+    transition: color var(--dur-fast) var(--ease);
+}
+.footer__links a:hover {
+    color: var(--accent);
+}
