@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta name="description" content="Infraestructura DePIN móvil multipropósito. Monetización de ancho de banda, cómputo y datos mediante orquestación de SDKs.">
-
+    <meta name="description" content="Infraestructura DePIN móvil multipropósito. Monetización de ancho de banda, cómputo y datos mediante orquestación de SDKs.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resource Digital | DePIN Infrastructure</title>
@@ -81,7 +80,7 @@
             <div class="p-8 rounded-3xl node-card text-center">
                 <div class="text-xs font-mono text-gray-500 mb-2 uppercase tracking-widest">Network Status</div>
                 <div class="text-2xl font-extrabold text-yellow-400">DEVELOPMENT</div>
-                <div class="text-gray-400 text-xs mt-2">Integración de SDKs en curso</div>
+                <div class="text-gray-400 text-xs mt-2">Solicitudes de SDKs enviadas, pendientes de aprobación</div>
             </div>
         </div>
     </section>
@@ -93,10 +92,10 @@
                 <h2 class="text-2xl font-bold text-white mb-4">Transparencia y Consentimiento</h2>
                 <p class="text-gray-400 leading-relaxed mb-6">
                     <strong class="text-white">Resource Digital solicita el consentimiento explícito del usuario antes de activar cualquier módulo de monetización.</strong><br><br>
-                    Utilizamos un orquestador multi-SDK de banda ancha, integrando de forma coordinada a Honeygain, Pawns.app y Bright SDK, permitiendo la monetización optimizada del ancho de banda no utilizado a través de múltiples redes de infraestructura de IA. El usuario puede desactivar el servicio en cualquier momento desde <span class="text-white font-semibold">Configuración &gt; Recursos &gt; Banda ancha</span>.
+                    Actualmente, estamos configurando la integración de múltiples SDKs de banda ancha (Honeygain, Pawns.app y Bright SDK) para permitir la monetización optimizada del ancho de banda no utilizado. <strong class="text-white">Las solicitudes han sido enviadas y están pendientes de aprobación por parte de los proveedores.</strong> El usuario podrá desactivar el servicio en cualquier momento desde <span class="text-white font-semibold">Configuración &gt; Recursos &gt; Banda ancha</span> una vez los módulos estén operativos.
                 </p>
                 <p class="text-gray-400 leading-relaxed">
-                    El SDK no accede a datos personales, archivos ni historial de navegación. Los datos de sensores se anonimizan en el dispositivo y solo se registran hashes en la blockchain de peaq.
+                    Los datos de sensores se anonimizarán en el dispositivo y se registrarán hashes en la blockchain de peaq (Fase 2). Los SDKs no acceden a datos personales, archivos ni historial de navegación.
                 </p>
             </div>
             <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
@@ -127,7 +126,7 @@
                 <div class="md:w-1/2">
                     <h2 class="text-4xl font-bold text-white mb-6 leading-tight">Arquitectura <br><span class="text-green-400">Atómica de 18 Sistemas.</span></h2>
                     <p class="text-gray-400 mb-8 leading-relaxed">
-                        No es solo una aplicación, es un sistema coordinado de 18 módulos independientes que garantizan la escalabilidad y la resiliencia del nodo. Desde el buffer local SQLite hasta la verificación de datos on-chain en peaq.
+                        No es solo una aplicación, es un sistema coordinado de 18 módulos independientes que garantizan la escalabilidad y la resiliencia del nodo. Desde el buffer local SQLite hasta la verificación de datos on-chain en peaq (Fase 2).
                     </p>
                     <a href="https://github.com/1inquisidor1/Resource-digital/tree/main/docs" class="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-xl font-bold hover:bg-green-400 transition">
                         Explorar Documentación Técnica <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
@@ -136,16 +135,22 @@
                 <div class="md:w-1/2 grid grid-cols-2 gap-4 font-mono">
                     <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S01: App UI Interface</div>
                     <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S02: Foreground Service</div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S03: Sensor Capture</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S03: Sensor Capture (Fase 2)</div>
                     <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S04: SQLite Buffer</div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S05: Bandwidth Aggregator</div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S06: peaq L1 Layer</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S05: Bandwidth Orchestrator</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S06: peaq L1 Layer (Fase 2)</div>
                     <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S07: Boosters Engine</div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-//S08: Resource Panel</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S08: Resource Panel</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S09: Affiliates v2.0</div>
                     <div class="p-4 rounded-xl bg-black border border-green-500/50 text-xs text-green-400">S10: Auth & Registry</div>
-                    <div class="p-4 rounded-xl bg-black border border-green-500/50 text-xs text-green-400">S11: Withdrawals</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S11: Withdrawals (Planificado)</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S12: Notifications</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S13: User Support</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S14: Admin Panel</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S15: Analytics</div>
                     <div class="p-4 rounded-xl bg-black border border-green-500/50 text-xs text-green-400">S16: Legal Compliance</div>
                     <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S17: Feature Flags</div>
+                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S18: Monitoring</div>
                 </div>
             </div>
         </div>
@@ -154,7 +159,7 @@
     <!-- Footer -->
     <footer class="px-6 py-12 border-t border-white/10 text-center">
         <div class="text-sm text-gray-500">
-            &copy; 2026 Resource Digital. Infrastructure Powered by peaq. <br>
+            &copy; 2026 Resource Digital. Evolucionando hacia peaq.<br>
             <div class="mt-4 flex justify-center gap-6">
                 <a href="https://github.com/1inquisidor1/Resource-digital" target="_blank" class="text-gray-400 hover:text-white transition">GitHub</a>
                 <a href="legal/terms.html" class="text-gray-400 hover:text-white transition">Términos</a>
