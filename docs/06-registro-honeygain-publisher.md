@@ -134,7 +134,7 @@ class HoneygainConsent {
 
 ## 6. Checklist de registro
 
-- [ ] Cuenta de email dedicada creada (ej. `dev@resourcedigital.app`)
+- [ ] Cuenta de email dedicada creada (ej. `andy@resourcedigital.dpdns.org`)
 - [ ] Registro en [sdk.honeygain.com](https://sdk.honeygain.com)
 - [ ] Formulario de publisher completado
 - [ ] Contacto con business developer establecido
