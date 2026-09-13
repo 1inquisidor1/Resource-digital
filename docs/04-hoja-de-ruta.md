@@ -1,11 +1,11 @@
 # Hoja de Ruta (12 Semanas)
 
-## 🎯 Fase 1: Núcleo Rentable (Semanas 1-4)
-**Objetivo:** MVP que genere ingresos inmediatos.
+## 🎯 Fase 1: Pre-Beta Infraestructura Core (v5.1 ALPHA) (Semanas 1-4)
+**Objetivo:** MVP que genere ingresos inmediatos y validación en Ecuador.
 - **Semana 1:** UI + SDK de Banda + Registro.
 - **Semana 2:** Servicio Foreground + Overlay + Notificaciones.
 - **Semana 3:** Retiros + Cumplimiento Legal.
-- **Semana 4:** Validación Beta (5-10 usuarios).
+- **Semana 4:** Validación Beta (5-10 usuarios en Ecuador).
 
 ## 🎯 Fase 2: Capa DePIN con peaq (Semanas 5-8)
 **Objetivo:** Diferenciación tecnológica y descentralización.

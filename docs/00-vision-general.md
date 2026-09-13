@@ -21,6 +21,6 @@
 | **Offerwalls** | Opcional | Inmediata | $1-$3/mes | Fase 3 |
 
 ## 🗺️ Estrategia de Ejecución
-1. **Fase 1: Núcleo Rentable** $ightarrow$ MVP, ingresos inmediatos, validación de retención.
-2. **Fase 2: Capa DePIN** $ightarrow$ Integración con peaq, sensores y pagos automatizados.
-3. **Fase 3: Ecosistema Completo** $ightarrow$ Almacenamiento descentralizado y cómputo móvil.
+1. **Fase 1: Pre-Beta Infraestructura Core (v5.1 ALPHA)** $\rightarrow$ MVP, ingresos inmediatos, validación de retención en Ecuador (EC) como mercado inicial.
+2. **Fase 2: Capa DePIN** $\rightarrow$ Integración con peaq, sensores y pagos automatizados.
+3. **Fase 3: Ecosistema Completo** $\rightarrow$ Almacenamiento descentralizado y cómputo móvil.

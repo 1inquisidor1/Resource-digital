@@ -1,7 +1,7 @@
 # Arquitectura de 18 Sistemas Atómicos
 
 ## 🏗️ Diagrama de Flujo
-**UI $ightarrow$ Servicio $ightarrow$ Sensores $ightarrow$ Buffer $ightarrow$ Backend $ightarrow$ peaq $ightarrow$ Reparto**
+**UI $\rightarrow$ Servicio $\rightarrow$ Sensores $\rightarrow$ Buffer $\rightarrow$ Backend $\rightarrow$ peaq $\rightarrow$ Reparto**
 
 ## 🧩 Desglose de Sistemas
 
@@ -12,7 +12,7 @@
 | 2 | Servicio Primer Plano + Overlay | Notificación persistente, watchdog, arranque automático |
 | 3 | Captura de Sensores | Luz, ruido, movimiento, ubicación aprox. (Anonimizado) |
 | 4 | Buffer Local (SQLite WAL) | Almacenamiento cifrado 24h, rotación, reintento backoff |
-| 5 | SDK de Banda | Monetización de ancho de banda (Honeygain + Pawns.app + BrightSDK) |
+| 5 | SDK de Banda | Monetización de ancho de banda (Honeygain [Implementado] + Pawns.app [Planificado] + BrightSDK [Planificado]) |
 | 6 | Capa peaq | peaq ID, peaq pay, peaq store, peaq verify |
 | 7 | Boosters y Reparto | Multiplicadores, fórmula 70/30, precio dinámico |
 | 8 | Panel de Recursos | Transparencia de uso, ganancias e impacto en dispositivo |
@@ -37,7 +37,7 @@
 - **Idempotencia:** `UNIQUE` keys en eventos de referidos y transacciones.
 
 ### Integraciones de Infraestructura DePIN
-- **S05 (Banda)** $ightarrow$ Conectado a Aggregated Bandwidth SDK (Honeygain, Bright, Pawns).
-- **S06 (Identidad)** $ightarrow$ Conectado a peaq L1.
-- **S15 (Almacenamiento)** $ightarrow$ Integración con DeNet Watcher Nodes.
-- **S18 (Cómputo)** $ightarrow$ Integración con Acurast Mobile Compute.
+- **S05 (Banda)** $\rightarrow$ Conectado a Aggregated Bandwidth SDK (Honeygain [Activo], Bright [En desarrollo], Pawns [En desarrollo]).
+- **S06 (Identidad)** $\rightarrow$ Conectado a peaq L1.
+- **S15 (Almacenamiento)** $\rightarrow$ Integración con DeNet Watcher Nodes.
+- **S18 (Cómputo)** $\rightarrow$ Integración con Acurast Mobile Compute.
