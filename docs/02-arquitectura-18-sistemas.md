@@ -35,3 +35,9 @@
 - **Sin dependencias circulares:** Flujo unidireccional hacia el backend.
 - **Aislamiento:** Isolate para el servicio y SQLite para el buffer.
 - **Idempotencia:** `UNIQUE` keys en eventos de referidos y transacciones.
+
+### Integraciones de Infraestructura DePIN
+- **S05 (Banda)** $ightarrow$ Conectado a Honeygain SDK.
+- **S06 (Identidad)** $ightarrow$ Conectado a peaq L1.
+- **S15 (Almacenamiento)** $ightarrow$ Integración con DeNet Watcher Nodes.
+- **S18 (Cómputo)** $ightarrow$ Integración con Acurast Mobile Compute.
