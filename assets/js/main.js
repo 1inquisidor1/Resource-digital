@@ -1,35 +1,90 @@
-// SCROLL REVEAL
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+'use strict';
+
+// ==================== SCROLL REVEAL ANIMATION ====================
+const revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-            entry.target.style.transitionDelay = (i % 8) * 60 + 'ms';
-            entry.target.classList.add('visible');
+            entry.target.classList.add('reveal--visible');
             revealObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+}, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -60px 0px'
+});
 
-// GENERATE SYSTEM CARD
+// ==================== NAVBAR SCROLL EFFECT ====================
+const navbar = document.getElementById('navbar');
+
+function updateNavbar() {
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.classList.add('nav--scrolled');
+        } else {
+            navbar.classList.remove('nav--scrolled');
+        }
+    }
+}
+
+window.addEventListener('scroll', updateNavbar, { passive: true });
+
+// ==================== MOBILE MENU TOGGLE ====================
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function() {
+        navToggle.classList.toggle('nav__toggle--active');
+        navLinks.classList.toggle('nav__links--active');
+    });
+    
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            navToggle.classList.remove('nav__toggle--active');
+            navLinks.classList.remove('nav__links--active');
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav')) {
+            navToggle.classList.remove('nav__toggle--active');
+            navLinks.classList.remove('nav__links--active');
+        }
+    });
+}
+
+// ==================== SYSTEM CARD GENERATOR ====================
 function generateSystemCard(system) {
-    var badgeClass = system.status === 'pending' ? 'badge--pending' : 
-                     system.status === 'in-progress' ? 'badge--progress' :
-                     system.status === 'done' ? 'badge--done' :
-                     system.phase === 3 ? 'badge--future' : 'badge--planned';
+    var badgeMap = {
+        'pending': 'badge--pending',
+        'in-progress': 'badge--progress',
+        'planned': 'badge--planned',
+        'future': 'badge--future'
+    };
     
-    var statusText = system.status === 'pending' ? 'Pendiente' :
-                     system.status === 'in-progress' ? 'En progreso' :
-                     system.status === 'done' ? 'Completado' :
-                     system.status === 'planned' ? 'Planificado' : system.status;
+    var statusTextMap = {
+        'pending': 'Pendiente',
+        'in-progress': 'En progreso',
+        'planned': 'Planificado',
+        'future': 'Futuro'
+    };
     
-    var tags = system.tags.map(function(tag) { return '<span class="tag">' + tag + '</span>'; }).join('');
+    var badgeClass = badgeMap[system.status] || 'badge--planned';
+    var statusText = statusTextMap[system.status] || system.status;
+    
+    var tags = (system.tags || []).map(function(tag) {
+        return '<span class="tag">' + escapeHtml(tag) + '</span>';
+    }).join('');
     
     return '<article class="system-card reveal" data-phase="' + system.phase + '">' +
         '<div class="system-card__header">' +
-            '<span class="system-card__id">' + system.id + '</span>' +
+            '<span class="system-card__id">' + escapeHtml(system.id) + '</span>' +
             '<span class="badge ' + badgeClass + '">' + statusText + '</span>' +
         '</div>' +
-        '<h3 class="system-card__title">' + system.name + '</h3>' +
-        '<p class="system-card__desc">' + system.desc + '</p>' +
+        '<h3 class="system-card__title">' + escapeHtml(system.name) + '</h3>' +
+        '<p class="system-card__desc">' + escapeHtml(system.desc) + '</p>' +
         '<div class="system-card__meta">' +
             '<span class="tag">Fase ' + system.phase + '</span>' +
             tags +
@@ -37,52 +92,105 @@ function generateSystemCard(system) {
     '</article>';
 }
 
-// GENERATE TIMELINE
+// ==================== TIMELINE GENERATOR ====================
 function generateTimeline(phases) {
     return phases.map(function(phase, i) {
         var activeClass = i === 0 ? 'timeline__item--active' : '';
-        return '<div class="timeline__item ' + activeClass + '">' +
+        return '<div class="timeline__item ' + activeClass + ' reveal" style="transition-delay: ' + (i * 150) + 'ms">' +
             '<div class="timeline__marker"></div>' +
             '<div class="timeline__content">' +
-                '<span class="timeline__phase">Fase ' + phase.id + ' - Semanas ' + phase.weeks + '</span>' +
-                '<h3>' + phase.name + '</h3>' +
-                '<span class="badge badge--' + phase.statusClass + '">' + phase.status + '</span>' +
+                '<span class="timeline__phase">Fase ' + phase.id + ' - Semanas ' + escapeHtml(phase.weeks) + '</span>' +
+                '<h3>' + escapeHtml(phase.name) + '</h3>' +
+                '<p>' + (phase.description ? escapeHtml(phase.description) : '') + '</p>' +
+                '<span class="badge badge--' + phase.statusClass + '">' + escapeHtml(phase.status) + '</span>' +
             '</div>' +
         '</div>';
     }).join('');
 }
 
-// LOAD DATA
+// ==================== HTML ESCAPE HELPER ====================
+function escapeHtml(text) {
+    if (!text) return '';
+    var div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// ==================== LOAD DATA ====================
 async function loadData() {
     try {
-        const response = await fetch('assets/data/systems.json');
-        const data = await response.json();
+        var response = await fetch('assets/data/systems.json');
+        if (!response.ok) {
+            throw new Error('Failed to load systems data: ' + response.status);
+        }
+        var data = await response.json();
         
         // Update hero stats
-        var statNumber = document.querySelector('.hero__stats .stat strong');
-        if (statNumber) statNumber.textContent = data.project.totalSystems;
+        var statNumbers = document.querySelectorAll('.hero__stats .stat__number');
+        if (data.project && data.project.totalSystems) {
+            if (statNumbers[0]) {
+                statNumbers[0].textContent = data.project.totalSystems;
+            }
+        }
         
         // Generate system cards
         var systemsContainer = document.getElementById('systems-grid');
-        if (systemsContainer) {
+        if (systemsContainer && data.systems) {
             systemsContainer.innerHTML = data.systems.map(generateSystemCard).join('');
         }
         
         // Generate timeline
         var timelineContainer = document.getElementById('timeline-track');
-        if (timelineContainer) {
-            timelineContainer.innerHTML = generateTimeline(data.phases);
+        if (timelineContainer && data.phases) {
+            timelineContainer.innerHTML = '<div class="timeline__track">' + generateTimeline(data.phases) + '</div>';
         }
         
         // Observe reveal elements
-        document.querySelectorAll('.reveal, .system-card').forEach(function(el) {
+        document.querySelectorAll('.reveal').forEach(function(el) {
             revealObserver.observe(el);
         });
         
     } catch (error) {
         console.error('Error loading data:', error);
+        
+        // Show fallback message
+        var systemsContainer = document.getElementById('systems-grid');
+        if (systemsContainer) {
+            systemsContainer.innerHTML = '<p style="color: var(--text-2); text-align: center; grid-column: 1/-1;">' +
+                'Error al cargar los datos. Por favor, recarga la pagina o consulta la ' +
+                '<a href="https://github.com/1inquisidor1/Resource-digital/tree/main/docs/systems" style="color: var(--accent);">documentacion en GitHub</a>.' +
+            '</p>';
+        }
     }
 }
 
-// INIT
-document.addEventListener('DOMContentLoaded', loadData);
+// ==================== SMOOTH SCROLL FOR ANCHOR LINKS ====================
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        var target = document.querySelector(targetId);
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// ==================== KEYBOARD NAVIGATION ====================
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        if (navToggle) navToggle.classList.remove('nav__toggle--active');
+        if (navLinks) navLinks.classList.remove('nav__links--active');
+    }
+});
+
+// ==================== INITIALIZE ====================
+document.addEventListener('DOMContentLoaded', function() {
+    loadData();
+    updateNavbar();
+});

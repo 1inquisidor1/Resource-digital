@@ -3,53 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Infraestructura DePIN móvil multipropósito. 21 sistemas atómicos.">
+    <meta name="description" content="Resource Digital - Infraestructura DePIN movil multiproposito. 21 sistemas atomicos para la Economia de las Cosas.">
+    <meta name="theme-color" content="#00e5a0">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Resource Digital - DePIN móvil">
-    <title>Resource Digital | DePIN Infrastructure</title>
+    <meta property="og:title" content="Resource Digital | DePIN Infrastructure">
+    <meta property="og:description" content="Infraestructura DePIN movil multiproposito. 21 sistemas atomicos.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+    <!-- NAVIGATION -->
     <header>
-        <nav class="nav">
+        <nav class="nav" id="navbar">
             <div class="nav__inner">
-                <div class="nav__brand"><span>RESOURCE</span> DIGITAL</div>
-                <div class="nav__links">
-                    <a href="#status">Estado</a>
-                    <a href="#systems">Sistemas</a>
-                    <a href="#roadmap">Hoja de Ruta</a>
-                    <a href="https://github.com/1inquisidor1/Resource-digital/tree/main/docs" target="_blank" class="nav__cta">GitHub</a>
+                <a href="/" class="nav__brand">
+                    <span class="nav__brand-accent">RESOURCE</span> DIGITAL
+                </a>
+                <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                </button>
+                <div class="nav__links" id="navLinks">
+                    <a href="#status" class="nav__link">Estado</a>
+                    <a href="#systems" class="nav__link">Sistemas</a>
+                    <a href="#roadmap" class="nav__link">Hoja de Ruta</a>
+                    <a href="https://github.com/1inquisidor1/Resource-digital/tree/main/docs" target="_blank" rel="noopener" class="nav__cta">Documentacion</a>
                 </div>
             </div>
         </nav>
     </header>
 
     <main>
+        <!-- HERO -->
         <section class="hero">
-            <div class="hero__bg"></div>
-            <div class="hero__content reveal visible">
-                <h1 class="hero__title">
-                    Tu teléfono es un <span class="gradient-text">nodo</span>.<br>
-                    Construyendo la Economía de las
-                </h1>
-                <div class="hero__stats">
-                    <div class="stat"><strong>21</strong><span style="margin-left: 0.25rem">Sistemas</span></div>
-                    <div class="stat"><strong>3</strong><span style="margin-left: 0.25rem">SDKs de banda</span></div>
-                    <div class="stat"><strong>Fase 1</strong><span style="margin-left: 0.25rem">Pre-Beta</span></div>
+            <div class="hero__bg">
+                <div class="hero__bg-grid"></div>
+                <div class="hero__orb hero__orb--1"></div>
+                <div class="hero__orb hero__orb--2"></div>
+                <div class="hero__orb hero__orb--3"></div>
+            </div>
+            <div class="hero__content">
+                <div class="hero__badge reveal">
+                    <span class="hero__badge-dot"></span>
+                    v5.1 ALPHA - Pre-Beta
                 </div>
-                <p class="hero__subtitle">
-                    <strong>Resource Digital</strong> es el <strong>primer DePIN móvil multipropósito</strong><br>
-                    diseñado para <strong>Latinoamérica</strong>.
+                <h1 class="hero__title reveal">
+                    Tu telefono es un <span class="hero__gradient">nodo</span>.<br>
+                    Construyendo la Economia de las Cosas.
+                </h1>
+                <div class="hero__stats reveal">
+                    <div class="stat">
+                        <span class="stat__number">21</span>
+                        <span class="stat__label">Sistemas</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__number">3</span>
+                        <span class="stat__label">SDKs de banda</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__number">1</span>
+                        <span class="stat__label">Blockchain</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__number">EC</span>
+                        <span class="stat__label">Mercado inicial</span>
+                    </div>
+                </div>
+                <p class="hero__subtitle reveal">
+                    <strong>Resource Digital</strong> es el <strong>primer DePIN movil multiproposito</strong><br>
+                    disenado para <strong>Latinoamerica</strong>. Transforma tu smartphone en un nodo<br>
+                    que genera ingresos pasivos compartiendo recursos.
                 </p>
+                <a href="#systems" class="hero__cta reveal">
+                    Explorar Sistemas
+                    <span class="hero__cta-icon">-></span>
+                </a>
             </div>
         </section>
 
+        <!-- STATUS -->
         <section class="section section--status" id="status">
             <div class="section__inner">
-                <h2 class="section__title reveal">Estado Actual</h2>
+                <div class="section__header">
+                    <span class="section__label">Estado Actual</span>
+                    <h2 class="section__title reveal">En Desarrollo Activo</h2>
+                </div>
                 <div class="status-grid reveal">
                     <div class="status-item">
                         <span class="status-label">Fase</span>
@@ -61,57 +102,68 @@
                     </div>
                     <div class="status-item">
                         <span class="status-label">Blockchain</span>
-                        <span class="status-value">peaq (Fase 2)</span>
+                        <span class="status-value">peaq (F2)</span>
                     </div>
                     <div class="status-item">
-                        <span class="status-label">SDKs</span>
-                        <span class="status-value">Solicitudes enviadas</span>
+                        <span class="status-label">SDKs Banda</span>
+                        <span class="status-value">Solicitudes</span>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- SYSTEMS -->
         <section class="section" id="systems">
             <div class="section__inner">
-                <h2 class="section__title reveal">Arquitectura de 21 Sistemas</h2>
-                <div class="systems-grid" id="systems-grid">
+                <div class="section__header">
+                    <span class="section__label">Arquitectura</span>
+                    <h2 class="section__title reveal">21 Sistemas Atomicos</h2>
+                    <p class="section__subtitle reveal">Disenados para escalar de forma independiente y garantizar la resiliencia de la red.</p>
+                </div>
+                <div class="systems-grid reveal" id="systems-grid">
                     <noscript>
-                        <p style="color: var(--color-text-muted); text-align: center;">
-                            La carga dinámica de sistemas requiere JavaScript.
-                            Consulta la <a href="https://github.com/1inquisidor1/Resource-digital/tree/main/docs/systems">documentación completa</a>.
+                        <p style="color: var(--text-2); text-align: center; grid-column: 1/-1;">
+                            La carga dinamica de sistemas requiere JavaScript.
+                            Consulta la <a href="https://github.com/1inquisidor1/Resource-digital/tree/main/docs/systems" style="color: var(--accent);">documentacion completa</a>.
                         </p>
                     </noscript>
                 </div>
             </div>
         </section>
 
+        <!-- ROADMAP -->
         <section class="section section--dark" id="roadmap">
             <div class="section__inner">
-                <h2 class="section__title reveal">Hoja de Ruta</h2>
-                <div class="timeline" id="timeline-track">
+                <div class="section__header">
+                    <span class="section__label">Planificacion</span>
+                    <h2 class="section__title reveal">Hoja de Ruta</h2>
+                </div>
+                <div class="timeline reveal" id="timeline-track">
                     <noscript>
-                        <div class="timeline__item timeline__item--active">
-                            <div class="timeline__marker"></div>
-                            <div class="timeline__content">
-                                <span class="timeline__phase">Fase 1 - Semanas 1-4</span>
-                                <h3>Pre-Beta Infraestructura Core</h3>
-                                <span class="badge badge--progress">En preparación</span>
+                        <div class="timeline__track">
+                            <div class="timeline__item timeline__item--active">
+                                <div class="timeline__marker"></div>
+                                <div class="timeline__content">
+                                    <span class="timeline__phase">Fase 1 - Semanas 1-4</span>
+                                    <h3>Pre-Beta Infraestructura Core</h3>
+                                    <span class="badge badge--progress">En preparacion</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="timeline__item">
-                            <div class="timeline__marker"></div>
-                            <div class="timeline__content">
-                                <span class="timeline__phase">Fase 2 - Semanas 5-8</span>
-                                <h3>Capa DePIN con peaq</h3>
-                                <span class="badge badge--planned">Planificado</span>
+                            <div class="timeline__item">
+                                <div class="timeline__marker"></div>
+                                <div class="timeline__content">
+                                    <span class="timeline__phase">Fase 2 - Semanas 5-8</span>
+                                    <h3>Capa DePIN con peaq</h3>
+                                    <span class="badge badge--planned">Planificado</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="timeline__item">
-                            <div class="timeline__marker"></div>
-                            <div class="timeline__content">
-                                <span class="timeline__phase">Fase 3 - Semanas 9+</span>
-                                <h3>Ecosistema Completo</h3>
-                                <span class="badge badge--future">Planificado</span>
+                            <div class="timeline__item">
+                                <div class="timeline__marker"></div>
+                                <div class="timeline__content">
+                                    <span class="timeline__phase">Fase 3 - Semanas 9+</span>
+                                    <h3>Ecosistema Completo</h3>
+                                    <span class="badge badge--future">Futuro</span>
+                                </div>
                             </div>
                         </div>
                     </noscript>
@@ -120,13 +172,21 @@
         </section>
     </main>
 
-    <footer>
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="footer__inner">
-            <div class="footer__brand"><span>RESOURCE</span> DIGITAL</div>
+            <div class="footer__brand">
+                <span class="footer__brand-accent">RESOURCE</span> DIGITAL
+            </div>
             <p class="footer__text">
-                Infraestructura DePIN móvil multipropósito.<br>
-                21 sistemas atómicos para la Economía de las Cosas.
+                Infraestructura DePIN movil multiproposito.<br>
+                21 sistemas atomicos para la Economia de las Cosas.
             </p>
+            <div class="footer__social">
+                <a href="https://github.com/1inquisidor1/Resource-digital" target="_blank" rel="noopener" class="footer__social-link" aria-label="GitHub">
+                    GitHub
+                </a>
+            </div>
             <p class="footer__copy">
                 © 2026 Resource Digital. Evolucionando hacia peaq.
             </p>

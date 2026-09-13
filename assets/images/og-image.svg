@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#070b14"/>
+      <stop offset="100%" style="stop-color:#0d1321"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00e5a0"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="25%" cy="40%" r="45%">
+      <stop offset="0%" style="stop-color:#00e5a0;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#00e5a0;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="75%" cy="55%" r="40%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <ellipse cx="300" cy="250" rx="300" ry="200" fill="url(#glow1)"/>
+  <ellipse cx="900" cy="400" rx="250" ry="180" fill="url(#glow2)"/>
+  
+  <!-- Grid -->
+  <g opacity="0.06">
+    <line x1="0" y1="150" x2="1200" y2="150" stroke="#00e5a0" stroke-width="0.5"/>
+    <line x1="0" y1="315" x2="1200" y2="315" stroke="#00e5a0" stroke-width="0.5"/>
+    <line x1="0" y1="480" x2="1200" y2="480" stroke="#00e5a0" stroke-width="0.5"/>
+    <line x1="300" y1="0" x2="300" y2="630" stroke="#00e5a0" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="630" stroke="#00e5a0" stroke-width="0.5"/>
+    <line x1="900" y1="0" x2="900" y2="630" stroke="#00e5a0" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Center content -->
+  <g transform="translate(600, 315)" text-anchor="middle">
+    <!-- Node icon -->
+    <circle cx="0" cy="-80" r="45" fill="none" stroke="url(#accentGrad)" stroke-width="3"/>
+    <circle cx="0" cy="-80" r="10" fill="#00e5a0"/>
+    <circle cx="-25" cy="-105" r="5" fill="#60a5fa"/>
+    <circle cx="25" cy="-105" r="5" fill="#60a5fa"/>
+    <circle cx="0" cy="-50" r="5" fill="#60a5fa"/>
+    <line x1="0" y1="-80" x2="-25" y2="-105" stroke="#00e5a0" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="-80" x2="25" y2="-105" stroke="#00e5a0" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="-80" x2="0" y2="-50" stroke="#00e5a0" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Title -->
+    <text x="0" y="10" font-family="Inter, -apple-system, sans-serif" font-size="64" font-weight="800" fill="#f8fafc">
+      RESOURCE DIGITAL
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="55" font-family="Inter, -apple-system, sans-serif" font-size="24" fill="#94a3b8">
+      Infraestructura DePIN móvil multipropósito
+    </text>
+    
+    <!-- Tagline -->
+    <text x="0" y="95" font-family="Inter, -apple-system, sans-serif" font-size="18" fill="#64748b">
+      21 sistemas atómicos · Primer DePIN móvil para Latinoamérica
+    </text>
+  </g>
+  
+  <!-- Bottom badge -->
+  <g transform="translate(600, 570)">
+    <rect x="-80" y="-18" width="160" height="36" rx="18" fill="rgba(0, 229, 160, 0.08)" stroke="rgba(0, 229, 160, 0.2)" stroke-width="1"/>
+    <text x="0" y="6" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#00e5a0" text-anchor="middle">v5.1 ALPHA · Pre-Beta Infrastructure</text>
+  </g>
+</svg>
