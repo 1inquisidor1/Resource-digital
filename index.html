@@ -1,176 +1,1046 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta name="description" content="Infraestructura DePIN móvil multipropósito. Monetización de ancho de banda, cómputo y datos mediante orquestación de SDKs.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Infraestructura DePIN móvil multipropósito. 18 sistemas atómicos. Monetización de ancho de banda, cómputo y datos mediante orquestación de SDKs.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Resource Digital — DePIN móvil multipropósito">
+    <meta property="og:description" content="18 sistemas atómicos. Multi-proveedor de banda ancha. Verificación on-chain en peaq.">
+    <meta property="og:url" content="https://1inquisidor1.github.io/Resource-digital/">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Resource Digital | DePIN Infrastructure</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Favicon SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300e5a0'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%230a0e1a' font-family='sans-serif' font-weight='bold'>R</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0D0D0D; color: #E5E7EB; scroll-behavior: smooth; }
-        .font-mono { font-family: 'Fira Code', monospace; }
-        .glow { box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
+        :root {
+            /* Colores — paleta DePIN */
+            --bg-0: #0a0e1a;
+            --bg-1: #111827;
+            --bg-2: #1a2233;
+            --border: #1f2937;
+            --border-hover: #2d3b52;
+            
+            --text-0: #f9fafb;
+            --text-1: #d1d5db;
+            --text-2: #9ca3af;
+            --text-3: #6b7280;
+            
+            --accent: #00e5a0;
+            --accent-dim: #00b37e;
+            --accent-glow: rgba(0, 229, 160, 0.15);
+            
+            --warning: #fbbf24;
+            --danger: #f87171;
+            --info: #60a5fa;
+            
+            /* Tipografía */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+            
+            /* Escala tipográfica */
+            --fs-xs: 0.75rem;
+            --fs-sm: 0.875rem;
+            --fs-base: 1rem;
+            --fs-lg: 1.125rem;
+            --fs-xl: 1.5rem;
+            --fs-2xl: 2rem;
+            --fs-3xl: 2.75rem;
+            --fs-4xl: 3.75rem;
+            
+            /* Espaciado */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-24: 6rem;
+            
+            /* Radios */
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            
+            /* Sombras */
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+            --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+            --shadow-glow: 0 0 24px var(--accent-glow);
+            
+            /* Transiciones */
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+            --dur-fast: 150ms;
+            --dur: 250ms;
+            --dur-slow: 400ms;
+        }
+
+        /* Reset y base */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-0);
+            color: var(--text-1);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--accent); color: var(--bg-0); }
+        
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-1); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--border-hover); }
+
+        a { color: inherit; text-decoration: none; }
+        
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* ========== NAVIGATION ========== */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(10, 14, 26, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .nav__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-4) var(--space-6);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .nav__brand {
+            font-size: var(--fs-lg);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text-0);
+        }
+        
+        .nav__brand span { color: var(--accent); }
+        
+        .nav__links {
+            display: none;
+            gap: var(--space-8);
+            font-size: var(--fs-sm);
+            font-weight: 500;
+            color: var(--text-2);
+        }
+        
+        .nav__links a:hover { color: var(--accent); transition: color var(--dur) var(--ease); }
+        
+        .nav__cta {
+            background: var(--accent);
+            color: var(--bg-0);
+            padding: var(--space-2) var(--space-4);
+            border-radius: 999px;
+            font-size: var(--fs-sm);
+            font-weight: 700;
+            transition: all var(--dur) var(--ease);
+        }
+        
+        .nav__cta:hover {
+            background: var(--accent-dim);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        @media (min-width: 768px) {
+            .nav__links { display: flex; }
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-24) var(--space-6);
+            overflow: hidden;
+        }
+        
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%, var(--accent-glow), transparent 70%),
+                linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 100%);
+            z-index: -1;
+        }
+        
+        .hero__bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black, transparent 80%);
+            opacity: 0.4;
+        }
+        
+        .hero__content {
+            max-width: 900px;
+            text-align: center;
+            z-index: 1;
+        }
+        
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-4);
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: var(--fs-sm);
+            color: var(--text-2);
+            margin-bottom: var(--space-6);
+        }
+        
+        .hero__badge .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        
+        .hero__title {
+            font-size: clamp(2.5rem, 6vw, var(--fs-4xl));
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--text-0);
+            margin-bottom: var(--space-6);
+        }
+        
         .gradient-text {
-            background: linear-gradient(90deg, #4ADE80, #3B82F6);
+            background: linear-gradient(135deg, var(--accent), var(--info));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .node-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
-        .node-card:hover { border-color: #4ADE80; background: rgba(74, 222, 128, 0.05); }
+        
+        .hero__subtitle {
+            font-size: var(--fs-lg);
+            color: var(--text-2);
+            line-height: 1.6;
+            max-width: 640px;
+            margin: 0 auto var(--space-8);
+        }
+        
+        .hero__cta {
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: var(--space-12);
+        }
+        
+        .hero__stats {
+            display: flex;
+            gap: var(--space-12);
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-top: var(--space-8);
+            border-top: 1px solid var(--border);
+        }
+        
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-1);
+        }
+        
+        .stat strong {
+            font-size: var(--fs-2xl);
+            font-weight: 700;
+            color: var(--text-0);
+        }
+        
+        .stat span {
+            font-size: var(--fs-sm);
+            color: var(--text-3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ========== BUTTONS ========== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-3) var(--space-6);
+            border-radius: var(--radius-md);
+            font-size: var(--fs-base);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--dur) var(--ease);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+        
+        .btn--primary {
+            background: var(--accent);
+            color: var(--bg-0);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn--primary:hover {
+            background: var(--accent-dim);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px var(--accent-glow);
+        }
+        
+        .btn--ghost {
+            background: transparent;
+            color: var(--text-0);
+            border-color: var(--border);
+        }
+        
+        .btn--ghost:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-glow);
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            padding: var(--space-24) var(--space-6);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section--dark {
+            background: var(--bg-1);
+            max-width: 100%;
+        }
+        
+        .section__inner { max-width: 1200px; margin: 0 auto; }
+        
+        .section__title {
+            font-size: var(--fs-3xl);
+            font-weight: 800;
+            color: var(--text-0);
+            text-align: center;
+            margin-bottom: var(--space-12);
+            letter-spacing: -0.02em;
+        }
+
+        /* ========== STATUS CARDS ========== */
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-6);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .status-card {
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8);
+            text-align: center;
+            transition: all var(--dur) var(--ease);
+        }
+        
+        .status-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+        
+        .status-card__label {
+            font-size: var(--fs-xs);
+            color: var(--text-3);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-2);
+        }
+        
+        .status-card__value {
+            font-size: var(--fs-2xl);
+            font-weight: 800;
+            color: var(--text-0);
+        }
+        
+        .status-card__value--accent { color: var(--accent); }
+        .status-card__value--warning { color: var(--warning); }
+        .status-card__sub {
+            font-size: var(--fs-sm);
+            color: var(--text-2);
+            margin-top: var(--space-2);
+        }
+
+        /* ========== TRANSPARENCY ========== */
+        .transparency {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-12);
+            align-items: start;
+        }
+        
+        @media (max-width: 768px) {
+            .transparency { grid-template-columns: 1fr; }
+        }
+        
+        .transparency h2 {
+            font-size: var(--fs-2xl);
+            font-weight: 700;
+            color: var(--text-0);
+            margin-bottom: var(--space-6);
+        }
+        
+        .transparency p {
+            color: var(--text-2);
+            line-height: 1.7;
+            margin-bottom: var(--space-4);
+        }
+        
+        .transparency strong { color: var(--text-0); }
+        
+        .legal-docs {
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+        }
+        
+        .legal-docs h3 {
+            font-size: var(--fs-lg);
+            font-weight: 700;
+            color: var(--text-0);
+            margin-bottom: var(--space-4);
+        }
+        
+        .legal-link {
+            display: block;
+            padding: var(--space-3);
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-3);
+            transition: all var(--dur) var(--ease);
+        }
+        
+        .legal-link:hover {
+            border-color: var(--accent);
+            background: var(--accent-glow);
+        }
+        
+        .legal-link span {
+            display: block;
+            font-weight: 700;
+            color: var(--text-0);
+        }
+        
+        .legal-link small {
+            font-size: var(--fs-xs);
+            color: var(--text-3);
+        }
+        
+        .contact-info {
+            margin-top: var(--space-6);
+            padding-top: var(--space-4);
+            border-top: 1px solid var(--border);
+            font-size: var(--fs-sm);
+            color: var(--text-2);
+        }
+        
+        .contact-info a {
+            color: var(--text-0);
+            text-decoration: underline;
+        }
+        
+        .contact-info a:hover { color: var(--accent); }
+
+        /* ========== SYSTEMS GRID ========== */
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-6);
+        }
+        
+        .system-card {
+            position: relative;
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            transition: all var(--dur) var(--ease);
+            overflow: hidden;
+        }
+        
+        .system-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity var(--dur) var(--ease);
+        }
+        
+        .system-card[data-phase="2"]::before {
+            background: linear-gradient(90deg, transparent, var(--warning), transparent);
+        }
+        
+        .system-card:hover {
+            background: var(--bg-2);
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .system-card:hover::before { opacity: 1; }
+        
+        .system-card__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-4);
+        }
+        
+        .system-card__id {
+            font-family: var(--font-mono);
+            font-size: var(--fs-sm);
+            color: var(--text-3);
+            font-weight: 500;
+        }
+        
+        .system-card__title {
+            font-size: var(--fs-xl);
+            font-weight: 700;
+            color: var(--text-0);
+            margin-bottom: var(--space-2);
+            letter-spacing: -0.02em;
+        }
+        
+        .system-card__desc {
+            font-size: var(--fs-sm);
+            color: var(--text-2);
+            line-height: 1.6;
+            margin-bottom: var(--space-4);
+        }
+        
+        .system-card__meta {
+            display: flex;
+            gap: var(--space-2);
+            flex-wrap: wrap;
+        }
+
+        /* ========== BADGES & TAGS ========== */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-1);
+            padding: var(--space-1) var(--space-3);
+            border-radius: 999px;
+            font-size: var(--fs-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .badge--pending {
+            background: rgba(248, 113, 113, 0.1);
+            color: var(--danger);
+            border: 1px solid rgba(248, 113, 113, 0.2);
+        }
+        
+        .badge--planned {
+            background: rgba(251, 191, 36, 0.1);
+            color: var(--warning);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+        }
+        
+        .badge--progress {
+            background: var(--accent-glow);
+            color: var(--accent);
+            border: 1px solid rgba(0, 229, 160, 0.3);
+        }
+        
+        .tag {
+            font-size: var(--fs-xs);
+            padding: var(--space-1) var(--space-2);
+            background: var(--bg-0);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-3);
+            font-family: var(--font-mono);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: var(--space-12) var(--space-6);
+            text-align: center;
+        }
+        
+        .footer__links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-6);
+            margin-bottom: var(--space-4);
+            font-size: var(--fs-sm);
+        }
+        
+        .footer__links a { color: var(--text-3); transition: color var(--dur) var(--ease); }
+        .footer__links a:hover { color: var(--text-0); }
+        
+        .footer__copy {
+            font-size: var(--fs-sm);
+            color: var(--text-3);
+        }
+        
+        .footer__note {
+            font-size: var(--fs-xs);
+            color: var(--text-3);
+            margin-top: var(--space-4);
+        }
+
+        /* ========== SCROLL REVEAL ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+        }
+        
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            :root {
+                --fs-4xl: 2.5rem;
+                --fs-3xl: 2rem;
+                --fs-2xl: 1.5rem;
+            }
+            
+            .hero { padding: var(--space-16) var(--space-4); min-height: 80vh; }
+            .hero__stats { gap: var(--space-6); }
+            .hero__cta { flex-direction: column; }
+            .hero__cta .btn { width: 100%; justify-content: center; }
+            
+            .section { padding: var(--space-16) var(--space-4); }
+            .systems-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/10 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="text-xl font-extrabold tracking-tighter text-white flex items-center gap-2">
-                <span class="text-green-400">RESOURCE</span> DIGITAL
+    <nav class="nav">
+        <div class="nav__inner">
+            <div class="nav__brand"><span>RESOURCE</span> DIGITAL</div>
+            <div class="nav__links">
+                <a href="#concept">Concepto</a>
+                <a href="#status">Estado</a>
+                <a href="#sistemas">Sistemas</a>
+                <a href="#docs">Docs</a>
             </div>
-            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-                <a href="#concept" class="hover:text-green-400 transition">Concepto</a>
-                <a href="#network" class="hover:text-green-400 transition">Estado de la Red</a>
-                <a href="#docs" class="hover:text-green-400 transition">Documentación</a>
-            </div>
-            <a href="https://github.com/1inquisidor1/Resource-digital/tree/main/docs" target="_blank" class="bg-white text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-green-400 transition">Explorar Docs</a>
+            <a href="https://github.com/1inquisidor1/Resource-digital/tree/main/docs" target="_blank" class="nav__cta">GitHub</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative px-6 pt-32 pb-20 md:pt-48 md:pb-32 max-w-7xl mx-auto text-center">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-green-500/10 blur-[120px] -z-10"></div>
-        <div class="inline-block px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-mono mb-6">
-            v5.1 ALPHA - DEPIN INFRASTRUCTURE
-        </div>
-        <h1 class="text-5xl md:text-8xl font-extrabold text-white tracking-tight mb-8 leading-tight">
-            Tu teléfono es un <span class="gradient-text">nodo.</span><br>
-            Construyendo la Economía de las Máquinas.
-        </h1>
-        <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Construyendo la infraestructura DePIN móvil. Iniciamos con la Fase 1 centrada en la monetización multi-fuente de banda ancha (Honeygain, Pawns.app y Bright SDK), evolucionando hacia peaq (Fase 2), DeNet y Acurast (Fase 3).
-        </p>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-            <a href="#" class="bg-green-500 text-black px-10 py-4 rounded-2xl font-bold text-lg hover:bg-green-400 transition glow w-full md:w-auto">
-                Solicitar Acceso Beta
-            </a>
-            <a href="#network" class="px-10 py-4 rounded-2xl font-bold text-lg text-gray-300 hover:text-white transition w-full md:w-auto border border-white/10">
-                Ver Estado de la Red
-            </a>
-        </div>
-    </section>
-
-    <!-- Current Status Section (Honest Metrics) -->
-    <section id="network" class="px-6 py-24 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Current Status</h2>
-            <p class="text-gray-400">Progreso real del despliegue de infraestructura.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div class="p-8 rounded-3xl node-card text-center">
-                <div class="text-xs font-mono text-gray-500 mb-2 uppercase tracking-widest">Current Phase</div>
-                <div class="text-2xl font-extrabold text-white">Fase 1: Pre-Beta</div>
-                <div class="text-green-400 text-xs mt-2">Infraestructura Core en desarrollo</div>
+    <!-- Hero -->
+    <section class="hero" id="concept">
+        <div class="hero__bg"></div>
+        <div class="hero__content reveal">
+            <span class="hero__badge">
+                <span class="dot"></span> v5.1 ALPHA · Pre-Beta · Ecuador
+            </span>
+            <h1 class="hero__title">
+                Tu teléfono es un <span class="gradient-text">nodo</span>.<br>
+                Construyendo la Economía de las Máquinas.
+            </h1>
+            <p class="hero__subtitle">
+                Arquitectura atómica de 18 sistemas. Multi-proveedor de banda ancha.
+                Verificación on-chain en peaq. Todo desde tu dispositivo Android.
+            </p>
+            <div class="hero__cta">
+                <a href="#sistemas" class="btn btn--primary">Ver arquitectura</a>
+                <a href="#contacto" class="btn btn--ghost">Contacto</a>
             </div>
-            <div class="p-8 rounded-3xl node-card text-center">
-                <div class="text-xs font-mono text-gray-500 mb-2 uppercase tracking-widest">Target Region</div>
-                <div class="text-2xl font-extrabold text-white">Ecuador (EC)</div>
-                <div class="text-gray-400 text-xs mt-2">Mercado inicial de validación</div>
-            </div>
-            <div class="p-8 rounded-3xl node-card text-center">
-                <div class="text-xs font-mono text-gray-500 mb-2 uppercase tracking-widest">Network Status</div>
-                <div class="text-2xl font-extrabold text-yellow-400">DEVELOPMENT</div>
-                <div class="text-gray-400 text-xs mt-2">Solicitudes de SDKs enviadas, pendientes de aprobación</div>
+            <div class="hero__stats">
+                <div class="stat"><strong>18</strong><span>Sistemas</span></div>
+                <div class="stat"><strong>3</strong><span>SDKs de banda</span></div>
+                <div class="stat"><strong>Fase 1</strong><span>Pre-Beta</span></div>
             </div>
         </div>
     </section>
 
-    <!-- Transparency Section -->
-    <section id="consent" class="px-6 py-24 max-w-5xl mx-auto border-t border-white/10">
-        <div class="grid md:grid-cols-2 gap-10 items-start">
-            <div>
-                <h2 class="text-2xl font-bold text-white mb-4">Transparencia y Consentimiento</h2>
-                <p class="text-gray-400 leading-relaxed mb-6">
-                    <strong class="text-white">Resource Digital solicita el consentimiento explícito del usuario antes de activar cualquier módulo de monetización.</strong><br><br>
-                    Las solicitudes de acceso a los SDKs de banda ancha (Honeygain, Pawns.app y Bright SDK) han sido enviadas y están <strong class="text-white">pendientes de aprobación</strong> por parte de los proveedores. La integración técnica comenzará una vez aprobadas las solicitudes. El usuario podrá desactivar el servicio en cualquier momento desde <span class="text-white font-semibold">Configuración &gt; Recursos &gt; Banda ancha</span> una vez los módulos estén operativos.
+    <!-- Status -->
+    <section class="section section--dark" id="status">
+        <div class="section__inner">
+            <h2 class="section__title reveal">Current Status</h2>
+            <div class="status-grid">
+                <div class="status-card reveal">
+                    <div class="status-card__label">Fase Actual</div>
+                    <div class="status-card__value status-card__value--accent">Pre-Beta</div>
+                    <div class="status-card__sub">Infraestructura Core en desarrollo</div>
+                </div>
+                <div class="status-card reveal">
+                    <div class="status-card__label">Mercado Inicial</div>
+                    <div class="status-card__value">Ecuador (EC)</div>
+                    <div class="status-card__sub">Validación beta</div>
+                </div>
+                <div class="status-card reveal">
+                    <div class="status-card__label">Network Status</div>
+                    <div class="status-card__value status-card__value--warning">DEVELOPMENT</div>
+                    <div class="status-card__sub">SDKs pendientes de aprobación</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparency -->
+    <section class="section" id="consent">
+        <div class="transparency">
+            <div class="reveal">
+                <h2>Transparencia y Consentimiento</h2>
+                <p>
+                    <strong>Resource Digital solicita el consentimiento explícito del usuario antes de activar cualquier módulo de monetización.</strong>
                 </p>
-                <p class="text-gray-400 leading-relaxed">
-                    Los datos de sensores se anonimizarán en el dispositivo y se registrarán hashes en la blockchain de peaq (Fase 2). Según las políticas oficiales de Honeygain y Pawns.app, los SDKs de banda ancha no acceden a datos personales, archivos ni historial de navegación. Esta afirmación se verificará formalmente al completarse la integración.
+                <p>
+                    Las solicitudes de acceso a los SDKs de banda ancha (Honeygain, Pawns.app y Bright SDK) han sido enviadas y están <strong>pendientes de aprobación</strong> por parte de los proveedores. La integración técnica comenzará una vez aprobadas las solicitudes.
+                </p>
+                <p>
+                    Según las políticas oficiales de Honeygain y Pawns.app, los SDKs de banda ancha no acceden a datos personales, archivos ni historial de navegación. Los datos de sensores se anonimizarán en el dispositivo y se registrarán hashes en la blockchain de peaq (Fase 2).
                 </p>
             </div>
-            <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
-                <h3 class="text-lg font-bold text-white mb-3">Documentos legales</h3>
-                <div class="space-y-3">
-                    <a href="legal/terms.html" class="block p-3 rounded-xl bg-white/5 border border-green-500/30 hover:bg-green-500/10 hover:border-green-400 transition group">
-                        <span class="font-bold text-white group-hover:text-green-300 transition">Términos de Servicio</span>
-                        <span class="block text-xs text-gray-400 mt-1">Acuerdo de licencia de usuario final (EULA)</span>
+            <div class="reveal">
+                <div class="legal-docs">
+                    <h3>Documentos legales</h3>
+                    <a href="legal/terms.html" class="legal-link">
+                        <span>Términos de Servicio</span>
+                        <small>Acuerdo de licencia de usuario final (EULA)</small>
                     </a>
-                    <a href="legal/privacy.html" class="block p-3 rounded-xl bg-white/5 border border-green-500/30 hover:bg-green-500/10 hover:border-green-400 transition group">
-                        <span class="font-bold text-white group-hover:text-green-300 transition">Política de Privacidad</span>
-                        <span class="block text-xs text-gray-400 mt-1">Tratamiento de datos y derechos del usuario</span>
+                    <a href="legal/privacy.html" class="legal-link">
+                        <span>Política de Privacidad</span>
+                        <small>Tratamiento de datos y derechos del usuario</small>
                     </a>
                 </div>
-                <div class="mt-6 pt-4 border-t border-white/10 text-sm text-gray-400">
+                <div class="contact-info" id="contacto">
                     <p>¿Dudas sobre el uso de tus datos o la monetización?</p>
-                    <a href="mailto:andy@resourcedigital.dpdns.org" class="text-white underline hover:text-green-300 transition">andy@resourcedigital.dpdns.org</a>
-                    <p class="text-xs text-gray-500 mt-1">Este es el correo oficial de atención al cliente.</p>
+                    <a href="mailto:andy@resourcedigital.dpdns.org">andy@resourcedigital.dpdns.org</a>
+                    <p>Correo oficial de atención al cliente.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Documentation Index -->
-    <section id="docs" class="px-6 py-24 bg-white/5">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row gap-16 items-center">
-                <div class="md:w-1/2">
-                    <h2 class="text-4xl font-bold text-white mb-6 leading-tight">Arquitectura <br><span class="text-green-400">Atómica de 18 Sistemas.</span></h2>
-                    <p class="text-gray-400 mb-8 leading-relaxed">
-                        No es solo una aplicación, es un sistema coordinado de 18 módulos independientes que garantizan la escalabilidad y la resiliencia del nodo. Desde el buffer local SQLite hasta la verificación de datos on-chain en peaq (Fase 2).
-                    </p>
-                    <a href="https://github.com/1inquisidor1/Resource-digital/tree/main/docs" class="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-xl font-bold hover:bg-green-400 transition">
-                        Explorar Documentación Técnica <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                    </a>
-                </div>
-                <div class="md:w-1/2 grid grid-cols-2 gap-4 font-mono">
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S01: App UI <span class="text-yellow-400">(Pendiente)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S02: Foreground Service <span class="text-yellow-400">(Pendiente)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S03: Sensors <span class="text-blue-400">(Fase 2)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S04: SQLite Buffer <span class="text-yellow-400">(Pendiente)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-yellow-500/50 text-xs text-yellow-400">S05: Bandwidth <span class="text-yellow-400">(En progreso)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S06: peaq L1 <span class="text-blue-400">(Fase 2)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S07: Boosters <span class="text-blue-400">(Fase 2)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S08: Resource Panel <span class="text-blue-400">(Fase 2)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S09: Affiliates <span class="text-blue-400">(Fase 2)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-yellow-500/50 text-xs text-yellow-400">S10: Auth <span class="text-yellow-400">(Pendiente)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S11: Withdrawals <span class="text-yellow-400">(Pendiente, Fase 1)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S12: Notifications <span class="text-yellow-400">(Pendiente, Fase 1)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S13: Support <span class="text-blue-400">(Fase 2)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S14: Admin Panel <span class="text-blue-400">(Fase 2)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S15: Analytics <span class="text-blue-400">(Fase 2)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-yellow-500/50 text-xs text-yellow-400">S16: Legal <span class="text-yellow-400">(Pendiente)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S17: Feature Flags <span class="text-blue-400">(Fase 2)</span></div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S18: Monitoring <span class="text-blue-400">(Fase 2)</span></div>
-                </div>
+    <!-- 18 Systems -->
+    <section class="section section--dark" id="sistemas">
+        <div class="section__inner">
+            <h2 class="section__title reveal">Arquitectura Atómica de 18 Sistemas</h2>
+            <div class="systems-grid">
+                
+                <article class="system-card reveal" data-phase="1">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S01</span>
+                        <span class="badge badge--pending">Pendiente</span>
+                    </div>
+                    <h3 class="system-card__title">App UI</h3>
+                    <p class="system-card__desc">Onboarding, billetera-nodo, panel de recursos y configuración.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 1</span>
+                        <span class="tag">Flutter</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="1">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S02</span>
+                        <span class="badge badge--pending">Pendiente</span>
+                    </div>
+                    <h3 class="system-card__title">Foreground Service</h3>
+                    <p class="system-card__desc">Notificación persistente, watchdog, arranque automático.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 1</span>
+                        <span class="tag">Android</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="2">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S03</span>
+                        <span class="badge badge--planned">Fase 2</span>
+                    </div>
+                    <h3 class="system-card__title">Sensor Capture</h3>
+                    <p class="system-card__desc">Luz, ruido, movimiento, ubicación anonimizada.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 2</span>
+                        <span class="tag">Sensors</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="1">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S04</span>
+                        <span class="badge badge--pending">Pendiente</span>
+                    </div>
+                    <h3 class="system-card__title">SQLite Buffer</h3>
+                    <p class="system-card__desc">Almacenamiento cifrado 24h, rotación, reintento backoff.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 1</span>
+                        <span class="tag">SQLite</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="1">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S05</span>
+                        <span class="badge badge--progress">En progreso</span>
+                    </div>
+                    <h3 class="system-card__title">Bandwidth Orchestrator</h3>
+                    <p class="system-card__desc">Honeygain, Pawns.app, BrightSDK. Solicitudes enviadas.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 1</span>
+                        <span class="tag">SDKs</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="2">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S06</span>
+                        <span class="badge badge--planned">Fase 2</span>
+                    </div>
+                    <h3 class="system-card__title">peaq L1</h3>
+                    <p class="system-card__desc">peaq ID, peaq pay, peaq store, peaq verify.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 2</span>
+                        <span class="tag">Blockchain</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="2">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S07</span>
+                        <span class="badge badge--planned">Fase 2</span>
+                    </div>
+                    <h3 class="system-card__title">Boosters Engine</h3>
+                    <p class="system-card__desc">Multiplicadores, fórmula 70/30, precio dinámico.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 2</span>
+                        <span class="tag">Backend</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="2">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S08</span>
+                        <span class="badge badge--planned">Fase 2</span>
+                    </div>
+                    <h3 class="system-card__title">Resource Panel</h3>
+                    <p class="system-card__desc">Transparencia de uso, ganancias e impacto.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 2</span>
+                        <span class="tag">Flutter</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="2">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S09</span>
+                        <span class="badge badge--planned">Fase 2</span>
+                    </div>
+                    <h3 class="system-card__title">Affiliates v2.0</h3>
+                    <p class="system-card__desc">3 niveles, comisiones escalonadas, anti-fraude.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 2</span>
+                        <span class="tag">Referrals</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="1">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S10</span>
+                        <span class="badge badge--pending">Pendiente</span>
+                    </div>
+                    <h3 class="system-card__title">Auth & Registry</h3>
+                    <p class="system-card__desc">Email/Google/Wallet, creación de peaq ID.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 1</span>
+                        <span class="tag">Supabase</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="1">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S11</span>
+                        <span class="badge badge--pending">Pendiente, Fase 1</span>
+                    </div>
+                    <h3 class="system-card__title">Withdrawals</h3>
+                    <p class="system-card__desc">PIX, SPEI, USDC, PayPal. Umbral $5.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 1</span>
+                        <span class="tag">PayOS</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="1">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S12</span>
+                        <span class="badge badge--pending">Pendiente, Fase 1</span>
+                    </div>
+                    <h3 class="system-card__title">Notifications</h3>
+                    <p class="system-card__desc">Push + in-app, eventos de sistema.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 1</span>
+                        <span class="tag">Firebase</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="2">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S13</span>
+                        <span class="badge badge--planned">Fase 2</span>
+                    </div>
+                    <h3 class="system-card__title">User Support</h3>
+                    <p class="system-card__desc">FAQ, chat IA, tickets.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 2</span>
+                        <span class="tag">Help</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="2">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S14</span>
+                        <span class="badge badge--planned">Fase 2</span>
+                    </div>
+                    <h3 class="system-card__title">Admin Panel</h3>
+                    <p class="system-card__desc">Gestión de usuarios, retiros y configuración.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 2</span>
+                        <span class="tag">Dashboard</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="2">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S15</span>
+                        <span class="badge badge--planned">Fase 2</span>
+                    </div>
+                    <h3 class="system-card__title">Analytics</h3>
+                    <p class="system-card__desc">PostHog + Metabase. Sin PII.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 2</span>
+                        <span class="tag">PostHog</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="1">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S16</span>
+                        <span class="badge badge--pending">Pendiente</span>
+                    </div>
+                    <h3 class="system-card__title">Legal Compliance</h3>
+                    <p class="system-card__desc">GDPR/LGPD, términos y privacidad.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 1</span>
+                        <span class="tag">GDPR</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="2">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S17</span>
+                        <span class="badge badge--planned">Fase 2</span>
+                    </div>
+                    <h3 class="system-card__title">Feature Flags</h3>
+                    <p class="system-card__desc">Firebase Remote Config, rollout gradual.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 2</span>
+                        <span class="tag">Firebase</span>
+                    </div>
+                </article>
+                
+                <article class="system-card reveal" data-phase="2">
+                    <div class="system-card__header">
+                        <span class="system-card__id">S18</span>
+                        <span class="badge badge--planned">Fase 2</span>
+                    </div>
+                    <h3 class="system-card__title">Monitoring</h3>
+                    <p class="system-card__desc">Sentry, UptimeRobot, alertas de fraude.</p>
+                    <div class="system-card__meta">
+                        <span class="tag">Fase 2</span>
+                        <span class="tag">Sentry</span>
+                    </div>
+                </article>
+                
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="px-6 py-12 border-t border-white/10 text-center">
-        <div class="text-sm text-gray-500">
-            &copy; 2026 Resource Digital. Evolucionando hacia peaq.<br><span class="text-xs text-gray-600">Sistemas S01-S18 (equivalentes a S00-S17 en documentación técnica)</span><br>
-            <div class="mt-4 flex justify-center gap-6">
-                <a href="https://github.com/1inquisidor1/Resource-digital" target="_blank" class="text-gray-400 hover:text-white transition">GitHub</a>
-                <a href="legal/terms.html" class="text-gray-400 hover:text-white transition">Términos</a>
-                <a href="legal/privacy.html" class="text-gray-400 hover:text-white transition">Privacidad</a>
-                <a href="mailto:andy@resourcedigital.dpdns.org" class="text-gray-400 hover:text-white transition">Contacto</a>
-            </div>
+    <footer class="footer">
+        <div class="footer__links">
+            <a href="https://github.com/1inquisidor1/Resource-digital" target="_blank">GitHub</a>
+            <a href="legal/terms.html">Términos</a>
+            <a href="legal/privacy.html">Privacidad</a>
+            <a href="mailto:andy@resourcedigital.dpdns.org">Contacto</a>
         </div>
+        <div class="footer__copy">© 2026 Resource Digital. Evolucionando hacia peaq.</div>
+        <div class="footer__note">Sistemas S01-S18 (equivalentes a S00-S17 en documentación técnica)</div>
     </footer>
 
+    <!-- Scroll Reveal -->
     <script>
-        // No metrics simulation here. The current status is static and honest.
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transitionDelay = (i % 6) * 80 + 'ms';
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
+
 </body>
 </html>
