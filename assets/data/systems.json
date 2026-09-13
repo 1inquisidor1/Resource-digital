@@ -35,7 +35,7 @@
       "name": "App UI",
       "desc": "Onboarding, billetera-nodo, panel de recursos y configuracion.",
       "phase": 1,
-      "status": "Pendiente",
+      "status": "pending",
       "tags": [
         "Flutter"
       ]
@@ -45,7 +45,7 @@
       "name": "Foreground Service",
       "desc": "Notificacion persistente, watchdog, arranque automatico.",
       "phase": 1,
-      "status": "Pendiente",
+      "status": "pending",
       "tags": [
         "Android"
       ]
@@ -55,7 +55,7 @@
       "name": "Sensor Capture",
       "desc": "Luz, ruido, movimiento, ubicacion anonimizada.",
       "phase": 2,
-      "status": "Fase 2",
+      "status": "planned",
       "tags": [
         "Sensors"
       ]
@@ -65,7 +65,7 @@
       "name": "SQLite Buffer",
       "desc": "Almacenamiento cifrado 24h, rotacion, reintento backoff.",
       "phase": 1,
-      "status": "Pendiente",
+      "status": "pending",
       "tags": [
         "SQLite"
       ]
@@ -75,7 +75,7 @@
       "name": "Bandwidth Orchestrator",
       "desc": "Honeygain, Pawns.app, BrightSDK. Solicitudes enviadas.",
       "phase": 1,
-      "status": "En progreso",
+      "status": "in-progress",
       "tags": [
         "SDKs"
       ]
@@ -85,7 +85,7 @@
       "name": "peaq L1",
       "desc": "peaq ID, peaq pay, peaq store, peaq verify.",
       "phase": 2,
-      "status": "Fase 2",
+      "status": "planned",
       "tags": [
         "Blockchain"
       ]
@@ -95,7 +95,7 @@
       "name": "Boosters Engine",
       "desc": "Multiplicadores, formula 70/30, precio dinamico.",
       "phase": 2,
-      "status": "Fase 2",
+      "status": "planned",
       "tags": [
         "Backend"
       ]
@@ -105,7 +105,7 @@
       "name": "Resource Panel",
       "desc": "Transparencia de uso, ganancias e impacto.",
       "phase": 2,
-      "status": "Fase 2",
+      "status": "planned",
       "tags": [
         "Flutter"
       ]
@@ -115,7 +115,7 @@
       "name": "Affiliates v2.0",
       "desc": "3 niveles, comisiones escalonadas, anti-fraude.",
       "phase": 2,
-      "status": "Fase 2",
+      "status": "planned",
       "tags": [
         "Referrals"
       ]
@@ -125,7 +125,7 @@
       "name": "Auth and Registry",
       "desc": "Email/Google/Wallet, creacion de peaq ID.",
       "phase": 1,
-      "status": "Pendiente",
+      "status": "pending",
       "tags": [
         "Supabase"
       ]
@@ -135,7 +135,7 @@
       "name": "Withdrawals",
       "desc": "PIX, SPEI, USDC, PayPal. Umbral $5.",
       "phase": 1,
-      "status": "Pendiente, Fase 1",
+      "status": "pending",
       "tags": [
         "PayOS"
       ]
@@ -145,7 +145,7 @@
       "name": "Notifications",
       "desc": "Push + in-app, eventos de sistema.",
       "phase": 1,
-      "status": "Pendiente, Fase 1",
+      "status": "pending",
       "tags": [
         "Firebase"
       ]
@@ -155,7 +155,7 @@
       "name": "User Support",
       "desc": "FAQ, chat IA, tickets.",
       "phase": 2,
-      "status": "Fase 2",
+      "status": "planned",
       "tags": [
         "Help"
       ]
@@ -165,7 +165,7 @@
       "name": "Admin Panel",
       "desc": "Gestion de usuarios, retiros y configuracion.",
       "phase": 2,
-      "status": "Fase 2",
+      "status": "planned",
       "tags": [
         "Dashboard"
       ]
@@ -175,7 +175,7 @@
       "name": "Analytics",
       "desc": "PostHog + Metabase. Sin PII.",
       "phase": 2,
-      "status": "Fase 2",
+      "status": "planned",
       "tags": [
         "PostHog"
       ]
@@ -185,7 +185,7 @@
       "name": "Legal Compliance",
       "desc": "GDPR/LGPD, terminos y privacidad.",
       "phase": 1,
-      "status": "Pendiente",
+      "status": "pending",
       "tags": [
         "GDPR"
       ]
@@ -195,7 +195,7 @@
       "name": "Feature Flags",
       "desc": "Firebase Remote Config, rollout gradual.",
       "phase": 2,
-      "status": "Fase 2",
+      "status": "planned",
       "tags": [
         "Firebase"
       ]
@@ -205,7 +205,7 @@
       "name": "Monitoring",
       "desc": "Sentry, UptimeRobot, alertas de fraude.",
       "phase": 2,
-      "status": "Fase 2",
+      "status": "planned",
       "tags": [
         "Sentry"
       ]
@@ -215,7 +215,7 @@
       "name": "DeNet Storage",
       "desc": "Almacenamiento descentralizado de datos de sensores.",
       "phase": 3,
-      "status": "Fase 3",
+      "status": "planned",
       "tags": [
         "DeNet"
       ]
@@ -225,7 +225,7 @@
       "name": "Acurast Compute",
       "desc": "Computo descentralizado para procesamiento en la nube.",
       "phase": 3,
-      "status": "Fase 3",
+      "status": "planned",
       "tags": [
         "Acurast"
       ]
@@ -235,7 +235,7 @@
       "name": "PayOS Gateway",
       "desc": "Pagos interoperables multi-chain para LatAm.",
       "phase": 3,
-      "status": "Fase 3",
+      "status": "planned",
       "tags": [
         "PayOS"
       ]

@@ -11,16 +11,22 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 // GENERATE SYSTEM CARD
 function generateSystemCard(system) {
-    var badgeClass = system.status === 'Pendiente' ? 'badge--pending' : 
-                     system.status === 'En progreso' ? 'badge--progress' :
+    var badgeClass = system.status === 'pending' ? 'badge--pending' : 
+                     system.status === 'in-progress' ? 'badge--progress' :
+                     system.status === 'done' ? 'badge--done' :
                      system.phase === 3 ? 'badge--future' : 'badge--planned';
+    
+    var statusText = system.status === 'pending' ? 'Pendiente' :
+                     system.status === 'in-progress' ? 'En progreso' :
+                     system.status === 'done' ? 'Completado' :
+                     system.status === 'planned' ? 'Planificado' : system.status;
     
     var tags = system.tags.map(function(tag) { return '<span class="tag">' + tag + '</span>'; }).join('');
     
     return '<article class="system-card reveal" data-phase="' + system.phase + '">' +
         '<div class="system-card__header">' +
             '<span class="system-card__id">' + system.id + '</span>' +
-            '<span class="badge ' + badgeClass + '">' + system.status + '</span>' +
+            '<span class="badge ' + badgeClass + '">' + statusText + '</span>' +
         '</div>' +
         '<h3 class="system-card__title">' + system.name + '</h3>' +
         '<p class="system-card__desc">' + system.desc + '</p>' +
