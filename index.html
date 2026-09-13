@@ -1029,17 +1029,21 @@
 
     <!-- Scroll Reveal -->
     <script>
-        const observer = new IntersectionObserver((entries) => {
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, i) => {
                 if (entry.isIntersecting) {
-                    entry.target.style.transitionDelay = (i % 6) * 80 + 'ms';
+                    entry.target.style.transitionDelay = (i % 8) * 60 + 'ms';
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+                    revealObserver.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
         
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        // Observar elementos con clase reveal o system-card
+        document.querySelectorAll('.reveal, .system-card').forEach((el, i) => {
+            el.setAttribute('data-reveal-index', i);
+            revealObserver.observe(el);
+        });
     </script>
 
 </body>
