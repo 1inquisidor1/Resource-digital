@@ -3,354 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Resource Digital - Simulador de App. Demostracion interactiva del funcionamiento teorico en fase final.">
     <meta name="theme-color" content="#070b14">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Resource Digital | Simulador App">
-    <meta property="og:description" content="Demostracion interactiva del funcionamiento de Resource Digital en fase final">
-    <title>Resource Digital | Simulador App</title>
+    <meta name="description" content="Resource Digital - Demo App. Experimenta el poder del DePIN móvil.">
+    <title>Resource Digital | Demo App</title>
     <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        *{margin:0;padding:0;box-sizing:border-box}
         :root {
-            --bg-0: #070b14;
-            --bg-1: #0d1321;
-            --bg-2: #151d2e;
-            --bg-3: #1a2540;
-            --bg-4: #1e2d4a;
-            --border: #1e2a3a;
-            --border-active: #2a4a3a;
-            --text-0: #f8fafc;
-            --text-1: #cbd5e1;
-            --text-2: #94a3b8;
-            --text-3: #64748b;
+            --bg-0: #050a12;
+            --bg-1: #0a1120;
+            --bg-2: #101a2e;
+            --bg-3: #162040;
+            --bg-4: #1c2d50;
+            --border: #1a2540;
+            --border-active: #1a4a3a;
+            --text-0: #ffffff;
+            --text-1: #c8d6e5;
+            --text-2: #8395a7;
+            --text-3: #576574;
             --accent: #00e5a0;
             --accent-dim: #00b884;
-            --accent-glow: rgba(0, 229, 160, 0.15);
-            --accent-glow-strong: rgba(0, 229, 160, 0.3);
-            --warning: #fbbf24;
-            --warning-bg: rgba(251, 191, 36, 0.1);
-            --danger: #f87171;
-            --danger-bg: rgba(248, 113, 113, 0.1);
-            --info: #60a5fa;
-            --info-bg: rgba(96, 165, 250, 0.1);
-            --future: #a78bfa;
-            --future-bg: rgba(167, 139, 250, 0.1);
-            --usdc: #2775ca;
-            --gradient-primary: linear-gradient(135deg, var(--accent) 0%, var(--info) 100%);
-            --gradient-gold: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-            --fs-3xs: 0.65rem;
-            --fs-2xs: 0.7rem;
-            --fs-xs: 0.75rem;
-            --fs-sm: 0.875rem;
-            --fs-base: 1rem;
-            --fs-lg: 1.125rem;
-            --fs-xl: 1.5rem;
-            --fs-2xl: 2rem;
-            --fs-3xl: 2.75rem;
-            --space-1: 0.25rem;
-            --space-2: 0.5rem;
-            --space-3: 0.75rem;
-            --space-4: 1rem;
-            --space-5: 1.25rem;
-            --space-6: 1.5rem;
-            --space-8: 2rem;
-            --space-10: 2.5rem;
-            --space-12: 3rem;
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 24px;
-            --radius-full: 9999px;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
-            --shadow-lg: 0 12px 40px rgba(0,0,0,0.6);
-            --shadow-glow: 0 0 32px var(--accent-glow);
+            --accent-glow: rgba(0, 229, 160, 0.2);
+            --accent-glow2: rgba(0, 229, 160, 0.4);
+            --blue: #60a5fa;
+            --blue-glow: rgba(96, 165, 250, 0.15);
+            --orange: #fbbf24;
+            --orange-glow: rgba(251, 191, 36, 0.15);
+            --purple: #a78bfa;
+            --purple-glow: rgba(167, 139, 250, 0.15);
+            --red: #f87171;
+            --red-glow: rgba(248, 113, 113, 0.15);
+            --font: 'Inter', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
             --ease: cubic-bezier(0.4, 0, 0.2, 1);
-            --dur-fast: 150ms;
-            --dur: 250ms;
-            --dur-slow: 400ms;
         }
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: var(--font-sans);
+            font-family: var(--font);
             background: var(--bg-0);
             color: var(--text-1);
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
             min-height: 100vh;
-            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
-        ::selection { background: var(--accent); color: var(--bg-0); }
-        a { color: var(--accent); text-decoration: none; }
-
-        /* ========== APP SHELL ========== */
-        .app-shell {
+        
+        /* APP SHELL */
+        .app {
             max-width: 430px;
             margin: 0 auto;
             min-height: 100vh;
             background: var(--bg-0);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 0 60px rgba(0,0,0,0.8);
         }
-
-        /* ========== HEADER ========== */
-        .app-header {
+        
+        /* SCREENS */
+        .screen {
+            display: none;
+            padding: 16px;
+            padding-bottom: 100px;
+            animation: fadeSlide 0.3s var(--ease);
+        }
+        .screen.active { display: block; }
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* HEADER */
+        .header {
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(7, 11, 20, 0.95);
+            background: rgba(5, 10, 18, 0.9);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
-            padding: var(--space-3) var(--space-4);
+            padding: 12px 16px;
         }
-        .app-header__top {
+        .header__top {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: var(--space-2);
         }
-        .app-header__brand {
-            font-size: var(--fs-sm);
+        .header__brand {
+            font-size: 12px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: -0.02em;
             color: var(--text-0);
         }
-        .app-header__brand-accent {
-            background: var(--gradient-primary);
+        .header__brand span {
+            background: linear-gradient(135deg, var(--accent), var(--blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
-        .app-header__status {
+        .header__status {
             display: flex;
             align-items: center;
-            gap: var(--space-2);
+            gap: 6px;
+            padding: 4px 10px;
+            background: rgba(0, 229, 160, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 999px;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--accent);
         }
-        .app-header__status-dot {
-            width: 8px;
-            height: 8px;
+        .header__dot {
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
             background: var(--accent);
-            box-shadow: 0 0 8px var(--accent-glow-strong);
+            box-shadow: 0 0 8px var(--accent-glow2);
             animation: pulse 2s infinite;
         }
-        .app-header__status-text {
-            font-size: var(--fs-2xs);
-            color: var(--accent);
-            font-weight: 500;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
         }
-        .app-header__wallet {
+        .header__wallet {
             display: flex;
             align-items: center;
-            gap: var(--space-2);
-            padding: var(--space-2) var(--space-3);
+            gap: 6px;
+            margin-top: 8px;
+            padding: 6px 12px;
             background: var(--bg-2);
             border: 1px solid var(--border);
-            border-radius: var(--radius-full);
-            font-size: var(--fs-2xs);
+            border-radius: 999px;
+            font-size: 10px;
             color: var(--text-2);
-            font-family: var(--font-mono);
-        }
-        .app-header__wallet-address {
-            max-width: 90px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        /* ========== SCREENS ========== */
-        .screens-container {
-            position: relative;
-            min-height: calc(100vh - 140px);
-        }
-        .screen {
-            display: none;
-            padding: var(--space-4);
-            animation: fadeIn var(--dur) var(--ease);
-        }
-        .screen.active { display: block; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ========== BOTTOM NAV ========== */
-        .bottom-nav {
-            position: sticky;
-            bottom: 0;
-            background: rgba(7, 11, 20, 0.95);
-            backdrop-filter: blur(20px);
-            border-top: 1px solid var(--border);
-            padding: var(--space-2) var(--space-4);
-            z-index: 100;
-        }
-        .bottom-nav__list {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .bottom-nav__item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2px;
-            padding: var(--space-1) var(--space-3);
-            background: none;
-            border: none;
-            color: var(--text-3);
-            font-size: var(--fs-3xs);
-            font-family: var(--font-sans);
+            font-family: var(--mono);
             cursor: pointer;
-            transition: all var(--dur-fast) var(--ease);
-            border-radius: var(--radius-sm);
+            transition: all 0.2s;
         }
-        .bottom-nav__item svg {
-            width: 22px;
-            height: 22px;
-            transition: all var(--dur-fast) var(--ease);
-        }
-        .bottom-nav__item:hover { color: var(--text-2); }
-        .bottom-nav__item.active { color: var(--accent); }
-        .bottom-nav__item.active svg { filter: drop-shadow(0 0 6px var(--accent-glow-strong)); }
-        .bottom-nav__badge {
-            position: absolute;
-            top: -2px;
-            right: -2px;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--danger);
-        }
-
-        /* ========== CARD ========== */
-        .card {
-            background: var(--bg-1);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-5);
-            margin-bottom: var(--space-4);
-            transition: all var(--dur) var(--ease);
-        }
-        .card--glow {
-            border-color: var(--accent);
-            box-shadow: var(--shadow-glow);
-        }
-        .card--dark {
-            background: var(--bg-2);
-        }
-        .card__header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: var(--space-4);
-        }
-        .card__title {
-            font-size: var(--fs-sm);
-            font-weight: 700;
-            color: var(--text-0);
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-        }
-        .card__subtitle {
-            font-size: var(--fs-2xs);
-            color: var(--text-3);
-            margin-top: 2px;
-        }
-        .card__badge {
-            padding: 2px var(--space-2);
-            border-radius: var(--radius-full);
-            font-size: var(--fs-3xs);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-        .card__badge--active { background: var(--accent-glow); color: var(--accent); }
-        .card__badge--warning { background: var(--warning-bg); color: var(--warning); }
-        .card__badge--info { background: var(--info-bg); color: var(--info); }
-        .card__badge--future { background: var(--future-bg); color: var(--future); }
-
-        /* ========== BALANCE CARD ========== */
-        .balance-card {
+        .header__wallet:hover { border-color: var(--accent); color: var(--accent); }
+        
+        /* BALANCE CARD */
+        .balance {
             background: linear-gradient(135deg, var(--bg-2) 0%, var(--bg-3) 100%);
             border: 1px solid var(--border-active);
-            border-radius: var(--radius-xl);
-            padding: var(--space-6);
-            margin-bottom: var(--space-4);
+            border-radius: 20px;
+            padding: 24px;
+            margin: 16px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
-        .balance-card::before {
+        .balance::before {
             content: '';
             position: absolute;
             top: -50%;
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 70%);
-            opacity: 0.3;
-            animation: rotate 20s linear infinite;
+            background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 60%);
+            animation: rotate 15s linear infinite;
         }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .balance-card__label {
-            font-size: var(--fs-xs);
+        @keyframes rotate { to { transform: rotate(360deg); } }
+        .balance__label {
+            font-size: 10px;
             color: var(--text-2);
-            margin-bottom: var(--space-2);
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            margin-bottom: 8px;
+            position: relative;
         }
-        .balance-card__amount {
-            font-size: var(--fs-3xl);
-            font-weight: 800;
+        .balance__amount {
+            font-size: 36px;
+            font-weight: 900;
             color: var(--text-0);
             letter-spacing: -0.03em;
             position: relative;
         }
-        .balance-card__amount--usd { color: var(--accent); }
-        .balance-card__sub {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-4);
-            margin-top: var(--space-4);
-            position: relative;
-        }
-        .balance-card__stat {
-            text-align: center;
-        }
-        .balance-card__stat-value {
-            font-size: var(--fs-lg);
-            font-weight: 700;
-            color: var(--text-0);
-        }
-        .balance-card__stat-label {
-            font-size: var(--fs-3xs);
-            color: var(--text-3);
-            text-transform: uppercase;
-        }
-        .balance-card__earning {
+        .balance__amount .currency { color: var(--accent); }
+        .balance__rate {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: var(--space-1);
-            margin-top: var(--space-3);
-            font-size: var(--fs-xs);
+            gap: 4px;
+            margin-top: 8px;
+            font-size: 12px;
             color: var(--accent);
-            font-weight: 500;
+            font-weight: 600;
             position: relative;
         }
-        .live-dot {
+        .balance__stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            position: relative;
+        }
+        .balance__stat-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-0);
+        }
+        .balance__stat-value.accent { color: var(--accent); }
+        .balance__stat-label {
+            font-size: 10px;
+            color: var(--text-3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* LIVE INDICATOR */
+        .live {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 10px;
+            color: var(--accent);
+        }
+        .live__dot {
             width: 6px;
             height: 6px;
             border-radius: 50%;
@@ -361,129 +229,322 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.3; }
         }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.5); opacity: 0.5; }
+        
+        /* SECTION TITLES */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-0);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 20px 0 12px;
         }
-
-        /* ========== RESOURCE GRID ========== */
-        .resource-grid {
+        
+        /* RESOURCE CARDS */
+        .resources {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--space-3);
+            gap: 12px;
         }
-        .resource-tile {
+        .resource {
             background: var(--bg-1);
             border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: var(--space-4);
+            border-radius: 14px;
+            padding: 16px;
             cursor: pointer;
-            transition: all var(--dur) var(--ease);
+            transition: all 0.25s var(--ease);
             position: relative;
-            overflow: hidden;
         }
-        .resource-tile:hover {
+        .resource:hover { transform: translateY(-2px); border-color: var(--accent); }
+        .resource.active {
             border-color: var(--accent);
             background: var(--bg-2);
-            transform: translateY(-2px);
+            box-shadow: 0 0 20px var(--accent-glow);
         }
-        .resource-tile--active {
-            border-color: var(--accent);
-            background: var(--bg-2);
-            box-shadow: var(--shadow-glow);
-        }
-        .resource-tile__icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
+        .resource__header {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: var(--space-3);
-            font-size: var(--fs-lg);
+            justify-content: space-between;
+            margin-bottom: 8px;
         }
-        .resource-tile__icon--bandwidth { background: var(--info-bg); }
-        .resource-tile__icon--sensors { background: var(--warning-bg); }
-        .resource-tile__icon--storage { background: var(--future-bg); }
-        .resource-tile__icon--compute { background: var(--accent-glow); }
-        .resource-tile__name {
-            font-size: var(--fs-sm);
-            font-weight: 600;
-            color: var(--text-0);
-            margin-bottom: 2px;
-        }
-        .resource-tile__value {
-            font-size: var(--fs-xs);
-            color: var(--accent);
-            font-family: var(--font-mono);
-            font-weight: 500;
-        }
-        .resource-tile__bar {
-            height: 3px;
-            background: var(--bg-3);
-            border-radius: 2px;
-            margin-top: var(--space-2);
-            overflow: hidden;
-        }
-        .resource-tile__bar-fill {
-            height: 100%;
-            border-radius: 2px;
-            transition: width var(--dur-slow) var(--ease);
-        }
-        .resource-tile__bar-fill--bandwidth { background: var(--info); }
-        .resource-tile__bar-fill--sensors { background: var(--warning); }
-        .resource-tile__bar-fill--storage { background: var(--future); }
-        .resource-tile__bar-fill--compute { background: var(--accent); }
-
-        /* ========== BOOSTERS ========== */
-        .booster-item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-3);
-            padding: var(--space-3);
-            background: var(--bg-2);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            margin-bottom: var(--space-2);
-        }
-        .booster-item__icon {
+        .resource__icon {
             width: 32px;
             height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+        .resource__icon.bandwidth { background: var(--blue-glow); }
+        .resource__icon.sensors { background: var(--orange-glow); }
+        .resource__icon.storage { background: var(--purple-glow); }
+        .resource__icon.compute { background: var(--accent-glow); }
+        .resource__toggle {
+            position: relative;
+            width: 40px;
+            height: 22px;
+        }
+        .resource__toggle input { display: none; }
+        .resource__toggle label {
+            position: absolute;
+            inset: 0;
+            background: var(--bg-3);
+            border-radius: 11px;
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+        }
+        .resource__toggle label::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            top: 2px;
+            left: 2px;
+            background: var(--text-2);
+            border-radius: 50%;
+            transition: all 0.3s var(--ease);
+        }
+        .resource__toggle input:checked + label { background: var(--accent); }
+        .resource__toggle input:checked + label::before { transform: translateX(18px); background: var(--bg-0); }
+        .resource__name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-0);
+            margin-bottom: 4px;
+        }
+        .resource__value {
+            font-size: 11px;
+            color: var(--accent);
+            font-family: var(--mono);
+            font-weight: 500;
+        }
+        .resource__bar {
+            height: 4px;
+            background: var(--bg-3);
+            border-radius: 2px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+        .resource__bar-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.5s var(--ease);
+        }
+        .resource__bar-fill.bandwidth { background: var(--blue); }
+        .resource__bar-fill.sensors { background: var(--orange); }
+        .resource__bar-fill.storage { background: var(--purple); }
+        .resource__bar-fill.compute { background: var(--accent); }
+        
+        /* BOOSTERS */
+        .boosters {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .booster {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+        .booster__icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .booster__info { flex: 1; }
+        .booster__name {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-0);
+        }
+        .booster__desc {
+            font-size: 10px;
+            color: var(--text-3);
+        }
+        .booster__multiplier {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: var(--mono);
+        }
+        
+        /* CHART */
+        .chart-card {
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        .chart-card__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .chart-card__title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-0);
+        }
+        .chart-card__period {
+            display: flex;
+            gap: 4px;
+        }
+        .chart-card__period button {
+            padding: 4px 8px;
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 10px;
+            color: var(--text-2);
+            cursor: pointer;
+            font-family: var(--font);
+        }
+        .chart-card__period button.active {
+            background: var(--accent);
+            color: var(--bg-0);
+            border-color: var(--accent);
+        }
+        .chart {
+            height: 100px;
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+        }
+        .chart__bar {
+            flex: 1;
+            background: linear-gradient(to top, var(--accent), var(--blue));
+            border-radius: 3px 3px 0 0;
+            min-height: 4px;
+            transition: height 0.5s var(--ease);
+            opacity: 0.8;
+        }
+        .chart__bar:hover { opacity: 1; }
+        
+        /* ACTIVITY FEED */
+        .activity {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .activity__item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            animation: slideIn 0.3s var(--ease);
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .activity__icon {
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: var(--fs-sm);
+            font-size: 12px;
             flex-shrink: 0;
         }
-        .booster-item__info { flex: 1; }
-        .booster-item__name {
-            font-size: var(--fs-xs);
-            font-weight: 600;
-            color: var(--text-0);
+        .activity__info { flex: 1; }
+        .activity__text {
+            font-size: 11px;
+            color: var(--text-1);
         }
-        .booster-item__desc {
-            font-size: var(--fs-3xs);
+        .activity__time {
+            font-size: 10px;
             color: var(--text-3);
         }
-        .booster-item__value {
-            font-size: var(--fs-sm);
+        .activity__amount {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            font-family: var(--mono);
+        }
+        
+        /* NETWORK MAP */
+        .network {
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px;
+            margin: 16px 0;
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        .network__title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-0);
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+        }
+        .network__canvas {
+            position: absolute;
+            inset: 0;
+        }
+        .network__stats {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            right: 12px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 2;
+        }
+        .network__stat {
+            text-align: center;
+        }
+        .network__stat-value {
+            font-size: 14px;
             font-weight: 700;
             color: var(--accent);
-            font-family: var(--font-mono);
+            font-family: var(--mono);
         }
-
-        /* ========== AFFILIATES ========== */
+        .network__stat-label {
+            font-size: 9px;
+            color: var(--text-3);
+            text-transform: uppercase;
+        }
+        
+        /* AFFILIATES */
+        .affiliate-levels {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
         .affiliate-level {
             display: flex;
             align-items: center;
-            gap: var(--space-3);
-            padding: var(--space-3);
+            gap: 12px;
+            padding: 12px;
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             border-left: 3px solid var(--accent);
-            background: var(--bg-2);
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            margin-bottom: var(--space-2);
         }
+        .affiliate-level:nth-child(2) { border-left-color: var(--blue); }
+        .affiliate-level:nth-child(3) { border-left-color: var(--purple); }
         .affiliate-level__badge {
             width: 28px;
             height: 28px;
@@ -491,725 +552,442 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: var(--fs-xs);
+            font-size: 12px;
             font-weight: 700;
             color: var(--bg-0);
-            flex-shrink: 0;
         }
+        .affiliate-level:nth-child(1) .affiliate-level__badge { background: var(--accent); }
+        .affiliate-level:nth-child(2) .affiliate-level__badge { background: var(--blue); }
+        .affiliate-level:nth-child(3) .affiliate-level__badge { background: var(--purple); }
         .affiliate-level__info { flex: 1; }
         .affiliate-level__name {
-            font-size: var(--fs-xs);
+            font-size: 12px;
             font-weight: 600;
             color: var(--text-0);
         }
         .affiliate-level__count {
-            font-size: var(--fs-3xs);
+            font-size: 10px;
             color: var(--text-3);
         }
         .affiliate-level__commission {
-            font-size: var(--fs-xs);
+            font-size: 14px;
             font-weight: 700;
             color: var(--accent);
+            font-family: var(--mono);
         }
-
-        /* ========== WITHDRAWAL METHODS ========== */
-        .withdrawal-method {
+        
+        /* WITHDRAWAL METHODS */
+        .methods {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .method {
             display: flex;
             align-items: center;
-            gap: var(--space-3);
-            padding: var(--space-3);
+            gap: 12px;
+            padding: 12px;
             background: var(--bg-1);
             border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            margin-bottom: var(--space-2);
+            border-radius: 12px;
             cursor: pointer;
-            transition: all var(--dur) var(--ease);
+            transition: all 0.2s;
         }
-        .withdrawal-method:hover {
-            border-color: var(--accent);
-            background: var(--bg-2);
-        }
-        .withdrawal-method__icon {
+        .method:hover { border-color: var(--accent); background: var(--bg-2); }
+        .method__icon {
             width: 36px;
             height: 36px;
-            border-radius: var(--radius-sm);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: var(--fs-lg);
-            flex-shrink: 0;
+            font-size: 16px;
         }
-        .withdrawal-method__info { flex: 1; }
-        .withdrawal-method__name {
-            font-size: var(--fs-sm);
+        .method__info { flex: 1; }
+        .method__name {
+            font-size: 12px;
             font-weight: 600;
             color: var(--text-0);
         }
-        .withdrawal-method__detail {
-            font-size: var(--fs-3xs);
+        .method__detail {
+            font-size: 10px;
             color: var(--text-3);
         }
-        .withdrawal-method__fee {
-            font-size: var(--fs-xs);
-            color: var(--warning);
+        .method__fee {
+            font-size: 11px;
+            color: var(--orange);
             font-weight: 500;
         }
-
-        /* ========== CHART AREA ========== */
-        .chart-container {
-            background: var(--bg-1);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-4);
-            margin-bottom: var(--space-4);
-        }
-        .chart-area {
-            height: 120px;
-            display: flex;
-            align-items: flex-end;
-            gap: 3px;
-            padding: var(--space-2) 0;
-        }
-        .chart-bar {
-            flex: 1;
-            background: linear-gradient(to top, var(--accent) 0%, var(--info) 100%);
-            border-radius: 2px 2px 0 0;
-            min-height: 4px;
-            transition: height var(--dur-slow) var(--ease);
-            opacity: 0.7;
-        }
-        .chart-bar:hover { opacity: 1; }
-
-        /* ========== ACTIVITY FEED ========== */
-        .activity-item {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-3);
-            padding: var(--space-3) 0;
-            border-bottom: 1px solid var(--border);
-        }
-        .activity-item:last-child { border-bottom: none; }
-        .activity-item__icon {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: var(--fs-xs);
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-        .activity-item__info { flex: 1; }
-        .activity-item__text {
-            font-size: var(--fs-xs);
-            color: var(--text-1);
-        }
-        .activity-item__time {
-            font-size: var(--fs-3xs);
-            color: var(--text-3);
-            margin-top: 2px;
-        }
-        .activity-item__amount {
-            font-size: var(--fs-xs);
-            font-weight: 600;
-            color: var(--accent);
-            text-align: right;
-        }
-
-        /* ========== DID CARD ========== */
+        
+        /* PROFILE */
         .did-card {
-            background: linear-gradient(135deg, var(--bg-2) 0%, var(--bg-3) 100%);
+            background: linear-gradient(135deg, var(--bg-2), var(--bg-3));
             border: 1px solid var(--border-active);
-            border-radius: var(--radius-lg);
-            padding: var(--space-4);
-            margin-bottom: var(--space-4);
+            border-radius: 16px;
+            padding: 16px;
+            margin: 16px 0;
         }
         .did-card__label {
-            font-size: var(--fs-3xs);
+            font-size: 10px;
             color: var(--text-3);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: var(--space-2);
+            margin-bottom: 8px;
         }
         .did-card__address {
-            font-family: var(--font-mono);
-            font-size: var(--fs-xs);
+            font-family: var(--mono);
+            font-size: 11px;
             color: var(--accent);
             word-break: break-all;
             line-height: 1.5;
         }
-
-        /* ========== TOGGLE SWITCH ========== */
-        .toggle {
-            position: relative;
-            width: 44px;
-            height: 24px;
-        }
-        .toggle input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        .toggle__slider {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: var(--bg-3);
-            border-radius: 12px;
-            transition: all var(--dur) var(--ease);
-            cursor: pointer;
-        }
-        .toggle__slider::before {
-            content: '';
-            position: absolute;
-            width: 18px;
-            height: 18px;
-            left: 3px;
-            bottom: 3px;
-            background: var(--text-2);
-            border-radius: 50%;
-            transition: all var(--dur) var(--ease);
-        }
-        .toggle input:checked + .toggle__slider {
-            background: var(--accent);
-        }
-        .toggle input:checked + .toggle__slider::before {
-            transform: translateX(20px);
-            background: var(--bg-0);
-        }
-
-        /* ========== PROGRESS RING ========== */
-        .progress-ring {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto var(--space-3);
-        }
-        .progress-ring__circle {
-            fill: none;
-            stroke-width: 6;
-        }
-        .progress-ring__bg { stroke: var(--bg-3); }
-        .progress-ring__fill {
-            stroke: var(--accent);
-            stroke-linecap: round;
-            transform: rotate(-90deg);
-            transform-origin: 50% 50%;
-            transition: stroke-dashoffset var(--dur-slow) var(--ease);
-        }
-        .progress-ring__text {
-            font-size: var(--fs-xl);
-            font-weight: 700;
-            fill: var(--text-0);
-        }
-
-        /* ========== DEVICE LIST ========== */
-        .device-item {
+        .did-card__badges {
             display: flex;
-            align-items: center;
-            gap: var(--space-3);
-            padding: var(--space-3);
-            background: var(--bg-2);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            margin-bottom: var(--space-2);
-        }
-        .device-item__icon {
-            width: 32px;
-            height: 32px;
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--bg-3);
-            font-size: var(--fs-sm);
-        }
-        .device-item__info { flex: 1; }
-        .device-item__name {
-            font-size: var(--fs-xs);
-            font-weight: 600;
-            color: var(--text-0);
-        }
-        .device-item__status {
-            font-size: var(--fs-3xs);
-            color: var(--text-3);
-        }
-        .device-item__earning {
-            font-size: var(--fs-xs);
-            font-weight: 600;
-            color: var(--accent);
-            font-family: var(--font-mono);
-        }
-
-        /* ========== ACTION BUTTONS ========== */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-2);
-            padding: var(--space-3) var(--space-5);
-            border-radius: var(--radius-full);
-            font-size: var(--fs-sm);
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all var(--dur) var(--ease);
-            font-family: var(--font-sans);
-        }
-        .btn--primary {
-            background: var(--accent);
-            color: var(--bg-0);
-        }
-        .btn--primary:hover {
-            background: var(--accent-dim);
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-glow);
-        }
-        .btn--secondary {
-            background: var(--bg-3);
-            color: var(--text-1);
-            border: 1px solid var(--border);
-        }
-        .btn--secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-        .btn--block { width: 100%; }
-
-        /* ========== FORM ELEMENTS ========== */
-        .form-group { margin-bottom: var(--space-4); }
-        .form-label {
-            display: block;
-            font-size: var(--fs-xs);
-            color: var(--text-2);
-            margin-bottom: var(--space-2);
-            font-weight: 500;
-        }
-        .form-input {
-            width: 100%;
-            padding: var(--space-3) var(--space-4);
-            background: var(--bg-2);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            color: var(--text-0);
-            font-size: var(--fs-sm);
-            font-family: var(--font-sans);
-            transition: all var(--dur) var(--ease);
-        }
-        .form-input:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px var(--accent-glow);
-        }
-        .form-input--readonly {
-            background: var(--bg-3);
-            color: var(--text-2);
-        }
-
-        /* ========== BADGE GROUP ========== */
-        .badge-group {
-            display: flex;
-            gap: var(--space-2);
-            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
         }
         .badge {
-            display: inline-flex;
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+        .badge.accent { background: var(--accent-glow); color: var(--accent); }
+        .badge.blue { background: var(--blue-glow); color: var(--blue); }
+        
+        .settings-row {
+            display: flex;
             align-items: center;
-            gap: var(--space-1);
-            padding: var(--space-1) var(--space-2);
-            border-radius: var(--radius-full);
-            font-size: var(--fs-3xs);
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .settings-row:last-child { border-bottom: none; }
+        .settings-row__label {
+            font-size: 12px;
+            color: var(--text-1);
+        }
+        .settings-row__value {
+            font-size: 12px;
+            color: var(--text-0);
             font-weight: 500;
         }
-        .badge--accent { background: var(--accent-glow); color: var(--accent); }
-        .badge--info { background: var(--info-bg); color: var(--info); }
-        .badge--warning { background: var(--warning-bg); color: var(--warning); }
-
-        /* ========== TOAST ========== */
+        
+        /* BOTTOM NAV */
+        .nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 430px;
+            background: rgba(5, 10, 18, 0.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border);
+            padding: 8px 16px;
+            z-index: 100;
+        }
+        .nav__list {
+            display: flex;
+            justify-content: space-around;
+        }
+        .nav__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 12px;
+            background: none;
+            border: none;
+            color: var(--text-3);
+            font-size: 10px;
+            font-family: var(--font);
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 8px;
+        }
+        .nav__item svg {
+            width: 20px;
+            height: 20px;
+            transition: all 0.2s;
+        }
+        .nav__item:hover { color: var(--text-2); }
+        .nav__item.active { color: var(--accent); }
+        .nav__item.active svg { filter: drop-shadow(0 0 6px var(--accent-glow2)); }
+        
+        /* TOAST */
         .toast {
             position: fixed;
-            top: var(--space-4);
+            top: 20px;
             left: 50%;
             transform: translateX(-50%) translateY(-100px);
             background: var(--bg-2);
             border: 1px solid var(--accent);
-            border-radius: var(--radius-full);
-            padding: var(--space-3) var(--space-5);
-            font-size: var(--fs-xs);
+            border-radius: 999px;
+            padding: 10px 20px;
+            font-size: 12px;
             color: var(--text-0);
             z-index: 9999;
-            transition: transform var(--dur-slow) var(--ease);
-            box-shadow: var(--shadow-glow);
+            transition: transform 0.4s var(--ease);
+            box-shadow: 0 0 20px var(--accent-glow);
             white-space: nowrap;
         }
         .toast.show { transform: translateX(-50%) translateY(0); }
-
-        /* ========== ANIMATIONS ========== */
+        
+        /* ANIMATIONS */
         .fade-up {
-            animation: fadeUp var(--dur-slow) var(--ease) both;
+            animation: fadeUp 0.5s var(--ease) both;
         }
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(12px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
-
-        /* ========== ROW LAYOUT ========== */
-        .row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: var(--space-3) 0;
-            border-bottom: 1px solid var(--border);
-        }
-        .row:last-child { border-bottom: none; }
-        .row__label { font-size: var(--fs-xs); color: var(--text-2); }
-        .row__value { font-size: var(--fs-xs); color: var(--text-0); font-weight: 600; }
-
-        /* ========== DESKTOP ADAPTATION ========== */
+        
+        /* RESPONSIVE */
         @media (min-width: 768px) {
-            .app-shell { margin: 20px auto; border-radius: var(--radius-xl); min-height: calc(100vh - 40px); border: 1px solid var(--border); }
-            .screens-container { min-height: calc(100vh - 180px); }
+            .app { margin: 20px auto; border-radius: 24px; min-height: calc(100vh - 40px); border: 1px solid var(--border); }
         }
-
-        @media (max-width: 380px) {
-            .resource-grid { grid-template-columns: 1fr; }
-            .balance-card__amount { font-size: var(--fs-2xl); }
-        }
-
-        /* ========== SCROLLBAR ========== */
-        ::-webkit-scrollbar { width: 6px; }
+        
+        /* SCROLLBAR */
+        ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: var(--bg-0); }
-        ::-webkit-scrollbar-thumb { background: var(--bg-3); border-radius: 3px; }
-
-        /* ========== SECTION TITLE ========== */
-        .section-title {
-            font-size: var(--fs-xs);
-            font-weight: 700;
-            color: var(--text-0);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: var(--space-3);
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-        }
-
-        /* ========== EMPTY STATE ========== */
-        .empty-state {
-            text-align: center;
-            padding: var(--space-8) var(--space-4);
-            color: var(--text-3);
-        }
-        .empty-state__icon { font-size: var(--fs-3xl); margin-bottom: var(--space-4); }
-        .empty-state__text { font-size: var(--fs-sm); }
-
-        /* ========== INFO ROW ========== */
-        .info-row {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-            padding: var(--space-2) 0;
-            font-size: var(--fs-xs);
-        }
-        .info-row__icon { width: 16px; text-align: center; }
-        .info-row__label { color: var(--text-2); }
-        .info-row__value { color: var(--text-0); font-weight: 500; margin-left: auto; }
-
-        /* ========== LEVEL INDICATOR ========== */
-        .level-bar {
-            display: flex;
-            gap: 4px;
-            margin-top: var(--space-2);
-        }
-        .level-bar__segment {
-            height: 4px;
-            flex: 1;
-            border-radius: 2px;
-            background: var(--bg-3);
-        }
-        .level-bar__segment--filled { background: var(--accent); }
+        ::-webkit-scrollbar-thumb { background: var(--bg-3); border-radius: 2px; }
     </style>
 </head>
 <body>
-    <div class="app-shell">
+    <div class="app">
         <!-- HEADER -->
-        <header class="app-header">
-            <div class="app-header__top">
-                <span class="app-header__brand">
-                    <span class="app-header__brand-accent">Resource</span> Digital
-                </span>
-                <div class="app-header__status">
-                    <span class="app-header__status-dot"></span>
-                    <span class="app-header__status-text">Nodo Activo</span>
+        <header class="header">
+            <div class="header__top">
+                <span class="header__brand"><span>Resource</span> Digital</span>
+                <div class="header__status">
+                    <span class="header__dot"></span>
+                    Nodo Activo
                 </div>
             </div>
-            <div class="app-header__wallet" onclick="showToast('DID copiado al portapapeles')">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 1 0 0 4h4v-4h-4z"/></svg>
-                <span class="app-header__wallet-address" id="walletAddress">0x7a3B...F92d</span>
+            <div class="header__wallet" onclick="copyToClipboard()">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 1 0 0 4h4v-4h-4z"/></svg>
+                <span id="walletAddress">0x7a3B...F92d</span>
             </div>
         </header>
-
+        
         <!-- SCREENS -->
-        <div class="screens-container">
-            <!-- HOME SCREEN -->
+        <div id="screens">
+            <!-- HOME -->
             <section class="screen active" id="screen-home">
-                <!-- Balance Card -->
-                <div class="balance-card fade-up">
-                    <div class="balance-card__label">Saldo Total (Billetera-Nodo)</div>
-                    <div class="balance-card__amount balance-card__amount--usd" id="totalBalance">$0.00</div>
-                    <div class="balance-card__earning">
-                        <span class="live-dot"></span>
-                        <span>+<span id="earningRate">$0.00</span>/hora estimado</span>
+                <div class="balance fade-up">
+                    <div class="balance__label">Saldo Total (Billetera-Nodo)</div>
+                    <div class="balance__amount"><span class="currency">$</span><span id="balance">0.00</span> <span style="font-size:14px;color:var(--text-3)">USD</span></div>
+                    <div class="balance__rate">
+                        <span class="live"><span class="live__dot"></span></span>
+                        +$<span id="rate">0.00</span>/hora
                     </div>
-                    <div class="balance-card__sub">
-                        <div class="balance-card__stat">
-                            <div class="balance-card__stat-value" id="todayEarned">$0.00</div>
-                            <div class="balance-card__stat-label">Hoy</div>
+                    <div class="balance__stats">
+                        <div>
+                            <div class="balance__stat-value accent" id="today">$0.00</div>
+                            <div class="balance__stat-label">Hoy</div>
                         </div>
-                        <div class="balance-card__stat">
-                            <div class="balance-card__stat-value" id="weekEarned">$0.00</div>
-                            <div class="balance-card__stat-label">Semana</div>
+                        <div>
+                            <div class="balance__stat-value" id="week">$0.00</div>
+                            <div class="balance__stat-label">Semana</div>
                         </div>
-                        <div class="balance-card__stat">
-                            <div class="balance-card__stat-value" id="totalDevices">1</div>
-                            <div class="balance-card__stat-label">Nodos</div>
+                        <div>
+                            <div class="balance__stat-value" id="month">$0.00</div>
+                            <div class="balance__stat-label">Mes</div>
+                        </div>
+                        <div>
+                            <div class="balance__stat-value accent" id="nodes">1</div>
+                            <div class="balance__stat-label">Nodos</div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Resources -->
-                <div class="section-title fade-up delay-1">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                    Recursos Activos
-                </div>
-                <div class="resource-grid fade-up delay-2">
-                    <div class="resource-tile resource-tile--active" id="tile-bandwidth" onclick="toggleResource('bandwidth')">
-                        <div class="resource-tile__icon resource-tile__icon--bandwidth">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-                        </div>
-                        <div class="resource-tile__name">Ancho de Banda</div>
-                        <div class="resource-tile__value" id="bandwidthValue">0 MB/s</div>
-                        <div class="resource-tile__bar"><div class="resource-tile__bar-fill resource-tile__bar-fill--bandwidth" id="bandwidthBar" style="width:0%"></div></div>
-                    </div>
-                    <div class="resource-tile resource-tile--active" id="tile-sensors" onclick="toggleResource('sensors')">
-                        <div class="resource-tile__icon resource-tile__icon--sensors">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                        </div>
-                        <div class="resource-tile__name">Sensores</div>
-                        <div class="resource-tile__value" id="sensorsValue">Capturando</div>
-                        <div class="resource-tile__bar"><div class="resource-tile__bar-fill resource-tile__bar-fill--sensors" id="sensorsBar" style="width:0%"></div></div>
-                    </div>
-                    <div class="resource-tile" id="tile-storage" onclick="toggleResource('storage')">
-                        <div class="resource-tile__icon resource-tile__icon--storage">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-                        </div>
-                        <div class="resource-tile__name">Almacenamiento</div>
-                        <div class="resource-tile__value" id="storageValue">Inactivo</div>
-                        <div class="resource-tile__bar"><div class="resource-tile__bar-fill resource-tile__bar-fill--storage" id="storageBar" style="width:0%"></div></div>
-                    </div>
-                    <div class="resource-tile" id="tile-compute" onclick="toggleResource('compute')">
-                        <div class="resource-tile__icon resource-tile__icon--compute">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
-                        </div>
-                        <div class="resource-tile__name">Cómputo</div>
-                        <div class="resource-tile__value" id="computeValue">Inactivo</div>
-                        <div class="resource-tile__bar"><div class="resource-tile__bar-fill resource-tile__bar-fill--compute" id="computeBar" style="width:0%"></div></div>
-                    </div>
-                </div>
-
-                <!-- Boosters -->
-                <div class="section-title fade-up delay-3">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                    Boosters Activos
-                </div>
-                <div class="fade-up delay-4">
-                    <div class="booster-item">
-                        <div class="booster-item__icon" style="background:var(--accent-glow);">🚀</div>
-                        <div class="booster-item__info">
-                            <div class="booster-item__name">Nodo 24/7</div>
-                            <div class="booster-item__desc">Activo más de 20h/día</div>
-                        </div>
-                        <div class="booster-item__value">x1.5</div>
-                    </div>
-                    <div class="booster-item">
-                        <div class="booster-item__icon" style="background:var(--warning-bg);">⭐</div>
-                        <div class="booster-item__info">
-                            <div class="booster-item__name">Afiliados Directos</div>
-                            <div class="booster-item__desc">3 referidos activos</div>
-                        </div>
-                        <div class="booster-item__value">x1.3</div>
-                    </div>
-                    <div class="booster-item">
-                        <div class="booster-item__icon" style="background:var(--info-bg);">🔗</div>
-                        <div class="booster-item__info">
-                            <div class="booster-item__name">Verificación DID</div>
-                            <div class="booster-item__desc">Identidad peaq verificada</div>
-                        </div>
-                        <div class="booster-item__value">x1.2</div>
-                    </div>
-                </div>
-
-                <!-- Recent Activity -->
-                <div class="section-title">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    Actividad Reciente
-                </div>
-                <div class="card">
-                    <div id="activityFeed"></div>
-                </div>
-            </section>
-
-            <!-- RESOURCES SCREEN -->
-            <section class="screen" id="screen-resources">
-                <div class="section-title">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                    Gestión de Recursos
                 </div>
                 
-                <!-- Bandwidth Detail -->
-                <div class="card">
-                    <div class="card__header">
-                        <div>
-                            <div class="card__title">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-                                Ancho de Banda
+                <div class="section-title">Recursos Activos</div>
+                <div class="resources fade-up delay-1">
+                    <div class="resource active" id="res-bandwidth" onclick="toggleResource('bandwidth')">
+                        <div class="resource__header">
+                            <div class="resource__icon bandwidth">📡</div>
+                            <div class="resource__toggle">
+                                <input type="checkbox" id="toggle-bandwidth" checked>
+                                <label for="toggle-bandwidth"></label>
                             </div>
-                            <div class="card__subtitle">Honeygain + Pawns.app + BrightSDK</div>
                         </div>
-                        <span class="card__badge card__badge--active">Activo</span>
+                        <div class="resource__name">Ancho de Banda</div>
+                        <div class="resource__value" id="bandwidth-val">0 MB/s</div>
+                        <div class="resource__bar"><div class="resource__bar-fill bandwidth" id="bandwidth-bar" style="width:0%"></div></div>
                     </div>
-                    <div class="row">
-                        <span class="row__label">Velocidad actual</span>
-                        <span class="row__value" id="bwSpeed">0 MB/s</span>
+                    <div class="resource active" id="res-sensors" onclick="toggleResource('sensors')">
+                        <div class="resource__header">
+                            <div class="resource__icon sensors">📊</div>
+                            <div class="resource__toggle">
+                                <input type="checkbox" id="toggle-sensors" checked>
+                                <label for="toggle-sensors"></label>
+                            </div>
+                        </div>
+                        <div class="resource__name">Sensores</div>
+                        <div class="resource__value" id="sensors-val">Capturando</div>
+                        <div class="resource__bar"><div class="resource__bar-fill sensors" id="sensors-bar" style="width:0%"></div></div>
                     </div>
-                    <div class="row">
-                        <span class="row__label">Hoy transferido</span>
-                        <span class="row__value" id="bwToday">0 GB</span>
+                    <div class="resource" id="res-storage" onclick="toggleResource('storage')">
+                        <div class="resource__header">
+                            <div class="resource__icon storage">💾</div>
+                            <div class="resource__toggle">
+                                <input type="checkbox" id="toggle-storage">
+                                <label for="toggle-storage"></label>
+                            </div>
+                        </div>
+                        <div class="resource__name">Almacenamiento</div>
+                        <div class="resource__value" id="storage-val">Inactivo</div>
+                        <div class="resource__bar"><div class="resource__bar-fill storage" id="storage-bar" style="width:0%"></div></div>
                     </div>
-                    <div class="row">
-                        <span class="row__label">Ganancia estimada</span>
-                        <span class="row__value" style="color:var(--accent)" id="bwEarned">$0.00</span>
-                    </div>
-                    <div class="row">
-                        <span class="row__label">SDKs activos</span>
-                        <span class="row__value">3 / 3</span>
-                    </div>
-                    <div class="row">
-                        <span class="row__label">Reparto</span>
-                        <span class="row__value">70% usuario / 30% red</span>
+                    <div class="resource" id="res-compute" onclick="toggleResource('compute')">
+                        <div class="resource__header">
+                            <div class="resource__icon compute">⚡</div>
+                            <div class="resource__toggle">
+                                <input type="checkbox" id="toggle-compute">
+                                <label for="toggle-compute"></label>
+                            </div>
+                        </div>
+                        <div class="resource__name">Cómputo</div>
+                        <div class="resource__value" id="compute-val">Inactivo</div>
+                        <div class="resource__bar"><div class="resource__bar-fill compute" id="compute-bar" style="width:0%"></div></div>
                     </div>
                 </div>
-
-                <!-- Sensors Detail -->
-                <div class="card">
-                    <div class="card__header">
-                        <div>
-                            <div class="card__title">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                Sensores
-                            </div>
-                            <div class="card__subtitle">Luz, ruido, movimiento anonimizados</div>
+                
+                <div class="section-title">Boosters Activos</div>
+                <div class="boosters fade-up delay-2">
+                    <div class="booster">
+                        <div class="booster__icon" style="background:var(--accent-glow)">🚀</div>
+                        <div class="booster__info">
+                            <div class="booster__name">Nodo 24/7</div>
+                            <div class="booster__desc">Activo más de 20h/día</div>
                         </div>
-                        <span class="card__badge card__badge--active">Capturando</span>
+                        <div class="booster__multiplier">x1.5</div>
                     </div>
-                    <div class="row">
-                        <span class="row__label">Luz ambiente</span>
-                        <span class="row__value" id="sensorLux">0 lux</span>
+                    <div class="booster">
+                        <div class="booster__icon" style="background:var(--orange-glow)">⭐</div>
+                        <div class="booster__info">
+                            <div class="booster__name">Afiliados Directos</div>
+                            <div class="booster__desc">3 referidos activos</div>
+                        </div>
+                        <div class="booster__multiplier">x1.3</div>
                     </div>
-                    <div class="row">
-                        <span class="row__label">Nivel de ruido</span>
-                        <span class="row__value" id="sensorNoise">0 dB</span>
-                    </div>
-                    <div class="row">
-                        <span class="row__label">Movimiento</span>
-                        <span class="row__value" id="sensorMotion">Detectando</span>
-                    </div>
-                    <div class="row">
-                        <span class="row__label">Privacidad</span>
-                        <span class="row__value" style="color:var(--accent)">Datos anonimizados</span>
+                    <div class="booster">
+                        <div class="booster__icon" style="background:var(--blue-glow)">🔗</div>
+                        <div class="booster__info">
+                            <div class="booster__name">DID Verificado</div>
+                            <div class="booster__desc">Identidad peaq on-chain</div>
+                        </div>
+                        <div class="booster__multiplier">x1.2</div>
                     </div>
                 </div>
-
-                <!-- DeNet Storage Detail -->
-                <div class="card">
-                    <div class="card__header">
-                        <div>
-                            <div class="card__title">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-                                Almacenamiento DeNet
-                            </div>
-                            <div class="card__subtitle">Fase 3 - Almacenamiento descentralizado</div>
+                
+                <div class="section-title">Rendimiento (24h)</div>
+                <div class="chart-card fade-up delay-3">
+                    <div class="chart-card__header">
+                        <span class="chart-card__title">Ganancias por hora</span>
+                        <div class="chart-card__period">
+                            <button class="active">24h</button>
+                            <button>7d</button>
+                            <button>30d</button>
                         </div>
-                        <span class="card__badge card__badge--future">Fase 3</span>
                     </div>
-                    <div class="row">
-                        <span class="row__label">Espacio compartido</span>
-                        <span class="row__value" id="denetSpace">0 GB / 5 GB</span>
-                    </div>
-                    <div class="row">
-                        <span class="row__label">Estado</span>
-                        <span class="row__value" id="denetStatus">Pendiente</span>
+                    <div class="chart" id="chart"></div>
+                </div>
+                
+                <div class="section-title">Actividad Reciente</div>
+                <div class="activity fade-up delay-3" id="activity-feed"></div>
+            </section>
+            
+            <!-- NETWORK -->
+            <section class="screen" id="screen-network">
+                <div class="section-title">Red DePIN</div>
+                <div class="network">
+                    <div class="network__title">Nodos conectados en tu región</div>
+                    <canvas class="network__canvas" id="networkCanvas"></canvas>
+                    <div class="network__stats">
+                        <div class="network__stat">
+                            <div class="network__stat-value" id="net-nodes">1,247</div>
+                            <div class="network__stat-label">Nodos activos</div>
+                        </div>
+                        <div class="network__stat">
+                            <div class="network__stat-value" id="net-bandwidth">2.4 TB</div>
+                            <div class="network__stat-label">Banda compartida</div>
+                        </div>
+                        <div class="network__stat">
+                            <div class="network__stat-value" id="net-earnings">$12.4K</div>
+                            <div class="network__stat-label">Pagos hoy</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Acurast Compute Detail -->
-                <div class="card">
-                    <div class="card__header">
+                
+                <div class="section-title">Tu Impacto</div>
+                <div class="balance" style="padding:20px">
+                    <div class="balance__stats">
                         <div>
-                            <div class="card__title">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
-                                Cómputo Acurast
-                            </div>
-                            <div class="card__subtitle">Fase 3 - Procesamiento descentralizado</div>
+                            <div class="balance__stat-value accent" id="impact-uptime">98.5%</div>
+                            <div class="balance__stat-label">Uptime</div>
                         </div>
-                        <span class="card__badge card__badge--future">Fase 3</span>
+                        <div>
+                            <div class="balance__stat-value" id="impact-shared">0 GB</div>
+                            <div class="balance__stat-label">Datos compartidos</div>
+                        </div>
+                        <div>
+                            <div class="balance__stat-value accent" id="impact-rank">#1,247</div>
+                            <div class="balance__stat-label">Ranking</div>
+                        </div>
                     </div>
-                    <div class="row">
-                        <span class="row__label">Tareas completadas</span>
-                        <span class="row__value" id="acurastTasks">0</span>
+                </div>
+                
+                <div class="section-title">Sistemas Atómicos</div>
+                <div class="resources">
+                    <div class="resource active" style="border-color:var(--blue)">
+                        <div class="resource__name">S01-S05</div>
+                        <div class="resource__value">Core Node</div>
                     </div>
-                    <div class="row">
-                        <span class="row__label">CPU compartido</span>
-                        <span class="row__value" id="acurastCPU">0%</span>
+                    <div class="resource active" style="border-color:var(--accent)">
+                        <div class="resource__name">S06-S09</div>
+                        <div class="resource__value">DePIN Layer</div>
+                    </div>
+                    <div class="resource active" style="border-color:var(--orange)">
+                        <div class="resource__name">S10-S18</div>
+                        <div class="resource__value">Soporte</div>
+                    </div>
+                    <div class="resource" style="border-color:var(--purple)">
+                        <div class="resource__name">S19-S21</div>
+                        <div class="resource__value">Ecosistema</div>
                     </div>
                 </div>
             </section>
-
-            <!-- AFFILIATES SCREEN -->
+            
+            <!-- AFFILIATES -->
             <section class="screen" id="screen-affiliates">
-                <div class="section-title">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    Sistema de Afiliados
-                </div>
-
-                <div class="balance-card" style="padding:var(--space-5)">
-                    <div class="balance-card__label">Ganancias por Afiliados</div>
-                    <div class="balance-card__amount balance-card__amount--usd" style="font-size:var(--fs-2xl)" id="affEarnings">$0.00</div>
-                    <div class="balance-card__sub" style="margin-top:var(--space-3)">
-                        <div class="balance-card__stat">
-                            <div class="balance-card__stat-value" id="affDirect">0</div>
-                            <div class="balance-card__stat-label">Directos</div>
+                <div class="balance" style="padding:20px">
+                    <div class="balance__label">Ganancias por Afiliados</div>
+                    <div class="balance__amount" style="font-size:28px"><span class="currency">$</span><span id="aff-earnings">0.00</span></div>
+                    <div class="balance__stats">
+                        <div>
+                            <div class="balance__stat-value accent" id="aff-direct">3</div>
+                            <div class="balance__stat-label">Directos</div>
                         </div>
-                        <div class="balance-card__stat">
-                            <div class="balance-card__stat-value" id="affIndirect">0</div>
-                            <div class="balance-card__stat-label">Indirectos</div>
+                        <div>
+                            <div class="balance__stat-value" id="aff-indirect">7</div>
+                            <div class="balance__stat-label">Indirectos</div>
                         </div>
-                        <div class="balance-card__stat">
-                            <div class="balance-card__stat-value" id="affLevels">3</div>
-                            <div class="balance-card__stat-label">Niveles</div>
+                        <div>
+                            <div class="balance__stat-value" id="aff-total">$0.00</div>
+                            <div class="balance__stat-label">Total</div>
                         </div>
                     </div>
                 </div>
-
-                <div class="card">
-                    <div class="card__header">
-                        <div class="card__title">Niveles de Comisión</div>
-                    </div>
+                
+                <div class="section-title">Niveles de Comisión</div>
+                <div class="affiliate-levels">
                     <div class="affiliate-level">
-                        <div class="affiliate-level__badge" style="background:var(--accent)">1</div>
+                        <div class="affiliate-level__badge">1</div>
                         <div class="affiliate-level__info">
                             <div class="affiliate-level__name">Nivel Directo</div>
                             <div class="affiliate-level__count">Referidos que tú invitas</div>
@@ -1217,7 +995,7 @@
                         <div class="affiliate-level__commission">10%</div>
                     </div>
                     <div class="affiliate-level">
-                        <div class="affiliate-level__badge" style="background:var(--info)">2</div>
+                        <div class="affiliate-level__badge">2</div>
                         <div class="affiliate-level__info">
                             <div class="affiliate-level__name">Nivel Indirecto</div>
                             <div class="affiliate-level__count">Referidos de tus referidos</div>
@@ -1225,7 +1003,7 @@
                         <div class="affiliate-level__commission">5%</div>
                     </div>
                     <div class="affiliate-level">
-                        <div class="affiliate-level__badge" style="background:var(--future)">3</div>
+                        <div class="affiliate-level__badge">3</div>
                         <div class="affiliate-level__info">
                             <div class="affiliate-level__name">Nivel Red</div>
                             <div class="affiliate-level__count">Red extendida</div>
@@ -1233,433 +1011,448 @@
                         <div class="affiliate-level__commission">2%</div>
                     </div>
                 </div>
-
-                <div class="card">
-                    <div class="card__header">
-                        <div class="card__title">Tu Link de Referido</div>
-                    </div>
-                    <div style="display:flex;gap:var(--space-2)">
-                        <input type="text" class="form-input" value="https://rd.app/ref/0x7a3B" readonly style="font-size:var(--fs-2xs)">
-                        <button class="btn btn--primary" onclick="showToast('Link copiado')">Copiar</button>
-                    </div>
-                    <div class="level-bar">
-                        <div class="level-bar__segment level-bar__segment--filled"></div>
-                        <div class="level-bar__segment level-bar__segment--filled"></div>
-                        <div class="level-bar__segment"></div>
-                    </div>
-                    <p style="font-size:var(--fs-3xs);color:var(--text-3);margin-top:var(--space-2)">Invita 5 personas para desbloquear Nivel 3</p>
+                
+                <div class="section-title">Tu Link de Referido</div>
+                <div style="display:flex;gap:8px;margin-top:8px">
+                    <input type="text" style="flex:1;padding:10px;background:var(--bg-2);border:1px solid var(--border);border-radius:10px;color:var(--text-0);font-size:11px;font-family:var(--mono)" value="https://rd.app/ref/0x7a3B" readonly>
+                    <button style="padding:10px 16px;background:var(--accent);color:var(--bg-0);border:none;border-radius:10px;font-size:12px;font-weight:600;cursor:pointer" onclick="copyLink()">Copiar</button>
                 </div>
             </section>
-
-            <!-- WITHDRAW SCREEN -->
+            
+            <!-- WITHDRAW -->
             <section class="screen" id="screen-withdraw">
-                <div class="section-title">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                    Retiros
-                </div>
-
-                <div class="balance-card" style="padding:var(--space-5)">
-                    <div class="balance-card__label">Disponible para Retiro</div>
-                    <div class="balance-card__amount balance-card__amount--usd" style="font-size:var(--fs-2xl)" id="withdrawAvailable">$0.00</div>
-                    <div style="margin-top:var(--space-3);display:flex;justify-content:center;gap:var(--space-4)">
-                        <div class="badge-group">
-                            <span class="badge badge--info">Min: $5.00</span>
-                            <span class="badge badge--accent">USDC</span>
-                        </div>
+                <div class="balance" style="padding:20px">
+                    <div class="balance__label">Disponible para Retiro</div>
+                    <div class="balance__amount" style="font-size:28px"><span class="currency">$</span><span id="withdraw-amount">0.00</span> <span style="font-size:14px;color:var(--text-3)">USD</span></div>
+                    <div style="margin-top:12px">
+                        <span class="badge accent">Min: $5.00</span>
+                        <span class="badge blue" style="margin-left:8px">USDC</span>
                     </div>
                 </div>
-
+                
                 <div class="section-title">Métodos de Retiro</div>
-                <div class="withdrawal-method" onclick="showToast('Retiro PayPal: mínimo $5')">
-                    <div class="withdrawal-method__icon" style="background:var(--info-bg)">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M17 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/><line x1="7" y1="6" x2="17" y2="6"/></svg>
-                    </div>
-                    <div class="withdrawal-method__info">
-                        <div class="withdrawal-method__name">PayPal</div>
-                        <div class="withdrawal-method__detail">Retiro directo a tu cuenta</div>
-                    </div>
-                    <div class="withdrawal-method__fee">1%</div>
-                </div>
-                <div class="withdrawal-method" onclick="showToast('Retiro SPEI: cuenta bancaria México')">
-                    <div class="withdrawal-method__icon" style="background:var(--warning-bg)">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                    </div>
-                    <div class="withdrawal-method__info">
-                        <div class="withdrawal-method__name">SPEI (MX)</div>
-                        <div class="withdrawal-method__detail">Transferencia bancaria México</div>
-                    </div>
-                    <div class="withdrawal-method__fee">$10 MXN</div>
-                </div>
-                <div class="withdrawal-method" onclick="showToast('Retiro PIX: cuenta bancaria Brasil')">
-                    <div class="withdrawal-method__icon" style="background:var(--accent-glow)">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                    </div>
-                    <div class="withdrawal-method__info">
-                        <div class="withdrawal-method__name">PIX (BR)</div>
-                        <div class="withdrawal-method__detail">Transferencia bancaria Brasil</div>
-                    </div>
-                    <div class="withdrawal-method__fee">Gratis</div>
-                </div>
-                <div class="withdrawal-method" onclick="showToast('Retiro PSE: cuenta bancaria Colombia')">
-                    <div class="withdrawal-method__icon" style="background:var(--future-bg)">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                    </div>
-                    <div class="withdrawal-method__info">
-                        <div class="withdrawal-method__name">PSE (CO)</div>
-                        <div class="withdrawal-method__detail">Transferencia bancaria Colombia</div>
-                    </div>
-                    <div class="withdrawal-method__fee">$2.500 COP</div>
-                </div>
-
-                <div class="card" style="margin-top:var(--space-4)">
-                    <div class="card__header">
-                        <div class="card__title">Historial de Retiros</div>
-                    </div>
-                    <div id="withdrawHistory">
-                        <div class="empty-state">
-                            <div class="empty-state__icon">📭</div>
-                            <div class="empty-state__text">Sin retiros aún</div>
+                <div class="methods">
+                    <div class="method" onclick="showToast('Retiro PayPal procesado')">
+                        <div class="method__icon" style="background:var(--blue-glow)">💳</div>
+                        <div class="method__info">
+                            <div class="method__name">PayPal</div>
+                            <div class="method__detail">Retiro directo a tu cuenta</div>
                         </div>
+                        <div class="method__fee">1%</div>
+                    </div>
+                    <div class="method" onclick="showToast('Retiro SPEI procesado')">
+                        <div class="method__icon" style="background:var(--orange-glow)">🏦</div>
+                        <div class="method__info">
+                            <div class="method__name">SPEI (MX)</div>
+                            <div class="method__detail">Transferencia bancaria México</div>
+                        </div>
+                        <div class="method__fee">$10 MXN</div>
+                    </div>
+                    <div class="method" onclick="showToast('Retiro PIX procesado')">
+                        <div class="method__icon" style="background:var(--accent-glow)">🇧🇷</div>
+                        <div class="method__info">
+                            <div class="method__name">PIX (BR)</div>
+                            <div class="method__detail">Transferencia bancaria Brasil</div>
+                        </div>
+                        <div class="method__fee" style="color:var(--accent)">Gratis</div>
+                    </div>
+                    <div class="method" onclick="showToast('Retiro PSE procesado')">
+                        <div class="method__icon" style="background:var(--purple-glow)">🇨🇴</div>
+                        <div class="method__info">
+                            <div class="method__name">PSE (CO)</div>
+                            <div class="method__detail">Transferencia bancaria Colombia</div>
+                        </div>
+                        <div class="method__fee">$2.500 COP</div>
+                    </div>
+                </div>
+                
+                <div class="section-title">Historial</div>
+                <div id="withdraw-history">
+                    <div style="text-align:center;padding:20px;color:var(--text-3);font-size:12px">
+                        Sin retiros aún
                     </div>
                 </div>
             </section>
-
-            <!-- PROFILE SCREEN -->
+            
+            <!-- PROFILE -->
             <section class="screen" id="screen-profile">
-                <div class="section-title">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    Mi Cuenta
-                </div>
-
-                <!-- DID Card -->
                 <div class="did-card">
                     <div class="did-card__label">Identidad Descentralizada (peaq DID)</div>
-                    <div class="did-card__address" id="didAddress">did:peaq:0x7a3B4c8E9F2d1A6b5C7D8E9F0a1B2c3D4e5F6a7B</div>
-                    <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2)">
-                        <span class="badge badge--accent">Verificado</span>
-                        <span class="badge badge--info">peaq L1</span>
+                    <div class="did-card__address">did:peaq:0x7a3B4c8E9F2d1A6b5C7D8E9F0a1B2c3D4e5F6a7B</div>
+                    <div class="did-card__badges">
+                        <span class="badge accent">Verificado</span>
+                        <span class="badge blue">peaq L1</span>
                     </div>
                 </div>
-
-                <!-- Device Info -->
-                <div class="card">
-                    <div class="card__header">
-                        <div class="card__title">Dispositivo Vinculado</div>
-                        <span class="card__badge card__badge--active">Principal</span>
-                    </div>
-                    <div class="device-item">
-                        <div class="device-item__icon">📱</div>
-                        <div class="device-item__info">
-                            <div class="device-item__name">Android - Pixel 7 Pro</div>
-                            <div class="device-item__status">Foreground activo • 23h 45m hoy</div>
+                
+                <div class="section-title">Dispositivo</div>
+                <div class="resource active" style="border-color:var(--accent)">
+                    <div class="resource__header">
+                        <div class="resource__icon" style="background:var(--accent-glow)">📱</div>
+                        <div class="resource__toggle">
+                            <input type="checkbox" checked disabled>
+                            <label style="background:var(--accent)"></label>
                         </div>
-                        <div class="device-item__earning" id="deviceEarning">$0.00</div>
+                    </div>
+                    <div class="resource__name">Android - Pixel 7 Pro</div>
+                    <div class="resource__value">Principal • 23h 45m hoy</div>
+                </div>
+                
+                <div class="section-title">Configuración</div>
+                <div style="background:var(--bg-1);border:1px solid var(--border);border-radius:14px;padding:4px 16px">
+                    <div class="settings-row">
+                        <span class="settings-row__label">Notificaciones</span>
+                        <span class="settings-row__value" style="color:var(--accent)">Activadas</span>
+                    </div>
+                    <div class="settings-row">
+                        <span class="settings-row__label">Cifrado</span>
+                        <span class="settings-row__value">AES-256</span>
+                    </div>
+                    <div class="settings-row">
+                        <span class="settings-row__label">Buffer</span>
+                        <span class="settings-row__value">SQLite WAL</span>
+                    </div>
+                    <div class="settings-row">
+                        <span class="settings-row__label">Idioma</span>
+                        <span class="settings-row__value">Español</span>
+                    </div>
+                    <div class="settings-row">
+                        <span class="settings-row__label">País</span>
+                        <span class="settings-row__value">🇪🇨 Ecuador</span>
                     </div>
                 </div>
-
-                <!-- Settings -->
-                <div class="card">
-                    <div class="card__header">
-                        <div class="card__title">Configuración</div>
-                    </div>
-                    <div class="row">
-                        <span class="row__label">Notificaciones</span>
-                        <label class="toggle">
-                            <input type="checkbox" checked disabled>
-                            <span class="toggle__slider"></span>
-                        </label>
-                    </div>
-                    <div class="row">
-                        <span class="row__label">Datos en tránsito (TLS 1.3)</span>
-                        <label class="toggle">
-                            <input type="checkbox" checked disabled>
-                            <span class="toggle__slider"></span>
-                        </label>
-                    </div>
-                    <div class="row">
-                        <span class="row__label">Cifrado local (AES-256)</span>
-                        <label class="toggle">
-                            <input type="checkbox" checked disabled>
-                            <span class="toggle__slider"></span>
-                        </label>
-                    </div>
-                    <div class="row">
-                        <span class="row__label">Buffer SQLite WAL</span>
-                        <label class="toggle">
-                            <input type="checkbox" checked disabled>
-                            <span class="toggle__slider"></span>
-                        </label>
-                    </div>
-                    <div class="row">
-                        <span class="row__label">Idioma</span>
-                        <span class="row__value">Español (ES)</span>
-                    </div>
-                    <div class="row">
-                        <span class="row__label">País</span>
-                        <span class="row__value">🇪🇨 Ecuador</span>
-                    </div>
-                </div>
-
-                <!-- Version -->
-                <div class="card">
-                    <div class="info-row">
-                        <span class="info-row__icon">📦</span>
-                        <span class="info-row__label">Versión</span>
-                        <span class="info-row__value">v5.1.0-alpha</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-row__icon">🔗</span>
-                        <span class="info-row__label">Repositorio</span>
-                        <span class="info-row__value" style="font-size:var(--fs-3xs)">git@github.com:1inquisidor1/Resource-digital.git</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-row__icon">📧</span>
-                        <span class="info-row__label">Contacto</span>
-                        <span class="info-row__value" style="font-size:var(--fs-3xs)">andy@resourcedigital.dpdns.org</span>
-                    </div>
+                
+                <div class="section-title">Acerca de</div>
+                <div style="background:var(--bg-1);border:1px solid var(--border);border-radius:14px;padding:16px;font-size:11px;color:var(--text-2)">
+                    <p><strong>Versión:</strong> v5.1.0-alpha</p>
+                    <p style="margin-top:8px"><strong>Repositorio:</strong> git@github.com:1inquisidor1/Resource-digital.git</p>
+                    <p style="margin-top:8px"><strong>Contacto:</strong> andy@resourcedigital.dpdns.org</p>
                 </div>
             </section>
         </div>
-
+        
         <!-- BOTTOM NAV -->
-        <nav class="bottom-nav">
-            <div class="bottom-nav__list">
-                <button class="bottom-nav__item active" onclick="navigateTo('home')">
+        <nav class="nav">
+            <div class="nav__list">
+                <button class="nav__item active" onclick="nav('home')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                     Inicio
                 </button>
-                <button class="bottom-nav__item" onclick="navigateTo('resources')">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                    Recursos
+                <button class="nav__item" onclick="nav('network')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v10M1 12h6m6 0h10"/></svg>
+                    Red
                 </button>
-                <button class="bottom-nav__item" onclick="navigateTo('affiliates')">
+                <button class="nav__item" onclick="nav('affiliates')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     Afiliados
                 </button>
-                <button class="bottom-nav__item" onclick="navigateTo('withdraw')">
+                <button class="nav__item" onclick="nav('withdraw')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                     Retirar
                 </button>
-                <button class="bottom-nav__item" onclick="navigateTo('profile')">
+                <button class="nav__item" onclick="nav('profile')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     Perfil
                 </button>
             </div>
         </nav>
     </div>
-
+    
     <!-- TOAST -->
     <div class="toast" id="toast"></div>
-
+    
     <script>
     // ========== STATE ==========
     const state = {
         balance: 0,
-        todayEarned: 0,
-        weekEarned: 0,
-        earningRate: 0,
+        today: 0,
+        week: 0,
+        month: 0,
+        rate: 0,
         bandwidth: { active: true, speed: 0, todayGB: 0, earned: 0 },
-        sensors: { active: true, lux: 0, noise: 0, motion: 'Detectando' },
-        storage: { active: false, spaceGB: 0, maxGB: 5 },
-        compute: { active: false, tasks: 0, cpu: 0 },
+        sensors: { active: true, lux: 0, noise: 0, earned: 0 },
+        storage: { active: false, spaceGB: 0, maxGB: 5, earned: 0 },
+        compute: { active: false, tasks: 0, cpu: 0, earned: 0 },
         boosters: [
-            { name: 'Nodo 24/7', multiplier: 1.5, active: true },
-            { name: 'Afiliados', multiplier: 1.3, active: true },
-            { name: 'DID Verificado', multiplier: 1.2, active: true }
+            { name: 'Nodo 24/7', mult: 1.5, active: true },
+            { name: 'Afiliados', mult: 1.3, active: true },
+            { name: 'DID', mult: 1.2, active: true }
         ],
         affiliates: { direct: 3, indirect: 7, earnings: 0 },
-        devices: 1,
-        activity: []
+        activity: [],
+        chartData: [],
+        totalShared: 0
     };
-
+    
     // ========== NAVIGATION ==========
-    function navigateTo(screen) {
+    function nav(screen) {
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        document.querySelectorAll('.bottom-nav__item').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.nav__item').forEach(b => b.classList.remove('active'));
         document.getElementById('screen-' + screen).classList.add('active');
         event.currentTarget.classList.add('active');
     }
-
+    
     // ========== TOAST ==========
-    function showToast(message) {
-        const toast = document.getElementById('toast');
-        toast.textContent = message;
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 2500);
+    function showToast(msg) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 2500);
     }
-
+    
+    function copyToClipboard() {
+        showToast('DID copiado al portapapeles');
+    }
+    
+    function copyLink() {
+        showToast('Link de referido copiado');
+    }
+    
     // ========== RESOURCE TOGGLE ==========
-    function toggleResource(resource) {
-        const tile = document.getElementById('tile-' + resource);
-        if (state[resource].active) {
-            state[resource].active = false;
-            tile.classList.remove('resource-tile--active');
-            showToast(resource + ' desactivado');
+    function toggleResource(res) {
+        const checkbox = document.getElementById('toggle-' + res);
+        checkbox.checked = !checkbox.checked;
+        state[res].active = checkbox.checked;
+        const el = document.getElementById('res-' + res);
+        if (checkbox.checked) {
+            el.classList.add('active');
+            showToast(res + ' activado');
         } else {
-            state[resource].active = true;
-            tile.classList.add('resource-tile--active');
-            showToast(resource + ' activado');
+            el.classList.remove('active');
+            showToast(res + ' desactivado');
         }
         updateUI();
     }
-
+    
     // ========== SIMULATION ==========
-    function simulateData() {
-        // Bandwidth simulation
+    function getMultiplier() {
+        return state.boosters.filter(b => b.active).reduce((a, b) => a * b.mult, 1);
+    }
+    
+    function simulate() {
+        let earned = 0;
+        
+        // Bandwidth
         if (state.bandwidth.active) {
-            state.bandwidth.speed = (Math.random() * 2.5 + 0.5);
+            state.bandwidth.speed = Math.random() * 2.5 + 0.5;
             state.bandwidth.todayGB += state.bandwidth.speed * 0.001;
-            const bwEarn = state.bandwidth.speed * 0.0008 * getBoosterMultiplier();
-            state.bandwidth.earned += bwEarn;
-            state.balance += bwEarn;
-            state.todayEarned += bwEarn;
-            state.weekEarned += bwEarn;
+            const e = state.bandwidth.speed * 0.0008 * getMultiplier();
+            state.bandwidth.earned += e;
+            earned += e;
+            state.totalShared += state.bandwidth.speed * 0.001;
         }
-
-        // Sensors simulation
+        
+        // Sensors
         if (state.sensors.active) {
             state.sensors.lux = Math.floor(Math.random() * 800 + 100);
             state.sensors.noise = Math.floor(Math.random() * 40 + 20);
-            const sensorEarn = 0.0001 * getBoosterMultiplier();
-            state.balance += sensorEarn;
-            state.todayEarned += sensorEarn;
-            state.weekEarned += sensorEarn;
+            const e = 0.00015 * getMultiplier();
+            state.sensors.earned += e;
+            earned += e;
         }
-
-        // Storage simulation (Fase 3)
+        
+        // Storage
         if (state.storage.active) {
-            state.storage.spaceGB = Math.min(state.storage.spaceGB + 0.001, state.storage.maxGB);
-            const storageEarn = 0.0003 * getBoosterMultiplier();
-            state.balance += storageEarn;
-            state.todayEarned += storageEarn;
-            state.weekEarned += storageEarn;
+            state.storage.spaceGB = Math.min(state.storage.spaceGB + 0.0005, state.storage.maxGB);
+            const e = 0.0003 * getMultiplier();
+            state.storage.earned += e;
+            earned += e;
         }
-
-        // Compute simulation (Fase 3)
+        
+        // Compute
         if (state.compute.active) {
             state.compute.cpu = Math.floor(Math.random() * 30 + 5);
             if (Math.random() > 0.7) state.compute.tasks++;
-            const computeEarn = 0.0002 * getBoosterMultiplier();
-            state.balance += computeEarn;
-            state.todayEarned += computeEarn;
-            state.weekEarned += computeEarn;
+            const e = 0.0002 * getMultiplier();
+            state.compute.earned += e;
+            earned += e;
         }
-
-        // Affiliate earnings
-        const affEarn = (state.affiliates.direct * 0.0005 + state.affiliates.indirect * 0.0002) * getBoosterMultiplier();
+        
+        // Affiliates
+        const affEarn = (state.affiliates.direct * 0.0005 + state.affiliates.indirect * 0.0002) * getMultiplier();
         state.affiliates.earnings += affEarn;
-        state.balance += affEarn;
-        state.todayEarned += affEarn;
-        state.weekEarned += affEarn;
-
-        // Update earning rate (per hour estimate)
-        state.earningRate = state.balance * 0.05;
-
-        // Add activity occasionally
-        if (Math.random() > 0.85) {
-            addActivity();
-        }
-
+        earned += affEarn;
+        
+        // Update totals
+        state.balance += earned;
+        state.today += earned;
+        state.week += earned;
+        state.month += earned;
+        state.rate = state.balance * 0.04;
+        
+        // Chart data
+        state.chartData.push(earned);
+        if (state.chartData.length > 24) state.chartData.shift();
+        
+        // Activity
+        if (Math.random() > 0.8) addActivity();
+        
         updateUI();
     }
-
-    function getBoosterMultiplier() {
-        return state.boosters.filter(b => b.active).reduce((acc, b) => acc * b.multiplier, 1);
-    }
-
+    
     function addActivity() {
-        const activities = [
-            { icon: '📡', color: 'var(--info-bg)', text: 'Ancho de banda compartido', amount: '+$0.00' },
-            { icon: '📊', color: 'var(--warning-bg)', text: 'Datos de sensores anonimizados', amount: '+$0.00' },
-            { icon: '🔗', color: 'var(--accent-glow)', text: 'Verificación DID actualizada', amount: '' },
-            { icon: '👥', color: 'var(--future-bg)', text: 'Comisión de afiliado recibida', amount: '+$0.00' },
-            { icon: '🚀', color: 'var(--accent-glow)', text: 'Booster Nodo 24/7 activo', amount: 'x1.5' },
-            { icon: '💾', color: 'var(--future-bg)', text: 'Almacenamiento DeNet sincronizado', amount: '+$0.00' },
-            { icon: '⚡', color: 'var(--accent-glow)', text: 'Tarea Acurast completada', amount: '+$0.00' }
+        const acts = [
+            { icon: '📡', bg: 'var(--blue-glow)', text: 'Ancho de banda compartido', amount: '+$0.00' },
+            { icon: '📊', bg: 'var(--orange-glow)', text: 'Datos de sensores anonimizados', amount: '+$0.00' },
+            { icon: '🔗', bg: 'var(--accent-glow)', text: 'DID verificado on-chain', amount: '' },
+            { icon: '👥', bg: 'var(--purple-glow)', text: 'Comisión de afiliado', amount: '+$0.00' },
+            { icon: '💾', bg: 'var(--purple-glow)', text: 'Storage sincronizado', amount: '+$0.00' },
+            { icon: '⚡', bg: 'var(--accent-glow)', text: 'Tarea Acurast completada', amount: '+$0.00' }
         ];
-        const act = activities[Math.floor(Math.random() * activities.length)];
+        const act = acts[Math.floor(Math.random() * acts.length)];
         const now = new Date();
         const time = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
         state.activity.unshift({ ...act, time });
-        if (state.activity.length > 8) state.activity.pop();
+        if (state.activity.length > 6) state.activity.pop();
     }
-
+    
     // ========== UPDATE UI ==========
     function updateUI() {
         // Balance
-        document.getElementById('totalBalance').textContent = '$' + state.balance.toFixed(2);
-        document.getElementById('todayEarned').textContent = '$' + state.todayEarned.toFixed(2);
-        document.getElementById('weekEarned').textContent = '$' + state.weekEarned.toFixed(2);
-        document.getElementById('earningRate').textContent = '$' + state.earningRate.toFixed(3);
-        document.getElementById('totalDevices').textContent = state.devices;
-        document.getElementById('withdrawAvailable').textContent = '$' + state.balance.toFixed(2);
-        document.getElementById('deviceEarning').textContent = '$' + state.todayEarned.toFixed(2);
-
-        // Bandwidth
-        document.getElementById('bandwidthValue').textContent = state.bandwidth.speed.toFixed(1) + ' MB/s';
-        document.getElementById('bandwidthBar').style.width = Math.min(state.bandwidth.speed / 3 * 100, 100) + '%';
-        document.getElementById('bwSpeed').textContent = state.bandwidth.speed.toFixed(2) + ' MB/s';
-        document.getElementById('bwToday').textContent = state.bandwidth.todayGB.toFixed(2) + ' GB';
-        document.getElementById('bwEarned').textContent = '$' + state.bandwidth.earned.toFixed(2);
-
-        // Sensors
-        document.getElementById('sensorsValue').textContent = state.sensors.active ? 'Capturando' : 'Inactivo';
-        document.getElementById('sensorsBar').style.width = state.sensors.active ? '75%' : '0%';
-        document.getElementById('sensorLux').textContent = state.sensors.lux + ' lux';
-        document.getElementById('sensorNoise').textContent = state.sensors.noise + ' dB';
-        document.getElementById('sensorMotion').textContent = state.sensors.active ? 'Detectando' : 'Inactivo';
-
-        // Storage
-        document.getElementById('storageValue').textContent = state.storage.active ? state.storage.spaceGB.toFixed(1) + ' GB' : 'Inactivo';
-        document.getElementById('storageBar').style.width = (state.storage.spaceGB / state.storage.maxGB * 100) + '%';
-        document.getElementById('denetSpace').textContent = state.storage.spaceGB.toFixed(1) + ' GB / ' + state.storage.maxGB + ' GB';
-        document.getElementById('denetStatus').textContent = state.storage.active ? 'Sincronizando' : 'Pendiente (Fase 3)';
-
-        // Compute
-        document.getElementById('computeValue').textContent = state.compute.active ? state.compute.cpu + '% CPU' : 'Inactivo';
-        document.getElementById('computeBar').style.width = state.compute.active ? state.compute.cpu + '%' : '0%';
-        document.getElementById('acurastTasks').textContent = state.compute.tasks;
-        document.getElementById('acurastCPU').textContent = state.compute.active ? state.compute.cpu + '%' : '0%';
-
+        document.getElementById('balance').textContent = state.balance.toFixed(2);
+        document.getElementById('rate').textContent = state.rate.toFixed(3);
+        document.getElementById('today').textContent = '$' + state.today.toFixed(2);
+        document.getElementById('week').textContent = '$' + state.week.toFixed(2);
+        document.getElementById('month').textContent = '$' + state.month.toFixed(2);
+        document.getElementById('withdraw-amount').textContent = state.balance.toFixed(2);
+        
+        // Resources
+        document.getElementById('bandwidth-val').textContent = state.bandwidth.speed.toFixed(1) + ' MB/s';
+        document.getElementById('bandwidth-bar').style.width = Math.min(state.bandwidth.speed / 3 * 100, 100) + '%';
+        document.getElementById('sensors-val').textContent = state.sensors.active ? state.sensors.lux + ' lux' : 'Inactivo';
+        document.getElementById('sensors-bar').style.width = state.sensors.active ? '75%' : '0%';
+        document.getElementById('storage-val').textContent = state.storage.active ? state.storage.spaceGB.toFixed(1) + ' GB' : 'Inactivo';
+        document.getElementById('storage-bar').style.width = (state.storage.spaceGB / state.storage.maxGB * 100) + '%';
+        document.getElementById('compute-val').textContent = state.compute.active ? state.compute.cpu + '% CPU' : 'Inactivo';
+        document.getElementById('compute-bar').style.width = state.compute.active ? state.compute.cpu + '%' : '0%';
+        
         // Affiliates
-        document.getElementById('affEarnings').textContent = '$' + state.affiliates.earnings.toFixed(2);
-        document.getElementById('affDirect').textContent = state.affiliates.direct;
-        document.getElementById('affIndirect').textContent = state.affiliates.indirect;
-
-        // Activity feed
-        const feed = document.getElementById('activityFeed');
+        document.getElementById('aff-earnings').textContent = state.affiliates.earnings.toFixed(2);
+        document.getElementById('aff-total').textContent = '$' + state.affiliates.earnings.toFixed(2);
+        
+        // Impact
+        document.getElementById('impact-shared').textContent = state.totalShared.toFixed(1) + ' GB';
+        
+        // Chart
+        const chart = document.getElementById('chart');
+        const max = Math.max(...state.chartData, 0.001);
+        chart.innerHTML = state.chartData.map(v => 
+            '<div class="chart__bar" style="height:' + (v / max * 100) + '%"></div>'
+        ).join('');
+        
+        // Activity
+        const feed = document.getElementById('activity-feed');
         if (state.activity.length === 0) {
-            feed.innerHTML = '<div class="empty-state" style="padding:var(--space-4)"><div class="empty-state__text">Esperando actividad...</div></div>';
+            feed.innerHTML = '<div style="text-align:center;padding:16px;color:var(--text-3);font-size:11px">Esperando actividad...</div>';
         } else {
             feed.innerHTML = state.activity.map(a => `
-                <div class="activity-item">
-                    <div class="activity-item__icon" style="background:${a.color}">${a.icon}</div>
-                    <div class="activity-item__info">
-                        <div class="activity-item__text">${a.text}</div>
-                        <div class="activity-item__time">${a.time}</div>
+                <div class="activity__item">
+                    <div class="activity__icon" style="background:${a.bg}">${a.icon}</div>
+                    <div class="activity__info">
+                        <div class="activity__text">${a.text}</div>
+                        <div class="activity__time">${a.time}</div>
                     </div>
-                    <div class="activity-item__amount">${a.amount}</div>
+                    <div class="activity__amount">${a.amount}</div>
                 </div>
             `).join('');
         }
     }
-
+    
+    // ========== NETWORK CANVAS ==========
+    function initNetwork() {
+        const canvas = document.getElementById('networkCanvas');
+        const ctx = canvas.getContext('2d');
+        let nodes = [];
+        
+        function resize() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+        
+        // Create nodes
+        for (let i = 0; i < 30; i++) {
+            nodes.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                size: Math.random() * 3 + 2,
+                color: Math.random() > 0.7 ? '#00e5a0' : '#60a5fa'
+            });
+        }
+        
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw connections
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 80) {
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.strokeStyle = 'rgba(0, 229, 160, ' + (1 - dist / 80) * 0.3 + ')';
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                }
+            }
+            
+            // Draw nodes
+            nodes.forEach(n => {
+                ctx.beginPath();
+                ctx.arc(n.x, n.y, n.size, 0, Math.PI * 2);
+                ctx.fillStyle = n.color;
+                ctx.fill();
+                
+                // Glow
+                ctx.beginPath();
+                ctx.arc(n.x, n.y, n.size + 3, 0, Math.PI * 2);
+                ctx.fillStyle = n.color + '33';
+                ctx.fill();
+            });
+            
+            // Update positions
+            nodes.forEach(n => {
+                n.x += n.vx;
+                n.y += n.vy;
+                if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+                if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+            });
+            
+            requestAnimationFrame(draw);
+        }
+        draw();
+    }
+    
     // ========== INIT ==========
     function init() {
         updateUI();
-        // Simulate data every 2 seconds
-        setInterval(simulateData, 2000);
-        // Add initial activity
-        setTimeout(() => {
-            state.activity = [
-                { icon: '🚀', color: 'var(--accent-glow)', text: 'Nodo iniciado correctamente', amount: '', time: 'Ahora' },
-                { icon: '🔗', color: 'var(--info-bg)', text: 'DID peaq verificado on-chain', amount: '', time: 'Hace 1m' },
-                { icon: '📡', color: 'var(--info-bg)', text: 'Honeygain SDK conectado', amount: '+$0.00', time: 'Hace 2m' }
-            ];
-            updateUI();
-        }, 500);
+        initNetwork();
+        
+        // Initial activity
+        state.activity = [
+            { icon: '🚀', bg: 'var(--accent-glow)', text: 'Nodo iniciado correctamente', amount: '', time: 'Ahora' },
+            { icon: '🔗', bg: 'var(--blue-glow)', text: 'DID peaq verificado', amount: '', time: 'Hace 1m' },
+            { icon: '📡', bg: 'var(--blue-glow)', text: 'Honeygain conectado', amount: '+$0.00', time: 'Hace 2m' }
+        ];
+        
+        // Start simulation
+        setInterval(simulate, 1500);
+        
+        // Update network stats
+        setInterval(() => {
+            document.getElementById('net-nodes').textContent = (1200 + Math.floor(Math.random() * 100)).toLocaleString();
+            document.getElementById('net-bandwidth').textContent = (2 + Math.random() * 0.5).toFixed(1) + ' TB';
+            document.getElementById('net-earnings').textContent = '$' + (12 + Math.random() * 2).toFixed(1) + 'K';
+        }, 3000);
     }
-
+    
     init();
     </script>
 </body>
