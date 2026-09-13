@@ -33,12 +33,12 @@ Si un archivo no existe en `docs/INDEX.md`, **no lo crees sin añadirlo al índi
 
 | Carpeta | Contenido | Editable |
 |---|---|---|
-| `docs/` | Documentación en markdown | Sí |
-| `docs/systems/` | Un archivo por sistema (S01–S21) | ✅ Sí |
+| `docs/` | Documentación en markdown | Si |
+| `docs/systems/` | Un archivo por sistema (S01–S21) | ✅ Si |
 | `docs/_archive/` | Documentos originales | No |
-| `app/` | Proyecto Flutter | ✅ Sí |
-| `web/` | Landing page | ✅ Sí |
-| `supabase/` | Configuración Supabase | ✅ Sí |
+| `app/` | Proyecto Flutter | ✅ Si |
+| `web/` | Landing page | ✅ Si |
+| `supabase/` | Configuración Supabase | ✅ Si |
 
 **Nunca editar** archivos en `docs/_archive/`. Son históricos.
 
