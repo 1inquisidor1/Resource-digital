@@ -48,7 +48,7 @@ if not json_path.exists():
 json_data = json.loads(json_path.read_text(encoding="utf-8"))
 json_systems = {}
 for s in json_data.get("systems", []):
-    sid = s.get("id", "").upper()
+    sid = s.get("code", s.get("id", "")).upper()
     json_systems[sid] = {
         "phase": s.get("phase"),
         "status": s.get("status"),
