@@ -1,5 +1,5 @@
 ---
-title: S21 - PayOS Gateway
+title: PayOS Gateway
 status: planned
 phase: 3
 owner: andy
@@ -7,26 +7,22 @@ last_updated: 2026-09-13
 related: []
 ---
 
+# S21 — PayOS Gateway
 
-## Descripcion
-
-Pagos interoperables multi-chain para LatAm.
+## Descripción
+Gateway de pagos PayOS.
 
 ## Estado
-
 - Fase: 3
-- Estado: Planificado
-- Dependencias: S11
-- Bloqueadores: ninguno
+- Estado: planned
+- Dependencias: (ninguna)
+- Bloqueadores: (ninguno)
 
-## Funcion
-
-(descripcion de que hace el sistema)
+## Función
+Gestionar el procesamiento de pagos salientes.
 
 ## Contratos de datos
+(si aplica)
 
-(no aplica / detallar si aplica)
-
-## Notas de implementacion
-
-(notas tecnicas)
+## Notas de implementación
+(si aplica)

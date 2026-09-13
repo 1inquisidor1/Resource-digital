@@ -7,5 +7,22 @@ last_updated: 2026-09-13
 related: []
 ---
 
+# S17 — Feature Flags
 
-Estado: Planificado. Rollout gradual vía Firebase.
+## Descripción
+Banderas de características.
+
+## Estado
+- Fase: 2
+- Estado: planned
+- Dependencias: (ninguna)
+- Bloqueadores: (ninguno)
+
+## Función
+Gestionar la activación remota de funcionalidades.
+
+## Contratos de datos
+(si aplica)
+
+## Notas de implementación
+(si aplica)

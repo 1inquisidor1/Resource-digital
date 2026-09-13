@@ -1,5 +1,5 @@
 ---
-title: S20 - Acurast Compute
+title: Acurast Compute
 status: planned
 phase: 3
 owner: andy
@@ -7,26 +7,22 @@ last_updated: 2026-09-13
 related: []
 ---
 
+# S20 — Acurast Compute
 
-## Descripcion
-
-Computo descentralizado para procesamiento en la nube.
+## Descripción
+Cómputo descentralizado Acurast.
 
 ## Estado
-
 - Fase: 3
-- Estado: Planificado
-- Dependencias: S04
-- Bloqueadores: ninguno
+- Estado: planned
+- Dependencias: (ninguna)
+- Bloqueadores: (ninguno)
 
-## Funcion
-
-(descripcion de que hace el sistema)
+## Función
+Compartir capacidad de cómputo en la red Acurast.
 
 ## Contratos de datos
+(si aplica)
 
-(no aplica / detallar si aplica)
-
-## Notas de implementacion
-
-(notas tecnicas)
+## Notas de implementación
+(si aplica)

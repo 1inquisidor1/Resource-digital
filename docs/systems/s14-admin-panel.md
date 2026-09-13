@@ -7,5 +7,22 @@ last_updated: 2026-09-13
 related: []
 ---
 
+# S14 — Admin Panel
 
-Estado: Planificado. Gestión global de nodos.
+## Descripción
+Panel de administración.
+
+## Estado
+- Fase: 2
+- Estado: planned
+- Dependencias: (ninguna)
+- Bloqueadores: (ninguno)
+
+## Función
+Permitir a administradores gestionar usuarios y configuración.
+
+## Contratos de datos
+(si aplica)
+
+## Notas de implementación
+(si aplica)

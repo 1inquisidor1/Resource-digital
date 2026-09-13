@@ -1,5 +1,5 @@
 ---
-title: S10 - Auth & Registry
+title: Auth and Registry
 status: pending
 phase: 1
 owner: andy
@@ -7,26 +7,22 @@ last_updated: 2026-09-13
 related: []
 ---
 
+# S10 — Auth and Registry
 
-## Descripcion
-
-Email/Google/Wallet, creacion de peaq ID.
+## Descripción
+Autenticación y registro de usuarios.
 
 ## Estado
-
 - Fase: 1
-- Estado: Pendiente
-- Dependencias: ninguno
-- Bloqueadores: ninguno
+- Estado: pending
+- Dependencias: (ninguna)
+- Bloqueadores: (ninguno)
 
-## Funcion
-
-(descripcion de que hace el sistema)
+## Función
+Gestionar registro, login y autenticación de usuarios.
 
 ## Contratos de datos
+(si aplica)
 
-(no aplica / detallar si aplica)
-
-## Notas de implementacion
-
-(notas tecnicas)
+## Notas de implementación
+(si aplica)

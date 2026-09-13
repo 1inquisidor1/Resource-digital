@@ -1,6 +1,6 @@
-# Indice de documentacion
+# Índice de Documentación
 
-> Mapa del repo. Actualizar al anadir, mover o eliminar documentos.
+> Mapa del repositorio. Actualizar al añadir, mover o eliminar documentos.
 
 ## Principales
 

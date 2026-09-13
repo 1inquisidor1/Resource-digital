@@ -1,5 +1,5 @@
 ---
-title: S09 - Affiliates v2.0
+title: Affiliates v2
 status: planned
 phase: 2
 owner: andy
@@ -7,26 +7,22 @@ last_updated: 2026-09-13
 related: []
 ---
 
+# S09 — Affiliates v2
 
-## Descripcion
-
-3 niveles, comisiones escalonadas, anti-fraude.
+## Descripción
+Sistema de afiliados versión 2.0.
 
 ## Estado
-
 - Fase: 2
-- Estado: Planificado
-- Dependencias: S10
-- Bloqueadores: ninguno
+- Estado: planned
+- Dependencias: (ninguna)
+- Bloqueadores: (ninguno)
 
-## Funcion
-
-(descripcion de que hace el sistema)
+## Función
+Gestionar el programa de afiliados con 3 niveles.
 
 ## Contratos de datos
+(si aplica)
 
-(no aplica / detallar si aplica)
-
-## Notas de implementacion
-
-(notas tecnicas)
+## Notas de implementación
+(si aplica)

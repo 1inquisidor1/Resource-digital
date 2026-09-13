@@ -7,5 +7,22 @@ last_updated: 2026-09-13
 related: []
 ---
 
+# S18 — Monitoring
 
-Estado: Planificado. Sentry y UptimeRobot.
+## Descripción
+Monitoreo del sistema.
+
+## Estado
+- Fase: 2
+- Estado: planned
+- Dependencias: (ninguna)
+- Bloqueadores: (ninguno)
+
+## Función
+Monitorear la salud y rendimiento del sistema.
+
+## Contratos de datos
+(si aplica)
+
+## Notas de implementación
+(si aplica)
