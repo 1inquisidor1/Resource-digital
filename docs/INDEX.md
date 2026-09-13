@@ -7,7 +7,7 @@
 | Archivo | Descripcion | Estado |
 |---|---|---|
 | [00-vision-general.md](./00-vision-general.md) | Vision general del proyecto | active |
-| [02-arquitectura-18-sistemas.md](./02-arquitectura-18-sistemas.md) | Arquitectura de 21 sistemas | active |
+| [02-arquitectura-21-sistemas.md](./02-arquitectura-21-sistemas.md) | Arquitectura de 21 sistemas | active |
 | [03-stack-tecnologico.md](./03-stack-tecnologico.md) | Stack tecnologico | active |
 | [04-hoja-de-ruta.md](./04-hoja-de-ruta.md) | Hoja de ruta | active |
 | [07-seguridad-privacidad.md](./07-seguridad-privacidad.md) | Seguridad y privacidad | active |

@@ -55,7 +55,7 @@ for s in json_data.get("systems", []):
     }
 
 # --- 3. Extraer sistemas de la landing ---
-html_path = Path("index.html")
+html_path = Path("web/index.html")
 landing_systems = {}
 if html_path.exists():
     html = html_path.read_text(encoding="utf-8")

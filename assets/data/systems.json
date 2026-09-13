@@ -1,244 +1,171 @@
 {
-  "project": {
-    "name": "Resource Digital",
-    "version": "v5.1 ALPHA",
-    "status": "Pre-Beta",
-    "market": "Ecuador (EC)",
-    "totalSystems": 21
-  },
+  "project": "Resource Digital",
+  "version": "5.1.0",
+  "totalSystems": 21,
   "phases": [
     {
       "id": 1,
-      "name": "Pre-Beta Infraestructura Core",
-      "weeks": "1-4",
-      "status": "En preparacion",
-      "statusClass": "progress"
+      "name": "Fase 1",
+      "status": "in-progress"
     },
     {
       "id": 2,
-      "name": "Capa DePIN con peaq",
-      "weeks": "5-8",
-      "status": "Planificado",
-      "statusClass": "planned"
+      "name": "Fase 2",
+      "status": "planned"
     },
     {
       "id": 3,
-      "name": "Ecosistema Completo",
-      "weeks": "9+",
-      "status": "Planificado",
-      "statusClass": "future"
+      "name": "Fase 3",
+      "status": "planned"
     }
   ],
   "systems": [
     {
-      "id": "S01",
+      "code": "S01",
       "name": "App UI",
-      "desc": "Onboarding, billetera-nodo, panel de recursos y configuracion.",
       "phase": 1,
       "status": "pending",
-      "tags": [
-        "Flutter"
-      ]
+      "description": "Interfaz principal de la app"
     },
     {
-      "id": "S02",
+      "code": "S02",
       "name": "Foreground Service",
-      "desc": "Notificacion persistente, watchdog, arranque automatico.",
       "phase": 1,
       "status": "pending",
-      "tags": [
-        "Android"
-      ]
+      "description": "Servicio en primer plano"
     },
     {
-      "id": "S03",
+      "code": "S03",
       "name": "Sensor Capture",
-      "desc": "Luz, ruido, movimiento, ubicacion anonimizada.",
       "phase": 2,
       "status": "planned",
-      "tags": [
-        "Sensors"
-      ]
+      "description": "Captura de sensores"
     },
     {
-      "id": "S04",
+      "code": "S04",
       "name": "SQLite Buffer",
-      "desc": "Almacenamiento cifrado 24h, rotacion, reintento backoff.",
       "phase": 1,
       "status": "pending",
-      "tags": [
-        "SQLite"
-      ]
+      "description": "Buffer local SQLite"
     },
     {
-      "id": "S05",
+      "code": "S05",
       "name": "Bandwidth Orchestrator",
-      "desc": "Honeygain, Pawns.app, BrightSDK. Solicitudes enviadas.",
       "phase": 1,
       "status": "in-progress",
-      "tags": [
-        "SDKs"
-      ]
+      "description": "Orquestador de ancho de banda"
     },
     {
-      "id": "S06",
+      "code": "S06",
       "name": "peaq L1",
-      "desc": "peaq ID, peaq pay, peaq store, peaq verify.",
       "phase": 2,
       "status": "planned",
-      "tags": [
-        "Blockchain"
-      ]
+      "description": "Blockchain peaq"
     },
     {
-      "id": "S07",
+      "code": "S07",
       "name": "Boosters Engine",
-      "desc": "Multiplicadores, formula 70/30, precio dinamico.",
       "phase": 2,
       "status": "planned",
-      "tags": [
-        "Backend"
-      ]
+      "description": "Motor de boosters"
     },
     {
-      "id": "S08",
+      "code": "S08",
       "name": "Resource Panel",
-      "desc": "Transparencia de uso, ganancias e impacto.",
       "phase": 2,
       "status": "planned",
-      "tags": [
-        "Flutter"
-      ]
+      "description": "Panel de recursos"
     },
     {
-      "id": "S09",
+      "code": "S09",
       "name": "Affiliates v2.0",
-      "desc": "3 niveles, comisiones escalonadas, anti-fraude.",
       "phase": 2,
       "status": "planned",
-      "tags": [
-        "Referrals"
-      ]
+      "description": "Sistema de afiliados"
     },
     {
-      "id": "S10",
+      "code": "S10",
       "name": "Auth and Registry",
-      "desc": "Email/Google/Wallet, creacion de peaq ID.",
       "phase": 1,
       "status": "pending",
-      "tags": [
-        "Supabase"
-      ]
+      "description": "Autenticación y registro"
     },
     {
-      "id": "S11",
+      "code": "S11",
       "name": "Withdrawals",
-      "desc": "PIX, SPEI, USDC, PayPal. Umbral $5.",
       "phase": 1,
       "status": "pending",
-      "tags": [
-        "PayOS"
-      ]
+      "description": "Retiros"
     },
     {
-      "id": "S12",
+      "code": "S12",
       "name": "Notifications",
-      "desc": "Push + in-app, eventos de sistema.",
       "phase": 1,
       "status": "pending",
-      "tags": [
-        "Firebase"
-      ]
+      "description": "Notificaciones"
     },
     {
-      "id": "S13",
+      "code": "S13",
       "name": "User Support",
-      "desc": "FAQ, chat IA, tickets.",
       "phase": 2,
       "status": "planned",
-      "tags": [
-        "Help"
-      ]
+      "description": "Soporte al usuario"
     },
     {
-      "id": "S14",
+      "code": "S14",
       "name": "Admin Panel",
-      "desc": "Gestion de usuarios, retiros y configuracion.",
       "phase": 2,
       "status": "planned",
-      "tags": [
-        "Dashboard"
-      ]
+      "description": "Panel de administración"
     },
     {
-      "id": "S15",
+      "code": "S15",
       "name": "Analytics",
-      "desc": "PostHog + Metabase. Sin PII.",
       "phase": 2,
       "status": "planned",
-      "tags": [
-        "PostHog"
-      ]
+      "description": "Analíticas"
     },
     {
-      "id": "S16",
+      "code": "S16",
       "name": "Legal Compliance",
-      "desc": "GDPR/LGPD, terminos y privacidad.",
       "phase": 1,
       "status": "pending",
-      "tags": [
-        "GDPR"
-      ]
+      "description": "Cumplimiento legal"
     },
     {
-      "id": "S17",
+      "code": "S17",
       "name": "Feature Flags",
-      "desc": "Firebase Remote Config, rollout gradual.",
       "phase": 2,
       "status": "planned",
-      "tags": [
-        "Firebase"
-      ]
+      "description": "Feature flags"
     },
     {
-      "id": "S18",
+      "code": "S18",
       "name": "Monitoring",
-      "desc": "Sentry, UptimeRobot, alertas de fraude.",
       "phase": 2,
       "status": "planned",
-      "tags": [
-        "Sentry"
-      ]
+      "description": "Monitoreo"
     },
     {
-      "id": "S19",
+      "code": "S19",
       "name": "DeNet Storage",
-      "desc": "Almacenamiento descentralizado de datos de sensores.",
       "phase": 3,
       "status": "planned",
-      "tags": [
-        "DeNet"
-      ]
+      "description": "Almacenamiento DeNet"
     },
     {
-      "id": "S20",
+      "code": "S20",
       "name": "Acurast Compute",
-      "desc": "Computo descentralizado para procesamiento en la nube.",
       "phase": 3,
       "status": "planned",
-      "tags": [
-        "Acurast"
-      ]
+      "description": "Cómputo Acurast"
     },
     {
-      "id": "S21",
+      "code": "S21",
       "name": "PayOS Gateway",
-      "desc": "Pagos interoperables multi-chain para LatAm.",
       "phase": 3,
       "status": "planned",
-      "tags": [
-        "PayOS"
-      ]
+      "description": "Gateway de pagos"
     }
   ]
 }

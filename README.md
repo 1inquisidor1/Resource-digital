@@ -17,10 +17,10 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 
 | Recurso | SDK/Integración | Estado |
 |---------|----------------|--------|
-| 📡 Ancho de Banda | Honeygain + Pawns + BrightSDK | Activo |
-| 📊 Sensores | Luz, ruido, movimiento | Activo |
-| 💾 Almacenamiento | DeNet (Fase 3) | Planificado |
-| ⚡ Cómputo | Acurast (Fase 3) | Planificado |
+| 📡 Ancho de Banda | Honeygain + Pawns + BrightSDK | 🟡 En progreso |
+| 📊 Sensores | Luz, ruido, movimiento | ⏳ Planificado (Fase 2) |
+| 💾 Almacenamiento | DeNet (Fase 3) | ⏳ Planificado |
+| ⚡ Cómputo | Acurast (Fase 3) | ⏳ Planificado |
 
 ---
 
@@ -63,10 +63,13 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 
 | Categoría | Tecnología |
 |-----------|------------|
-| Mobile | Kotlin, Jetpack Compose |
-| Backend | Rust (Actix), PostgreSQL |
-| Blockchain | peaq Network (Substrate) |
-| Frontend | HTML, CSS, JS (este sitio) |
+| Mobile | Flutter 3.47.4, Dart 3.13.3 |
+| Estado | Riverpod |
+| Navegación | go_router |
+| Backend | Supabase (Fase 2) |
+| Local | sqflite + flutter_secure_storage |
+| Blockchain | peaq Network (Fase 2) |
+| Frontend | HTML, CSS, JS (landing) |
 | Infraestructura | GitHub Actions, Docker |
 
 ---
