@@ -1,12 +1,19 @@
 ---
-title: Registro Honeygain Publisher
+title: Registro de Plataformas
 status: active
-phase: null
+phase: 1
 owner: andy
 last_updated: 2026-09-13
 related: []
 ---
 
+# 06 — Registro de Plataformas
+
+> Guías de registro para plataformas de compartición de recursos.
+
+---
+
+## Honeygain Publisher
 
 ## 1. ¿Qué es Honeygain SDK?
 
@@ -178,3 +185,15 @@ No. El SDK está diseñado para **no recolectar PII** y todo el tráfico está c
 | Documentación | [https://sdk.honeygain.com/blog](https://sdk.honeygain.com/blog) |
 | Soporte | Contacto directo vía dashboard |
 | API (no oficial) | [https://github.com/malmeloo/honeygain.py](https://github.com/malmeloo/honeygain.py) |
+
+---
+
+## Pawns.app
+
+Documento en construcción... (Planificado para Fase 1.2)
+
+---
+
+## Bright SDK
+
+Documento en construcción... (Planificado para Fase 1.2)

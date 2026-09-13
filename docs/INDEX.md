@@ -12,9 +12,9 @@
 | [04-hoja-de-ruta.md](./04-hoja-de-ruta.md) | Hoja de ruta | active |
 | [07-seguridad-privacidad.md](./07-seguridad-privacidad.md) | Seguridad y privacidad | active |
 | [05-esquema-base-datos.md](./05-esquema-base-datos.md) | Esquema base de datos | active |
-| [06-registro-pawns.md](./06-registro-pawns.md) | Registro Pawns.app | active |
-| [06-registro-bright.md](./06-registro-bright.md) | Registro Bright SDK | active |
-| [06-registro-honeygain-publisher.md](./06-registro-honeygain-publisher.md) | Registro Honeygain Publisher | active |
+| [06-registro-plataformas.md](./06-registro-plataformas.md) | Registro Pawns.app | active |
+| [06-registro-plataformas.md](./06-registro-plataformas.md) | Registro Bright SDK | active |
+| [06-registro-plataformas.md](./06-registro-plataformas.md) | Registro Honeygain Publisher | active |
 | [09-modelo-financiero.md](./09-modelo-financiero.md) | Modelo financiero | active |
 | [01-fase1-honeygain.md](./01-fase1-honeygain.md) | Fase 1 Honeygain | active |
 | [README.md](./README.md) | README documentacion | active |

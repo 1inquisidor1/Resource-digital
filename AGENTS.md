@@ -38,6 +38,7 @@ Si un archivo no existe en `docs/INDEX.md`, **no lo crees sin añadirlo al índi
 | `docs/_archive/` | Documentos originales | ❌ No |
 | `app/` | Proyecto Flutter | ✅ Sí |
 | `web/` | Landing page | ✅ Sí |
+| `supabase/` | Configuración Supabase | ✅ Sí |
 
 **Nunca editar** archivos en `docs/_archive/`. Son históricos.
 
