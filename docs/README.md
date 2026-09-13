@@ -45,4 +45,4 @@ Infraestructura de backend, legal y monitoreo.
 - [**S18: Monitoreo**](S18_monitoring.md) - Alertas de salud del sistema y fraude.
 
 ---
-*Última actualización: Septiembre 2026*
+Última actualización: Septiembre 2026

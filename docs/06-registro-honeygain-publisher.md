@@ -14,7 +14,7 @@ Honeygain SDK es una solución de **monetización pasiva sin anuncios** que perm
 desarrolladores generar ingresos compartiendo el ancho de banda no utilizado de sus usuarios. El SDK
 corre en segundo plano, no accede a datos personales y es **GDPR y CCPA compliant**.
 
-## Datos clave (2026):
+## Datos clave (2026)
 
 - Integración en menos de 30 minutos con documentación clara.
 - Pagos vía **PayPal o transferencia bancaria**.
@@ -57,7 +57,7 @@ SDK de Honeygain"
 
 ### Paso 3: Implementar consentimiento y opt-out
 
-## Requisitos obligatorios de Honeygain:
+## Requisitos obligatorios de Honeygain
 
 1. **Informar claramente** al usuario sobre el uso compartido de ancho de banda.
 2. **Opt-in único** (one-time consent).

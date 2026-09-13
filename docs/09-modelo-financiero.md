@@ -17,7 +17,9 @@ Aunque se utiliza un stack de Free Tiers, existe un costo obligatorio para publi
 
 ## Proyección de Ingresos (Banda Ancha)
 
-*Basado en tasas de Honeygain/Pawns.app para Ecuador (2026)*
+## Proyección de Ingresos (Banda Ancha)
+
+Basado en tasas de Honeygain/Pawns.app para Ecuador (2026)
 
 - **Ingreso por GB:** ~$0.02 - $0.05
 - **Ingreso estimado por usuario/mes:** $0.50 - $3.00
