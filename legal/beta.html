@@ -524,7 +524,10 @@
 </head>
 <body>
     <div class="container">
-        <a href="../" class="back-link">← Volver al inicio</a>
+        <a href="../" class="back-link">
+                <img src="../assets/images/favicon.svg" alt="Resource Digital" style="width:16px;height:16px;margin-right:4px;vertical-align:middle">
+                ← Volver al inicio
+            </a>
         
         <!-- HEADER -->
         <header class="header">
@@ -582,7 +585,7 @@
         </div>
 
         <!-- FORM -->
-        <form id="betaForm" action="https://formsubmit.co/ajax/andy@resourcedigital.dpdns.org" method="POST">
+        <form id="betaForm" role="form" aria-label="Formulario de registro beta" action="https://formsubmit.co/ajax/andy@resourcedigital.dpdns.org" method="POST">
             
             <!-- HONEYPOT - Anti-spam -->
             <div class="honeypot">
@@ -875,7 +878,7 @@
 
             <!-- SUBMIT -->
             <div class="submit-section">
-                <button type="submit" class="submit-btn" id="submitBtn">
+                <button type="submit" class="submit-btn" id="submitBtn" aria-label="Enviar solicitud de beta">
                     <span class="submit-btn__spinner"></span>
                     <span class="submit-btn__text">Enviar Solicitud Beta</span>
                 </button>

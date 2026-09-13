@@ -1,58 +1,51 @@
----
-title: README Documentacion
-status: active
-phase: null
-owner: andy
-last_updated: 2026-09-13
-related: []
----
+# Documentación del Proyecto
 
-Bienvenido a la base de conocimientos tecnica de **Resource Digital**.
-Este proyecto esta construido sobre una arquitectura de
-**21 Sistemas Atomicos** para garantizar la escalabilidad DePIN.
-
-## Arquitectura Core (Sistemas 1-9)
-
-Sistemas que forman el motor operativo del nodo en el dispositivo del usuario.
-
-- [S00: Vision General](00-vision-general.md) - Propuesta de valor y modelo de negocio
-- [S01: App UI](systems/s01-app-ui.md) - Interfaz de usuario y onboarding
-- [S02: Servicio & Overlay](systems/s02-foreground-service.md) - Gestion de primer plano
-- [S03: Captura de Sensores](systems/s03-sensor-capture.md) - Recoleccion de datos
-- [S04: Buffer Local](systems/s04-sqlite-buffer.md) - Almacenamiento SQLite WAL
-- [S05: SDK de Banda](systems/s05-bandwidth-orchestrator.md) - Integracion de monetizacion
-- [S06: Capa peaq](systems/s06-peaq-l1.md) - Identidad DID on-chain
-- [S07: Boosters & Reparto](systems/s07-boosters-engine.md) - Multiplicadores y reparto
-- [S08: Panel de Recursos](systems/s08-resource-panel.md) - Transparencia de consumo
-- [S09: Afiliados v2.0](systems/s09-affiliates-v2.0.md) - Referidos multinivel
-
-## Sistemas de Soporte (Sistemas 10-18)
-
-Infraestructura de backend, legal y monitoreo.
-
-- [S10: Auth & Registro](systems/s10-auth-%26-registry.md) - Gestion de identidad
-- [S11: Retiros](systems/s11-withdrawals.md) - Pagos USDC-FIAT
-- [S12: Notificaciones](systems/s12-notifications.md) - Alertas y eventos
-- [S13: Soporte](systems/s13-user-support.md) - FAQ y centro de ayuda
-- [S14: Panel Admin](systems/s14-admin-panel.md) - Dashboard de control
-- [S15: Analytics](systems/s15-analytics.md) - Metricas de red
-- [S16: Legal](07-seguridad-privacidad.md) - Cumplimiento GDPR/LGPD
-- [S17: Feature Flags](systems/s17-feature-flags.md) - Despliegues graduales
-- [S18: Monitoreo](systems/s18-monitoring.md) - Alertas de salud
-
-## Ecosistema Completo (Sistemas 19-21)
-
-Fuentes de ingreso de alto valor.
-
-- [S19: DeNet Storage](systems/s19-denet-storage.md) - Almacenamiento descentralizado
-- [S20: Acurast Compute](systems/s20-acurast-compute.md) - Computo descentralizado
-- [S21: PayOS Gateway](systems/s21-payos-gateway.md) - Pagos multi-chain
+> Documentación técnica y estratégica de Resource Digital.
 
 ---
 
-Ultima actualizacion: 2026-09-13
+## 📁 Estructura
+
+| Carpeta | Contenido |
+|---------|-----------|
+| [systems/](systems/) | Documentación de los 21 sistemas atómicos |
+| [INDEX.md](INDEX.md) | Índice maestro de navegación |
+| [00-vision-general.md](00-vision-general.md) | Visión estratégica del proyecto |
+
 ---
 
-**Ver Plan de Desarrollo completo:** [legal/roadmap.html](../legal/roadmap.html)
-**Probar la App:** [Simulador interactivo](../legal/app-simulator.html)
-**Beta Cerrada:** [Registrarse para la beta](../legal/beta.html)
+## 🧭 Navegación Rápida
+
+### Documentación Estratégica
+- [Visión General](00-vision-general.md) — Concepto, propuesta de valor, modelo de ingresos
+- [Hoja de Ruta](04-hoja-de-ruta.md) — Plan de desarrollo por fases
+- [Modelo Financiero](09-modelo-financiero.md) — Proyecciones y economía del token
+- [Seguridad y Privacidad](07-seguridad-privacidad.md) — Arquitectura de seguridad
+
+### Documentación Técnica
+- [Stack Tecnológico](03-stack-tecnologico.md) — Tecnologías utilizadas
+- [Arquitectura de 21 Sistemas](02-arquitectura-18-sistemas.md) — Desglose de sistemas atómicos
+- [Esquema de Base de Datos](05-esquema-base-datos.md) — Modelo de datos
+- [Registro Honeygain Publisher](06-registro-honeygain-publisher.md) — Guía de integración
+
+### Sistemas Atómicos
+- [Índice de Sistemas](systems/) — Documento por cada uno de los 21 sistemas
+
+---
+
+## 🌐 Enlaces del Sitio
+
+| Página | Descripción |
+|--------|-------------|
+| [Inicio](../../) | Página principal del proyecto |
+| [Demo App](../../legal/app-simulator.html) | Simulador interactivo de la app |
+| [Beta Cerrada](../../legal/beta.html) | Registro para beta cerrada |
+| [Plan](../../legal/roadmap.html) | Plan de desarrollo visual |
+| [Privacidad](../../legal/privacy.html) | Política de privacidad |
+| [Términos](../../legal/terms.html) | Términos de servicio |
+
+---
+
+<p align="center">
+  <a href="../../">← Volver al inicio</a>
+</p>

@@ -1390,3 +1390,13 @@ a:hover {
         justify-content: center;
     }
 }
+
+/* Hero accent CTA */
+.hero__cta--accent {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.hero__cta--accent:hover {
+    background: var(--accent-glow);
+    border-color: var(--accent-dim);
+}

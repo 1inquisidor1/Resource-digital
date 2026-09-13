@@ -755,20 +755,34 @@
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: var(--bg-0); }
         ::-webkit-scrollbar-thumb { background: var(--bg-3); border-radius: 2px; }
-    </style>
+    
+/* Helper classes */
+.bg-accent-glow { background: var(--accent-glow); }
+.bg-blue-glow { background: var(--blue-glow); }
+.bg-orange-glow { background: var(--orange-glow); }
+.bg-purple-glow { background: var(--purple-glow); }
+</style>
+    <meta property="og:title" content="Resource Digital | Demo App">
+    <meta property="og:description" content="Simulador interactivo de Resource Digital. Experimenta el DePIN móvil del futuro.">
+    <meta property="og:image" content="https://1inquisidor1.github.io/Resource-digital/assets/images/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
     <div class="app">
         <!-- HEADER -->
         <header class="header">
+            <h1 style="position:absolute;left:-9999px">Resource Digital - Demo App Simulador</h1>
             <div class="header__top">
-                <span class="header__brand"><span>Resource</span> Digital</span>
+                <span class="header__brand">
+                    <img src="../assets/images/favicon.svg" alt="Resource Digital" style="width:20px;height:20px;vertical-align:middle;margin-right:6px">
+                    <span>Resource</span> Digital
+                </span>
                 <div class="header__status">
                     <span class="header__dot"></span>
                     Nodo Activo
                 </div>
             </div>
-            <div class="header__wallet" onclick="copyToClipboard()">
+            <div class="header__wallet" onclick="copyToClipboard()" aria-label="Copiar DID" role="button" tabindex="0">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 1 0 0 4h4v-4h-4z"/></svg>
                 <span id="walletAddress">0x7a3B...F92d</span>
             </div>
@@ -811,7 +825,7 @@
                         <div class="resource__header">
                             <div class="resource__icon bandwidth">📡</div>
                             <div class="resource__toggle">
-                                <input type="checkbox" id="toggle-bandwidth" checked>
+                                <input type="checkbox" id="toggle-bandwidth" checked aria-label="Activar ancho de banda">
                                 <label for="toggle-bandwidth"></label>
                             </div>
                         </div>
@@ -823,7 +837,7 @@
                         <div class="resource__header">
                             <div class="resource__icon sensors">📊</div>
                             <div class="resource__toggle">
-                                <input type="checkbox" id="toggle-sensors" checked>
+                                <input type="checkbox" id="toggle-sensors" checked aria-label="Activar sensores">
                                 <label for="toggle-sensors"></label>
                             </div>
                         </div>
@@ -835,7 +849,7 @@
                         <div class="resource__header">
                             <div class="resource__icon storage">💾</div>
                             <div class="resource__toggle">
-                                <input type="checkbox" id="toggle-storage">
+                                <input type="checkbox" id="toggle-storage" aria-label="Activar almacenamiento">
                                 <label for="toggle-storage"></label>
                             </div>
                         </div>
@@ -847,7 +861,7 @@
                         <div class="resource__header">
                             <div class="resource__icon compute">⚡</div>
                             <div class="resource__toggle">
-                                <input type="checkbox" id="toggle-compute">
+                                <input type="checkbox" id="toggle-compute" aria-label="Activar cómputo">
                                 <label for="toggle-compute"></label>
                             </div>
                         </div>
@@ -860,7 +874,7 @@
                 <div class="section-title">Boosters Activos</div>
                 <div class="boosters fade-up delay-2">
                     <div class="booster">
-                        <div class="booster__icon" style="background:var(--accent-glow)">🚀</div>
+                        <div class="booster__icon" class="bg-accent-glow">🚀</div>
                         <div class="booster__info">
                             <div class="booster__name">Nodo 24/7</div>
                             <div class="booster__desc">Activo más de 20h/día</div>
@@ -868,7 +882,7 @@
                         <div class="booster__multiplier">x1.5</div>
                     </div>
                     <div class="booster">
-                        <div class="booster__icon" style="background:var(--orange-glow)">⭐</div>
+                        <div class="booster__icon" class="bg-orange-glow">⭐</div>
                         <div class="booster__info">
                             <div class="booster__name">Afiliados Directos</div>
                             <div class="booster__desc">3 referidos activos</div>
@@ -876,7 +890,7 @@
                         <div class="booster__multiplier">x1.3</div>
                     </div>
                     <div class="booster">
-                        <div class="booster__icon" style="background:var(--blue-glow)">🔗</div>
+                        <div class="booster__icon" class="bg-blue-glow">🔗</div>
                         <div class="booster__info">
                             <div class="booster__name">DID Verificado</div>
                             <div class="booster__desc">Identidad peaq on-chain</div>
@@ -1033,7 +1047,7 @@
                 <div class="section-title">Métodos de Retiro</div>
                 <div class="methods">
                     <div class="method" onclick="showToast('Retiro PayPal procesado')">
-                        <div class="method__icon" style="background:var(--blue-glow)">💳</div>
+                        <div class="method__icon" class="bg-blue-glow">💳</div>
                         <div class="method__info">
                             <div class="method__name">PayPal</div>
                             <div class="method__detail">Retiro directo a tu cuenta</div>
@@ -1041,7 +1055,7 @@
                         <div class="method__fee">1%</div>
                     </div>
                     <div class="method" onclick="showToast('Retiro SPEI procesado')">
-                        <div class="method__icon" style="background:var(--orange-glow)">🏦</div>
+                        <div class="method__icon" class="bg-orange-glow">🏦</div>
                         <div class="method__info">
                             <div class="method__name">SPEI (MX)</div>
                             <div class="method__detail">Transferencia bancaria México</div>
@@ -1049,7 +1063,7 @@
                         <div class="method__fee">$10 MXN</div>
                     </div>
                     <div class="method" onclick="showToast('Retiro PIX procesado')">
-                        <div class="method__icon" style="background:var(--accent-glow)">🇧🇷</div>
+                        <div class="method__icon" class="bg-accent-glow">🇧🇷</div>
                         <div class="method__info">
                             <div class="method__name">PIX (BR)</div>
                             <div class="method__detail">Transferencia bancaria Brasil</div>
@@ -1057,7 +1071,7 @@
                         <div class="method__fee" style="color:var(--accent)">Gratis</div>
                     </div>
                     <div class="method" onclick="showToast('Retiro PSE procesado')">
-                        <div class="method__icon" style="background:var(--purple-glow)">🇨🇴</div>
+                        <div class="method__icon" class="bg-purple-glow">🇨🇴</div>
                         <div class="method__info">
                             <div class="method__name">PSE (CO)</div>
                             <div class="method__detail">Transferencia bancaria Colombia</div>
@@ -1088,7 +1102,7 @@
                 <div class="section-title">Dispositivo</div>
                 <div class="resource active" style="border-color:var(--accent)">
                     <div class="resource__header">
-                        <div class="resource__icon" style="background:var(--accent-glow)">📱</div>
+                        <div class="resource__icon" class="bg-accent-glow">📱</div>
                         <div class="resource__toggle">
                             <input type="checkbox" checked disabled>
                             <label style="background:var(--accent)"></label>
@@ -1134,23 +1148,23 @@
         <!-- BOTTOM NAV -->
         <nav class="nav">
             <div class="nav__list">
-                <button class="nav__item active" onclick="nav('home')">
+                <button class="nav__item active" onclick="nav('home')" aria-label="Inicio">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                     Inicio
                 </button>
-                <button class="nav__item" onclick="nav('network')">
+                <button class="nav__item" onclick="nav('network')" aria-label="Red">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v10M1 12h6m6 0h10"/></svg>
                     Red
                 </button>
-                <button class="nav__item" onclick="nav('affiliates')">
+                <button class="nav__item" onclick="nav('affiliates')" aria-label="Afiliados">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     Afiliados
                 </button>
-                <button class="nav__item" onclick="nav('withdraw')">
+                <button class="nav__item" onclick="nav('withdraw')" aria-label="Retirar">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                     Retirar
                 </button>
-                <button class="nav__item" onclick="nav('profile')">
+                <button class="nav__item" onclick="nav('profile')" aria-label="Perfil">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     Perfil
                 </button>
@@ -1158,6 +1172,28 @@
         </nav>
     </div>
     
+    <!-- FOOTER -->
+    <div style="text-align:center;padding:20px 16px;margin-top:20px;border-top:1px solid var(--border)">
+        <div style="display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap">
+            <a href="../" style="color:var(--text-2);font-size:12px;text-decoration:none" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-2)'">← Inicio</a>
+            <a href="beta.html" style="color:var(--text-2);font-size:12px;text-decoration:none" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-2)'">Beta</a>
+            <a href="roadmap.html" style="color:var(--text-2);font-size:12px;text-decoration:none" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-2)'">Plan</a>
+            <a href="privacy.html" style="color:var(--text-2);font-size:12px;text-decoration:none" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-2)'">Privacidad</a>
+        </div>
+        <p style="font-size:11px;color:var(--text-3)">© 2026 Resource Digital. Demo interactivo.</p>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="text-align:center;padding:24px 16px;margin-top:20px;border-top:1px solid var(--border)">
+        <div style="display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap">
+            <a href="../" style="color:var(--text-2);font-size:12px;text-decoration:none">← Inicio</a>
+            <a href="beta.html" style="color:var(--text-2);font-size:12px;text-decoration:none">Beta</a>
+            <a href="roadmap.html" style="color:var(--text-2);font-size:12px;text-decoration:none">Plan</a>
+            <a href="privacy.html" style="color:var(--text-2);font-size:12px;text-decoration:none">Privacidad</a>
+        </div>
+        <p style="font-size:11px;color:var(--text-3)">© 2026 Resource Digital. Demo interactivo.</p>
+    </div>
+
     <!-- TOAST -->
     <div class="toast" id="toast"></div>
     
