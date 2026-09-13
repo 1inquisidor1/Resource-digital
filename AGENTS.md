@@ -33,9 +33,9 @@ Si un archivo no existe en `docs/INDEX.md`, **no lo crees sin añadirlo al índi
 
 | Carpeta | Contenido | Editable |
 |---|---|---|
-| `docs/` | Documentación en markdown | ✅ Sí |
+| `docs/` | Documentación en markdown | Sí |
 | `docs/systems/` | Un archivo por sistema (S01–S21) | ✅ Sí |
-| `docs/_archive/` | Documentos originales | ❌ No |
+| `docs/_archive/` | Documentos originales | No |
 | `app/` | Proyecto Flutter | ✅ Sí |
 | `web/` | Landing page | ✅ Sí |
 | `supabase/` | Configuración Supabase | ✅ Sí |
@@ -92,7 +92,7 @@ related: [...]
 
 ## Estado
 - Fase: X
-- Estado: ⏳ Pendiente |  En progreso | ✅ Completado
+- Estado: Pendiente |  En progreso | Completado
 - Dependencias: SXX, SXX
 - Bloqueadores: (ninguno | descripción)
 

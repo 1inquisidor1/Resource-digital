@@ -21,7 +21,7 @@ Banda $\rightarrow$ [Backend se integra en Fase 2]**
 |---|---------|---------|---------------|
 | 1 | App UI (Flutter) | Onboarding, billetera-nodo, panel de recursos | ⏳ Pendiente |
 | 2 | Servicio Primer Plano + Overlay | Notificación persistente, watchdog | ⏳ Pendiente |
-| 3 | Captura de Sensores | Luz, ruido, movimiento | ⏳ Fase 2 |
+| 3 | Captura de Sensores | Luz, ruido, movimiento | Fase 2 |
 | 4 | Buffer Local (SQLite WAL) | Almacenamiento cifrado 24h | ⏳ Pendiente |
 | 5 | SDK de Banda | Monetización de ancho de banda | Solicitud Enviada |
 | 6 | Capa peaq | peaq ID, peaq pay | ⏳ Fase 2 |
@@ -47,7 +47,7 @@ Banda $\rightarrow$ [Backend se integra en Fase 2]**
 
 | # | Sistema | Función | Estado |
 |---|---------|---------|--------|
-| 19 | DeNet Storage | Almacenamiento descentralizado | ⏳ Fase 3 |
+| 19 | DeNet Storage | Almacenamiento descentralizado | Fase 3 |
 | 20 | Acurast Compute | Cómputo descentralizado | ⏳ Fase 3 |
 | 21 | PayOS Gateway | Pagos interoperables LatAm | ⏳ Fase 3 |
 
