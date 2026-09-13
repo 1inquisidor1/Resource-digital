@@ -8,7 +8,7 @@ related: []
 ---
 
 
-## 📱 Frontend & Mobile
+##  Frontend & Mobile
 
 - **Framework:** Flutter 3.47.4 / Dart 3.13.3
 - **IDE:** Android Studio / VS Code
@@ -16,7 +16,7 @@ related: []
 - **Android SDK:** API **37** / Build-tools 37.0.0
 - **Estado:** Riverpod 2.6.1 / go_router 14.6.2
 
-## ⚙️ Backend & Infraestructura
+##  Backend & Infraestructura
 
 - **Backend:** Supabase (PostgreSQL 15+) - *Fase 2*
 - **Auth:** Supabase Auth (JWT) - *Fase 2 (Fase 1 es local)*
@@ -24,7 +24,7 @@ related: []
 - **Monitoreo:** Sentry + UptimeRobot - *Fase 2*
 - **Analytics:** PostHog + Metabase - *Fase 2*
 
-## ⛓️ Capa DePIN & Blockchain
+##  Capa DePIN & Blockchain
 
 - **L1 Blockchain:** peaq - *Fase 2*
 - **Identidad:** peaq ID (DID) - *Fase 2*
@@ -32,7 +32,7 @@ related: []
 - **Almacenamiento:** DeNet (Watcher Node) - *Fase 3*
 - **Cómputo:** Acurast (Processor Lite) - *Fase 3*
 
-## 🔌 SDKs & Librerías Clave
+##  SDKs & Librerías Clave
 
 - **Banda:** Honeygain (Solicitud Enviada), Pawns.app (Solicitud Enviada), BrightSDK (En proceso
 Paso 2/5)

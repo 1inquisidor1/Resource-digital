@@ -13,7 +13,7 @@ related: [INDEX.md, 00-vision-general.md]
 
 ---
 
-## 📁 Estructura
+##  Estructura
 
 | Carpeta | Contenido |
 |---------|-----------|
@@ -23,7 +23,7 @@ related: [INDEX.md, 00-vision-general.md]
 
 ---
 
-## 🧭 Navegación Rápida
+##  Navegación Rápida
 
 ### Documentación Estratégica
 - [Visión General](00-vision-general.md) — Concepto, propuesta de valor, modelo de ingresos
@@ -42,7 +42,7 @@ related: [INDEX.md, 00-vision-general.md]
 
 ---
 
-## 🌐 Enlaces del Sitio
+##  Enlaces del Sitio
 
 | Página | Descripción |
 |--------|-------------|

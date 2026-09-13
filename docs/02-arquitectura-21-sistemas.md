@@ -8,12 +8,12 @@ related: []
 ---
 
 
-## 🏗️ Diagrama de Flujo
+##  Diagrama de Flujo
 
 **UI $\rightarrow$ Servicio $\rightarrow$ Sensores $\rightarrow$ Buffer Local $\rightarrow$ SDK
 Banda $\rightarrow$ [Backend se integra en Fase 2]**
 
-## 🧩 Desglose de 21 Sistemas
+##  Desglose de 21 Sistemas
 
 ### Sistemas Core (1-9)
 
@@ -23,7 +23,7 @@ Banda $\rightarrow$ [Backend se integra en Fase 2]**
 | 2 | Servicio Primer Plano + Overlay | Notificación persistente, watchdog | ⏳ Pendiente |
 | 3 | Captura de Sensores | Luz, ruido, movimiento | ⏳ Fase 2 |
 | 4 | Buffer Local (SQLite WAL) | Almacenamiento cifrado 24h | ⏳ Pendiente |
-| 5 | SDK de Banda | Monetización de ancho de banda | 🟡 Solicitud Enviada |
+| 5 | SDK de Banda | Monetización de ancho de banda | Solicitud Enviada |
 | 6 | Capa peaq | peaq ID, peaq pay | ⏳ Fase 2 |
 | 7 | Boosters y Reparto | Multiplicadores, fórmula 70/30 | ⏳ Fase 2 (Basado en Backend) |
 | 8 | Panel de Recursos | Transparencia de uso y ganancias | ⏳ Pendiente |
@@ -51,7 +51,7 @@ Banda $\rightarrow$ [Backend se integra en Fase 2]**
 | 20 | Acurast Compute | Cómputo descentralizado | ⏳ Fase 3 |
 | 21 | PayOS Gateway | Pagos interoperables LatAm | ⏳ Fase 3 |
 
-## 🛡️ Garantías de Atomicidad
+##  Garantías de Atomicidad
 
 - **Sin dependencias circulares:** Flujo unidireccional.
 - **Aislamiento:** Isolate para el servicio y SQLite para el buffer.

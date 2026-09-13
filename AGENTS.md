@@ -15,7 +15,7 @@
 - **Un tema = un archivo**: no crear archivos "varios" o "misc".
 - **Fechas en ISO 8601**: `2026-09-13`. Nunca `13/09/2026` ni `septiembre 2026`.
 - **Idioma**: documentación en español. Código y variables en inglés.
-- **Sin emojis decorativos**. Solo `✅` `⚠️` `❌` `⏳` `🟡` para estado.
+- **Sin emojis decorativos**. Solo `✅` `⚠` `❌` `⏳` `` para estado.
 
 ---
 
@@ -91,7 +91,7 @@ related: [...]
 
 ## Estado
 - Fase: X
-- Estado: ⏳ Pendiente | 🟡 En progreso | ✅ Completado
+- Estado: ⏳ Pendiente |  En progreso | ✅ Completado
 - Dependencias: SXX, SXX
 - Bloqueadores: (ninguno | descripción)
 

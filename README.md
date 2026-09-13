@@ -1,4 +1,4 @@
-# Resource Digital 🌐
+# Resource Digital
 
 > **El primer DePIN móvil multipropósito diseñado para Latinoamérica.**
 
@@ -9,7 +9,7 @@
 
 ---
 
-## 🎯 Propuesta de Valor
+## Propuesta de Valor
 
 > *"Tu teléfono es un nodo. Mientras no lo usas, generas ingresos. Tú controlas cuántos dispositivos vincular y qué recursos activar."*
 
@@ -17,25 +17,25 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 
 | Recurso | SDK/Integración | Estado |
 |---------|----------------|--------|
-| 📡 Ancho de Banda | Honeygain + Pawns + BrightSDK | 🟡 En progreso |
-| 📊 Sensores | Luz, ruido, movimiento | ⏳ Planificado (Fase 2) |
-| 💾 Almacenamiento | DeNet (Fase 3) | ⏳ Planificado |
-| ⚡ Cómputo | Acurast (Fase 3) | ⏳ Planificado |
+| Ancho de Banda | Honeygain + Pawns + BrightSDK |  En progreso |
+| Sensores | Luz, ruido, movimiento | ⏳ Planificado (Fase 2) |
+| Almacenamiento | DeNet (Fase 3) | ⏳ Planificado |
+| Computo | Acurast (Fase 3) | ⏳ Planificado |
 
 ---
 
-## 🚀 Demo en Vivo
+## Demo en Vivo
 
 | Recurso | Enlace |
 |---------|--------|
-| 🌐 **Página Principal** | [Ver sitio](https://1inquisidor1.github.io/Resource-digital/) |
-| 📱 **Demo App** | [Simulador interactivo](https://1inquisidor1.github.io/Resource-digital/legal/app-simulator.html) |
-| 🎯 **Beta Cerrada** | [Registrarse](https://1inquisidor1.github.io/Resource-digital/legal/beta.html) |
-| 🗺️ **Plan de Desarrollo** | [Ver roadmap](https://1inquisidor1.github.io/Resource-digital/legal/roadmap.html) |
+| Pagina Principal | [Ver sitio](https://1inquisidor1.github.io/Resource-digital/) |
+| Demo App | [Simulador interactivo](https://1inquisidor1.github.io/Resource-digital/legal/app-simulator.html) |
+| Beta Cerrada | [Registrarse](https://1inquisidor1.github.io/Resource-digital/legal/beta.html) |
+| Plan de Desarrollo | [Ver roadmap](https://1inquisidor1.github.io/Resource-digital/legal/roadmap.html) |
 
 ---
 
-## 💰 Modelo de Ingresos
+## Modelo de Ingresos
 
 | Fuente | Tipo | Est. Ingreso | Fase |
 |--------|------|--------------|------|
@@ -49,7 +49,7 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 
 ---
 
-## 🔐 Seguridad y Privacidad
+## Seguridad y Privacidad
 
 - ✅ Datos de sensores **anonimizados** antes de compartir
 - ✅ Cifrado **AES-256** en reposo
@@ -59,7 +59,7 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Stack Tecnológico
 
 | Categoría | Tecnología |
 |-----------|------------|
@@ -74,20 +74,20 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 
 ---
 
-## 📋 Sistemas Atómicos (21)
+## Sistemas Atomicos (21)
 
 ```
-S01-S05:   Core Node (App, Sensores, Buffer, Banda, Foreground)
-S06-S09:   DePIN Layer (peaq, Boosters, Panel, Affiliates)
-S10-S18:   Soporte (Auth, Withdrawals, Notificaciones, Soporte, Admin, Analytics, Legal, Flags, Monitoring)
-S19-S21:   Ecosistema (DeNet, Acurast, PayOS)
+S01-S05: Core Node (App, Sensores, Buffer, Banda, Foreground)
+S06-S09: DePIN Layer (peaq, Boosters, Panel, Affiliates)
+S10-S18: Soporte (Auth, Withdrawals, Notificaciones, Soporte, Admin, Analytics, Legal, Flags, Monitoring)
+S19-S21: Ecosistema (DeNet, Acurast, PayOS)
 ```
 
 Ver documentación completa: [docs/INDEX.md](docs/INDEX.md)
 
 ---
 
-## 🤝 Contribuir
+## Contribuir
 
 Este proyecto está en desarrollo activo. Para contribuir:
 
@@ -97,24 +97,24 @@ Este proyecto está en desarrollo activo. Para contribuir:
 
 ---
 
-## 📞 Contacto
+## Contacto
 
-- 📧 **Email:** andy@resourcedigital.dpdns.org
-- 💬 **GitHub:** [@1inquisidor1](https://github.com/1inquisidor1)
+- **Email:** andy@resourcedigital.dpdns.org
+- **GitHub:** [@1inquisidor1](https://github.com/1inquisidor1)
 
 ---
 
-## 📄 Licencia
+## Licencia
 
 [MIT License](LICENSE) — Libre uso, modificación y distribución.
 
 ---
 
 <p align="center">
-  <strong>© 2026 Resource Digital. Construyendo el futuro DePIN en Latinoamérica.</strong><br>
-  <a href="legal/privacy.html">Privacidad</a> · 
-  <a href="legal/terms.html">Términos</a> · 
-  <a href="legal/roadmap.html">Plan</a> · 
-  <a href="legal/beta.html">Beta</a> · 
-  <a href="legal/app-simulator.html">Demo</a>
+ <strong>© 2026 Resource Digital. Construyendo el futuro DePIN en Latinoamérica.</strong><br>
+ <a href="legal/privacy.html">Privacidad</a> ·
+ <a href="legal/terms.html">Términos</a> ·
+ <a href="legal/roadmap.html">Plan</a> ·
+ <a href="legal/beta.html">Beta</a> ·
+ <a href="legal/app-simulator.html">Demo</a>
 </p>

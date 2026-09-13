@@ -8,7 +8,7 @@ related: []
 ---
 
 
-## 🎯 Fase 1: Pre-Beta Infraestructura Core (v5.1 ALPHA)
+##  Fase 1: Pre-Beta Infraestructura Core (v5.1 ALPHA)
 
 **Objetivo:** Preparación e integración de MVP para validación en Ecuador.
 
@@ -17,7 +17,7 @@ related: []
 - **Semana 3:** Servicio Foreground + Overlay + Notificaciones locales.
 - **Semana 4:** Validación Interna (5-10 usuarios beta en Ecuador).
 
-## 🎯 Fase 2: Capa DePIN con peaq (Semanas 5-8)
+##  Fase 2: Capa DePIN con peaq (Semanas 5-8)
 
 **Objetivo:** Diferenciación tecnológica, backend y descentralización.
 
@@ -26,7 +26,7 @@ related: []
 - **Semana 7:** Retiros (Requiere configuración de cuentas PayPal/Banco).
 - **Semana 8:** Panel Admin + Monitoreo.
 
-## 🎯 Fase 3: Ecosistema Completo (Semanas 9+)
+##  Fase 3: Ecosistema Completo (Semanas 9+)
 
 **Objetivo:** Fuentes de ingreso de alto valor.
 

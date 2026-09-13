@@ -19,6 +19,9 @@
 | [01-fase1-honeygain.md](./01-fase1-honeygain.md) | Fase 1 Honeygain | active |
 | [README.md](./README.md) | README documentacion | active |
 
+| [README.md](./README.md) | README documentacion | active |
+| [_inconsistencies.md](./_inconsistencies.md) | Incoherencias Detectadas | archived |
+
 ## Sistemas
 
 | ID | Archivo | Nombre | Fase | Estado |
