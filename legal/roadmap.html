@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resource Digital - Plan de Desarrollo. Conoce nuestra hoja de ruta, fases y el progreso del proyecto.">
+    <meta name="theme-color" content="#00e5a0">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Resource Digital | Plan de Desarrollo">
+    <meta property="og:description" content="Plan de Desarrollo completo - Resource Digital">
+    <title>Resource Digital | Plan de Desarrollo</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-0: #070b14;
+            --bg-1: #0d1321;
+            --bg-2: #151d2e;
+            --bg-3: #1a2540;
+            --border: #1e2a3a;
+            --border-hover: #2a3a52;
+            --text-0: #f8fafc;
+            --text-1: #cbd5e1;
+            --text-2: #94a3b8;
+            --text-3: #64748b;
+            --accent: #00e5a0;
+            --accent-dim: #00b884;
+            --accent-glow: rgba(0, 229, 160, 0.12);
+            --warning: #fbbf24;
+            --danger: #f87171;
+            --info: #60a5fa;
+            --future: #a78bfa;
+            --gradient-primary: linear-gradient(135deg, var(--accent) 0%, var(--info) 100%);
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+            --fs-xs: 0.75rem;
+            --fs-sm: 0.875rem;
+            --fs-base: 1rem;
+            --fs-lg: 1.125rem;
+            --fs-xl: 1.5rem;
+            --fs-2xl: 2rem;
+            --fs-3xl: 2.75rem;
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.6);
+            --shadow-glow: 0 0 32px var(--accent-glow);
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+            --dur-fast: 150ms;
+            --dur: 250ms;
+            --dur-slow: 400ms;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-0);
+            color: var(--text-1);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+        ::selection { background: var(--accent); color: var(--bg-0); }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* BACK LINK */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-8);
+            padding: var(--space-2) var(--space-4);
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: var(--fs-sm);
+            color: var(--text-2);
+            transition: all var(--dur) var(--ease);
+        }
+        .back-link:hover {
+            background: var(--bg-3);
+            border-color: var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* CONTAINER */
+        .roadmap-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--space-16) var(--space-6);
+        }
+
+        /* HEADER */
+        .roadmap-header {
+            text-align: center;
+            margin-bottom: var(--space-16);
+            padding-bottom: var(--space-8);
+            border-bottom: 1px solid var(--border);
+        }
+        .roadmap-header__brand {
+            font-size: var(--fs-xl);
+            font-weight: 800;
+            color: var(--text-0);
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+            margin-bottom: var(--space-4);
+        }
+        .roadmap-header__brand-accent {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .roadmap-header__title {
+            font-size: var(--fs-3xl);
+            font-weight: 800;
+            color: var(--text-0);
+            margin-bottom: var(--space-4);
+        }
+        .roadmap-header__subtitle {
+            color: var(--text-2);
+            font-size: var(--fs-lg);
+        }
+
+        /* STATUS BAR */
+        .status-bar {
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            margin-bottom: var(--space-12);
+        }
+        .status-bar__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-6);
+            text-align: center;
+        }
+        .status-bar__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-2);
+        }
+        .status-bar__value {
+            font-size: var(--fs-2xl);
+            font-weight: 800;
+            color: var(--accent);
+        }
+        .status-bar__label {
+            font-size: var(--fs-xs);
+            color: var(--text-3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* INTRO */
+        .intro-section {
+            margin-bottom: var(--space-12);
+        }
+        .intro-section p {
+            margin-bottom: var(--space-4);
+            color: var(--text-1);
+        }
+        .intro-section__highlight {
+            background: var(--bg-2);
+            border-left: 3px solid var(--accent);
+            padding: var(--space-4) var(--space-6);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: var(--space-6) 0;
+        }
+
+        /* PHASES */
+        .phase {
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-8);
+            overflow: hidden;
+        }
+        .phase__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-6);
+            background: var(--bg-2);
+            border-bottom: 1px solid var(--border);
+        }
+        .phase__header-left {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+        }
+        .phase__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-1) var(--space-3);
+            background: var(--bg-3);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: var(--fs-xs);
+            font-weight: 600;
+            color: var(--text-2);
+        }
+        .phase__badge--active {
+            background: rgba(0, 229, 160, 0.1);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .phase__badge--progress {
+            background: rgba(96, 165, 250, 0.1);
+            border-color: var(--info);
+            color: var(--info);
+        }
+        .phase__badge--planned {
+            background: rgba(167, 139, 250, 0.1);
+            border-color: var(--future);
+            color: var(--future);
+        }
+        .phase__title {
+            font-size: var(--fs-xl);
+            font-weight: 700;
+            color: var(--text-0);
+        }
+        .phase__timeline {
+            font-size: var(--fs-sm);
+            color: var(--text-2);
+        }
+        .phase__body {
+            padding: var(--space-6);
+        }
+        .phase__objective {
+            margin-bottom: var(--space-6);
+        }
+        .phase__objective-label {
+            font-size: var(--fs-xs);
+            font-weight: 600;
+            color: var(--text-3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-2);
+        }
+        .phase__objective-text {
+            font-size: var(--fs-base);
+            color: var(--text-1);
+        }
+
+        /* WEEKS */
+        .weeks-grid {
+            display: grid;
+            gap: var(--space-4);
+        }
+        .week {
+            display: flex;
+            gap: var(--space-4);
+            padding: var(--space-4);
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            transition: all var(--dur) var(--ease);
+        }
+        .week:hover {
+            border-color: var(--accent);
+            background: var(--bg-3);
+        }
+        .week__number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 40px;
+            height: 40px;
+            background: var(--bg-3);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            font-size: var(--fs-sm);
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .week__content {
+            flex: 1;
+        }
+        .week__title {
+            font-size: var(--fs-base);
+            font-weight: 600;
+            color: var(--text-0);
+            margin-bottom: var(--space-2);
+        }
+        .week__tasks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+        }
+        .week__task {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-1);
+            padding: var(--space-1) var(--space-3);
+            background: var(--bg-3);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: var(--fs-xs);
+            color: var(--text-2);
+        }
+        .week__task--highlight {
+            background: rgba(0, 229, 160, 0.1);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* SYSTEMS */
+        .systems-section {
+            margin-top: var(--space-12);
+        }
+        .systems-section__title {
+            font-size: var(--fs-xl);
+            font-weight: 700;
+            color: var(--text-0);
+            margin-bottom: var(--space-6);
+        }
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: var(--space-4);
+        }
+        .system-card {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-4);
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            transition: all var(--dur) var(--ease);
+        }
+        .system-card:hover {
+            border-color: var(--accent);
+            background: var(--bg-2);
+        }
+        .system-card__badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            height: 36px;
+            background: var(--bg-3);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            font-size: var(--fs-xs);
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .system-card__info {
+            flex: 1;
+        }
+        .system-card__name {
+            font-size: var(--fs-sm);
+            font-weight: 600;
+            color: var(--text-0);
+        }
+        .system-card__phase {
+            font-size: var(--fs-xs);
+            color: var(--text-3);
+        }
+
+        /* TECH STACK */
+        .tech-section {
+            margin-top: var(--space-12);
+            padding: var(--space-6);
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+        }
+        .tech-section__title {
+            font-size: var(--fs-xl);
+            font-weight: 700;
+            color: var(--text-0);
+            margin-bottom: var(--space-6);
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-4);
+        }
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3) var(--space-4);
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: var(--fs-sm);
+            color: var(--text-1);
+        }
+        .tech-item__icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-3);
+            border-radius: var(--radius-sm);
+            font-size: var(--fs-xs);
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* FOOTER */
+        .roadmap-footer {
+            text-align: center;
+            margin-top: var(--space-16);
+            padding-top: var(--space-8);
+            border-top: 1px solid var(--border);
+        }
+        .roadmap-footer p {
+            color: var(--text-3);
+            font-size: var(--fs-sm);
+        }
+        .roadmap-footer__links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+        .roadmap-footer__links a {
+            color: var(--text-2);
+            font-size: var(--fs-sm);
+            transition: color var(--dur-fast) var(--ease);
+        }
+        .roadmap-footer__links a:hover {
+            color: var(--accent);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .status-bar__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .systems-grid {
+                grid-template-columns: 1fr;
+            }
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+            .phase__header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="roadmap-container">
+        <a href="../" class="back-link">← Volver al inicio</a>
+        
+        <header class="roadmap-header">
+            <div class="roadmap-header__brand">
+                <span class="roadmap-header__brand-accent">RESOURCE</span> DIGITAL
+            </div>
+            <h1 class="roadmap-header__title">Plan de Desarrollo</h1>
+            <p class="roadmap-header__subtitle">Hoja de ruta completa del proyecto DePIN movil multiproposito</p>
+        </header>
+
+        <!-- STATUS BAR -->
+        <div class="status-bar">
+            <div class="status-bar__grid">
+                <div class="status-bar__item">
+                    <span class="status-bar__value">21</span>
+                    <span class="status-bar__label">Sistemas</span>
+                </div>
+                <div class="status-bar__item">
+                    <span class="status-bar__value">3</span>
+                    <span class="status-bar__label">Fases</span>
+                </div>
+                <div class="status-bar__item">
+                    <span class="status-bar__value">12</span>
+                    <span class="status-bar__label">Semanas</span>
+                </div>
+                <div class="status-bar__item">
+                    <span class="status-bar__value">EC</span>
+                    <span class="status-bar__label">Mercado</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- INTRO -->
+        <section class="intro-section">
+            <p>
+                <strong>Resource Digital</strong> es el primer DePIN movil multiproposito disenado para 
+                <strong>Latamerica</strong>. Nuestro plan de desarrollo esta estructurado en 
+                <strong>3 fases</strong> que abarcan <strong>12 semanas</strong> de trabajo intensivo.
+            </p>
+            <div class="intro-section__highlight">
+                <strong>Estado actual:</strong> v5.1 ALPHA (Pre-Beta Infraestructura Core). 
+                El proyecto se encuentra en la <strong>Fase 1</strong> de desarrollo.
+            </div>
+            <p>
+                Cada fase esta disenada para entregar valor de forma incremental, comenzando con la 
+                infraestructura basica del nodo, seguida de la capa de descentralizacion con peaq, 
+                y finalmente el ecosistema completo con almacenamiento y computo descentralizado.
+            </p>
+        </section>
+
+        <!-- FASE 1 -->
+        <div class="phase">
+            <div class="phase__header">
+                <div class="phase__header-left">
+                    <span class="phase__badge phase__badge--active">En Progreso</span>
+                    <h2 class="phase__title">Fase 1: Pre-Beta Infraestructura Core</h2>
+                </div>
+                <span class="phase__timeline">Semanas 1-4</span>
+            </div>
+            <div class="phase__body">
+                <div class="phase__objective">
+                    <span class="phase__objective-label">Objetivo</span>
+                    <p class="phase__objective-text">Preparacion e integracion de MVP para validacion en Ecuador.</p>
+                </div>
+                <div class="weeks-grid">
+                    <div class="week">
+                        <div class="week__number">S1</div>
+                        <div class="week__content">
+                            <h3 class="week__title">Configuracion de Entorno y Aprobacion de SDKs</h3>
+                            <div class="week__tasks">
+                                <span class="week__task week__task--highlight">Flutter + Riverpod</span>
+                                <span class="week__task">Configuracion CI/CD</span>
+                                <span class="week__task">Aprobacion Honeygain</span>
+                                <span class="week__task">Aprobacion Pawns.app</span>
+                                <span class="week__task">Registro BrightSDK</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week__number">S2</div>
+                        <div class="week__content">
+                            <h3 class="week__title">UI y Integracion SDK de Banda</h3>
+                            <div class="week__tasks">
+                                <span class="week__task">Diseno UI/UX completo</span>
+                                <span class="week__task week__task--highlight">Onboarding de usuario</span>
+                                <span class="week__task">Integracion Honeygain SDK</span>
+                                <span class="week__task">Integracion Pawns SDK</span>
+                                <span class="week__task">Auth Local (SQLite)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week__number">S3</div>
+                        <div class="week__content">
+                            <h3 class="week__title">Servicio Foreground y Notificaciones</h3>
+                            <div class="week__tasks">
+                                <span class="week__task week__task--highlight">Servicio primer plano</span>
+                                <span class="week__task">Overlay de estado</span>
+                                <span class="week__task">Notificaciones locales</span>
+                                <span class="week__task">Gestion de bateria</span>
+                                <span class="week__task">Widgets Android</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week__number">S4</div>
+                        <div class="week__content">
+                            <h3 class="week__title">Validacion Interna</h3>
+                            <div class="week__tasks">
+                                <span class="week__task week__task--highlight">5-10 usuarios beta</span>
+                                <span class="week__task">Testing en Ecuador</span>
+                                <span class="week__task">Recoleccion de metricas</span>
+                                <span class="week__task">Ajustes de rendimiento</span>
+                                <span class="week__task">Preparacion Fase 2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FASE 2 -->
+        <div class="phase">
+            <div class="phase__header">
+                <div class="phase__header-left">
+                    <span class="phase__badge phase__badge--progress">Planificado</span>
+                    <h2 class="phase__title">Fase 2: Capa DePIN con peaq</h2>
+                </div>
+                <span class="phase__timeline">Semanas 5-8</span>
+            </div>
+            <div class="phase__body">
+                <div class="phase__objective">
+                    <span class="phase__objective-label">Objetivo</span>
+                    <p class="phase__objective-text">Diferenciacion tecnologica, backend y descentralizacion.</p>
+                </div>
+                <div class="weeks-grid">
+                    <div class="week">
+                        <div class="week__number">S5</div>
+                        <div class="week__content">
+                            <h3 class="week__title">peaq SDK y Supabase Auth</h3>
+                            <div class="week__tasks">
+                                <span class="week__task week__task--highlight">Identidad DID peaq</span>
+                                <span class="week__task">peaq pay integracion</span>
+                                <span class="week__task">Supabase Auth</span>
+                                <span class="week__task">Wallet on-chain</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week__number">S6</div>
+                        <div class="week__content">
+                            <h3 class="week__title">Sensores, Buffer y Motor de Reparto</h3>
+                            <div class="week__tasks">
+                                <span class="week__task">Captura de sensores</span>
+                                <span class="week__task">Buffer local SQLite WAL</span>
+                                <span class="week__task week__task--highlight">Motor de Reparto 70/30</span>
+                                <span class="week__task">Multiplicadores</span>
+                                <span class="week__task">Analytics anonimo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week__number">S7</div>
+                        <div class="week__content">
+                            <h3 class="week__title">Retiros y Pagos</h3>
+                            <div class="week__tasks">
+                                <span class="week__task week__task--highlight">PayPal integration</span>
+                                <span class="week__task">Cuentas bancarias</span>
+                                <span class="week__task">Pasarela USDC-FIAT</span>
+                                <span class="week__task">Verificacion KYC</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week__number">S8</div>
+                        <div class="week__content">
+                            <h3 class="week__title">Panel Admin y Monitoreo</h3>
+                            <div class="week__tasks">
+                                <span class="week__task">Dashboard admin</span>
+                                <span class="week__task week__task--highlight">Monitoreo de red</span>
+                                <span class="week__task">Alertas de fraude</span>
+                                <span class="week__task">Soporte al usuario</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FASE 3 -->
+        <div class="phase">
+            <div class="phase__header">
+                <div class="phase__header-left">
+                    <span class="phase__badge phase__badge--planned">Futuro</span>
+                    <h2 class="phase__title">Fase 3: Ecosistema Completo</h2>
+                </div>
+                <span class="phase__timeline">Semanas 9-12</span>
+            </div>
+            <div class="phase__body">
+                <div class="phase__objective">
+                    <span class="phase__objective-label">Objetivo</span>
+                    <p class="phase__objective-text">Fuentes de ingreso de alto valor mediante almacenamiento y computo.</p>
+                </div>
+                <div class="weeks-grid">
+                    <div class="week">
+                        <div class="week__number">S9</div>
+                        <div class="week__content">
+                            <h3 class="week__title">DeNet y Acurast</h3>
+                            <div class="week__tasks">
+                                <span class="week__task week__task--highlight">Almacenamiento DeNet</span>
+                                <span class="week__task">Computo Acurast</span>
+                                <span class="week__task">Integracion de red</span>
+                                <span class="week__task">Modelo de ingresos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week__number">S10</div>
+                        <div class="week__content">
+                            <h3 class="week__title">PayOS y Feature Flags</h3>
+                            <div class="week__tasks">
+                                <span class="week__task week__task--highlight">PayOS Gateway</span>
+                                <span class="week__task">Pagos multi-chain</span>
+                                <span class="week__task">Feature Flags</span>
+                                <span class="week__task">Despliegues graduales</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week__number">S11</div>
+                        <div class="week__content">
+                            <h3 class="week__title">Hardening de Seguridad</h3>
+                            <div class="week__tasks">
+                                <span class="week__task">RASP (Runtime Protection)</span>
+                                <span class="week__task week__task--highlight">Certificate Pinning</span>
+                                <span class="week__task">Deteccion de rooted</span>
+                                <span class="week__task">Pentesting basico</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week__number">S12</div>
+                        <div class="week__content">
+                            <h3 class="week__title">Beta Ampliada y Metricas</h3>
+                            <div class="week__tasks">
+                                <span class="week__task week__task--highlight">50 usuarios beta</span>
+                                <span class="week__task">Metricas finales</span>
+                                <span class="week__task">Optimizacion</span>
+                                <span class="week__task">Documentacion final</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SISTEMAS -->
+        <section class="systems-section">
+            <h2 class="systems-section__title">Sistemas Atomicos por Fase</h2>
+            <div class="systems-grid">
+                <div class="system-card">
+                    <span class="system-card__badge">S01</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">App UI</span>
+                        <span class="system-card__phase">Fase 1</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S02</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Foreground Service</span>
+                        <span class="system-card__phase">Fase 1</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S03</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Sensor Capture</span>
+                        <span class="system-card__phase">Fase 2</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S04</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">SQLite Buffer</span>
+                        <span class="system-card__phase">Fase 1</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S05</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Bandwidth Orchestrator</span>
+                        <span class="system-card__phase">Fase 1</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S06</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">peaq L1</span>
+                        <span class="system-card__phase">Fase 2</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S07</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Boosters Engine</span>
+                        <span class="system-card__phase">Fase 2</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S08</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Resource Panel</span>
+                        <span class="system-card__phase">Fase 2</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S09</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Affiliates v2.0</span>
+                        <span class="system-card__phase">Fase 2</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S10</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Auth & Registry</span>
+                        <span class="system-card__phase">Fase 1</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S11</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Withdrawals</span>
+                        <span class="system-card__phase">Fase 2</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S12</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Notifications</span>
+                        <span class="system-card__phase">Fase 1</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S13</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">User Support</span>
+                        <span class="system-card__phase">Fase 2</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S14</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Admin Panel</span>
+                        <span class="system-card__phase">Fase 2</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S15</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Analytics</span>
+                        <span class="system-card__phase">Fase 2</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S16</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Legal Compliance</span>
+                        <span class="system-card__phase">Fase 1</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S17</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Feature Flags</span>
+                        <span class="system-card__phase">Fase 3</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S18</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Monitoring</span>
+                        <span class="system-card__phase">Fase 2</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S19</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">DeNet Storage</span>
+                        <span class="system-card__phase">Fase 3</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S20</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">Acurast Compute</span>
+                        <span class="system-card__phase">Fase 3</span>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="system-card__badge">S21</span>
+                    <div class="system-card__info">
+                        <span class="system-card__name">PayOS Gateway</span>
+                        <span class="system-card__phase">Fase 3</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECH STACK -->
+        <section class="tech-section">
+            <h2 class="tech-section__title">Stack Tecnologico</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <span class="tech-item__icon">D</span>
+                    <span>Dart / Flutter</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item__icon">R</span>
+                    <span>Riverpod</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item__icon">S</span>
+                    <span>SQLite WAL</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item__icon">P</span>
+                    <span>peaq Network</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item__icon">H</span>
+                    <span>Honeygain</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item__icon">P</span>
+                    <span>Pawns.app</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item__icon">B</span>
+                    <span>BrightSDK</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item__icon">S</span>
+                    <span>Supabase</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item__icon">D</span>
+                    <span>DeNet</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item__icon">A</span>
+                    <span>Acurast</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item__icon">P</span>
+                    <span>PayOS</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item__icon">T</span>
+                    <span>Terraform</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="roadmap-footer">
+            <div class="roadmap-footer__links">
+                <a href="privacy.html">Privacidad</a>
+                <a href="terms.html">Terminos</a>
+                <a href="../">Inicio</a>
+            </div>
+            <p>© 2026 Resource Digital. Evolucionando hacia peaq.</p>
+            <p style="margin-top: var(--space-2); font-size: var(--fs-xs);">
+                Contacto: andy@resourcedigital.dpdns.org
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
