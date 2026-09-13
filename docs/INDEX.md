@@ -31,8 +31,8 @@
 | S06 | [s06-peaq-l1.md](./systems/s06-peaq-l1.md) | peaq L1 | 2 | planned |
 | S07 | [s07-boosters-engine.md](./systems/s07-boosters-engine.md) | Boosters Engine | 2 | planned |
 | S08 | [s08-resource-panel.md](./systems/s08-resource-panel.md) | Resource Panel | 2 | planned |
-| S09 | [s09-affiliates-v2.0.md](./systems/s09-affiliates-v2.0.md) | Affiliates v2.0 | 2 | planned |
-| S10 | [s10-auth-&-registry.md](./systems/s10-auth-&-registry.md) | Auth & Registry | 1 | pending |
+| S09 | [s09-affiliates-v2.md](./systems/s09-affiliates-v2.md) | Affiliates v2.0 | 2 | planned |
+| S10 | [s10-auth-registry.md](./systems/s10-auth-registry.md) | Auth & Registry | 1 | pending |
 | S11 | [s11-withdrawals.md](./systems/s11-withdrawals.md) | Withdrawals | 1 | pending |
 | S12 | [s12-notifications.md](./systems/s12-notifications.md) | Notifications | 1 | pending |
 | S13 | [s13-user-support.md](./systems/s13-user-support.md) | User Support | 2 | planned |

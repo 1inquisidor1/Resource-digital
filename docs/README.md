@@ -1,3 +1,12 @@
+---
+title: Documentación del Proyecto
+status: active
+phase: null
+owner: andy
+last_updated: 2026-01-15
+related: [INDEX.md, 00-vision-general.md]
+---
+
 # Documentación del Proyecto
 
 > Documentación técnica y estratégica de Resource Digital.
