@@ -17,9 +17,9 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 
 | Recurso | SDK/Integración | Estado |
 |---------|----------------|--------|
-| Ancho de Banda | Honeygain + Pawns + BrightSDK | 🟡 En progreso |
-| Sensores | Luz, ruido, movimiento | ⏳ Planificado (Fase 2) |
-| Almacenamiento | DeNet (Fase 3) | ⏳ Planificado |
+| Ancho de Banda | Honeygain + Pawns + BrightSDK | [En progreso] |
+| Sensores | Luz, ruido, movimiento | [Planificado - Fase 2] |
+| Almacenamiento | DeNet (Fase 3) | [Planificado] |
 | Computo | Acurast (Fase 3) | ⏳ Planificado |
 
 ---
