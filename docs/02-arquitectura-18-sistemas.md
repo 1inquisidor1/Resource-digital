@@ -7,14 +7,16 @@ last_updated: 2026-09-13
 related: []
 ---
 
-# Arquitectura de 21 Sistemas Atómicos
 
 ## 🏗️ Diagrama de Flujo
-**UI $\rightarrow$ Servicio $\rightarrow$ Sensores $\rightarrow$ Buffer Local $\rightarrow$ SDK Banda $\rightarrow$ [Backend se integra en Fase 2]**
+
+**UI $\rightarrow$ Servicio $\rightarrow$ Sensores $\rightarrow$ Buffer Local $\rightarrow$ SDK
+Banda $\rightarrow$ [Backend se integra en Fase 2]**
 
 ## 🧩 Desglose de 21 Sistemas
 
 ### Sistemas Core (1-9)
+
 | # | Sistema | Función | Fase 1 Estado |
 |---|---------|---------|---------------|
 | 1 | App UI (Flutter) | Onboarding, billetera-nodo, panel de recursos | ⏳ Pendiente |
@@ -28,6 +30,7 @@ related: []
 | 9 | Sistema de Afiliados v2.0 | 3 niveles, comisiones escalonadas | ⏳ Fase 2 |
 
 ### Sistemas de Soporte (10-18)
+
 | # | Sistema | Función | Fase 1 Estado |
 |---|---------|---------|---------------|
 | 10 | Autenticación y Registro | Email/Google/Wallet, peaq ID | ⏳ Pendiente (Local) |
@@ -49,11 +52,14 @@ related: []
 | 21 | PayOS Gateway | Pagos interoperables LatAm | ⏳ Fase 3 |
 
 ## 🛡️ Garantías de Atomicidad
+
 - **Sin dependencias circulares:** Flujo unidireccional.
 - **Aislamiento:** Isolate para el servicio y SQLite para el buffer.
 - **Idempotencia:** `UNIQUE` keys en eventos de referidos.
 
 ### Arquitectura Fase 1: Local-First
+
 En la Fase 1, la arquitectura es **local**. No depende de Supabase ni de peaq.
+
 - El reparto de ganancias (70/30) se calcula localmente.
 - La identidad es local hasta la integración de Supabase Auth en Fase 2.

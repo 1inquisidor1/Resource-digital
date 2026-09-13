@@ -11,9 +11,12 @@ related: []
 
 ## 1. ¿Qué es Honeygain SDK?
 
-Honeygain SDK es una solución de **monetización pasiva sin anuncios** que permite a los desarrolladores generar ingresos compartiendo el ancho de banda no utilizado de sus usuarios. El SDK corre en segundo plano, no accede a datos personales y es **GDPR y CCPA compliant**.
+Honeygain SDK es una solución de **monetización pasiva sin anuncios** que permite a los
+desarrolladores generar ingresos compartiendo el ancho de banda no utilizado de sus usuarios. El SDK
+corre en segundo plano, no accede a datos personales y es **GDPR y CCPA compliant**.
 
 **Datos clave (2026):**
+
 - Integración en menos de 30 minutos con documentación clara.
 - Pagos vía **PayPal o transferencia bancaria**.
 - Dashboard en tiempo real para trackear ganancias.
@@ -40,7 +43,9 @@ Honeygain SDK es una solución de **monetización pasiva sin anuncios** que perm
    - **Email corporativo** (o personal si aún no tienes empresa)
    - **Nombre de la app**: `Resource Digital`
    - **Plataforma**: Android
-   - **Descripción breve**: "App de ingresos pasivos que monetiza ancho de banda no utilizado mediante SDK de Honeygain"
+
+- **Descripción breve**: "App de ingresos pasivos que monetiza ancho de banda no utilizado mediante
+SDK de Honeygain"
 4. El equipo de **business developers** de Honeygain te contactará para asistirte en el proceso.
 
 ### Paso 2: Integrar el SDK
@@ -139,16 +144,19 @@ class HoneygainConsent {
 ## 7. Preguntas frecuentes del proceso
 
 **¿Necesito empresa registrada?**
-No. Honeygain permite publishers individuales. Si luego quieres facturar a escala, puedes registrar una empresa en Ecuador.
+No. Honeygain permite publishers individuales. Si luego quieres facturar a escala, puedes registrar
+una empresa en Ecuador.
 
 **¿Cuánto tarda el review?**
 Quick review: 1-2 días hábiles.
 
 **¿Puedo usar Honeygain junto a otros SDKs de banda?**
-Sí. Honeygain SDK es compatible con modelos híbridos. Cuando migres a Pawns.app en el futuro, puedes tener ambos en paralelo.
+Sí. Honeygain SDK es compatible con modelos híbridos. Cuando migres a Pawns.app en el futuro, puedes
+tener ambos en paralelo.
 
 **¿Qué pasa si un usuario desactiva el opt-in?**
-El SDK se detiene inmediatamente. No genera ingresos para ese usuario, pero tampoco consume recursos.
+El SDK se detiene inmediatamente. No genera ingresos para ese usuario, pero tampoco consume
+recursos.
 
 **¿Honeygain accede a datos personales?**
 No. El SDK está diseñado para **no recolectar PII** y todo el tráfico está cifrado.
@@ -157,8 +165,8 @@ No. El SDK está diseñado para **no recolectar PII** y todo el tráfico está c
 
 | Recurso | URL |
 |---------|-----|
-| Dashboard SDK | https://sdk.honeygain.com |
-| Registro publisher | https://sdk.honeygain.com/start-sdk-monetization |
-| Documentación | https://sdk.honeygain.com/blog |
+| Dashboard SDK | [https://sdk.honeygain.com](https://sdk.honeygain.com) |
+| Registro publisher | [https://sdk.honeygain.com/start-sdk-monetization](https://sdk.honeygain.com/start-sdk-monetization) |
+| Documentación | [https://sdk.honeygain.com/blog](https://sdk.honeygain.com/blog) |
 | Soporte | Contacto directo vía dashboard |
-| API (no oficial) | https://github.com/malmeloo/honeygain.py |
+| API (no oficial) | [https://github.com/malmeloo/honeygain.py](https://github.com/malmeloo/honeygain.py) |
