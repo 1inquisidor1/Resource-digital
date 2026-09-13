@@ -40,14 +40,14 @@
     <section class="relative px-6 pt-32 pb-20 md:pt-48 md:pb-32 max-w-7xl mx-auto text-center">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-green-500/10 blur-[120px] -z-10"></div>
         <div class="inline-block px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-mono mb-6">
-            v5.0 ALPHA - DEPIN INFRASTRUCTURE
+            v5.1 ALPHA - DEPIN INFRASTRUCTURE
         </div>
         <h1 class="text-5xl md:text-8xl font-extrabold text-white tracking-tight mb-8 leading-tight">
             Tu teléfono es un <span class="gradient-text">nodo.</span><br>
             Genera valor pasivo.
         </h1>
         <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-            El primer ecosistema DePIN móvil multipropósito de Latinoamérica. Convertimos el hardware inactivo en activos digitales productivos mediante la infraestructura de <span class="text-white font-semibold">peaq, Honeygain, DeNet y Acurast</span>.
+            El primer ecosistema DePIN móvil multipropósito de Latinoamérica. Construyendo la infraestructura DePIN móvil. Iniciamos con la monetización de recursos en Fase 1, integrando progresivamente a peaq (Fase 2), DeNet y Acurast (Fase 3).
         </p>
         <div class="flex flex-col md:flex-row items-center justify-center gap-6">
             <a href="#" class="bg-green-500 text-black px-10 py-4 rounded-2xl font-bold text-lg hover:bg-green-400 transition glow w-full md:w-auto">
@@ -90,32 +90,27 @@
             </div>
         </div>
     </section>
+    
     <section id="network" class="px-6 py-24 max-w-7xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Network Pulse</h2>
-            <p class="text-gray-400">Monitoreo en tiempo real de la infraestructura distribuida.</p>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Current Status</h2>
+            <p class="text-gray-400">Progreso real del despliegue de infraestructura.</p>
         </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <div class="p-8 rounded-3xl node-card text-center">
-                <div class="text-xs font-mono text-gray-500 mb-2 uppercase tracking-widest">Active Nodes</div>
-                <div id="node-count" class="text-4xl font-extrabold text-white">1,024</div>
-                <div class="text-green-400 text-xs mt-2">↑ 12% this week</div>
+                <div class="text-xs font-mono text-gray-500 mb-2 uppercase tracking-widest">Current Phase</div>
+                <div class="text-2xl font-extrabold text-white">Fase 1: Pre-Beta</div>
+                <div class="text-green-400 text-xs mt-2">Infraestructura Core en desarrollo</div>
             </div>
             <div class="p-8 rounded-3xl node-card text-center">
-                <div class="text-xs font-mono text-gray-500 mb-2 uppercase tracking-widest">Data Processed</div>
-                <div id="data-count" class="text-4xl font-extrabold text-white">42.8 TB</div>
-                <div class="text-blue-400 text-xs mt-2">Real-time sync</div>
-            </div>
-            <div class="p-8 rounded-3xl node-card text-center">
-                <div class="text-xs font-mono text-gray-500 mb-2 uppercase tracking-widest">Active Regions</div>
-                <div class="text-4xl font-extrabold text-white">EC / BR / MX</div>
-                <div class="text-gray-400 text-xs mt-2">LATAM Core</div>
+                <div class="text-xs font-mono text-gray-500 mb-2 uppercase tracking-widest">Target Region</div>
+                <div class="text-2xl font-extrabold text-white">Ecuador (EC)</div>
+                <div class="text-gray-400 text-xs mt-2">Mercado inicial de validación</div>
             </div>
             <div class="p-8 rounded-3xl node-card text-center">
                 <div class="text-xs font-mono text-gray-500 mb-2 uppercase tracking-widest">Network Status</div>
-                <div class="text-4xl font-extrabold text-green-400">STABLE</div>
-                <div class="text-gray-400 text-xs mt-2">peaq L1 Integrated</div>
+                <div class="text-2xl font-extrabold text-yellow-400">DEVELOPMENT</div>
+                <div class="text-gray-400 text-xs mt-2">Integración de SDKs en curso</div>
             </div>
         </div>
     </section>
@@ -151,16 +146,21 @@
                         Explorar Documentación Técnica <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                     </a>
                 </div>
-                <div class="md:w-1/2 grid grid-cols-2 gap-4 font-mono">
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S01: App UI Interface</div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S02: Foreground Service</div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S03: Sensor Capture</div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S04: SQLite Buffer</div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S05: Bandwidth SDK</div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S06: peaq L1 Layer</div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S07: Boosters Engine</div>
-                    <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S08: Resource Panel</div>
-                </div>
+                
+        <div class="md:w-1/2 grid grid-cols-2 gap-4 font-mono">
+            <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S01: App UI Interface</div>
+            <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S02: Foreground Service</div>
+            <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S03: Sensor Capture</div>
+            <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S04: SQLite Buffer</div>
+            <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S05: Bandwidth Aggregator</div>
+            <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S06: peaq L1 Layer</div>
+            <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S07: Boosters Engine</div>
+            <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S08: Resource Panel</div>
+            <div class="p-4 rounded-xl bg-black border border-green-500/50 text-xs text-green-400">S10: Auth & Registry</div>
+            <div class="p-4 rounded-xl bg-black border border-green-500/50 text-xs text-green-400">S11: Withdrawals</div>
+            <div class="p-4 rounded-xl bg-black border border-green-500/50 text-xs text-green-400">S16: Legal Compliance</div>
+            <div class="p-4 rounded-xl bg-black border border-white/10 text-xs text-gray-400">S17: Feature Flags</div>
+        </div>
             </div>
         </div>
     </section>
@@ -176,7 +176,7 @@
                     El uso compartido de ancho de banda solo comienza después de que usted lo acepta en un diálogo claro durante el registro. Puede desactivar el servicio en cualquier momento desde <span class="text-white font-semibold">Configuración &gt; Recursos &gt; Banda ancha</span>.
                 </p>
                 <p class="text-gray-400 leading-relaxed">
-                    El SDK de banda ancha de Honeygain nos permite conectar el ancho de banda no utilizado de nuestros usuarios con la infraestructura de IA global de Honeygain.
+                    Utilizamos un orquestador de SDKs de banda ancha (Honeygain, Pawns.app y BrightSDK) para conectar el ancho de banda no utilizado de nuestros usuarios con la infraestructura de IA global.
                 </p>
                 <p class="text-gray-400 leading-relaxed mt-4">
                     El SDK no accede a datos personales, archivos ni historial de navegación. Los datos de sensores se anonimizan en el dispositivo y solo se registran hashes en la blockchain de peaq.

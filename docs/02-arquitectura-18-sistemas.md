@@ -12,7 +12,7 @@
 | 2 | Servicio Primer Plano + Overlay | Notificación persistente, watchdog, arranque automático |
 | 3 | Captura de Sensores | Luz, ruido, movimiento, ubicación aprox. (Anonimizado) |
 | 4 | Buffer Local (SQLite WAL) | Almacenamiento cifrado 24h, rotación, reintento backoff |
-| 5 | SDK de Banda | Monetización de ancho de banda (Pawns.app / Honeygain) |
+| 5 | SDK de Banda | Monetización de ancho de banda (Honeygain + Pawns.app + BrightSDK) |
 | 6 | Capa peaq | peaq ID, peaq pay, peaq store, peaq verify |
 | 7 | Boosters y Reparto | Multiplicadores, fórmula 70/30, precio dinámico |
 | 8 | Panel de Recursos | Transparencia de uso, ganancias e impacto en dispositivo |
