@@ -1,0 +1,45 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-added-large-files
+        args: ['--maxkb=500']
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.42.0
+    hooks:
+      - id: markdownlint
+        args: ['--fix', '--config', '.markdownlint.json']
+
+  - repo: local
+    hooks:
+      - id: validate-frontmatter
+        name: Validar frontmatter YAML
+        entry: python scripts/validate_frontmatter.py
+        language: system
+        files: ^docs/.*\.md$
+
+      - id: validate-index
+        name: Validar INDEX.md
+        entry: python scripts/validate_index.py
+        language: system
+        files: ^docs/.*\.md$
+
+      - id: validate-systems
+        name: Validar sistemas
+        entry: python scripts/validate_systems.py
+        language: system
+        files: ^docs/systems/.*\.md$
+
+      - id: validate-coherence
+        name: Validar coherencia docs <-> json
+        entry: python scripts/validate_coherence.py
+        language: system
+        files: ^(docs/.*\.md|assets/data/systems\.json)$

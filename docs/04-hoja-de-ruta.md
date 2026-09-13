@@ -1,3 +1,12 @@
+---
+title: Hoja de Ruta
+status: active
+phase: null
+owner: andy
+last_updated: 2026-09-13
+related: []
+---
+
 # Hoja de Ruta (12 Semanas)
 
 ## 🎯 Fase 1: Pre-Beta Infraestructura Core (v5.1 ALPHA)

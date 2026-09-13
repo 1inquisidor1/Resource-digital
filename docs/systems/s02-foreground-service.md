@@ -1,5 +1,5 @@
 ---
-title: S02 - Foreground Service
+title: Foreground Service
 status: pending
 phase: 1
 owner: andy
@@ -7,22 +7,6 @@ last_updated: 2026-09-13
 related: []
 ---
 
-# S02 - Foreground Service
+# S02: Servicio & Overlay
 
-## Descripcion
-Notificacion persistente, watchdog, arranque automatico.
-
-## Estado
-- Fase: 1
-- Estado: Pendiente
-- Dependencias: ninguno
-- Bloqueadores: ninguno
-
-## Funcion
-(descripcion de que hace el sistema)
-
-## Contratos de datos
-(no aplica / detallar si aplica)
-
-## Notas de implementacion
-(notas tecnicas)
+Estado: En desarrollo. Implementación de foreground services y watchdog.

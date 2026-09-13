@@ -1,3 +1,12 @@
+---
+title: Arquitectura de 21 Sistemas
+status: active
+phase: null
+owner: andy
+last_updated: 2026-09-13
+related: []
+---
+
 # Arquitectura de 21 Sistemas Atómicos
 
 ## 🏗️ Diagrama de Flujo

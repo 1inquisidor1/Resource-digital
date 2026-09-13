@@ -1,5 +1,5 @@
 ---
-title: S05 - Bandwidth Orchestrator
+title: Bandwidth Orchestrator
 status: in-progress
 phase: 1
 owner: andy
@@ -7,22 +7,6 @@ last_updated: 2026-09-13
 related: []
 ---
 
-# S05 - Bandwidth Orchestrator
+# S05: SDK de Banda
 
-## Descripcion
-Honeygain, Pawns.app, BrightSDK. Solicitudes enviadas.
-
-## Estado
-- Fase: 1
-- Estado: En progreso
-- Dependencias: S04
-- Bloqueadores: ninguno
-
-## Funcion
-(descripcion de que hace el sistema)
-
-## Contratos de datos
-(no aplica / detallar si aplica)
-
-## Notas de implementacion
-(notas tecnicas)
+Referencia: [Guía Honeygain](06-registro-honeygain-publisher.md). Integración de Pawns y Bright en progreso.

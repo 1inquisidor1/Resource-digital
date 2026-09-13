@@ -1,3 +1,12 @@
+---
+title: Stack Tecnologico
+status: active
+phase: null
+owner: andy
+last_updated: 2026-09-13
+related: []
+---
+
 # Stack Tecnológico Definitivo
 
 ## 📱 Frontend & Mobile

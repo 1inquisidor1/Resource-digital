@@ -1,3 +1,12 @@
+---
+title: Modelo Financiero
+status: active
+phase: null
+owner: andy
+last_updated: 2026-09-13
+related: []
+---
+
 # Modelo Financiero y Costes
 
 ## Inversión Inicial

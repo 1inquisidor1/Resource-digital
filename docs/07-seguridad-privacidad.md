@@ -1,3 +1,12 @@
+---
+title: Seguridad y Privacidad
+status: active
+phase: null
+owner: andy
+last_updated: 2026-09-13
+related: []
+---
+
 # Seguridad y Privacidad — Resource Digital
 
 ## 1. Privacidad por diseño

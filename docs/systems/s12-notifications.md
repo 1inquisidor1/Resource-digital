@@ -1,5 +1,5 @@
 ---
-title: S12 - Notifications
+title: Notifications
 status: pending
 phase: 1
 owner: andy
@@ -7,22 +7,6 @@ last_updated: 2026-09-13
 related: []
 ---
 
-# S12 - Notifications
+# S12: Notificaciones
 
-## Descripcion
-Push + in-app, eventos de sistema.
-
-## Estado
-- Fase: 1
-- Estado: Pendiente
-- Dependencias: ninguno
-- Bloqueadores: ninguno
-
-## Funcion
-(descripcion de que hace el sistema)
-
-## Contratos de datos
-(no aplica / detallar si aplica)
-
-## Notas de implementacion
-(notas tecnicas)
+Estado: Planificado. Sistema de alertas push.

@@ -1,3 +1,12 @@
+---
+title: Registro Honeygain Publisher
+status: active
+phase: null
+owner: andy
+last_updated: 2026-09-13
+related: []
+---
+
 # Guía de registro: Honeygain SDK Publisher
 
 ## 1. ¿Qué es Honeygain SDK?
