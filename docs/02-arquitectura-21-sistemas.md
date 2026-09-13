@@ -8,12 +8,12 @@ related: []
 ---
 
 
-##  Diagrama de Flujo
+## Diagrama de Flujo
 
 **UI $\rightarrow$ Servicio $\rightarrow$ Sensores $\rightarrow$ Buffer Local $\rightarrow$ SDK
 Banda $\rightarrow$ [Backend se integra en Fase 2]**
 
-##  Desglose de 21 Sistemas
+## Desglose de 21 Sistemas
 
 ### Sistemas Core (1-9)
 
@@ -51,7 +51,7 @@ Banda $\rightarrow$ [Backend se integra en Fase 2]**
 | 20 | Acurast Compute | Cómputo descentralizado | Fase 3 |
 | 21 | PayOS Gateway | Pagos interoperables LatAm | Fase 3 |
 
-##  Garantías de Atomicidad
+## Garantías de Atomicidad
 
 - **Sin dependencias circulares:** Flujo unidireccional.
 - **Aislamiento:** Isolate para el servicio y SQLite para el buffer.

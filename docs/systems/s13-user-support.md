@@ -10,19 +10,24 @@ related: []
 # S13 — User Support
 
 ## Descripción
+
 Soporte al usuario.
 
 ## Estado
+
 - Fase: 2
 - Estado: planned
 - Dependencias: (ninguna)
 - Bloqueadores: (ninguno)
 
 ## Función
+
 Proporcionar canales de soporte (FAQ, chat).
 
 ## Contratos de datos
+
 (si aplica)
 
 ## Notas de implementación
+
 (si aplica)

@@ -76,12 +76,12 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 
 ## Sistemas Atomicos (21)
 
-```
+```text
 S01-S05: Core Node (App, Sensores, Buffer, Banda, Foreground)
 S06-S09: DePIN Layer (peaq, Boosters, Panel, Affiliates)
 S10-S18: Soporte (Auth, Withdrawals, Notificaciones, Soporte, Admin, Analytics, Legal, Flags, Monitoring)
 S19-S21: Ecosistema (DeNet, Acurast, PayOS)
-```
+```text
 
 Ver documentación completa: [docs/INDEX.md](docs/INDEX.md)
 

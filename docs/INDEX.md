@@ -7,20 +7,14 @@
 | Archivo | Descripcion | Estado |
 |---|---|---|
 | [00-vision-general.md](./00-vision-general.md) | Vision general del proyecto | active |
+| [01-fase1-honeygain.md](./01-fase1-honeygain.md) | Fase 1 Honeygain | active |
 | [02-arquitectura-21-sistemas.md](./02-arquitectura-21-sistemas.md) | Arquitectura de 21 sistemas | active |
 | [03-stack-tecnologico.md](./03-stack-tecnologico.md) | Stack tecnologico | active |
 | [04-hoja-de-ruta.md](./04-hoja-de-ruta.md) | Hoja de ruta | active |
-| [07-seguridad-privacidad.md](./07-seguridad-privacidad.md) | Seguridad y privacidad | active |
 | [05-esquema-base-datos.md](./05-esquema-base-datos.md) | Esquema base de datos | active |
-| [06-registro-plataformas.md](./06-registro-plataformas.md) | Registro Pawns.app | active |
-| [06-registro-plataformas.md](./06-registro-plataformas.md) | Registro Bright SDK | active |
-| [06-registro-plataformas.md](./06-registro-plataformas.md) | Registro Honeygain Publisher | active |
+| [06-registro-plataformas.md](./06-registro-plataformas.md) | Guias de registro (Honeygain, Pawns, Bright) | active |
+| [07-seguridad-privacidad.md](./07-seguridad-privacidad.md) | Seguridad y privacidad | active |
 | [09-modelo-financiero.md](./09-modelo-financiero.md) | Modelo financiero | active |
-| [01-fase1-honeygain.md](./01-fase1-honeygain.md) | Fase 1 Honeygain | active |
-| [README.md](./README.md) | README documentacion | active |
-
-| [README.md](./README.md) | README documentacion | active |
-| [_inconsistencies.md](./_inconsistencies.md) | Incoherencias Detectadas | archived |
 
 ## Sistemas
 
@@ -47,9 +41,3 @@
 | S19 | [s19-denet-storage.md](./systems/s19-denet-storage.md) | DeNet Storage | 3 | planned |
 | S20 | [s20-acurast-compute.md](./systems/s20-acurast-compute.md) | Acurast Compute | 3 | planned |
 | S21 | [s21-payos-gateway.md](./systems/s21-payos-gateway.md) | PayOS Gateway | 3 | planned |
-
-## Archivo
-
-| Carpeta | Contenido |
-|---|---|
-| [_archive/](./_archive/) | Documentos originales. No editar. |

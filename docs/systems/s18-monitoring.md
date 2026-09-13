@@ -10,19 +10,24 @@ related: []
 # S18 — Monitoring
 
 ## Descripción
+
 Monitoreo del sistema.
 
 ## Estado
+
 - Fase: 2
 - Estado: planned
 - Dependencias: (ninguna)
 - Bloqueadores: (ninguno)
 
 ## Función
+
 Monitorear la salud y rendimiento del sistema.
 
 ## Contratos de datos
+
 (si aplica)
 
 ## Notas de implementación
+
 (si aplica)

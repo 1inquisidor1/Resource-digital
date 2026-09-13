@@ -10,19 +10,24 @@ related: []
 # S03 — Sensor Capture
 
 ## Descripción
+
 Captura de sensores del dispositivo.
 
 ## Estado
+
 - Fase: 2
 - Estado: planned
 - Dependencias: (ninguna)
 - Bloqueadores: (ninguno)
 
 ## Función
+
 Capturar datos de sensores (luz, ruido, movimiento) del dispositivo.
 
 ## Contratos de datos
+
 (si aplica)
 
 ## Notas de implementación
+
 (si aplica)

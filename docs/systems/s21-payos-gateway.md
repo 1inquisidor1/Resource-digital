@@ -10,19 +10,24 @@ related: []
 # S21 — PayOS Gateway
 
 ## Descripción
+
 Gateway de pagos PayOS.
 
 ## Estado
+
 - Fase: 3
 - Estado: planned
 - Dependencias: (ninguna)
 - Bloqueadores: (ninguno)
 
 ## Función
+
 Gestionar el procesamiento de pagos salientes.
 
 ## Contratos de datos
+
 (si aplica)
 
 ## Notas de implementación
+
 (si aplica)

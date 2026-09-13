@@ -112,7 +112,7 @@ class HoneygainConsent {
     ) ?? false;
   }
 }
-```
+```text
 
 ### Paso 4: Submit para review
 

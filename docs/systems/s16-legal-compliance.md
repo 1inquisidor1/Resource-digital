@@ -10,19 +10,24 @@ related: []
 # S16 — Legal Compliance
 
 ## Descripción
+
 Cumplimiento legal.
 
 ## Estado
+
 - Fase: 1
 - Estado: pending
 - Dependencias: (ninguna)
 - Bloqueadores: (ninguno)
 
 ## Función
+
 Asegurar el cumplimiento de regulaciones locales.
 
 ## Contratos de datos
+
 (si aplica)
 
 ## Notas de implementación
+
 (si aplica)
