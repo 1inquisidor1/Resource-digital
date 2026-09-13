@@ -1,0 +1,244 @@
+{
+  "project": {
+    "name": "Resource Digital",
+    "version": "v5.1 ALPHA",
+    "status": "Pre-Beta",
+    "market": "Ecuador (EC)",
+    "totalSystems": 21
+  },
+  "phases": [
+    {
+      "id": 1,
+      "name": "Pre-Beta Infraestructura Core",
+      "weeks": "1-4",
+      "status": "En preparacion",
+      "statusClass": "progress"
+    },
+    {
+      "id": 2,
+      "name": "Capa DePIN con peaq",
+      "weeks": "5-8",
+      "status": "Planificado",
+      "statusClass": "planned"
+    },
+    {
+      "id": 3,
+      "name": "Ecosistema Completo",
+      "weeks": "9+",
+      "status": "Planificado",
+      "statusClass": "future"
+    }
+  ],
+  "systems": [
+    {
+      "id": "S01",
+      "name": "App UI",
+      "desc": "Onboarding, billetera-nodo, panel de recursos y configuracion.",
+      "phase": 1,
+      "status": "Pendiente",
+      "tags": [
+        "Flutter"
+      ]
+    },
+    {
+      "id": "S02",
+      "name": "Foreground Service",
+      "desc": "Notificacion persistente, watchdog, arranque automatico.",
+      "phase": 1,
+      "status": "Pendiente",
+      "tags": [
+        "Android"
+      ]
+    },
+    {
+      "id": "S03",
+      "name": "Sensor Capture",
+      "desc": "Luz, ruido, movimiento, ubicacion anonimizada.",
+      "phase": 2,
+      "status": "Fase 2",
+      "tags": [
+        "Sensors"
+      ]
+    },
+    {
+      "id": "S04",
+      "name": "SQLite Buffer",
+      "desc": "Almacenamiento cifrado 24h, rotacion, reintento backoff.",
+      "phase": 1,
+      "status": "Pendiente",
+      "tags": [
+        "SQLite"
+      ]
+    },
+    {
+      "id": "S05",
+      "name": "Bandwidth Orchestrator",
+      "desc": "Honeygain, Pawns.app, BrightSDK. Solicitudes enviadas.",
+      "phase": 1,
+      "status": "En progreso",
+      "tags": [
+        "SDKs"
+      ]
+    },
+    {
+      "id": "S06",
+      "name": "peaq L1",
+      "desc": "peaq ID, peaq pay, peaq store, peaq verify.",
+      "phase": 2,
+      "status": "Fase 2",
+      "tags": [
+        "Blockchain"
+      ]
+    },
+    {
+      "id": "S07",
+      "name": "Boosters Engine",
+      "desc": "Multiplicadores, formula 70/30, precio dinamico.",
+      "phase": 2,
+      "status": "Fase 2",
+      "tags": [
+        "Backend"
+      ]
+    },
+    {
+      "id": "S08",
+      "name": "Resource Panel",
+      "desc": "Transparencia de uso, ganancias e impacto.",
+      "phase": 2,
+      "status": "Fase 2",
+      "tags": [
+        "Flutter"
+      ]
+    },
+    {
+      "id": "S09",
+      "name": "Affiliates v2.0",
+      "desc": "3 niveles, comisiones escalonadas, anti-fraude.",
+      "phase": 2,
+      "status": "Fase 2",
+      "tags": [
+        "Referrals"
+      ]
+    },
+    {
+      "id": "S10",
+      "name": "Auth and Registry",
+      "desc": "Email/Google/Wallet, creacion de peaq ID.",
+      "phase": 1,
+      "status": "Pendiente",
+      "tags": [
+        "Supabase"
+      ]
+    },
+    {
+      "id": "S11",
+      "name": "Withdrawals",
+      "desc": "PIX, SPEI, USDC, PayPal. Umbral $5.",
+      "phase": 1,
+      "status": "Pendiente, Fase 1",
+      "tags": [
+        "PayOS"
+      ]
+    },
+    {
+      "id": "S12",
+      "name": "Notifications",
+      "desc": "Push + in-app, eventos de sistema.",
+      "phase": 1,
+      "status": "Pendiente, Fase 1",
+      "tags": [
+        "Firebase"
+      ]
+    },
+    {
+      "id": "S13",
+      "name": "User Support",
+      "desc": "FAQ, chat IA, tickets.",
+      "phase": 2,
+      "status": "Fase 2",
+      "tags": [
+        "Help"
+      ]
+    },
+    {
+      "id": "S14",
+      "name": "Admin Panel",
+      "desc": "Gestion de usuarios, retiros y configuracion.",
+      "phase": 2,
+      "status": "Fase 2",
+      "tags": [
+        "Dashboard"
+      ]
+    },
+    {
+      "id": "S15",
+      "name": "Analytics",
+      "desc": "PostHog + Metabase. Sin PII.",
+      "phase": 2,
+      "status": "Fase 2",
+      "tags": [
+        "PostHog"
+      ]
+    },
+    {
+      "id": "S16",
+      "name": "Legal Compliance",
+      "desc": "GDPR/LGPD, terminos y privacidad.",
+      "phase": 1,
+      "status": "Pendiente",
+      "tags": [
+        "GDPR"
+      ]
+    },
+    {
+      "id": "S17",
+      "name": "Feature Flags",
+      "desc": "Firebase Remote Config, rollout gradual.",
+      "phase": 2,
+      "status": "Fase 2",
+      "tags": [
+        "Firebase"
+      ]
+    },
+    {
+      "id": "S18",
+      "name": "Monitoring",
+      "desc": "Sentry, UptimeRobot, alertas de fraude.",
+      "phase": 2,
+      "status": "Fase 2",
+      "tags": [
+        "Sentry"
+      ]
+    },
+    {
+      "id": "S19",
+      "name": "DeNet Storage",
+      "desc": "Almacenamiento descentralizado de datos de sensores.",
+      "phase": 3,
+      "status": "Fase 3",
+      "tags": [
+        "DeNet"
+      ]
+    },
+    {
+      "id": "S20",
+      "name": "Acurast Compute",
+      "desc": "Computo descentralizado para procesamiento en la nube.",
+      "phase": 3,
+      "status": "Fase 3",
+      "tags": [
+        "Acurast"
+      ]
+    },
+    {
+      "id": "S21",
+      "name": "PayOS Gateway",
+      "desc": "Pagos interoperables multi-chain para LatAm.",
+      "phase": 3,
+      "status": "Fase 3",
+      "tags": [
+        "PayOS"
+      ]
+    }
+  ]
+}
