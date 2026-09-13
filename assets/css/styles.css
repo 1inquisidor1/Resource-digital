@@ -1109,19 +1109,4 @@ a:hover {
     color: var(--accent);
 }
 
-.footer__legal {
-    margin: var(--space-8) 0;
-    padding: var(--space-6);
-    background: var(--bg-2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-}
-.footer__legal-label {
-    display: block;
-    font-size: var(--fs-xs);
-    font-weight: 600;
-    color: var(--text-3);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--space-4);
-}
+
