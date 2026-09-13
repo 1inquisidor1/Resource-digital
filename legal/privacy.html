@@ -3,90 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad — Resource Digital</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Resource Digital">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300e5a0'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%230a0e1a' font-family='sans-serif' font-weight='bold'>R</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0D0D0D; color: #E5E7EB; }
-        .box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); }
-        a { color: #4ADE80; }
-        h2 { color: #fff; }
+        :root {
+            --bg-0: #0a0e1a;
+            --bg-1: #111827;
+            --bg-2: #1a2233;
+            --border: #1f2937;
+            --text-0: #f9fafb;
+            --text-1: #d1d5db;
+            --text-2: #9ca3af;
+            --text-3: #6b7280;
+            --accent: #00e5a0;
+            --accent-glow: rgba(0, 229, 160, 0.15);
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-0);
+            color: var(--text-1);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::selection { background: var(--accent); color: var(--bg-0); }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-1); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+        
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(10, 14, 26, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav__brand {
+            font-size: 1.125rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text-0);
+        }
+        .nav__brand span { color: var(--accent); }
+        .nav__back {
+            font-size: 0.875rem;
+            color: var(--text-2);
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            transition: all 250ms ease;
+        }
+        .nav__back:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 6rem 1.5rem 4rem;
+        }
+        
+        .page-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 800;
+            color: var(--text-0);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .page-subtitle {
+            color: var(--text-3);
+            font-size: 0.875rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-0);
+            margin-bottom: 1rem;
+        }
+        
+        .section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .section ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+            list-style: disc;
+        }
+        
+        .card {
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card--highlight {
+            border-color: var(--accent);
+            background: linear-gradient(135deg, var(--bg-1), rgba(0, 229, 160, 0.05));
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            background: var(--accent-glow);
+            color: var(--accent);
+            border: 1px solid rgba(0, 229, 160, 0.3);
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-box {
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .contact-box h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-0);
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 5rem 1rem 3rem; }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
     </style>
+    <meta name="description" content="Política de Privacidad de Resource Digital. Tratamiento de datos y derechos del usuario.">
+    <meta property="og:title" content="Política de Privacidad — Resource Digital">
+    <meta property="og:description" content="Cómo Resource Digital trata y protege los datos de sus usuarios.">
+    <title>Política de Privacidad — Resource Digital</title>
 </head>
-<body class="p-6 md:p-12 max-w-4xl mx-auto">
-    <a href="/Resource-digital/index.html" class="text-gray-400 hover:text-white transition text-sm mb-8 inline-block">&larr; Volver a Inicio</a>
-    <h1 class="text-3xl font-extrabold text-white mb-8">Política de Privacidad</h1>
-    
-<div class="space-y-6 text-gray-400 leading-relaxed">
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">1. Información que recopilamos</h2>
-        <p>Recopilamos únicamente los datos necesarios para operar el servicio:</p>
-        <ul class="list-disc pl-6 mt-2 space-y-1">
-            <li><strong>Datos de cuenta:</strong> email, identificador de wallet, dispositivo(s) vinculado(s).</li>
-            <li><strong>Datos de banda ancha:</strong> GB compartidos, tiempo de actividad (uptime) y ubicación aproximada (a nivel de barrio).</li>
-            <li><strong>Datos de sensores:</strong> lecturas ambientales de luz, ruido y movimiento, anonimizadas en el dispositivo (solo hashes y zonas).</li>
-            <li><strong>Datos de ganancias:</strong> historial de transacciones, saldo y retiros.</li>
-        </ul>
+<body>
+
+    <nav class="nav">
+        <div class="nav__inner">
+            <div class="nav__brand"><span>RESOURCE</span> DIGITAL</div>
+            <a href="../index.html" class="nav__back">← Volver</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Política de Privacidad</h1>
+        <p class="page-subtitle">Última actualización: Septiembre 2026 · v5.1 ALPHA</p>
+        
+        <span class="badge">Documento Legal</span>
+        
+        <div class="section">
+            <h2>1. Responsable del Tratamiento</h2>
+            <p>Resource Digital ("nosotros", "nuestro") es responsable del tratamiento de los datos personales de los usuarios de la aplicación móvil.</p>
+            <p><strong>Correo de contacto:</strong> <a href="mailto:andy@resourcedigital.dpdns.org">andy@resourcedigital.dpdns.org</a></p>
+        </div>
+        
+        <div class="section">
+            <h2>2. Datos que Recopilamos</h2>
+            <div class="card">
+                <h3>Datos proporcionados por el usuario:</h3>
+                <ul>
+                    <li>Dirección email (para autenticación)</li>
+                    <li>Nombre de usuario (opcional)</li>
+                    <li>Configuración de preferencias de la aplicación</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Datos recopilados automáticamente:</h3>
+                <ul>
+                    <li>Datos de uso de la aplicación (anónimos)</li>
+                    <li>Información del dispositivo (modelo, versión de Android)</li>
+                    <li>Estadísticas de ancho de banda compartido (procesadas por SDKs de terceros)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>3. Datos que NO Recopilamos</h2>
+            <p><strong>Resource Digital no accede ni almacena:</strong></p>
+            <ul>
+                <li>Historial de navegación web</li>
+                <li>Archivos personales del dispositivo</li>
+                <li>Fotos, contactos o mensajes</li>
+                <li>Contraseñas o credenciales de otras aplicaciones</li>
+                <li>Datos de ubicación GPS precisos (solo aproximado si el usuario lo autoriza)</li>
+            </ul>
+        </div>
+        
+        <div class="card card--highlight">
+            <h2>4. SDKs de Terceros</h2>
+            <p>La aplicación integra SDKs de proveedores de servicios de banda ancha (Honeygain, Pawns.app, Bright SDK). Estos proveedores procesan datos de ancho de banda bajo sus propias políticas de privacidad.</p>
+            <p><strong>Recomendamos revisar las políticas de privacidad de cada proveedor:</strong></p>
+            <ul>
+                <li>Honeygain: <a href="https://www.honeygain.com/privacy" target="_blank" rel="noopener">Política de Privacidad</a></li>
+                <li>Pawns.app: <a href="https://pawns.app/privacy" target="_blank" rel="noopener">Política de Privacidad</a></li>
+                <li>Bright SDK: Disponible próximamente</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>5. Base Legal para el Tratamiento</h2>
+            <p>Tratamos sus datos basándonos en:</p>
+            <ul>
+                <li><strong>Consentimiento explícito:</strong> El usuario debe aceptar activamente (opt-in) cada módulo de monetización.</li>
+                <li><strong>Ejecución del contrato:</strong> Para proporcionar el servicio solicitado.</li>
+                <li><strong>Interés legítimo:</strong> Para mejorar el servicio y prevenir fraudes.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>6. Sus Derechos</h2>
+            <p>Como usuario, tiene derecho a:</p>
+            <ul>
+                <li><strong>Acceso:</strong> Solicitar una copia de sus datos personales.</li>
+                <li><strong>Rectificación:</strong> Corregir datos inexactos.</li>
+                <li><strong>Eliminación:</strong> Solicitar la eliminación de su cuenta y datos (Derecho al Olvido).</li>
+                <li><strong>Portabilidad:</strong> Recibir sus datos en formato estructurado.</li>
+                <li><strong>Oposición:</strong> Oponerse al tratamiento de sus datos.</li>
+                <li><strong>Retirar consentimiento:</strong> Desactivar cualquier módulo en cualquier momento.</li>
+            </ul>
+            <p>Para ejercer estos derechos, contacte a: <a href="mailto:andy@resourcedigital.dpdns.org">andy@resourcedigital.dpdns.org</a></p>
+        </div>
+        
+        <div class="section">
+            <h2>7. Seguridad de los Datos</h2>
+            <p>Implementamos medidas técnicas y organizativas para proteger sus datos:</p>
+            <ul>
+                <li>Cifrado en tránsito (TLS) y en reposo</li>
+                <li>Almacenamiento seguro con Android Keystore</li>
+                <li>Anonimización de datos antes de compartirlos con proveedores</li>
+                <li>Row Level Security en base de datos (Fase 2)</li>
+                <li>Monitoreo de seguridad y alertas de fraude (Fase 2)</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>8. Transferencias Internacionales</h2>
+            <p>Algunos datos pueden ser transferidos a servidores de proveedores de SDKs fuera de Ecuador. En tales casos, aseguramos que se apliquen garantías adecuadas como Cláusulas Contractuales Tipo o certificaciones de protección de datos equivalentes.</p>
+        </div>
+        
+        <div class="section">
+            <h2>9. Conservación de Datos</h2>
+            <p>Conservamos sus datos mientras:</p>
+            <ul>
+                <li>Su cuenta esté activa</li>
+                <li>Sea necesario para la ejecución del servicio</li>
+                <li>Exista una obligación legal de conservación (máximo 5 años para fines fiscales)</li>
+            </ul>
+            <p>Tras la eliminación de su cuenta, sus datos personales serán destruidos en un plazo máximo de 30 días.</p>
+        </div>
+        
+        <div class="section">
+            <h2>10. Cumplimiento Normativo</h2>
+            <p>Cumplimos con las siguientes regulaciones de protección de datos:</p>
+            <ul>
+                <li><strong>GDPR</strong> (Regulación General de Protección de Datos de la UE) - aplicable si hay usuarios europeos</li>
+                <li><strong>LGPD</strong> (Lei Geral de Proteção de Datos de Brasil) - aplicable para mercado brasileño</li>
+                <li><strong>LFPDPPP</strong> (Ley Federal de Protección de Datos de México) - aplicable para mercado mexicano</li>
+                <li><strong>Constitución del Ecuador</strong> y normativa local de protección de datos</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>11. Cambios en esta Política</h2>
+            <p>Podemos actualizar esta política ocasionalmente. Le notificaremos cualquier cambio significativo a través de la aplicación o por email. La fecha de última actualización se indica al inicio de este documento.</p>
+        </div>
+        
+        <div class="contact-box">
+            <h3>Contacto de Privacidad</h3>
+            <p>Para consultas sobre esta política o sus datos personales:</p>
+            <p><a href="mailto:andy@resourcedigital.dpdns.org">andy@resourcedigital.dpdns.org</a></p>
+        </div>
     </div>
 
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">2. Cómo usamos su información</h2>
-        <ul class="list-disc pl-6 mt-2 space-y-1">
-            <li>Operar la billetera-nodo y calcular sus ganancias.</li>
-            <li>Procesar retiros vía PIX, SPEI, USDC o PayPal.</li>
-            <li>Mejorar la Aplicación y prevenir fraudes.</li>
-            <li>Cumplir con obligaciones legales y fiscales.</li>
-        </ul>
-    </div>
-
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">3. Compartir ancho de banda (Honeygain / SDK)</h2>
-        <p>Al activar el opt-in, usted permite que el SDK compartido use su ancho de banda no utilizado con empresas de investigación de mercado e IA. Puede desactivarlo en cualquier momento desde <strong>Configuración &gt; Recursos &gt; Banda ancha</strong>.</p>
-        <p class="mt-2"><strong>El SDK no accede a:</strong> datos personales (nombre, email, teléfono), archivos personales, historial de navegación, ni contraseñas o credenciales.</p>
-    </div>
-
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">4. Anonimización en el dispositivo</h2>
-        <p>Los datos de sensores se anonimizan antes de salir del teléfono. Solo se transmiten hashes irreversibles y códigos de zona, nunca ubicación exacta ni identificadores personales. Sin PII on-chain: en la blockchain de peaq solo se registran hashes y DIDs.</p>
-    </div>
-
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">5. Sus derechos</h2>
-        <p>De acuerdo con GDPR/LGPD, usted tiene derecho a:</p>
-        <ul class="list-disc pl-6 mt-2 space-y-1">
-            <li><strong>Acceso:</strong> solicitar una copia de sus datos.</li>
-            <li><strong>Rectificación:</strong> corregir datos inexactos.</li>
-            <li><strong>Eliminación:</strong> borrar su cuenta y datos (derecho al olvido).</li>
-            <li><strong>Portabilidad:</strong> exportar sus datos en formato JSON.</li>
-            <li><strong>Oposición:</strong> desactivar recursos individuales.</li>
-        </ul>
-    </div>
-
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">6. Retención de datos</h2>
-        <ul class="list-disc pl-6 mt-2 space-y-1">
-            <li>Ganancias: 5 años (obligación fiscal).</li>
-            <li>Sesiones de banda: 90 días.</li>
-            <li>Buffer de sensores: 24h local + 30 días remoto.</li>
-            <li>peaq DIDs: permanente (público).</li>
-            <li>Logs de autenticación: 30 días.</li>
-        </ul>
-    </div>
-
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">7. Seguridad</h2>
-        <p>Usamos cifrado en tránsito (TLS con certificate pinning), almacenamiento seguro con Android Keystore, Row Level Security en la base de datos y técnicas RASP (anti-root/Frida/repackaging).</p>
-    </div>
-
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">8. Contacto de privacidad</h2>
-        <p>Email de privacidad: <a href="mailto:andy@resourcedigital.dpdns.org">andy@resourcedigital.dpdns.org</a> (Este es el correo oficial de atención al cliente.)</p>
-    </div>
-</div>
-    <div class="mt-12 pt-6 border-t border-white/10 text-sm text-gray-500">
-        <p>Resource Digital &copy; 2026. Para contacto: <a href="mailto:andy@resourcedigital.dpdns.org">andy@resourcedigital.dpdns.org</a></p>
-        <p class="text-xs text-gray-500 mt-1">Este es el correo temporal de atención al cliente.</p>
-    </div>
 </body>
 </html>
-<div class="box p-5 rounded-xl mt-6"><h2 class="text-xl font-bold mb-2">Terceros y Partners</h2><p>Los datos técnicos anonimizados son procesados por nuestros partners de infraestructura: <strong>Honeygain, peaq, DeNet y Acurast</strong>.</p></div>

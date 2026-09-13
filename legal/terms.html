@@ -3,70 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Términos de Servicio — Resource Digital</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Resource Digital">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300e5a0'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%230a0e1a' font-family='sans-serif' font-weight='bold'>R</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0D0D0D; color: #E5E7EB; }
-        .box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); }
-        a { color: #4ADE80; }
-        h2 { color: #fff; }
+        :root {
+            --bg-0: #0a0e1a;
+            --bg-1: #111827;
+            --bg-2: #1a2233;
+            --border: #1f2937;
+            --text-0: #f9fafb;
+            --text-1: #d1d5db;
+            --text-2: #9ca3af;
+            --text-3: #6b7280;
+            --accent: #00e5a0;
+            --accent-glow: rgba(0, 229, 160, 0.15);
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-0);
+            color: var(--text-1);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::selection { background: var(--accent); color: var(--bg-0); }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-1); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+        
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(10, 14, 26, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav__brand {
+            font-size: 1.125rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text-0);
+        }
+        .nav__brand span { color: var(--accent); }
+        .nav__back {
+            font-size: 0.875rem;
+            color: var(--text-2);
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            transition: all 250ms ease;
+        }
+        .nav__back:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 6rem 1.5rem 4rem;
+        }
+        
+        .page-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 800;
+            color: var(--text-0);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .page-subtitle {
+            color: var(--text-3);
+            font-size: 0.875rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-0);
+            margin-bottom: 1rem;
+        }
+        
+        .section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .section ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+            list-style: disc;
+        }
+        
+        .card {
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card--highlight {
+            border-color: var(--accent);
+            background: linear-gradient(135deg, var(--bg-1), rgba(0, 229, 160, 0.05));
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            background: var(--accent-glow);
+            color: var(--accent);
+            border: 1px solid rgba(0, 229, 160, 0.3);
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-box {
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .contact-box h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-0);
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 5rem 1rem 3rem; }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
     </style>
+    <meta name="description" content="Términos de Servicio de Resource Digital. Acuerdo de licencia de usuario final (EULA).">
+    <meta property="og:title" content="Términos de Servicio — Resource Digital">
+    <meta property="og:description" content="Acuerdo de licencia de usuario final para Resource Digital.">
+    <title>Términos de Servicio — Resource Digital</title>
 </head>
-<body class="p-6 md:p-12 max-w-4xl mx-auto">
-    <a href="/Resource-digital/index.html" class="text-gray-400 hover:text-white transition text-sm mb-8 inline-block">&larr; Volver a Inicio</a>
-    <h1 class="text-3xl font-extrabold text-white mb-8">Términos de Servicio</h1>
-    
-<div class="space-y-6 text-gray-400 leading-relaxed">
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">1. Aceptación de los Términos</h2>
-        <p>Al instalar o utilizar la aplicación "Resource Digital" (en adelante, "la Aplicación"), usted acepta estos Términos de Servicio y nuestra <a href="privacy.html">Política de Privacidad</a>. Si está utilizando la Aplicación en nombre de una organización, usted declara tener autoridad para vincularla a estos términos.</p>
+<body>
+
+    <nav class="nav">
+        <div class="nav__inner">
+            <div class="nav__brand"><span>RESOURCE</span> DIGITAL</div>
+            <a href="../index.html" class="nav__back">← Volver</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Términos de Servicio</h1>
+        <p class="page-subtitle">Última actualización: Septiembre 2026 · v5.1 ALPHA</p>
+        
+        <span class="badge">Documento Legal</span>
+        
+        <div class="section">
+            <h2>1. Aceptación de los Términos</h2>
+            <p>Al acceder y utilizar Resource Digital ("la Aplicación"), usted acepta estar sujeto a estos Términos de Servicio. Si no está de acuerdo con alguna parte de estos términos, no podrá utilizar nuestros servicios.</p>
+        </div>
+        
+        <div class="section">
+            <h2>2. Descripción del Servicio</h2>
+            <p>Resource Digital es una infraestructura DePIN (Decentralized Physical Infrastructure Network) móvil que permite a los usuarios monetizar recursos inactivos de sus dispositivos, comenzando con el ancho de banda de internet no utilizado.</p>
+            <p>El servicio opera mediante la integración de múltiples SDKs de proveedores terceros, incluyendo Honeygain, Pawns.app y Bright SDK, actualmente en proceso de aprobación.</p>
+        </div>
+        
+        <div class="section">
+            <h2>3. Elegibilidad</h2>
+            <ul>
+                <li>Debe tener al menos 18 años de edad.</li>
+                <li>Debe residir en una región donde el servicio esté disponible (inicialmente Ecuador).</li>
+                <li>Debe proporcionar un dispositivo Android compatible con acceso a internet estable.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>4. Uso Aceptable</h2>
+            <p>El usuario se compromete a:</p>
+            <ul>
+                <li>No manipular o interferir con los mecanismos de monetización.</li>
+                <li>No utilizar el servicio para actividades ilegales.</li>
+                <li>No intentar realizar ingeniería inversa de la aplicación.</li>
+                <li>Mantener la seguridad de sus credenciales de acceso.</li>
+            </ul>
+        </div>
+        
+        <div class="card card--highlight">
+            <h2>5. Consentimiento y Control del Usuario</h2>
+            <p><strong>Resource Digital requiere consentimiento explícito (opt-in) antes de activar cualquier módulo de monetización.</strong></p>
+            <p>El usuario puede desactivar el servicio en cualquier momento desde Configuración > Recursos > Banda ancha. La desactivación es inmediata y no afecta a los saldos ya acumulados.</p>
+        </div>
+        
+        <div class="section">
+            <h2>6. Propiedad de los Datos</h2>
+            <p>El usuario mantiene la propiedad de sus datos personales. Resource Digital no vende, comparte ni transfiere datos personales a terceros para fines distintos a la operación del servicio.</p>
+            <p>Los datos de ancho de banda compartidos son procesados por los SDKs de proveedores terceros bajo sus propias políticas de privacidad.</p>
+        </div>
+        
+        <div class="section">
+            <h2>7. Limitación de Responsabilidad</h2>
+            <p>Resource Digital se proporciona "tal cual" sin garantías de ningún tipo. No garantizamos ingresos específicos, disponibilidad continua del servicio o compatibilidad con todos los dispositivos.</p>
+            <p>Los ingresos dependen de múltiples factores fuera de nuestro control, incluyendo el tráfico de red efectivo y las políticas de los proveedores de SDK.</p>
+        </div>
+        
+        <div class="section">
+            <h2>8. Modificaciones</h2>
+            <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios serán notificados a través de la aplicación y entrarán en vigor 30 días después de la publicación.</p>
+        </div>
+        
+        <div class="section">
+            <h2>9. Terminación</h2>
+            <p>Cualquiera de las partes puede terminar este acuerdo en cualquier momento. El usuario puede eliminar su cuenta desde la configuración de la aplicación, lo que resultará en la destrucción de sus datos personales y la revocación de su identidad on-chain.</p>
+        </div>
+        
+        <div class="section">
+            <h2>10. Ley Aplicable</h2>
+            <p>Estos términos se rigen por las leyes de la República del Ecuador. Cualquier disputa será resuelta en los tribunales competentes de Quito, Ecuador.</p>
+        </div>
+        
+        <div class="contact-box">
+            <h3>Contacto Legal</h3>
+            <p>Para consultas sobre estos términos:</p>
+            <p><a href="mailto:andy@resourcedigital.dpdns.org">andy@resourcedigital.dpdns.org</a></p>
+        </div>
     </div>
 
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">2. Uso compartido de ancho de banda</h2>
-        <p>Una de las funciones principales de la Aplicación es la <strong>monetización de recursos digitales no utilizado</strong>. Al activar expresamente el módulo correspondiente mediante un <strong>consentimiento explícito (opt-in)</strong>, usted autoriza a la Aplicación a utilizar el tráfico de red sobrante de forma cifrada y segura.</p>
-        <ul class="list-disc pl-6 mt-2 space-y-1">
-            <li><strong>Consentimiento explícito:</strong> El uso de ancho de banda <em>solo</em> comienza después de que usted lo acepta en un diálogo claro durante el registro.</li>
-            <li><strong>Opt-out en todo momento:</strong> Puede desactivar el uso compartido de recursos digitales (ancho de banda, almacenamiento y cómputo) en cualquier momento desde <strong>Configuración &gt; Recursos &gt; Banda ancha</strong>. Al desactivarlo, el servicio se detiene inmediatamente y la Aplicación deja de generar ingresos por ese recurso.</li>
-            <li><strong>Sin acceso a datos personales:</strong> El SDK de banda no accede a su historial de navegación, archivos, contraseñas ni datos personales.</li>
-            <li><strong>Límites:</strong> La Aplicación limita el uso a una fracción del ancho de banda disponible para no degradar su experiencia de conexión (límite configurable, pausa durante streaming, uso preferente de WiFi).</li>
-        </ul>
-    </div>
-
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">3. Recompensas y monetización</h2>
-        <p>La Aplicación le permite acumular recompensas por los recursos aportados (ancho de banda, sensores, almacenamiento y cómputo, según la fase activa). Las recompensas son estimadas en USD y pueden estar sujetas a umbrales mínimos de retiro, comisiones de red y métodos de pago disponibles (incluidos PIX, SPEI, USDC y PayPal). El reparto entre el usuario y la plataforma seguirá la fórmula publicada en la Aplicación (reparto base 70/30 sobre el valor generado).</p>
-    </div>
-
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">4. Uso permitido</h2>
-        <p>Usted acepta no: (a) manipular o falsear datos para inflar recompensas; (b) utilizar la Aplicación para actividades ilícitas; (c) intentar descompilar o extraer el SDK; o (d) evadir las medidas de seguridad o anti-fraude.</p>
-    </div>
-
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">5. Servicio y disponibilidad</h2>
-        <p>La Aplicación se proporciona "tal cual". Puede interrumpirse por mantenimiento, cambios de los proveedores (Honeygain, peaq, DeNet, Acurast) o condiciones de la red. No garantizamos ingresos mínimos ni disponibilidad continua.</p>
-    </div>
-
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">6. Privacidad y datos</h2>
-        <p>El tratamiento de datos se rige por nuestra <a href="privacy.html">Política de Privacidad</a>. Los datos personales se anonimizan en el dispositivo y no se comparten identificadores con terceros sin su consentimiento.</p>
-    </div>
-
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">7. Terminación</h2>
-        <p>Podemos suspender o cancelar el acceso si usted incumple estos términos. Usted puede dejar de usar y desinstalar la Aplicación en cualquier momento; puede solicitar la eliminación de su cuenta y de los datos asociados.</p>
-    </div>
-
-    <div class="box p-5 rounded-xl">
-        <h2 class="text-xl font-bold mb-2">8. Contacto</h2>
-        <p>Para preguntas sobre estos términos, contacte a: <a href="mailto:andy@resourcedigital.dpdns.org">andy@resourcedigital.dpdns.org</a> (Este es el correo oficial de atención al cliente.)</p>
-    </div>
-</div>
-    <div class="mt-12 pt-6 border-t border-white/10 text-sm text-gray-500">
-        <p>Resource Digital &copy; 2026. Para contacto: <a href="mailto:andy@resourcedigital.dpdns.org">andy@resourcedigital.dpdns.org</a></p>
-        <p class="text-xs text-gray-500 mt-1">Este es el correo temporal de atención al cliente.</p>
-    </div>
 </body>
 </html>
