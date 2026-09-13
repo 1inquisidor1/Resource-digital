@@ -22,7 +22,7 @@
 - **Cómputo:** Acurast (Processor Lite)
 
 ## 🔌 SDKs & Librerías Clave
-- **Banda:** Pawns.app / Honeygain SDK
+- **Banda:** Pawns.app / Aggregated Bandwidth SDK (Honeygain, Bright, Pawns)
 - **Servicio:** `flutter_background_service`
 - **Overlay:** `flutter_overlay_window`
 - **Seguridad:** `flutter_rasp` + `flutter_secure_storage`
