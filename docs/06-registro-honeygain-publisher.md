@@ -47,6 +47,7 @@ corre en segundo plano, no accede a datos personales y es **GDPR y CCPA complian
 - **Descripción breve**: "App de ingresos pasivos que monetiza ancho de banda no utilizado mediante
 
 SDK de Honeygain"
+
 1. El equipo de **business developers** de Honeygain te contactará para asistirte en el proceso.
 
 ### Paso 2: Integrar el SDK
