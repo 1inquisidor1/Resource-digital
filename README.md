@@ -63,6 +63,7 @@ Fuentes de ingreso de alto valor mediante almacenamiento y computo.
 | 3 | 9+ | Ecosistema Completo | S19-S21 |
 
 **Ver Plan de Desarrollo completo:** [legal/roadmap.html](legal/roadmap.html)
+**Probar la App:** [Simulador interactivo](legal/app-simulator.html) — Demostración del funcionamiento en fase final
 
 ---
 

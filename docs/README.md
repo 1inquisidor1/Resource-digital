@@ -54,3 +54,4 @@ Ultima actualizacion: 2026-09-13
 ---
 
 **Ver Plan de Desarrollo completo:** [legal/roadmap.html](../legal/roadmap.html)
+**Probar la App:** [Simulador interactivo](../legal/app-simulator.html)
