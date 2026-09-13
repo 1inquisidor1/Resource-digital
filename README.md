@@ -51,11 +51,11 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 
 ## Seguridad y Privacidad
 
-- ✅ Datos de sensores **anonimizados** antes de compartir
-- ✅ Cifrado **AES-256** en reposo
-- ✅ Conexiones **TLS 1.3** en tránsito
-- ✅ Sin acceso a datos personales del usuario
-- ✅ Cumplimiento GDPR y regulaciones locales
+- Datos de sensores **anonimizados** antes de compartir
+- Cifrado **AES-256** en reposo
+- Conexiones **TLS 1.3** en tránsito
+- Sin acceso a datos personales del usuario
+- Cumplimiento GDPR y regulaciones locales
 
 ---
 

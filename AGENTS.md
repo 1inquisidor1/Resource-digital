@@ -190,16 +190,16 @@ Si encuentras dos documentos que se contradicen:
 
 ## 6. Qué NO hacer
 
-- ❌ Editar archivos en `docs/_archive/`.
-- ❌ Duplicar información entre documentos.
-- ❌ Crear archivos sin añadirlos a `docs/INDEX.md`.
-- ❌ Renombrar archivos sin actualizar referencias.
-- ❌ Resolver incoherencias sin avisar.
-- ❌ Añadir secciones nuevas a los archivos de sistema.
-- ❌ Usar HTML embebido en markdown (salvo tablas complejas).
-- ❌ Usar emojis decorativos.
-- ❌ Fechas en formatos no ISO.
-- ❌ Modificar `AGENTS.md` sin que cambien las convenciones del proyecto.
+- Editar archivos en `docs/_archive/`.
+- Duplicar información entre documentos.
+- Crear archivos sin añadirlos a `docs/INDEX.md`.
+- Renombrar archivos sin actualizar referencias.
+- Resolver incoherencias sin avisar.
+- Añadir secciones nuevas a los archivos de sistema.
+- Usar HTML embebido en markdown (salvo tablas complejas).
+- Usar emojis decorativos.
+- Fechas en formatos no ISO.
+- Modificar `AGENTS.md` sin que cambien las convenciones del proyecto.
 
 ---
 
