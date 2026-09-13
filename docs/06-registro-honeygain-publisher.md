@@ -38,12 +38,14 @@ corre en segundo plano, no accede a datos personales y es **GDPR y CCPA complian
 1. Ve a **[sdk.honeygain.com](https://sdk.honeygain.com)**
 2. Click en **"Get started"** o **"Sign up"**
 3. Completa el formulario:
+
    - **Nombre completo**
    - **Email corporativo** (o personal si aún no tienes empresa)
    - **Nombre de la app**: `Resource Digital`
    - **Plataforma**: Android
 
 - **Descripción breve**: "App de ingresos pasivos que monetiza ancho de banda no utilizado mediante
+
 SDK de Honeygain"
 1. El equipo de **business developers** de Honeygain te contactará para asistirte en el proceso.
 
@@ -51,6 +53,7 @@ SDK de Honeygain"
 
 1. Descarga el SDK para Android desde el dashboard de Honeygain
 2. Sigue la guía paso a paso:
+
    - **Android nativo**: Integración directa en `build.gradle`
    - **Flutter**: Usar `MethodChannel` para conectar con el SDK nativo Android
 3. Tiempo estimado: **1-2 días** para integración completa.
@@ -143,21 +146,26 @@ class HoneygainConsent {
 ## 7. Preguntas frecuentes del proceso
 
 ## ¿Necesito empresa registrada?
+
 No. Honeygain permite publishers individuales. Si luego quieres facturar a escala, puedes registrar
 una empresa en Ecuador.
 
 ## ¿Cuánto tarda el review?
+
 Quick review: 1-2 días hábiles.
 
 ## ¿Puedo usar Honeygain junto a otros SDKs de banda?
+
 Sí. Honeygain SDK es compatible con modelos híbridos. Cuando migres a Pawns.app en el futuro, puedes
 tener ambos en paralelo.
 
 ## ¿Qué pasa si un usuario desactiva el opt-in?
+
 El SDK se detiene inmediatamente. No genera ingresos para ese usuario, pero tampoco consume
 recursos.
 
 ## ¿Honeygain accede a datos personales?
+
 No. El SDK está diseñado para **no recolectar PII** y todo el tráfico está cifrado.
 
 ## 8. Enlaces útiles
