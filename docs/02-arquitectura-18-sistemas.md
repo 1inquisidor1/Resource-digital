@@ -1,9 +1,9 @@
-# Arquitectura de 18 Sistemas Atómicos
+# Arquitectura de 21 Sistemas Atómicos
 
 ## 🏗️ Diagrama de Flujo
 **UI $\rightarrow$ Servicio $\rightarrow$ Sensores $\rightarrow$ Buffer Local $\rightarrow$ SDK Banda $\rightarrow$ [Backend se integra en Fase 2]**
 
-## 🧩 Desglose de Sistemas
+## 🧩 Desglose de 21 Sistemas
 
 ### Sistemas Core (1-9)
 | # | Sistema | Función | Fase 1 Estado |
@@ -30,6 +30,14 @@
 | 16 | Cumplimiento Legal | GDPR/LGPD | ⏳ Pendiente |
 | 17 | Feature Flags | Firebase Remote Config | ⏳ Fase 2 |
 | 18 | Monitoreo | Sentry, UptimeRobot | ⏳ Fase 2 |
+
+### Sistemas de Ecosistema (Fase 3)
+
+| # | Sistema | Función | Estado |
+|---|---------|---------|--------|
+| 19 | DeNet Storage | Almacenamiento descentralizado | ⏳ Fase 3 |
+| 20 | Acurast Compute | Cómputo descentralizado | ⏳ Fase 3 |
+| 21 | PayOS Gateway | Pagos interoperables LatAm | ⏳ Fase 3 |
 
 ## 🛡️ Garantías de Atomicidad
 - **Sin dependencias circulares:** Flujo unidireccional.
