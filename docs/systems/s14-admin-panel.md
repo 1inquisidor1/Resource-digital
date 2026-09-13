@@ -7,6 +7,5 @@ last_updated: 2026-09-13
 related: []
 ---
 
-# S14: Panel Admin
 
 Estado: Planificado. Gestión global de nodos.

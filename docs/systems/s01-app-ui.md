@@ -7,6 +7,5 @@ last_updated: 2026-09-13
 related: []
 ---
 
-# S01: App UI
 
 Estado: En desarrollo (v5.1 ALPHA). Definición de interfaces en Flutter.

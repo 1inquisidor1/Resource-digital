@@ -62,7 +62,7 @@ El SDK de Honeygain requiere:
 
 Para cualquier consulta legal, solicitudes de eliminación de datos o soporte técnico, contacte al
 correo oficial:
-**andy@resourcedigital.dpdns.org**
+**[andy@resourcedigital.dpdns.org](mailto:andy@resourcedigital.dpdns.org)**
 
 ## Fase 3: Ecosistema Completo
 

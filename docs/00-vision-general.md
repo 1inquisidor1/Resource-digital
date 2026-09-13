@@ -7,7 +7,6 @@ last_updated: 2026-09-13
 related: []
 ---
 
-# Visión General: Resource Digital
 
 ## 🌟 Concepto
 

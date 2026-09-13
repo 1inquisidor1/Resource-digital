@@ -7,7 +7,6 @@ last_updated: 2026-09-13
 related: []
 ---
 
-# 📚 Índice Maestro de Documentación: Resource Digital
 
 Bienvenido a la base de conocimientos técnica de **Resource Digital**. Este proyecto está construido
 sobre una arquitectura de **18 Sistemas Atómicos** para garantizar la escalabilidad DePIN.

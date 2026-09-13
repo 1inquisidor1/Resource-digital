@@ -7,7 +7,6 @@ last_updated: 2026-09-13
 related: []
 ---
 
-# Guía de registro: Honeygain SDK Publisher
 
 ## 1. ¿Qué es Honeygain SDK?
 
@@ -15,7 +14,7 @@ Honeygain SDK es una solución de **monetización pasiva sin anuncios** que perm
 desarrolladores generar ingresos compartiendo el ancho de banda no utilizado de sus usuarios. El SDK
 corre en segundo plano, no accede a datos personales y es **GDPR y CCPA compliant**.
 
-**Datos clave (2026):**
+## Datos clave (2026):
 
 - Integración en menos de 30 minutos con documentación clara.
 - Pagos vía **PayPal o transferencia bancaria**.
@@ -46,7 +45,7 @@ corre en segundo plano, no accede a datos personales y es **GDPR y CCPA complian
 
 - **Descripción breve**: "App de ingresos pasivos que monetiza ancho de banda no utilizado mediante
 SDK de Honeygain"
-4. El equipo de **business developers** de Honeygain te contactará para asistirte en el proceso.
+1. El equipo de **business developers** de Honeygain te contactará para asistirte en el proceso.
 
 ### Paso 2: Integrar el SDK
 
@@ -58,7 +57,7 @@ SDK de Honeygain"
 
 ### Paso 3: Implementar consentimiento y opt-out
 
-**Requisitos obligatorios de Honeygain:**
+## Requisitos obligatorios de Honeygain:
 
 1. **Informar claramente** al usuario sobre el uso compartido de ancho de banda.
 2. **Opt-in único** (one-time consent).
@@ -143,22 +142,22 @@ class HoneygainConsent {
 
 ## 7. Preguntas frecuentes del proceso
 
-**¿Necesito empresa registrada?**
+## ¿Necesito empresa registrada?
 No. Honeygain permite publishers individuales. Si luego quieres facturar a escala, puedes registrar
 una empresa en Ecuador.
 
-**¿Cuánto tarda el review?**
+## ¿Cuánto tarda el review?
 Quick review: 1-2 días hábiles.
 
-**¿Puedo usar Honeygain junto a otros SDKs de banda?**
+## ¿Puedo usar Honeygain junto a otros SDKs de banda?
 Sí. Honeygain SDK es compatible con modelos híbridos. Cuando migres a Pawns.app en el futuro, puedes
 tener ambos en paralelo.
 
-**¿Qué pasa si un usuario desactiva el opt-in?**
+## ¿Qué pasa si un usuario desactiva el opt-in?
 El SDK se detiene inmediatamente. No genera ingresos para ese usuario, pero tampoco consume
 recursos.
 
-**¿Honeygain accede a datos personales?**
+## ¿Honeygain accede a datos personales?
 No. El SDK está diseñado para **no recolectar PII** y todo el tráfico está cifrado.
 
 ## 8. Enlaces útiles
