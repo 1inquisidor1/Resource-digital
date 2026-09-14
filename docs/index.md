@@ -38,6 +38,3 @@
 | S16 | [s16-legal-compliance.md](./systems/s16-legal-compliance.md) | Legal Compliance | 1 | pending |
 | S17 | [s17-feature-flags.md](./systems/s17-feature-flags.md) | Feature Flags | 2 | planned |
 | S18 | [s18-monitoring.md](./systems/s18-monitoring.md) | Monitoring | 2 | planned |
-| S19 | [s19-denet-storage.md](./systems/s19-denet-storage.md) | DeNet Storage | 3 | planned |
-| S20 | [s20-acurast-compute.md](./systems/s20-acurast-compute.md) | Acurast Compute | 3 | planned |
-| S21 | [s21-payos-gateway.md](./systems/s21-payos-gateway.md) | PayOS Gateway | 3 | planned |
