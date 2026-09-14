@@ -1399,4 +1399,126 @@ a:hover {
 .hero__cta--accent:hover {
     background: var(--accent-glow);
     border-color: var(--accent-dim);
+
+/* ===== SYSTEM CARD CATEGORY COLORS ===== */
+.system-card[data-category="core"] {
+    border-left: 3px solid var(--accent);
+}
+.system-card[data-category="depin"] {
+    border-left: 3px solid var(--blue);
+}
+.system-card[data-category="support"] {
+    border-left: 3px solid var(--orange);
+}
+.system-card[data-category="ecosystem"] {
+    border-left: 3px solid var(--purple);
+}
+
+/* ===== SYSTEM CARD ICON CONTAINER ===== */
+.system-card__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-0);
+    border: 1px solid var(--border);
+    margin-bottom: var(--space-4);
+    transition: all var(--dur) var(--ease);
+}
+.system-card:hover .system-card__icon {
+    background: var(--accent-glow);
+    border-color: var(--accent);
+    transform: scale(1.05);
+}
+.system-card[data-category="core"] .system-card__icon:hover {
+    background: var(--accent-glow);
+    border-color: var(--accent);
+}
+.system-card[data-category="depin"] .system-card__icon:hover {
+    background: var(--blue-glow);
+    border-color: var(--blue);
+}
+.system-card[data-category="support"] .system-card__icon:hover {
+    background: var(--orange-glow);
+    border-color: var(--orange);
+}
+.system-card[data-category="ecosystem"] .system-card__icon:hover {
+    background: var(--purple-glow);
+    border-color: var(--purple);
+}
+
+/* ===== SYSTEM GRID CATEGORY HEADERS ===== */
+.systems-category {
+    margin-bottom: var(--space-12);
+}
+.systems-category__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border);
+}
+.systems-category__title {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    color: var(--text-0);
+}
+.systems-category__subtitle {
+    font-size: var(--fs-sm);
+    color: var(--text-3);
+}
+.systems-category__count {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--accent);
+    background: var(--accent-glow);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 999px;
+    margin-left: auto;
+}
+
+/* ===== ENHANCED SYSTEM CARD ===== */
+.system-card {
+    position: relative;
+    background: var(--bg-1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all var(--dur) var(--ease);
+    overflow: hidden;
+}
+.system-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--dur) var(--ease);
+}
+.system-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, var(--accent-glow), transparent 50%);
+    opacity: 0;
+    transition: opacity var(--dur) var(--ease);
+    pointer-events: none;
+}
+.system-card:hover {
+    background: var(--bg-2);
+    border-color: var(--accent);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow);
+}
+.system-card:hover::before,
+.system-card:hover::after {
+    opacity: 1;
+}
+
 }

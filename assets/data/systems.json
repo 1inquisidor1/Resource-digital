@@ -25,147 +25,215 @@
       "name": "App UI",
       "phase": 1,
       "status": "pending",
-      "description": "Interfaz principal de la app"
+      "description": "Interfaz principal de la app",
+      "icon": "icon-node-core.svg",
+      "category": "core"
     },
     {
       "code": "S02",
       "name": "Foreground Service",
       "phase": 1,
       "status": "pending",
-      "description": "Servicio en primer plano"
+      "description": "Servicio en primer plano",
+      "icon": "icon-rocket.svg",
+      "category": "core"
     },
     {
       "code": "S03",
       "name": "Sensor Capture",
       "phase": 2,
       "status": "planned",
-      "description": "Captura de sensores"
+      "description": "Captura de sensores",
+      "icon": "icon-sensors.svg",
+      "category": "core"
     },
     {
       "code": "S04",
       "name": "SQLite Buffer",
       "phase": 1,
       "status": "pending",
-      "description": "Buffer local SQLite"
+      "description": "Buffer local SQLite",
+      "icon": "icon-database-buffer.svg",
+      "category": "core"
     },
     {
       "code": "S05",
       "name": "Bandwidth Orchestrator",
       "phase": 1,
       "status": "in-progress",
-      "description": "Orquestador de ancho de banda"
+      "description": "Orquestador de ancho de banda",
+      "icon": "icon-wave-signal.svg",
+      "category": "core"
     },
     {
       "code": "S06",
       "name": "peaq L1",
       "phase": 2,
       "status": "planned",
-      "description": "Blockchain peaq"
+      "description": "Blockchain peaq",
+      "icon": "icon-bridge-chain.svg",
+      "category": "depin"
     },
     {
       "code": "S07",
       "name": "Boosters Engine",
       "phase": 2,
       "status": "planned",
-      "description": "Motor de boosters"
+      "description": "Motor de boosters",
+      "icon": "icon-trophy.svg",
+      "category": "depin"
     },
     {
       "code": "S08",
       "name": "Resource Panel",
       "phase": 2,
       "status": "planned",
-      "description": "Panel de recursos"
+      "description": "Panel de recursos",
+      "icon": "icon-grid-panel.svg",
+      "category": "depin"
     },
     {
       "code": "S09",
       "name": "Affiliates v2",
       "phase": 2,
       "status": "planned",
-      "description": "Sistema de afiliados"
+      "description": "Sistema de afiliados",
+      "icon": "icon-affiliates.svg",
+      "category": "depin"
     },
     {
       "code": "S10",
       "name": "Auth and Registry",
       "phase": 1,
       "status": "pending",
-      "description": "Autenticación y registro"
+      "description": "Autenticación y registro",
+      "icon": "icon-auth.svg",
+      "category": "support"
     },
     {
       "code": "S11",
       "name": "Withdrawals",
       "phase": 1,
       "status": "pending",
-      "description": "Retiros"
+      "description": "Retiros",
+      "icon": "icon-wallet.svg",
+      "category": "support"
     },
     {
       "code": "S12",
       "name": "Notifications",
       "phase": 1,
       "status": "pending",
-      "description": "Notificaciones"
+      "description": "Notificaciones",
+      "icon": "icon-notifications.svg",
+      "category": "support"
     },
     {
       "code": "S13",
       "name": "User Support",
       "phase": 2,
       "status": "planned",
-      "description": "Soporte al usuario"
+      "description": "Soporte al usuario",
+      "icon": "icon-support.svg",
+      "category": "support"
     },
     {
       "code": "S14",
       "name": "Admin Panel",
       "phase": 2,
       "status": "planned",
-      "description": "Panel de administración"
+      "description": "Panel de administración",
+      "icon": "icon-cog-wheel.svg",
+      "category": "support"
     },
     {
       "code": "S15",
       "name": "Analytics",
       "phase": 2,
       "status": "planned",
-      "description": "Analíticas"
+      "description": "Analíticas",
+      "icon": "icon-analytics.svg",
+      "category": "support"
     },
     {
       "code": "S16",
       "name": "Legal Compliance",
       "phase": 1,
       "status": "pending",
-      "description": "Cumplimiento legal"
+      "description": "Cumplimiento legal",
+      "icon": "icon-document-shield.svg",
+      "category": "support"
     },
     {
       "code": "S17",
       "name": "Feature Flags",
       "phase": 2,
       "status": "planned",
-      "description": "Feature flags"
+      "description": "Feature flags",
+      "icon": "icon-flags.svg",
+      "category": "support"
     },
     {
       "code": "S18",
       "name": "Monitoring",
       "phase": 2,
       "status": "planned",
-      "description": "Monitoreo"
+      "description": "Monitoreo",
+      "icon": "icon-compass.svg",
+      "category": "support"
     },
     {
       "code": "S19",
       "name": "DeNet Storage",
       "phase": 3,
       "status": "planned",
-      "description": "Almacenamiento DeNet"
+      "description": "Almacenamiento DeNet",
+      "icon": "icon-denet.svg",
+      "category": "ecosystem"
     },
     {
       "code": "S20",
       "name": "Acurast Compute",
       "phase": 3,
       "status": "planned",
-      "description": "Cómputo Acurast"
+      "description": "Cómputo Acurast",
+      "icon": "icon-acurast.svg",
+      "category": "ecosystem"
     },
     {
       "code": "S21",
       "name": "PayOS Gateway",
       "phase": 3,
       "status": "planned",
-      "description": "Gateway de pagos"
+      "description": "Gateway de pagos",
+      "icon": "icon-payos.svg",
+      "category": "ecosystem"
+    }
+  ],
+  "categories": [
+    {
+      "id": "core",
+      "name": "Core Node",
+      "description": "Recursos del dispositivo Android",
+      "range": "S01-S05"
+    },
+    {
+      "id": "depin",
+      "name": "DePIN Layer",
+      "description": "Integración con blockchain y red",
+      "range": "S06-S09"
+    },
+    {
+      "id": "support",
+      "name": "Soporte",
+      "description": "Infraestructura y operaciones",
+      "range": "S10-S18"
+    },
+    {
+      "id": "ecosystem",
+      "name": "Ecosistema",
+      "description": "Servicios DePIN externos",
+      "range": "S19-S21"
     }
   ]
 }
