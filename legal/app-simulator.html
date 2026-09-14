@@ -1263,7 +1263,7 @@ body {
       <section class="screen" id="screen-network">
         <div class="network">
           <div class="network__title">Red DePIN en Vivo</div>
-          <canvas class="network__canvas" id="networkCanvas"></canvas>
+          <canvas class="network__canvas" id="networkCanvas" width="400" height="200"></canvas>
           <div class="network__stats">
             <div class="network__stat">
               <div class="network__stat-value" id="net-nodes">1,200</div>
@@ -1741,28 +1741,33 @@ body {
     var canvas = document.getElementById('networkCanvas');
     var ctx = canvas.getContext('2d');
     var nodes = [];
+    var animId = null;
 
-    function resize() {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
+    // Inicializar nodos
     for (var i = 0; i < 30; i++) {
       nodes.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
+        x: Math.random() * 400,
+        y: Math.random() * 200,
+        vx: (Math.random() - 0.5) * 0.8,
+        vy: (Math.random() - 0.5) * 0.8,
         size: Math.random() * 3 + 2,
         color: Math.random() > 0.7 ? '#00e5a0' : '#60a5fa'
       });
     }
 
+    function resize() {
+      var rect = canvas.parentElement.getBoundingClientRect();
+      if (rect.width > 0) {
+        canvas.width = rect.width - 4;
+        canvas.height = 200;
+      }
+    }
+
     function draw() {
+      if (!ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      // Dibujar conexiones
       for (var i = 0; i < nodes.length; i++) {
         for (var j = i + 1; j < nodes.length; j++) {
           var dx = nodes[i].x - nodes[j].x;
@@ -1772,24 +1777,27 @@ body {
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
-            ctx.strokeStyle = 'rgba(0, 229, 160, ' + (1 - dist / 80) * 0.3 + ')';
+            ctx.strokeStyle = 'rgba(0, 229, 160, ' + (1 - dist / 80) * 0.4 + ')';
             ctx.lineWidth = 1;
             ctx.stroke();
           }
         }
       }
 
+      // Dibujar nodos
       nodes.forEach(function(n) {
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.size, 0, Math.PI * 2);
         ctx.fillStyle = n.color;
         ctx.fill();
+        // Glow
         ctx.beginPath();
-        ctx.arc(n.x, n.y, n.size + 3, 0, Math.PI * 2);
-        ctx.fillStyle = n.color + '33';
+        ctx.arc(n.x, n.y, n.size + 4, 0, Math.PI * 2);
+        ctx.fillStyle = n.color + '22';
         ctx.fill();
       });
 
+      // Mover nodos
       nodes.forEach(function(n) {
         n.x += n.vx;
         n.y += n.vy;
@@ -1797,12 +1805,17 @@ body {
         if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
       });
 
-      requestAnimationFrame(draw);
+      animId = requestAnimationFrame(draw);
     }
+
+    // Iniciar animación
+    resize();
     draw();
+
+    // Redibujar cuando se haga visible
+    window.addEventListener('resize', resize);
   }
 
-  // ========== REFERRAL ==========
   function copyReferral() {
     var input = document.getElementById('referralInput');
     if (navigator.clipboard && navigator.clipboard.writeText) {
