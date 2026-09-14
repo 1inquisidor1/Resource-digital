@@ -4,7 +4,7 @@
 
 [![GitHub](https://img.shields.io/badge/GitHub-Resource%20Digital-00e5a0?style=flat-square&logo=github)](https://github.com/1inquisidor1/Resource-digital)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-v5.1%20Alpha-yellow?style=flat-square)]()
+[![Status](https://img.shields.io/badge/Status-v5.1%20Alpha-yellow?style=flat-square)](https://github.com/1inquisidor1/Resource-digital/releases)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-60a5fa?style=flat-square)](https://1inquisidor1.github.io/Resource-digital/)
 
 ---
@@ -83,7 +83,7 @@ S10-S18: Soporte (Auth, Withdrawals, Notificaciones, Soporte, Admin, Analytics, 
 S19-S21: Ecosistema (DeNet, Acurast, PayOS)
 ```text
 
-Ver documentación completa: [docs/INDEX.md](docs/INDEX.md)
+Ver documentación completa: [docs/index.md](https://1inquisidor1.github.io/Resource-digital/docs/index.md)
 
 ---
 
@@ -91,7 +91,7 @@ Ver documentación completa: [docs/INDEX.md](docs/INDEX.md)
 
 Este proyecto está en desarrollo activo. Para contribuir:
 
-1. Revisa el [Plan de Desarrollo](legal/roadmap.html)
+1. Revisa el [Plan de Desarrollo](https://1inquisidor1.github.io/Resource-digital/legal/roadmap.html)
 2. Abre un Issue con tu propuesta
 3. Sube un Pull Request siguiendo las guías de estilo
 
@@ -110,11 +110,13 @@ Este proyecto está en desarrollo activo. Para contribuir:
 
 ---
 
+
+<p align="center">© 2026 Resource Digital. Construyendo el futuro DePIN en Latinoamérica.</p>
+
 <p align="center">
- <strong>© 2026 Resource Digital. Construyendo el futuro DePIN en Latinoamérica.</strong><br>
- <a href="legal/privacy.html">Privacidad</a> ·
- <a href="legal/terms.html">Términos</a> ·
- <a href="legal/roadmap.html">Plan</a> ·
- <a href="legal/beta.html">Beta</a> ·
- <a href="legal/app-simulator.html">Demo</a>
+<a href="legal/privacy.html">Privacidad</a> ·
+<a href="legal/terms.html">Términos</a> ·
+<a href="legal/roadmap.html">Plan</a> ·
+<a href="legal/beta.html">Beta</a> ·
+<a href="legal/app-simulator.html">Demo</a>
 </p>
