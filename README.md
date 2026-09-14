@@ -120,7 +120,7 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 
 ---
 
-### Ecosistema (S19-S21)
+### Ecosistema (S18-S18)
 *Servicios DePIN externos*
 
 | Icono | Sistema | Descripción | Estado |
