@@ -12,6 +12,7 @@
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
  <style>
+
  *{margin:0;padding:0;box-sizing:border-box}
  :root {
  --bg-0: #050a12;
@@ -765,6 +766,7 @@
 .bg-blue-glow { background: var(--blue-glow); }
 .bg-orange-glow { background: var(--orange-glow); }
 .bg-purple-glow { background: var(--purple-glow); }
+
 </style>
  <meta property="og:title" content="Resource Digital | Demo App">
  <meta property="og:description" content="Simulador interactivo de Resource Digital. Experimenta el DePIN móvil del futuro.">
@@ -1138,23 +1140,23 @@
     <!-- BOTTOM NAV -->
     <nav class="nav">
       <div class="nav__list">
-        <button class="nav__item active" onclick="nav(event('home')" aria-label="Inicio">
+        <button class="nav__item active" onclick="nav('home', event)" aria-label="Inicio">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           Inicio
         </button>
-        <button class="nav__item" onclick="nav(event('network')" aria-label="Red">
+        <button class="nav__item" onclick="nav('network', event)" aria-label="Red">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v10M1 12h6m6 0h10"/></svg>
           Red
         </button>
-        <button class="nav__item" onclick="nav(event('affiliates')" aria-label="Afiliados">
+        <button class="nav__item" onclick="nav('affiliates', event)" aria-label="Afiliados">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           Afiliados
         </button>
-        <button class="nav__item" onclick="nav(event('withdraw')" aria-label="Retirar">
+        <button class="nav__item" onclick="nav('withdraw', event)" aria-label="Retirar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           Retirar
         </button>
-        <button class="nav__item" onclick="nav(event('profile')" aria-label="Perfil">
+        <button class="nav__item" onclick="nav('profile', event)" aria-label="Perfil">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           Perfil
         </button>
