@@ -19,8 +19,8 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 |---------|----------------|--------|
 | Ancho de Banda | Honeygain + Pawns + BrightSDK | [En progreso] |
 | Sensores | Luz, ruido, movimiento | [Planificado - Fase 2] |
-| Almacenamiento | DeNet (Fase 3) | [Planificado] |
-| Computo | Acurast (Fase 3) | [Planificado] |
+| Almacenamiento | DeNet (vía S05 ampliado) | [Planificado - Fase 3] |
+| Cómputo | Acurast (vía S05 ampliado) | [Planificado - Fase 3] |
 
 ---
 
@@ -125,13 +125,24 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 
 | Icono | Sistema | Descripción | Estado |
 |:-----:|---------|-------------|:------:|
-| <img src="assets/images/icon-denet.svg" width="24" height="24" alt="DeNet"> | **S19** DeNet Storage | Almacenamiento descentralizado | ⏳ |
-| <img src="assets/images/icon-acurast.svg" width="24" height="24" alt="Acurast"> | **S20** Acurast Compute | Cómputo serverless | ⏳ |
-| <img src="assets/images/icon-payos.svg" width="24" height="24" alt="PayOS"> | **S21** PayOS Gateway | Pasarela de pagos | ⏳ |
 
 </div>
 
 <div align="center">
+
+**[---
+
+### Proveedores Externos
+*Integraciones de terceros que potencian los sistemas*
+
+| Sistema | Proveedor | Función |
+|:---|:---|:---|
+| S05 Bandwidth | Honeygain, Pawns.app, BrightSDK | Ancho de banda |
+| S06 peaq | peaq SDK | Blockchain L1 |
+| S10 Auth | Supabase Auth | Autenticación |
+| S11 Withdrawals | PayOS, EBANX, Mercado Pago | Pasarela de pagos |
+| S15 Analytics | PostHog, Metabase | Métricas |
+| S18 Monitoring | Sentry, UptimeRobot | Monitoreo |
 
 **[Ver documentación completa](https://1inquisidor1.github.io/Resource-digital/docs/index.md)**
 
