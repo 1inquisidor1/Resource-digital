@@ -6,7 +6,8 @@
  <meta name="theme-color" content="#070b14">
  <meta name="description" content="Resource Digital - Demo App. Experimenta el poder del DePIN móvil.">
  <title>Resource Digital | Demo App</title>
- <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+ <base href="/Resource-digital/">
+ <link rel="icon" type="image/svg+xml" href="../Resource-digital/assets/images/favicon.svg">
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -764,7 +765,7 @@
 </style>
  <meta property="og:title" content="Resource Digital | Demo App">
  <meta property="og:description" content="Simulador interactivo de Resource Digital. Experimenta el DePIN móvil del futuro.">
- <meta property="og:image" content="https://1inquisidor1.github.io/Resource-digital/assets/images/og-image.svg">
+ <meta property="og:image" content="https://1inquisidor1.github.io/Resource-digital/Resource-digital/assets/images/og-image.svg">
  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -774,7 +775,7 @@
  <h1 style="position:absolute;left:-9999px">Resource Digital - Demo App Simulador</h1>
  <div class="header__top">
  <span class="header__brand">
- <img src="../assets/images/favicon.svg" alt="Resource Digital" style="width:20px;height:20px;vertical-align:middle;margin-right:6px">
+ <img src="../Resource-digital/assets/images/favicon.svg" alt="Resource Digital" style="width:20px;height:20px;vertical-align:middle;margin-right:6px">
  <span>Resource</span> Digital
  </span>
  <div class="header__status">
@@ -825,7 +826,7 @@
  <div class="resources fade-up delay-1">
  <div class="resource active" id="res-bandwidth" onclick="toggleResource('bandwidth')">
  <div class="resource__header">
- <div class="resource__icon bandwidth"><img src="../assets/images/icon-bandwidth.svg" alt="" width="24" height="24"></div>
+ <div class="resource__icon bandwidth"><img src="../Resource-digital/assets/images/icon-bandwidth.svg" alt="" width="24" height="24"></div>
  <div class="resource__toggle">
  <input type="checkbox" id="toggle-bandwidth" checked aria-label="Activar ancho de banda">
  <label for="toggle-bandwidth"></label>
@@ -837,7 +838,7 @@
  </div>
  <div class="resource active" id="res-sensors" onclick="toggleResource('sensors')">
  <div class="resource__header">
- <div class="resource__icon sensors"><img src="../assets/images/icon-sensors.svg" alt="" width="24" height="24"></div>
+ <div class="resource__icon sensors"><img src="../Resource-digital/assets/images/icon-sensors.svg" alt="" width="24" height="24"></div>
  <div class="resource__toggle">
  <input type="checkbox" id="toggle-sensors" checked aria-label="Activar sensores">
  <label for="toggle-sensors"></label>
@@ -849,7 +850,7 @@
  </div>
  <div class="resource" id="res-storage" onclick="toggleResource('storage')">
  <div class="resource__header">
- <div class="resource__icon storage"><img src="../assets/images/icon-storage.svg" alt="" width="24" height="24"></div>
+ <div class="resource__icon storage"><img src="../Resource-digital/assets/images/icon-storage.svg" alt="" width="24" height="24"></div>
  <div class="resource__toggle">
  <input type="checkbox" id="toggle-storage" aria-label="Activar almacenamiento">
  <label for="toggle-storage"></label>
@@ -861,7 +862,7 @@
  </div>
  <div class="resource" id="res-compute" onclick="toggleResource('compute')">
  <div class="resource__header">
- <div class="resource__icon compute"><img src="../assets/images/icon-compute.svg" alt="" width="24" height="24"></div>
+ <div class="resource__icon compute"><img src="../Resource-digital/assets/images/icon-compute.svg" alt="" width="24" height="24"></div>
  <div class="resource__toggle">
  <input type="checkbox" id="toggle-compute" aria-label="Activar cómputo">
  <label for="toggle-compute"></label>
@@ -876,7 +877,7 @@
  <div class="section-title">Boosters Activos</div>
  <div class="boosters fade-up delay-2">
  <div class="booster">
- <div class="booster__icon bg-accent-glow"><img src="../assets/images/icon-compute.svg" alt="" width="20" height="20"></div>
+ <div class="booster__icon bg-accent-glow"><img src="../Resource-digital/assets/images/icon-compute.svg" alt="" width="20" height="20"></div>
  <div class="booster__info">
  <div class="booster__name">Nodo 24/7</div>
  <div class="booster__desc">Activo más de 20h/día</div>
@@ -884,7 +885,7 @@
  <div class="booster__multiplier">x1.5</div>
  </div>
  <div class="booster">
- <div class="booster__icon bg-orange-glow"><img src="../assets/images/icon-affiliates.svg" alt="" width="20" height="20"></div>
+ <div class="booster__icon bg-orange-glow"><img src="../Resource-digital/assets/images/icon-affiliates.svg" alt="" width="20" height="20"></div>
  <div class="booster__info">
  <div class="booster__name">Afiliados Directos</div>
  <div class="booster__desc">3 referidos activos</div>
@@ -892,7 +893,7 @@
  <div class="booster__multiplier">x1.3</div>
  </div>
  <div class="booster">
- <div class="booster__icon bg-blue-glow"><img src="../assets/images/icon-analytics.svg" alt="" width="20" height="20"></div>
+ <div class="booster__icon bg-blue-glow"><img src="../Resource-digital/assets/images/icon-analytics.svg" alt="" width="20" height="20"></div>
  <div class="booster__info">
  <div class="booster__name">DID Verificado</div>
  <div class="booster__desc">Identidad peaq on-chain</div>
@@ -1049,7 +1050,7 @@
  <div class="section-title">Métodos de Retiro</div>
  <div class="methods">
  <div class="method" onclick="showToast('Retiro PayPal procesado')">
- <div class="method__icon bg-blue-glow"><img src="../assets/images/icon-blockchain.svg" alt="" width="20" height="20"></div>
+ <div class="method__icon bg-blue-glow"><img src="../Resource-digital/assets/images/icon-blockchain.svg" alt="" width="20" height="20"></div>
  <div class="method__info">
  <div class="method__name">PayPal</div>
  <div class="method__detail">Retiro directo a tu cuenta</div>
@@ -1057,7 +1058,7 @@
  <div class="method__fee">1%</div>
  </div>
  <div class="method" onclick="showToast('Retiro SPEI procesado')">
- <div class="method__icon bg-orange-glow"><img src="../assets/images/icon-wallet.svg" alt="" width="20" height="20"></div>
+ <div class="method__icon bg-orange-glow"><img src="../Resource-digital/assets/images/icon-wallet.svg" alt="" width="20" height="20"></div>
  <div class="method__info">
  <div class="method__name">SPEI (MX)</div>
  <div class="method__detail">Transferencia bancaria México</div>
@@ -1065,7 +1066,7 @@
  <div class="method__fee">$10 MXN</div>
  </div>
  <div class="method" onclick="showToast('Retiro PIX procesado')">
- <div class="method__icon bg-accent-glow"><img src="../assets/images/icon-shield.svg" alt="" width="20" height="20"></div>
+ <div class="method__icon bg-accent-glow"><img src="../Resource-digital/assets/images/icon-shield.svg" alt="" width="20" height="20"></div>
  <div class="method__info">
  <div class="method__name">PIX (BR)</div>
  <div class="method__detail">Transferencia bancaria Brasil</div>
@@ -1073,7 +1074,7 @@
  <div class="method__fee" style="color:var(--accent)">Gratis</div>
  </div>
  <div class="method" onclick="showToast('Retiro PSE procesado')">
- <div class="method__icon bg-purple-glow"><img src="../assets/images/icon-auth.svg" alt="" width="20" height="20"></div>
+ <div class="method__icon bg-purple-glow"><img src="../Resource-digital/assets/images/icon-auth.svg" alt="" width="20" height="20"></div>
  <div class="method__info">
  <div class="method__name">PSE (CO)</div>
  <div class="method__detail">Transferencia bancaria Colombia</div>
@@ -1104,7 +1105,7 @@
  <div class="section-title">Dispositivo</div>
  <div class="resource active" style="border-color:var(--accent)">
  <div class="resource__header">
- <div class="resource__icon bg-accent-glow"><img src="../assets/images/icon-bandwidth.svg" alt="" width="20" height="20"></div>
+ <div class="resource__icon bg-accent-glow"><img src="../Resource-digital/assets/images/icon-bandwidth.svg" alt="" width="20" height="20"></div>
  <div class="resource__toggle">
  <input type="checkbox" checked disabled>
  <label style="background:var(--accent)"></label>
