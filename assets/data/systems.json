@@ -131,7 +131,7 @@
     {
       "code": "S13",
       "name": "User Support",
-      "phase": 1,
+      "phase": 2,
       "status": "pending",
       "description": "Mesa de ayuda integrada",
       "icon": "icon-support.svg",
@@ -140,7 +140,7 @@
     {
       "code": "S14",
       "name": "Admin Panel",
-      "phase": 1,
+      "phase": 2,
       "status": "pending",
       "description": "Administración del sistema",
       "icon": "icon-cog-wheel.svg",
@@ -149,7 +149,7 @@
     {
       "code": "S15",
       "name": "Analytics",
-      "phase": 1,
+      "phase": 2,
       "status": "pending",
       "description": "Métricas y reportes",
       "icon": "icon-analytics.svg",
@@ -167,7 +167,7 @@
     {
       "code": "S17",
       "name": "Feature Flags",
-      "phase": 1,
+      "phase": 2,
       "status": "pending",
       "description": "Control de características",
       "icon": "icon-flags.svg",
@@ -176,7 +176,7 @@
     {
       "code": "S18",
       "name": "Monitoring",
-      "phase": 1,
+      "phase": 2,
       "status": "pending",
       "description": "Monitoreo de salud del nodo",
       "icon": "icon-compass.svg",
