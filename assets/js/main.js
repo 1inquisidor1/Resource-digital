@@ -81,12 +81,11 @@ function generateSystemCard(system) {
     }).join('');
     
     return '<article class="system-card reveal" data-phase="' + system.phase + '">' +
-        '<div class="system-card__header">' +
-            '<img src="assets/images/' + iconPath + '" alt="" width="24" height="24" style="margin-right:6px;vertical-align:middle">' +
+        '<div class="system-card__header"><img src="assets/images/' + iconPath + '" alt="" width="32" height="32" style="margin-right:8px;vertical-align:middle">' +
             '<span class="system-card__id">' + escapeHtml(system.id) + '</span>' +
             '<span class="badge ' + badgeClass + '">' + statusText + '</span>' +
         '</div>' +
-        '<h3 class="system-card__title"><img src="assets/images/' + iconPath + '" alt="" width="18" height="18" style="margin-right:6px;vertical-align:middle">' + escapeHtml(system.name) + '</h3>' +
+        '<h3 class="system-card__title"><img src="assets/images/' + iconPath + '" alt="" width="24" height="24" style="margin-right:8px;vertical-align:middle">' + escapeHtml(system.name) + '</h3>' +
         '<p class="system-card__desc">' + escapeHtml(system.desc) + '</p>' +
         '<div class="system-card__meta">' +
             '<span class="tag">Fase ' + system.phase + '</span>' +
