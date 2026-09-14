@@ -9,7 +9,7 @@ REQUIRED_FIELDS = {"title", "status", "phase", "owner", "last_updated"}
 VALID_STATUSES = {"draft", "active", "archived", "pending", "in-progress", "done", "planned"}
 VALID_PHASES = {1, 2, 3, None}
 
-EXCLUDE = {"INDEX.md", "AGENTS.md", "_inconsistencies.md"}
+EXCLUDE = {"index.md", "AGENTS.md", "_inconsistencies.md"}
 
 errors = []
 
