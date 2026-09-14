@@ -15,7 +15,8 @@
 - **Un tema = un archivo**: no crear archivos "varios" o "misc".
 - **Fechas en ISO 8601**: `2026-09-13`. Nunca `13/09/2026` ni `septiembre 2026`.
 - **Idioma**: documentación en español. Código y variables en inglés.
-- **Sin emojis decorativos**. Solo `✅` `⚠` `❌` `⏳` `` para estado.
+- **Sin emojis decorativos en documentacion**. Solo `✅` `⚠` `❌` `⏳` `` para estado en archivos .md.
+- **Iconos SVG en UI**: permitidos solo como guia visual funcional (identificar recursos, estados, acciones). Nunca decorativos.
 
 ---
 
@@ -242,4 +243,45 @@ Si dos documentos se contradicen, prevalece en este orden:
 5. `docs/03-diario.md` (histórico)
 
 Si el conflicto es entre un `.docx` de `_archive/` y un `.md` de `docs/`,
-**siempre prevalece el `.md`**.
+**siempre prevalece el `.md`**.---
+
+## 1.5. Activos visuales (iconos y imagenes)
+
+### Principios
+- **Funcionalidad sobre decoracion**: un icono debe guiar al usuario, identificar un recurso o indicar un estado. Si solo "decora", se elimina.
+- **Consistencia visual**: todos los iconos SVG comparten el mismo design system (color `#00e5a0` como principal, tamanos definidos, stroke-width uniforme).
+- **Accesibilidad**: cada icono tiene `alt=""` descriptivo o `aria-hidden="true"` si es puramente decorativo.
+
+### Cuando usar iconos SVG
+| Caso | Permitido? | Ejemplo |
+|---|---|---|
+| Identificar un recurso en la UI | Si | `icon-bandwidth.svg` en tarjeta de recurso |
+| Indicar estado (activo, pendiente, error) | Si | `icon-check.svg` en estado de exito |
+| Guiar al usuario en un flujo | Si | `icon-fase.svg` en timeline de roadmap |
+| Reemplazar texto descriptivo | No | No usar iconos como unica etiqueta |
+| Decorar secciones vacias | No | No agregar iconos solo por estetica |
+| Usar en documentacion .md | No | Los .md usan solo emojis de estado |
+
+### Donde NO usar iconos
+- En archivos de documentacion markdown (`docs/`)
+- En codigo Flutter (usar `IconData` o `SvgPicture.asset` con el mismo criterio)
+- En commits de git
+- En nombres de archivo o variables
+
+### Especificaciones tecnicas
+- **Formato**: SVG (escalable, ligero)
+- **Color principal**: `#00e5a0` (verde accent del theme)
+- **Colores secundarios**: `#fbbf24` (advertencia), `#60a5fa` (info), `#a78bfa` (futuro), `#f87171` (error)
+- **Tamanos**: 16px (inline), 20px (badges), 24px (cards), 28px (feature cards), 32px (headers), 48px (success states)
+- **ViewBox**: 32x32 para consistencia
+- **Stroke-width**: 2.5px para buena visibilidad
+- **Directorio**: `assets/images/icon-*.svg`
+
+### Criterio de decision
+Antes de agregar un icono, preguntar:
+1. Ayuda este icono al usuario a entender algo? Si no, no usarlo.
+2. Reemplaza texto que deberia existir? Si si, agregar texto + icono.
+3. Mantiene consistencia con los iconos existentes? Si no, redisenar.
+4. Se ve bien en todos los tamanos? Si no, simplificar el diseno.
+
+
