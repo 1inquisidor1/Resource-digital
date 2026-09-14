@@ -1260,7 +1260,6 @@ body {
       </section>
 
       <!-- SCREEN: NETWORK -->
-      <!-- SCREEN: NETWORK -->
       <section class="screen" id="screen-network">
         <div class="network">
           <div class="network__title">Red DePIN en Vivo</div>
@@ -1325,7 +1324,8 @@ body {
           </div>
         </div>
       </section>
-      <section class="screen"       <!-- SCREEN: AFFILIATES -->
+
+      <!-- SCREEN: AFFILIATES -->
       <section class="screen" id="screen-affiliates">
         <div class="affiliate-summary">
           <div class="affiliate-summary__label">Ganancias por Afiliados</div>
@@ -1382,7 +1382,9 @@ body {
             <button class="referral-link__btn" onclick="copyReferral()">Copiar</button>
           </div>
         </div>
-      </section>      <!-- SCREEN: WITHDRAW -->
+      </section>
+
+      <!-- SCREEN: WITHDRAW -->
       <section class="screen" id="screen-withdraw">
         <div class="withdraw-balance">
           <div class="withdraw-balance__label">Disponible para Retiro</div>
@@ -1444,7 +1446,9 @@ body {
             Sin retiros aún
           </div>
         </div>
-      </section>      <!-- SCREEN: PROFILE -->
+      </section>
+
+      <!-- SCREEN: PROFILE -->
       <section class="screen" id="screen-profile">
         <div class="did-card">
           <div class="did-card__label">
@@ -1508,7 +1512,8 @@ body {
           <p><strong>Contacto:</strong> andy@resourcedigital.dpdns.org</p>
           <p><strong>Licencia:</strong> MIT License</p>
         </div>
-      </section></main>
+      </section>
+    </main>
 
     <!-- BOTTOM NAV -->
     <nav class="nav">
@@ -1576,25 +1581,32 @@ body {
 
   // ========== NAVIGATION ==========
   function goToScreen(screen, event) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.nav__item').forEach(b => b.classList.remove('active'));
-    document.getElementById('screen-' + screen).classList.add('active');
-    event.currentTarget.classList.add('active');
+    try {
+      var btn = (event && event.currentTarget) ? event.currentTarget : document.querySelector('.nav__item[onclick*="' + screen + '"]');
+      var screens = document.querySelectorAll('.screen');
+      var navItems = document.querySelectorAll('.nav__item');
+      var i;
+      for (i = 0; i < screens.length; i++) { screens[i].classList.remove('active'); }
+      for (i = 0; i < navItems.length; i++) { navItems[i].classList.remove('active'); }
+      var target = document.getElementById('screen-' + screen);
+      if (target) { target.classList.add('active'); }
+      if (btn) { btn.classList.add('active'); }
+    } catch(e) { console.log(e); }
   }
 
   // ========== TOAST ==========
   function showToast(msg) {
-    const t = document.getElementById('toast');
+    var t = document.getElementById('toast');
     t.textContent = msg;
     t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 2500);
+    setTimeout(function() { t.classList.remove('show'); }, 2500);
   }
 
   // ========== RESOURCE TOGGLE ==========
   function toggleResource(res, el) {
-    const checkbox = el;
+    var checkbox = el;
     state[res].active = checkbox.checked;
-    const resEl = document.getElementById('res-' + res);
+    var resEl = document.getElementById('res-' + res);
     if (checkbox.checked) {
       resEl.classList.add('active');
       showToast(res + ' activado');
@@ -1607,16 +1619,16 @@ body {
 
   // ========== SIMULATION ==========
   function getMultiplier() {
-    return state.boosters.filter(b => b.active).reduce((a, b) => a * b.mult, 1);
+    return state.boosters.filter(function(b) { return b.active; }).reduce(function(a, b) { return a * b.mult; }, 1);
   }
 
   function simulate() {
-    let earned = 0;
+    var earned = 0;
 
     if (state.bandwidth.active) {
       state.bandwidth.speed = Math.random() * 2.5 + 0.5;
       state.bandwidth.todayGB += state.bandwidth.speed * 0.001;
-      const e = state.bandwidth.speed * 0.0008 * getMultiplier();
+      var e = state.bandwidth.speed * 0.0008 * getMultiplier();
       state.bandwidth.earned += e;
       earned += e;
       state.totalShared += state.bandwidth.speed * 0.001;
@@ -1625,14 +1637,14 @@ body {
     if (state.sensors.active) {
       state.sensors.lux = Math.floor(Math.random() * 800 + 100);
       state.sensors.noise = Math.floor(Math.random() * 40 + 20);
-      const e = 0.00015 * getMultiplier();
+      var e = 0.00015 * getMultiplier();
       state.sensors.earned += e;
       earned += e;
     }
 
     if (state.storage.active) {
       state.storage.spaceGB = Math.min(state.storage.spaceGB + 0.0005, state.storage.maxGB);
-      const e = 0.0003 * getMultiplier();
+      var e = 0.0003 * getMultiplier();
       state.storage.earned += e;
       earned += e;
     }
@@ -1640,12 +1652,12 @@ body {
     if (state.compute.active) {
       state.compute.cpu = Math.floor(Math.random() * 30 + 5);
       if (Math.random() > 0.7) state.compute.tasks++;
-      const e = 0.0002 * getMultiplier();
+      var e = 0.0002 * getMultiplier();
       state.compute.earned += e;
       earned += e;
     }
 
-    const affEarn = (state.affiliates.direct * 0.0005 + state.affiliates.indirect * 0.0002) * getMultiplier();
+    var affEarn = (state.affiliates.direct * 0.0005 + state.affiliates.indirect * 0.0002) * getMultiplier();
     state.affiliates.earnings += affEarn;
     earned += affEarn;
 
@@ -1664,7 +1676,7 @@ body {
   }
 
   function addActivity() {
-    const acts = [
+    var acts = [
       { icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>', bg: 'var(--blue-glow)', text: 'Ancho de banda compartido', amount: '+$0.00' },
       { icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>', bg: 'var(--orange-glow)', text: 'Datos de sensores anonimizados', amount: '+$0.00' },
       { icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>', bg: 'var(--accent-glow)', text: 'DID verificado on-chain', amount: '' },
@@ -1672,10 +1684,10 @@ body {
       { icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/></svg>', bg: 'var(--purple-glow)', text: 'Storage sincronizado', amount: '+$0.00' },
       { icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>', bg: 'var(--accent-glow)', text: 'Tarea Acurast completada', amount: '+$0.00' }
     ];
-    const act = acts[Math.floor(Math.random() * acts.length)];
-    const now = new Date();
-    const time = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
-    state.activity.unshift({ ...act, time });
+    var act = acts[Math.floor(Math.random() * acts.length)];
+    var now = new Date();
+    var time = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+    state.activity.unshift({ icon: act.icon, bg: act.bg, text: act.text, amount: act.amount, time: time });
     if (state.activity.length > 6) state.activity.pop();
   }
 
@@ -1701,34 +1713,34 @@ body {
     document.getElementById('aff-total').textContent = '$' + state.affiliates.earnings.toFixed(2);
     document.getElementById('impact-shared').textContent = state.totalShared.toFixed(1) + ' GB';
 
-    const chart = document.getElementById('chart');
-    const max = Math.max(...state.chartData, 0.001);
-    chart.innerHTML = state.chartData.map(v =>
-      '<div class="chart__bar" style="height:' + (v / max * 100) + '%"></div>'
-    ).join('');
+    var chart = document.getElementById('chart');
+    var max = Math.max.apply(null, state.chartData.concat([0.001]));
+    chart.innerHTML = state.chartData.map(function(v) {
+      return '<div class="chart__bar" style="height:' + (v / max * 100) + '%"></div>';
+    }).join('');
 
-    const feed = document.getElementById('activity-feed');
+    var feed = document.getElementById('activity-feed');
     if (state.activity.length === 0) {
       feed.innerHTML = '<div style="text-align:center;padding:16px;color:var(--text-3);font-size:11px">Esperando actividad...</div>';
     } else {
-      feed.innerHTML = state.activity.map(a => 
-        '<div class="activity__item">' +
+      feed.innerHTML = state.activity.map(function(a) {
+        return '<div class="activity__item">' +
           '<div class="activity__icon" style="background:' + a.bg + '">' + a.icon + '</div>' +
           '<div class="activity__info">' +
             '<div class="activity__text">' + a.text + '</div>' +
             '<div class="activity__time">' + a.time + '</div>' +
           '</div>' +
           '<div class="activity__amount">' + a.amount + '</div>' +
-        '</div>'
-      ).join('');
+        '</div>';
+      }).join('');
     }
   }
 
   // ========== NETWORK CANVAS ==========
   function initNetwork() {
-    const canvas = document.getElementById('networkCanvas');
-    const ctx = canvas.getContext('2d');
-    let nodes = [];
+    var canvas = document.getElementById('networkCanvas');
+    var ctx = canvas.getContext('2d');
+    var nodes = [];
 
     function resize() {
       canvas.width = canvas.offsetWidth;
@@ -1737,7 +1749,7 @@ body {
     resize();
     window.addEventListener('resize', resize);
 
-    for (let i = 0; i < 30; i++) {
+    for (var i = 0; i < 30; i++) {
       nodes.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -1751,11 +1763,11 @@ body {
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          const dx = nodes[i].x - nodes[j].x;
-          const dy = nodes[i].y - nodes[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+      for (var i = 0; i < nodes.length; i++) {
+        for (var j = i + 1; j < nodes.length; j++) {
+          var dx = nodes[i].x - nodes[j].x;
+          var dy = nodes[i].y - nodes[j].y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < 80) {
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
@@ -1767,7 +1779,7 @@ body {
         }
       }
 
-      nodes.forEach(n => {
+      nodes.forEach(function(n) {
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.size, 0, Math.PI * 2);
         ctx.fillStyle = n.color;
@@ -1778,7 +1790,7 @@ body {
         ctx.fill();
       });
 
-      nodes.forEach(n => {
+      nodes.forEach(function(n) {
         n.x += n.vx;
         n.y += n.vy;
         if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
@@ -1790,15 +1802,13 @@ body {
     draw();
   }
 
-  // ========== INIT ==========
-    // ========== REFERRAL ==========
+  // ========== REFERRAL ==========
   function copyReferral() {
-    const input = document.getElementById('referralInput');
+    var input = document.getElementById('referralInput');
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(input.value).then(() => {
+      navigator.clipboard.writeText(input.value).then(function() {
         showToast('Link de referido copiado');
-      }).catch(() => {
-        // Fallback
+      }).catch(function() {
         input.select();
         document.execCommand('copy');
         showToast('Link de referido copiado');
@@ -1810,7 +1820,8 @@ body {
     }
   }
 
-function init() {
+  // ========== INIT ==========
+  function init() {
     updateUI();
     initNetwork();
 
@@ -1822,10 +1833,8 @@ function init() {
 
     setInterval(simulate, 1500);
 
-    setInterval(() => {
+    setInterval(function() {
       document.getElementById('net-nodes').textContent = (1200 + Math.floor(Math.random() * 100)).toLocaleString();
-      document.getElementById('net-bandwidth').textContent = (2 + Math.random() * 0.5).toFixed(1) + ' TB';
-      document.getElementById('net-earnings').textContent = '
       document.getElementById('net-bandwidth').textContent = (2 + Math.random() * 0.5).toFixed(1) + ' TB';
       document.getElementById('net-earnings').textContent = '$' + (12 + Math.random() * 2).toFixed(1) + 'K';
     }, 3000);
