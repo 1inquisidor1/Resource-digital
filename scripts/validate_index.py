@@ -5,7 +5,7 @@ import re
 import sys
 from pathlib import Path
 
-index = Path("docs/INDEX.md").read_text(encoding="utf-8")
+index = Path("docs/index.md").read_text(encoding="utf-8")
 
 # Extraer enlaces del INDEX (archivos .md referenciados)
 linked = set(re.findall(r'\]\(\./([^)]+\.md)\)', index))
@@ -14,7 +14,7 @@ linked = {Path(l).name for l in linked}
 # Archivos reales en docs/ (excluyendo carpetas especiales)
 real = set()
 for f in Path("docs").rglob("*.md"):
-    if "_archive" in str(f) or f.name in {"INDEX.md", "_inconsistencies.md", "AGENTS.md"}:
+    if "_archive" in str(f) or f.name in {"index.md", "_inconsistencies.md", "AGENTS.md"}:
         continue
     real.add(f.name)
 
