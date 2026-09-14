@@ -57,6 +57,8 @@ if (navToggle && navLinks) {
 
 // ==================== SYSTEM CARD GENERATOR ====================
 function generateSystemCard(system) {
+    var iconMap = {"S01":"icon-app-ui.svg","S02":"icon-foreground.svg","S03":"icon-sensors.svg","S04":"icon-storage.svg","S05":"icon-bandwidth.svg","S06":"icon-blockchain.svg","S07":"icon-compute.svg","S08":"icon-status.svg","S09":"icon-affiliates.svg","S10":"icon-auth.svg","S11":"icon-withdrawals.svg","S12":"icon-notifications.svg","S13":"icon-support.svg","S14":"icon-admin.svg","S15":"icon-analytics.svg","S16":"icon-legal.svg","S17":"icon-flags.svg","S18":"icon-monitoring.svg","S19":"icon-denet.svg","S20":"icon-acurast.svg","S21":"icon-payos.svg"};
+    var iconPath = iconMap[system.id] || 'icon-status.svg';
     var badgeMap = {
         'pending': 'badge--pending',
         'in-progress': 'badge--progress',
@@ -80,10 +82,11 @@ function generateSystemCard(system) {
     
     return '<article class="system-card reveal" data-phase="' + system.phase + '">' +
         '<div class="system-card__header">' +
+            '<img src="assets/images/' + iconPath + '" alt="" width="24" height="24" style="margin-right:6px;vertical-align:middle">' +
             '<span class="system-card__id">' + escapeHtml(system.id) + '</span>' +
             '<span class="badge ' + badgeClass + '">' + statusText + '</span>' +
         '</div>' +
-        '<h3 class="system-card__title">' + escapeHtml(system.name) + '</h3>' +
+        '<h3 class="system-card__title"><img src="assets/images/' + iconPath + '" alt="" width="18" height="18" style="margin-right:6px;vertical-align:middle">' + escapeHtml(system.name) + '</h3>' +
         '<p class="system-card__desc">' + escapeHtml(system.desc) + '</p>' +
         '<div class="system-card__meta">' +
             '<span class="tag">Fase ' + system.phase + '</span>' +
