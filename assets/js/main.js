@@ -153,7 +153,7 @@ async function loadData() {
         });
         
     } catch (error) {
-        console.error('Error loading data:', error);
+        // Error handled silently
         
         // Show fallback message
         var systemsContainer = document.getElementById('systems-grid');
