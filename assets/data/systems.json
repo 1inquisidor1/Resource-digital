@@ -103,7 +103,7 @@
     },
     {
       "code": "S10",
-      "name": "Auth and Registry",
+      "name": "Auth & Registry",
       "phase": 1,
       "status": "pending",
       "description": "Autenticación y registro",
