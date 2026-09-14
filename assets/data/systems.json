@@ -1,7 +1,7 @@
 {
   "project": "Resource Digital",
   "version": "5.1.0",
-  "totalSystems": 21,
+  "totalSystems": 18,
   "phases": [
     {
       "id": 1,
@@ -25,7 +25,7 @@
       "name": "App UI",
       "phase": 1,
       "status": "pending",
-      "description": "Interfaz principal de la app",
+      "description": "Interfaz principal y navegación",
       "icon": "icon-node-core.svg",
       "category": "core"
     },
@@ -34,7 +34,7 @@
       "name": "Foreground Service",
       "phase": 1,
       "status": "pending",
-      "description": "Servicio en primer plano",
+      "description": "Servicio en primer plano persistente",
       "icon": "icon-rocket.svg",
       "category": "core"
     },
@@ -43,7 +43,7 @@
       "name": "Sensor Capture",
       "phase": 2,
       "status": "planned",
-      "description": "Captura de sensores",
+      "description": "Captura de luz, ruido y movimiento",
       "icon": "icon-sensors.svg",
       "category": "core"
     },
@@ -52,7 +52,7 @@
       "name": "SQLite Buffer",
       "phase": 1,
       "status": "pending",
-      "description": "Buffer local SQLite",
+      "description": "Almacenamiento local en cola",
       "icon": "icon-database-buffer.svg",
       "category": "core"
     },
@@ -61,7 +61,7 @@
       "name": "Bandwidth Orchestrator",
       "phase": 1,
       "status": "in-progress",
-      "description": "Orquestador de ancho de banda",
+      "description": "Gestión de ancho de banda",
       "icon": "icon-wave-signal.svg",
       "category": "core"
     },
@@ -70,7 +70,7 @@
       "name": "peaq L1",
       "phase": 2,
       "status": "planned",
-      "description": "Blockchain peaq",
+      "description": "Identidad descentralizada (DID)",
       "icon": "icon-bridge-chain.svg",
       "category": "depin"
     },
@@ -79,7 +79,7 @@
       "name": "Boosters Engine",
       "phase": 2,
       "status": "planned",
-      "description": "Motor de boosters",
+      "description": "Multiplicadores de ganancias",
       "icon": "icon-trophy.svg",
       "category": "depin"
     },
@@ -88,7 +88,7 @@
       "name": "Resource Panel",
       "phase": 2,
       "status": "planned",
-      "description": "Panel de recursos",
+      "description": "Dashboard de recursos",
       "icon": "icon-grid-panel.svg",
       "category": "depin"
     },
@@ -97,7 +97,7 @@
       "name": "Affiliates v2",
       "phase": 2,
       "status": "planned",
-      "description": "Sistema de afiliados",
+      "description": "Sistema de referidos multinivel",
       "icon": "icon-affiliates.svg",
       "category": "depin"
     },
@@ -115,7 +115,7 @@
       "name": "Withdrawals",
       "phase": 1,
       "status": "pending",
-      "description": "Retiros",
+      "description": "Retiros multi-moneda",
       "icon": "icon-wallet.svg",
       "category": "support"
     },
@@ -124,34 +124,34 @@
       "name": "Notifications",
       "phase": 1,
       "status": "pending",
-      "description": "Notificaciones",
+      "description": "Sistema de notificaciones push",
       "icon": "icon-notifications.svg",
       "category": "support"
     },
     {
       "code": "S13",
       "name": "User Support",
-      "phase": 2,
-      "status": "planned",
-      "description": "Soporte al usuario",
+      "phase": 1,
+      "status": "pending",
+      "description": "Mesa de ayuda integrada",
       "icon": "icon-support.svg",
       "category": "support"
     },
     {
       "code": "S14",
       "name": "Admin Panel",
-      "phase": 2,
-      "status": "planned",
-      "description": "Panel de administración",
+      "phase": 1,
+      "status": "pending",
+      "description": "Administración del sistema",
       "icon": "icon-cog-wheel.svg",
       "category": "support"
     },
     {
       "code": "S15",
       "name": "Analytics",
-      "phase": 2,
-      "status": "planned",
-      "description": "Analíticas",
+      "phase": 1,
+      "status": "pending",
+      "description": "Métricas y reportes",
       "icon": "icon-analytics.svg",
       "category": "support"
     },
@@ -160,54 +160,27 @@
       "name": "Legal Compliance",
       "phase": 1,
       "status": "pending",
-      "description": "Cumplimiento legal",
+      "description": "Cumplimiento normativo",
       "icon": "icon-document-shield.svg",
       "category": "support"
     },
     {
       "code": "S17",
       "name": "Feature Flags",
-      "phase": 2,
-      "status": "planned",
-      "description": "Feature flags",
+      "phase": 1,
+      "status": "pending",
+      "description": "Control de características",
       "icon": "icon-flags.svg",
       "category": "support"
     },
     {
       "code": "S18",
       "name": "Monitoring",
-      "phase": 2,
-      "status": "planned",
-      "description": "Monitoreo",
+      "phase": 1,
+      "status": "pending",
+      "description": "Monitoreo de salud del nodo",
       "icon": "icon-compass.svg",
       "category": "support"
-    },
-    {
-      "code": "S19",
-      "name": "DeNet Storage",
-      "phase": 3,
-      "status": "planned",
-      "description": "Almacenamiento DeNet",
-      "icon": "icon-denet.svg",
-      "category": "ecosystem"
-    },
-    {
-      "code": "S20",
-      "name": "Acurast Compute",
-      "phase": 3,
-      "status": "planned",
-      "description": "Cómputo Acurast",
-      "icon": "icon-acurast.svg",
-      "category": "ecosystem"
-    },
-    {
-      "code": "S21",
-      "name": "PayOS Gateway",
-      "phase": 3,
-      "status": "planned",
-      "description": "Gateway de pagos",
-      "icon": "icon-payos.svg",
-      "category": "ecosystem"
     }
   ],
   "categories": [
@@ -228,12 +201,6 @@
       "name": "Soporte",
       "description": "Infraestructura y operaciones",
       "range": "S10-S18"
-    },
-    {
-      "id": "ecosystem",
-      "name": "Ecosistema",
-      "description": "Servicios DePIN externos",
-      "range": "S19-S21"
     }
   ]
 }

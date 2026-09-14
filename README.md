@@ -74,7 +74,7 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 
 ---
 
-## Sistemas Atómicos (21)
+## Sistemas Atómicos (18)
 
 <div align="center">
 
