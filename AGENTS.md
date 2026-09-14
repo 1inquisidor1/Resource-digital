@@ -2,7 +2,7 @@
 
 > Instrucciones estables para asistentes de IA que trabajen en este repositorio.
 > Este archivo describe **cómo trabajar**, no **qué existe**. Para saber qué
-> existe, leer `docs/INDEX.md`.
+> existe, leer `docs/index.md`.
 
 ---
 
@@ -67,11 +67,11 @@ Antes de agregar un icono, preguntar:
 
 Antes de hacer cualquier cosa:
 
-1. Leer `docs/INDEX.md` → mapa completo de la documentación.
+1. Leer `docs/index.md` → mapa completo de la documentación.
 2. Leer `docs/roadmap.md` → fases actuales y plazos.
 3. Leer el archivo específico del sistema o tema que vas a tocar.
 
-Si un archivo no existe en `docs/INDEX.md`, **no lo crees sin añadirlo al índice**.
+Si un archivo no existe en `docs/index.md`, **no lo crees sin añadirlo al índice**.
 
 ### Estructura de carpetas
 
@@ -195,7 +195,7 @@ related: [...]
 ### Añadir un sistema nuevo
 
 1. Crear `docs/systems/SXX-nombre.md` con la plantilla de la sección 3.
-2. Añadirlo a la tabla de `docs/INDEX.md`.
+2. Añadirlo a la tabla de `docs/index.md`.
 3. Añadirlo a `docs/01-arquitectura.md` en la lista de sistemas.
 4. **No tocar `AGENTS.md`**.
 
@@ -213,7 +213,7 @@ related: [...]
 
 ### Renombrar o mover un archivo
 
-1. Actualizar `docs/INDEX.md`.
+1. Actualizar `docs/index.md`.
 2. Buscar referencias en todos los `.md` y actualizarlas.
 3. Actualizar el frontmatter `related` de los archivos afectados.
 
@@ -236,7 +236,7 @@ Si encuentras dos documentos que se contradicen:
 
 - Editar archivos en `docs/_archive/`.
 - Duplicar información entre documentos.
-- Crear archivos sin añadirlos a `docs/INDEX.md`.
+- Crear archivos sin añadirlos a `docs/index.md`.
 - Renombrar archivos sin actualizar referencias.
 - Resolver incoherencias sin avisar.
 - Añadir secciones nuevas a los archivos de sistema.
