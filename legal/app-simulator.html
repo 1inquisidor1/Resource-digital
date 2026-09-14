@@ -1110,6 +1110,16 @@ body {
 .bg-blue-glow { background: var(--blue-glow); }
 .bg-orange-glow { background: var(--orange-glow); }
 .bg-purple-glow { background: var(--purple-glow); }
+    *:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms;
+        transition-duration: 0.01ms;
+      }
+    }
 
 </style>
  <meta property="og:title" content="Resource Digital | Demo App">
@@ -1442,7 +1452,7 @@ body {
         <div class="section-title">Historial de Retiros</div>
         <div class="withdraw-history" id="withdraw-history">
           <div class="withdraw-history__empty">
-            <div class="withdraw-history__empty-icon">📋</div>
+            <div class="withdraw-history__empty-icon"></div>
             Sin retiros aún
           </div>
         </div>
