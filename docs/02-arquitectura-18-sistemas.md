@@ -13,11 +13,15 @@ related: []
 
 > **18 módulos internos propios** + **integraciones externas** = arquitectura limpia y mantenible.
 
-Los 18 sistemas son **código propio** de la app. Las integraciones externas (Honeygain, DeNet, Acurast, etc.) son **proveedores** que los sistemas consumen.
+Los 18 sistemas son **código propio** de la app.
+
+Las integraciones externas (Honeygain, DeNet, Acurast, etc.) son
+**proveedores** que los sistemas consumen.
 
 ## Diagrama de Flujo
 
-**UI → Servicio → Sensores → Buffer Local → SDK Banda → [Backend Fase 2]**
+**UI → Servicio → Sensores → Buffer Local → SDK Banda**
+→ [Backend Fase 2]
 
 ## Desglose de 18 Sistemas
 
