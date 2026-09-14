@@ -244,7 +244,6 @@ Si dos documentos se contradicen, prevalece en este orden:
 
 Si el conflicto es entre un `.docx` de `_archive/` y un `.md` de `docs/`,
 **siempre prevalece el `.md`**.---
-
 ## 1.5. Activos visuales (iconos y imagenes)
 
 ### Principios
@@ -283,5 +282,7 @@ Antes de agregar un icono, preguntar:
 2. Reemplaza texto que deberia existir? Si si, agregar texto + icono.
 3. Mantiene consistencia con los iconos existentes? Si no, redisenar.
 4. Se ve bien en todos los tamanos? Si no, simplificar el diseno.
+
+
 
 
