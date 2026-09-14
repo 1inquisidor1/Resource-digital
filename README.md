@@ -74,16 +74,68 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 
 ---
 
-## Sistemas Atomicos (21)
+## Sistemas Atómicos (21)
 
-```text
-S01-S05: Core Node (App, Sensores, Buffer, Banda, Foreground)
-S06-S09: DePIN Layer (peaq, Boosters, Panel, Affiliates)
-S10-S18: Soporte (Auth, Withdrawals, Notificaciones, Soporte, Admin, Analytics, Legal, Flags, Monitoring)
-S19-S21: Ecosistema (DeNet, Acurast, PayOS)
-```text
+<div align="center">
 
-Ver documentación completa: [docs/index.md](https://1inquisidor1.github.io/Resource-digital/docs/index.md)
+### Core Node (S01-S05)
+*Recursos del dispositivo Android*
+
+| Icono | Sistema | Descripción | Estado |
+|:-----:|---------|-------------|:------:|
+| <img src="assets/images/icon-node-core.svg" width="24" height="24" alt="App"> | **S01** App UI | Interfaz principal y navegación | ⏳ |
+| <img src="assets/images/icon-rocket.svg" width="24" height="24" alt="Foreground"> | **S02** Foreground Service | Servicio en primer plano persistente | ⏳ |
+| <img src="assets/images/icon-sensors.svg" width="24" height="24" alt="Sensores"> | **S03** Sensor Capture | Captura de luz, ruido y movimiento | ⏳ |
+| <img src="assets/images/icon-database-buffer.svg" width="24" height="24" alt="Buffer"> | **S04** SQLite Buffer | Almacenamiento local en cola | ⏳ |
+| <img src="assets/images/icon-wave-signal.svg" width="24" height="24" alt="Bandwidth"> | **S05** Bandwidth Orchestrator | Gestión de ancho de banda | ⏳ |
+
+---
+
+### DePIN Layer (S06-S09)
+*Integración con blockchain y red*
+
+| Icono | Sistema | Descripción | Estado |
+|:-----:|---------|-------------|:------:|
+| <img src="assets/images/icon-bridge-chain.svg" width="24" height="24" alt="peaq"> | **S06** peaq L1 | Identidad descentralizada (DID) | ⏳ |
+| <img src="assets/images/icon-trophy.svg" width="24" height="24" alt="Boosters"> | **S07** Boosters Engine | Multiplicadores de ganancias | ⏳ |
+| <img src="assets/images/icon-grid-panel.svg" width="24" height="24" alt="Panel"> | **S08** Resource Panel | Dashboard de recursos | ⏳ |
+| <img src="assets/images/icon-affiliates.svg" width="24" height="24" alt="Afiliados"> | **S09** Affiliates v2 | Sistema de referidos multinivel | ⏳ |
+
+---
+
+### Soporte (S10-S18)
+*Infraestructura y operaciones*
+
+| Icono | Sistema | Descripción | Estado |
+|:-----:|---------|-------------|:------:|
+| <img src="assets/images/icon-auth.svg" width="24" height="24" alt="Auth"> | **S10** Auth Registry | Registro y autenticación | ⏳ |
+| <img src="assets/images/icon-wallet.svg" width="24" height="24" alt="Withdrawals"> | **S11** Withdrawals | Retiros multi-moneda | ⏳ |
+| <img src="assets/images/icon-notifications.svg" width="24" height="24" alt="Notificaciones"> | **S12** Notifications | Sistema de notificaciones push | ⏳ |
+| <img src="assets/images/icon-support.svg" width="24" height="24" alt="Soporte"> | **S13** User Support | Mesa de ayuda integrada | ⏳ |
+| <img src="assets/images/icon-cog-wheel.svg" width="24" height="24" alt="Admin"> | **S14** Panel Admin | Administración del sistema | ⏳ |
+| <img src="assets/images/icon-analytics.svg" width="24" height="24" alt="Analytics"> | **S15** Analytics | Métricas y reportes | ⏳ |
+| <img src="assets/images/icon-document-shield.svg" width="24" height="24" alt="Legal"> | **S16** Legal Compliance | Cumplimiento normativo | ⏳ |
+| <img src="assets/images/icon-flags.svg" width="24" height="24" alt="Flags"> | **S17** Feature Flags | Control de características | ⏳ |
+| <img src="assets/images/icon-compass.svg" width="24" height="24" alt="Monitoreo"> | **S18** Monitoring | Monitoreo de salud del nodo | ⏳ |
+
+---
+
+### Ecosistema (S19-S21)
+*Servicios DePIN externos*
+
+| Icono | Sistema | Descripción | Estado |
+|:-----:|---------|-------------|:------:|
+| <img src="assets/images/icon-denet.svg" width="24" height="24" alt="DeNet"> | **S19** DeNet Storage | Almacenamiento descentralizado | ⏳ |
+| <img src="assets/images/icon-acurast.svg" width="24" height="24" alt="Acurast"> | **S20** Acurast Compute | Cómputo serverless | ⏳ |
+| <img src="assets/images/icon-payos.svg" width="24" height="24" alt="PayOS"> | **S21** PayOS Gateway | Pasarela de pagos | ⏳ |
+
+</div>
+
+<div align="center">
+
+**[Ver documentación completa](https://1inquisidor1.github.io/Resource-digital/docs/index.md)**
+
+</div>
 
 ---
 
