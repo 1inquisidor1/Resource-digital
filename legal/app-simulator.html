@@ -13,6 +13,7 @@
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
  <style>
 
+
  *{margin:0;padding:0;box-sizing:border-box}
  :root {
  --bg-0: #050a12;
@@ -766,6 +767,516 @@
 .bg-blue-glow { background: var(--blue-glow); }
 .bg-orange-glow { background: var(--orange-glow); }
 .bg-purple-glow { background: var(--purple-glow); }
+
+
+
+/* ===== VISUAL FIXES ===== */
+
+/* Asegurar que el balance sea prominente */
+.balance__amount {
+  font-size: 42px !important;
+  font-weight: 800 !important;
+  color: var(--text-0) !important;
+  margin: 8px 0 !important;
+}
+
+/* Asegurar que las barras de progreso tengan fondo */
+.resource__bar {
+  height: 4px !important;
+  background: var(--bg-3) !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+  margin-top: 8px !important;
+}
+
+.resource__bar-fill {
+  height: 100% !important;
+  border-radius: 999px !important;
+  transition: width 0.3s ease !important;
+}
+
+/* Colores de las barras de progreso */
+.resource__bar-fill.bandwidth {
+  background: var(--blue) !important;
+}
+
+.resource__bar-fill.sensors {
+  background: var(--orange) !important;
+}
+
+.resource__bar-fill.storage {
+  background: var(--purple) !important;
+}
+
+.resource__bar-fill.compute {
+  background: var(--accent) !important;
+}
+
+/* Asegurar que los iconos tengan tamaño y visibilidad */
+.resource__icon {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.resource__icon.bandwidth {
+  background: var(--blue-glow) !important;
+}
+
+.resource__icon.sensors {
+  background: var(--orange-glow) !important;
+}
+
+.resource__icon.storage {
+  background: var(--purple-glow) !important;
+}
+
+.resource__icon.compute {
+  background: var(--accent-glow) !important;
+}
+
+/* Asegurar que los textos de valor sean visibles */
+.resource__value {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--text-0) !important;
+  margin: 4px 0 !important;
+}
+
+/* Asegurar que los nombres sean visibles */
+.resource__name {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--text-0) !important;
+  margin-bottom: 2px !important;
+}
+
+/* Asegurar que el nombre del recurso no se corte */
+.resource__header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 8px !important;
+}
+
+/* Mejorar apariencia de los toggle switches */
+.resource__toggle {
+  position: relative !important;
+  width: 44px !important;
+  height: 24px !important;
+  flex-shrink: 0 !important;
+}
+
+.resource__toggle input {
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+}
+
+.resource__toggle label {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: var(--bg-3) !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.resource__toggle label::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 2px !important;
+  left: 2px !important;
+  width: 20px !important;
+  height: 20px !important;
+  background: var(--text-0) !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+}
+
+.resource__toggle input:checked + label {
+  background: var(--accent) !important;
+}
+
+.resource__toggle input:checked + label::after {
+  transform: translateX(20px) !important;
+}
+
+/* Asegurar que el padding inferior sea suficiente para el nav */
+.screen {
+  padding-bottom: 120px !important;
+}
+
+/* Mejorar la apariencia de los booster cards */
+.booster {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 14px !important;
+  background: var(--bg-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px !important;
+  margin-bottom: 8px !important;
+}
+
+.booster__icon {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.booster__info {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.booster__name {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--text-0) !important;
+}
+
+.booster__desc {
+  font-size: 11px !important;
+  color: var(--text-2) !important;
+  margin-top: 2px !important;
+}
+
+.booster__multiplier {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: var(--accent) !important;
+  flex-shrink: 0 !important;
+}
+
+/* Asegurar que el chart tenga altura */
+.chart {
+  height: 100px !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  gap: 3px !important;
+  padding: 10px 0 !important;
+}
+
+.chart__bar {
+  flex: 1 !important;
+  background: var(--accent) !important;
+  border-radius: 3px 3px 0 0 !important;
+  min-height: 2px !important;
+  transition: height 0.3s ease !important;
+}
+
+/* Mejorar la apariencia del activity feed */
+.activity {
+  background: var(--bg-1) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+}
+
+.activity__item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 12px 14px !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.activity__item:last-child {
+  border-bottom: none !important;
+}
+
+.activity__icon {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.activity__info {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.activity__text {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--text-0) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.activity__time {
+  font-size: 10px !important;
+  color: var(--text-3) !important;
+  margin-top: 2px !important;
+}
+
+.activity__amount {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--accent) !important;
+  flex-shrink: 0 !important;
+}
+
+/* Mejorar la apariencia del DID card */
+.did-card {
+  background: linear-gradient(135deg, var(--bg-2), var(--bg-3)) !important;
+  border: 1px solid var(--border-active) !important;
+  border-radius: 16px !important;
+  padding: 18px !important;
+  margin-bottom: 16px !important;
+}
+
+.did-card__label {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--accent) !important;
+  margin-bottom: 8px !important;
+}
+
+.did-card__address {
+  font-family: var(--mono) !important;
+  font-size: 11px !important;
+  color: var(--text-0) !important;
+  word-break: break-all !important;
+  line-height: 1.5 !important;
+}
+
+.did-card__badges {
+  display: flex !important;
+  gap: 8px !important;
+  margin-top: 12px !important;
+}
+
+/* Mejorar la apariencia de affiliate levels */
+.affiliate-level {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 14px !important;
+  background: var(--bg-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px !important;
+  margin-bottom: 8px !important;
+}
+
+.affiliate-level__badge {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: var(--accent-glow) !important;
+  color: var(--accent) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.affiliate-level__info {
+  flex: 1 !important;
+}
+
+.affiliate-level__name {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--text-0) !important;
+}
+
+.affiliate-level__count {
+  font-size: 11px !important;
+  color: var(--text-2) !important;
+  margin-top: 2px !important;
+}
+
+.affiliate-level__commission {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--accent) !important;
+  flex-shrink: 0 !important;
+}
+
+/* Mejorar la apariencia de methods */
+.method {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 14px !important;
+  background: var(--bg-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px !important;
+  margin-bottom: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.method:hover {
+  border-color: var(--accent) !important;
+  transform: translateY(-1px) !important;
+}
+
+.method__icon {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.method__info {
+  flex: 1 !important;
+}
+
+.method__name {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--text-0) !important;
+}
+
+.method__detail {
+  font-size: 11px !important;
+  color: var(--text-2) !important;
+  margin-top: 2px !important;
+}
+
+.method__fee {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: var(--text-2) !important;
+  flex-shrink: 0 !important;
+}
+
+/* Mejorar la apariencia del toast */
+.toast {
+  position: fixed !important;
+  bottom: 100px !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(20px) !important;
+  background: var(--bg-3) !important;
+  border: 1px solid var(--accent) !important;
+  color: var(--text-0) !important;
+  padding: 12px 20px !important;
+  border-radius: 12px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all 0.3s ease !important;
+  z-index: 1000 !important;
+  white-space: nowrap !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+.toast.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+/* Mejorar la apariencia del wallet */
+.header__wallet {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: var(--bg-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 10px !important;
+  padding: 8px 14px !important;
+  font-family: var(--mono) !important;
+  font-size: 11px !important;
+  color: var(--text-1) !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.header__wallet:hover {
+  border-color: var(--accent) !important;
+  background: var(--bg-3) !important;
+}
+
+/* Asegurar que el network stats sean visibles */
+.network__stat-value {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--text-0) !important;
+}
+
+.network__stat-label {
+  font-size: 11px !important;
+  color: var(--text-2) !important;
+  margin-top: 2px !important;
+}
+
+/* Asegurar que los badges sean visibles */
+.badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+}
+
+.badge.accent {
+  background: var(--accent-glow) !important;
+  color: var(--accent) !important;
+  border: 1px solid rgba(0, 229, 160, 0.3) !important;
+}
+
+.badge.blue {
+  background: var(--blue-glow) !important;
+  color: var(--blue) !important;
+  border: 1px solid rgba(96, 165, 250, 0.3) !important;
+}
+
+/* Asegurar que el impact shared sea visible */
+#impact-shared {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: var(--text-0) !important;
+}
+
+/* Asegurar que los valores de balance stats sean visibles */
+.balance__stat-value {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: var(--text-0) !important;
+}
+
+.balance__stat-value.accent {
+  color: var(--accent) !important;
+}
+
+.balance__stat-label {
+  font-size: 11px !important;
+  color: var(--text-2) !important;
+  margin-top: 2px !important;
+}
+
 
 </style>
  <meta property="og:title" content="Resource Digital | Demo App">
