@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verifica coherencia entre docs/systems/, assets/data/systems.json y web/index.html."""
+"""Verifica coherencia entre docs/systems/, assets/data/systems.json e index.html."""
 
 import re
 import sys
@@ -54,17 +54,28 @@ for s in json_data.get("systems", []):
         "status": s.get("status"),
     }
 
-# --- 3. Extraer sistemas de la landing ---
-html_path = Path("web/index.html")
-landing_systems = {}
+# --- 3. Verificar la landing (render dinamico desde systems.json) ---
+# index.html vive en la raiz (no en web/). Las tarjetas se generan en
+# cliente con assets/js/main.js, asi que se verifica el cableado:
+# contenedor #systems-grid, timeline #timeline-track y fetch del JSON.
+html_path = Path("index.html")
+js_path = Path("assets/js/main.js")
+landing_ok = False
 if html_path.exists():
     html = html_path.read_text(encoding="utf-8")
-    # Buscar sistemas en el HTML (hardcodeados o en datos embebidos)
-    # Primero buscar en el JSON embebidos en el HTML
-    for sid in json_systems:
-        # Verificar que el sistema aparece en el HTML
-        if f'>{sid}<' in html or f'> {sid} <' in html:
-            landing_systems[sid] = json_systems[sid]["phase"]
+    js = js_path.read_text(encoding="utf-8") if js_path.exists() else ""
+    landing_ok = (
+        'id="systems-grid"' in html
+        and 'id="timeline-track"' in html
+        and 'assets/data/systems.json' in (html + js)
+    )
+    if not landing_ok:
+        errors.append(
+            "index.html no cablea systems.json "
+            "(falta #systems-grid, #timeline-track o el fetch)"
+        )
+else:
+    errors.append("index.html no existe en la raiz")
 
 # --- 4. Comparar docs vs JSON ---
 # 4a. Conteo total
@@ -102,10 +113,8 @@ for sid in ["S03", "S06"]:
         errors.append(f"{sid} debe ser Fase 2 en systems.json")
 
 # --- 5. Comparar landing vs JSON ---
-for sid in json_systems:
-    if sid not in landing_systems:
-        # Solo advertir si el sistema deberia estar visible
-        pass  # Sistemas dinamicos no estan hardcodeados
+if not landing_ok:
+    errors.append("landing sin cableado a systems.json (ver seccion 3)")
 
 # --- 6. Reportar ---
 if errors:

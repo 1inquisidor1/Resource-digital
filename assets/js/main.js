@@ -56,9 +56,25 @@ if (navToggle && navLinks) {
 }
 
 // ==================== SYSTEM CARD GENERATOR ====================
-function generateSystemCard(system) {
-    var iconMap = {"S01":"icon-node-core.svg","S02":"icon-rocket.svg","S03":"icon-sensors.svg","S04":"icon-database-buffer.svg","S05":"icon-wave-signal.svg","S06":"icon-bridge-chain.svg","S07":"icon-trophy.svg","S08":"icon-grid-panel.svg","S09":"icon-affiliates.svg","S10":"icon-auth.svg","S11":"icon-wallet.svg","S12":"icon-notifications.svg","S13":"icon-support.svg","S14":"icon-cog-wheel.svg","S15":"icon-analytics.svg","S16":"icon-document-shield.svg","S17":"icon-flags.svg","S18":"icon-compass.svg","S19":"icon-denet.svg","S20":"icon-acurast.svg","S21":"icon-payos.svg"};
-    var iconPath = iconMap[system.id] || 'icon-status.svg';
+// Acepta el esquema de assets/data/systems.json: {code, name, phase,
+// status, description, icon, category}. normalizeSystem() mapea code->id.
+function normalizeSystem(system) {
+    return {
+        id: system.id || system.code,
+        name: system.name,
+        phase: system.phase,
+        status: system.status,
+        description: system.description,
+        icon: system.icon,
+        category: system.category,
+        tags: system.tags || []
+    };
+}
+
+function generateSystemCard(raw) {
+    var system = normalizeSystem(raw);
+    var iconMap = {"S01":"icon-node-core.svg","S02":"icon-rocket.svg","S03":"icon-sensors.svg","S04":"icon-database-buffer.svg","S05":"icon-wave-signal.svg","S06":"icon-bridge-chain.svg","S07":"icon-trophy.svg","S08":"icon-grid-panel.svg","S09":"icon-affiliates.svg","S10":"icon-auth.svg","S11":"icon-wallet.svg","S12":"icon-notifications.svg","S13":"icon-support.svg","S14":"icon-cog-wheel.svg","S15":"icon-analytics.svg","S16":"icon-document-shield.svg","S17":"icon-flags.svg","S18":"icon-compass.svg"};
+    var iconPath = system.icon || iconMap[system.id] || 'icon-status.svg';
     var badgeMap = {
         'pending': 'badge--pending',
         'in-progress': 'badge--progress',
@@ -105,27 +121,37 @@ function generateSystemCard(system) {
     '</article>';
 }
 
-function escapeHtml(text) {
-    if (!text) return '';
-    return text
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-}
-
 // ==================== TIMELINE GENERATOR ====================
+// Acepta fases de systems.json: {id, name, title?, weeks?, description?, status}.
 function generateTimeline(phases) {
+    var statusClassMap = {
+        'in-progress': 'progress',
+        'pending': 'progress',
+        'planned': 'planned',
+        'done': 'done',
+        'future': 'future'
+    };
+    var statusTextMap = {
+        'in-progress': 'En preparacion',
+        'pending': 'Pendiente',
+        'planned': 'Planificado',
+        'done': 'Completado',
+        'future': 'Futuro'
+    };
     return phases.map(function(phase, i) {
         var activeClass = i === 0 ? 'timeline__item--active' : '';
+        var statusClass = phase.statusClass || statusClassMap[phase.status] || 'progress';
+        var statusText = phase.statusLabel || statusTextMap[phase.status] || phase.status;
+        var range = phase.weeks ? ' - Semanas ' + escapeHtml(phase.weeks) : '';
+        var title = phase.title || phase.name;
+        var desc = phase.description ? '<p>' + escapeHtml(phase.description) + '</p>' : '';
         return '<div class="timeline__item ' + activeClass + ' reveal" style="transition-delay: ' + (i * 150) + 'ms">' +
             '<div class="timeline__marker"></div>' +
             '<div class="timeline__content">' +
-                '<span class="timeline__phase">Fase ' + phase.id + ' - Semanas ' + escapeHtml(phase.weeks) + '</span>' +
-                '<h3>' + escapeHtml(phase.name) + '</h3>' +
-                '<p>' + (phase.description ? escapeHtml(phase.description) : '') + '</p>' +
-                '<span class="badge badge--' + phase.statusClass + '">' + escapeHtml(phase.status) + '</span>' +
+                '<span class="timeline__phase">Fase ' + phase.id + range + '</span>' +
+                '<h3>' + escapeHtml(title) + '</h3>' +
+                desc +
+                '<span class="badge badge--' + statusClass + '">' + escapeHtml(statusText) + '</span>' +
             '</div>' +
         '</div>';
     }).join('');
@@ -147,13 +173,15 @@ async function loadData() {
             throw new Error('Failed to load systems data: ' + response.status);
         }
         var data = await response.json();
-        
-        // Update hero stats
+
+        // Update hero stats: totalSystems vive en la raiz del JSON
+        // (data.project es solo el nombre; se acepta objeto legacy).
+        var total = data.totalSystems ||
+            (data.project && data.project.totalSystems) ||
+            (data.systems ? data.systems.length : 0);
         var statNumbers = document.querySelectorAll('.hero__stats .stat__number');
-        if (data.project && data.project.totalSystems) {
-            if (statNumbers[0]) {
-                statNumbers[0].textContent = data.project.totalSystems;
-            }
+        if (total && statNumbers[0]) {
+            statNumbers[0].textContent = total;
         }
         
         // Generate system cards

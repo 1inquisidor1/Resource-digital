@@ -6,17 +6,26 @@
     {
       "id": 1,
       "name": "Fase 1",
-      "status": "in-progress"
+      "title": "Pre-Beta Infraestructura Core",
+      "weeks": "1-4",
+      "status": "in-progress",
+      "description": "Integracion de SDKs de banda y validacion con 5-10 usuarios en Ecuador."
     },
     {
       "id": 2,
       "name": "Fase 2",
-      "status": "planned"
+      "title": "Capa DePIN con peaq",
+      "weeks": "5-8",
+      "status": "planned",
+      "description": "Identidad peaq, backend Supabase y capa de recompensas."
     },
     {
       "id": 3,
       "name": "Fase 3",
-      "status": "planned"
+      "title": "Ecosistema Completo",
+      "weeks": "9+",
+      "status": "planned",
+      "description": "Almacenamiento DeNet, computo Acurast y beta ampliada."
     }
   ],
   "systems": [
@@ -132,7 +141,7 @@
       "code": "S13",
       "name": "User Support",
       "phase": 2,
-      "status": "pending",
+      "status": "planned",
       "description": "Mesa de ayuda integrada",
       "icon": "icon-support.svg",
       "category": "support"
@@ -141,7 +150,7 @@
       "code": "S14",
       "name": "Admin Panel",
       "phase": 2,
-      "status": "pending",
+      "status": "planned",
       "description": "Administración del sistema",
       "icon": "icon-cog-wheel.svg",
       "category": "support"
@@ -150,7 +159,7 @@
       "code": "S15",
       "name": "Analytics",
       "phase": 2,
-      "status": "pending",
+      "status": "planned",
       "description": "Métricas y reportes",
       "icon": "icon-analytics.svg",
       "category": "support"
@@ -168,7 +177,7 @@
       "code": "S17",
       "name": "Feature Flags",
       "phase": 2,
-      "status": "pending",
+      "status": "planned",
       "description": "Control de características",
       "icon": "icon-flags.svg",
       "category": "support"
@@ -177,7 +186,7 @@
       "code": "S18",
       "name": "Monitoring",
       "phase": 2,
-      "status": "pending",
+      "status": "planned",
       "description": "Monitoreo de salud del nodo",
       "icon": "icon-compass.svg",
       "category": "support"

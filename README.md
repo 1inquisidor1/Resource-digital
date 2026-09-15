@@ -120,18 +120,6 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 
 ---
 
-### Ecosistema (S18-S18)
-*Servicios DePIN externos*
-
-| Icono | Sistema | Descripción | Estado |
-|:-----:|---------|-------------|:------:|
-
-</div>
-
-<div align="center">
-
-**[---
-
 ### Proveedores Externos
 *Integraciones de terceros que potencian los sistemas*
 
@@ -144,7 +132,7 @@ Resource Digital convierte tu smartphone en un **nodo generador de ingresos pasi
 | S15 Analytics | PostHog, Metabase | Métricas |
 | S18 Monitoring | Sentry, UptimeRobot | Monitoreo |
 
-**[Ver documentación completa](https://1inquisidor1.github.io/Resource-digital/docs/index.md)**
+**[Ver documentación completa](https://github.com/1inquisidor1/Resource-digital/tree/main/docs)**
 
 </div>
 

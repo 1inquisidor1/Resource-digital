@@ -3,7 +3,7 @@ title: Seguridad y Privacidad
 status: active
 phase: null
 owner: andy
-last_updated: 2026-09-13
+last_updated: 2026-09-15
 related: []
 ---
 
@@ -66,11 +66,14 @@ correo oficial:
 
 ## Fase 3: Ecosistema Completo
 
-### Sistemas de Fase 3
+### Proveedores externos de Fase 3
 
-- **S19 - DeNet Storage:** Cifrado E2E, almacenamiento descentralizado
-- **S20 - Acurast Compute:** Procesamiento seguro, TEE (Trusted Execution Environment)
-- **S21 - PayOS Gateway:** Cumplimiento KYC/AML, regulación multi-chain
+DeNet, Acurast y PayOS no son sistemas internos (la arquitectura es de 18
+sistemas); son proveedores externos consumidos por S05 y S11.
+
+- **DeNet Storage:** Cifrado E2E, almacenamiento descentralizado
+- **Acurast Compute:** Procesamiento seguro, TEE (Trusted Execution Environment)
+- **PayOS Gateway:** Cumplimiento KYC/AML, regulación multi-chain
 
 ### Consideraciones de Seguridad Fase 3
 

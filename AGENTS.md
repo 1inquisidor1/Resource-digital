@@ -68,7 +68,7 @@ Antes de agregar un icono, preguntar:
 Antes de hacer cualquier cosa:
 
 1. Leer `docs/index.md` → mapa completo de la documentación.
-2. Leer `docs/roadmap.md` → fases actuales y plazos.
+2. Leer `docs/04-hoja-de-ruta.md` → fases actuales y plazos.
 3. Leer el archivo específico del sistema o tema que vas a tocar.
 
 Si un archivo no existe en `docs/index.md`, **no lo crees sin añadirlo al índice**.
@@ -78,10 +78,10 @@ Si un archivo no existe en `docs/index.md`, **no lo crees sin añadirlo al índi
 | Carpeta | Contenido | Editable |
 |---|---|---|
 | `docs/` | Documentación en markdown | Si |
-| `docs/systems/` | Un archivo por sistema (S01–S21) | ✅ Si |
+| `docs/systems/` | Un archivo por sistema (S01–S18) | ✅ Si |
 | `docs/_archive/` | Documentos originales | No |
-| `app/` | Proyecto Flutter | ✅ Si |
-| `web/` | Landing page | ✅ Si |
+| `app/` | Proyecto Flutter (vacío, pendiente de inicializar) | ✅ Si |
+| `/` + `assets/` | Landing page (`index.html` en raíz, sin carpeta `web/`) | ✅ Si |
 | `supabase/` | Configuración Supabase | ✅ Si |
 
 **Nunca editar** archivos en `docs/_archive/`. Son históricos.
@@ -196,18 +196,18 @@ related: [...]
 
 1. Crear `docs/systems/SXX-nombre.md` con la plantilla de la sección 3.
 2. Añadirlo a la tabla de `docs/index.md`.
-3. Añadirlo a `docs/01-arquitectura.md` en la lista de sistemas.
+3. Añadirlo a `docs/02-arquitectura-18-sistemas.md` en la lista de sistemas.
 4. **No tocar `AGENTS.md`**.
 
 ### Actualizar el estado de un sistema
 
 1. Editar solo el frontmatter (`status`, `last_updated`) y la sección "Estado".
 2. **No tocar otros archivos**.
-3. Si el cambio afecta a la fase, actualizar `docs/roadmap.md`.
+3. Si el cambio afecta a la fase, actualizar `docs/04-hoja-de-ruta.md`.
 
 ### Añadir una cuenta o servicio
 
-1. Editar `docs/cuentas.md` en la sección correspondiente.
+1. Editar `docs/06-registro-plataformas.md` en la sección correspondiente.
 2. Añadir entrada al historial de registros al final del archivo.
 3. **No crear archivos nuevos**.
 
@@ -259,7 +259,7 @@ flutter analyze
 dart format .
 ```
 
-### Web (en `web/`)
+### Web (raíz + `assets/`)
 
 No hay build. Editar y hacer commit. GitHub Pages despliega automáticamente.
 
@@ -280,10 +280,10 @@ Tipos de commit: `feat`, `fix`, `docs`, `refactor`, `chore`.
 Si dos documentos se contradicen, prevalece en este orden:
 
 1. `docs/systems/S*.md` (estado por sistema)
-2. `docs/01-arquitectura.md` (arquitectura global)
-3. `docs/roadmap.md` (fases y plazos)
-4. `docs/cuentas.md` (servicios y credenciales)
-5. `docs/03-diario.md` (histórico)
+2. `docs/02-arquitectura-18-sistemas.md` (arquitectura global)
+3. `docs/04-hoja-de-ruta.md` (fases y plazos)
+4. `docs/06-registro-plataformas.md` (servicios y credenciales)
+5. Historial de git (histórico; no existe `docs/03-diario.md`)
 
 Si el conflicto es entre un `.docx` de `_archive/` y un `.md` de `docs/`,
 **siempre prevalece el `.md`**.---
